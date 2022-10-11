@@ -1,7 +1,7 @@
 import './Navbar.css';
 
 export default function Navbar() {
-  return <div className='logoContainer'>
+  return <div className='navbar'>
     <a href="/">
       <img
         className="logo"
