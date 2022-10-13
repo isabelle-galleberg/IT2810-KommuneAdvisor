@@ -1,0 +1,22 @@
+.search {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchIcon {
+  max-width: 15px;
+}
+
+/* search */
+.mantine-16u1lte,
+.mantine-i0taq {
+  background-color: #405A7E;
+  border: 1px solid black;
+  color: #F3F9FC;
+}
+
+.mantine-1pwvbwf:hover {
+  background-color: #405A7E;
+}
