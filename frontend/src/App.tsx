@@ -7,21 +7,25 @@ import Navbar from './components/Navbar/Navbar';
 function App() {
   return (
     <div>
-      <Navbar />
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path='/'
-            element={<MainPage />}
-          />
-        </Routes>
-        <Routes>
-          <Route
-            path='/kommune'
-            element={<DetailsPage />}
-          />
-        </Routes>
-      </BrowserRouter>
+      <div>
+        <Navbar />
+      </div>
+      <div className='content'>
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path='/'
+              element={<MainPage />}
+            />
+          </Routes>
+          <Routes>
+            <Route
+              path='/kommune'
+              element={<DetailsPage />}
+            />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }
