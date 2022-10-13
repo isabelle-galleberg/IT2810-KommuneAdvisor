@@ -3,6 +3,8 @@ import KommuneCard from '../../components/KommuneCard/KommuneCard';
 import { SimpleGrid } from '@mantine/core';
 import InputFields from '../../components/InputFields/InputFields';
 import { useState } from 'react';
+import Search from '../../components/Search/Search';
+
 
 const kommuner = [
   {
@@ -56,6 +58,7 @@ const kommuner = [
 ];
 
 export default function MainPage() {
+  const [search, setSearch] = useState<string>('');
   const [countys, setCountys] = useState<string[]>([]);
   const [sort, setSort] = useState<string>('');
   const [parameters, setParameters] = useState<{ county: string, sort: string }>({
@@ -64,9 +67,14 @@ export default function MainPage() {
   });
 
   console.log(parameters);
+  console.log(search);
 
   return (
     <div>
+      <Search
+        setSearch={setSearch}
+        search={search}
+      ></Search>
       <InputFields
         parameters={parameters}
         setParameters={setParameters}

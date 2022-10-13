@@ -12,4 +12,7 @@ export interface InputFieldsProps {
   setSort: (sort: string) => void;
   sort: string;
 }
-
+export interface SearchProps {
+  setSearch: (search: string) => void;
+  search: string;
+}
