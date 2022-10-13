@@ -11,9 +11,9 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export default function KommuneCard({
-  kommune,
+  name,
   county,
-  weapon,
+  weaponImg,
 }: KommuneCardProps) {
   const { classes } = useStyles();
 
@@ -25,7 +25,7 @@ export default function KommuneCard({
         noWrap
         spacing={20}>
         <Image
-          src={weapon}
+          src={weaponImg}
           height={130}
           width={100}
         />
@@ -35,7 +35,7 @@ export default function KommuneCard({
             mb='xs'
             weight='700'
             size='md'>
-            {kommune}
+            {name}
           </Text>
           <Text
             size='sm'

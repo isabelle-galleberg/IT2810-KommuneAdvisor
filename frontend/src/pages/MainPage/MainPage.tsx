@@ -67,9 +67,9 @@ export default function MainPage() {
           return (
             <KommuneCard
               key={kommune.id}
-              kommune={kommune.kommune}
+              name={kommune.kommune}
               county={kommune.county}
-              weapon={kommune.weapon}
+              weaponImg={kommune.weapon}
             />
           );
         })}
