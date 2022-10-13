@@ -1,4 +1,5 @@
 import { createStyles, Card, Image, Text, Group, Button } from '@mantine/core';
+import { Link } from 'react-router-dom';
 import { KommuneCardProps } from '../../types/propTypes';
 
 const useStyles = createStyles((theme) => ({
@@ -42,13 +43,15 @@ export default function KommuneCard({
             color='dimmed'>
             📍{county}
           </Text>
-          <Button
-            variant='light'
-            color='blue'
-            mt='xs'
-            radius='md'>
-            Vis mer
-          </Button>
+          <Link to={`kommune/${name.replace(' ', '_')}`}>
+            <Button
+              variant='light'
+              color='blue'
+              mt='xs'
+              radius='md'>
+              Vis mer
+            </Button>
+          </Link>
         </div>
       </Group>
     </Card>

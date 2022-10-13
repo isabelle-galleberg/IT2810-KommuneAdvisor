@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import DetailsPage from './pages/DetailsPage/DetailsPage';
 import MainPage from './pages/MainPage/MainPage';
 import Navbar from './components/Navbar/Navbar';
+import KommuneDetails from './components/KommuneDetails/KommuneDetails';
 
 function App() {
   return (
@@ -17,8 +17,8 @@ function App() {
         </Routes>
         <Routes>
           <Route
-            path='/kommune'
-            element={<DetailsPage />}
+            path='kommune/:kommuneSlug'
+            element={<KommuneDetails />}
           />
         </Routes>
       </BrowserRouter>
