@@ -16,7 +16,7 @@ export interface ReviewCardProps {
   rating: number;
   title: string;
   text: string;
-  author: string;
+  date: Date;
 }
 export interface SearchProps {
   setSearch: (search: string) => void;
