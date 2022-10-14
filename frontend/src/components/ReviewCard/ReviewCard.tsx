@@ -6,7 +6,7 @@ export default function ReviewCard({
   rating,
   title,
   text,
-  author,
+  date,
 }: ReviewCardProps) {
   return (
     <div className='reviewCard'>
@@ -30,7 +30,7 @@ export default function ReviewCard({
       </div>
       <div className='title'>{title}</div>
       <div className='text'>{text}</div>
-      <div className='author'>{author}</div>
+      <div className='date'>{date.toString()}</div>
     </div>
   );
 }
