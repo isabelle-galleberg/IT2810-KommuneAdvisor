@@ -4,13 +4,14 @@ import ReviewCard from '../../components/ReviewCard/ReviewCard';
 import './ReviewPage.css';
 
 export default function ReviewPage() {
+  const exampleDate = new Date();
   return (
     <div className='reviewCards'>
       <ReviewCard
         rating={2}
         title={'Et høl'}
         text={'Jeg besøkte Trondheim i sommer og vil aldri tilbake igjen!'}
-        author={'-Isabelle Galleberg'}
+        date={exampleDate}
       />
     </div>
   );
