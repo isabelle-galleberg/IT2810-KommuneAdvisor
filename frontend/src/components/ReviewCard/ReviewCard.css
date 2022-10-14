@@ -1,0 +1,40 @@
+.reviewCard {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #3a73c5;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+    height: 100%;
+    width: clamp(200px, calc(75vw), 550px);
+  }
+  
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 8px;
+  }
+  
+  .text {
+    font-size: 16px;
+    margin-left: 8px;
+  }
+  
+  .author {
+    font-size: 12px;
+    margin-left: 8px;
+    color: #6e6e6e;
+  }
+  
+  .rating {
+    margin-left: 8px;
+  }
+  
+  .star {
+    margin-right: 5px;
+    height: 20px;
+    width: 20px;
+  }
+  
