@@ -8,6 +8,8 @@ export default function ReviewCard({
   text,
   date,
 }: ReviewCardProps) {
+  const dateString: string =
+    date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear();
   return (
     <div className='reviewCard'>
       <div className='rating'>
@@ -30,7 +32,7 @@ export default function ReviewCard({
       </div>
       <div className='title'>{title}</div>
       <div className='text'>{text}</div>
-      <div className='date'>{date.toString()}</div>
+      <div className='date'>{dateString}</div>
     </div>
   );
 }
