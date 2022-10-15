@@ -5,7 +5,6 @@ import InputFields from '../../components/InputFields/InputFields';
 import { useState } from 'react';
 import Search from '../../components/Search/Search';
 
-
 const kommuner = [
   {
     id: 1,
@@ -61,9 +60,12 @@ export default function MainPage() {
   const [search, setSearch] = useState<string>('');
   const [countys, setCountys] = useState<string[]>([]);
   const [sort, setSort] = useState<string>('');
-  const [parameters, setParameters] = useState<{ county: string, sort: string }>({
-    county: "",
-    sort: "",
+  const [parameters, setParameters] = useState<{
+    county: string;
+    sort: string;
+  }>({
+    county: '',
+    sort: '',
   });
 
   console.log(parameters);
@@ -73,16 +75,14 @@ export default function MainPage() {
     <div>
       <Search
         setSearch={setSearch}
-        search={search}
-      ></Search>
+        search={search}></Search>
       <InputFields
         parameters={parameters}
         setParameters={setParameters}
         countys={countys}
         setCountys={setCountys}
         setSort={setSort}
-        sort={sort}
-      ></InputFields>
+        sort={sort}></InputFields>
       <div className='cards'>
         <SimpleGrid
           breakpoints={[
@@ -95,14 +95,14 @@ export default function MainPage() {
             return (
               <KommuneCard
                 key={kommune.id}
-                kommune={kommune.kommune}
+                name={kommune.kommune}
                 county={kommune.county}
-                weapon={kommune.weapon}
+                weaponImg={kommune.weapon}
               />
             );
           })}
         </SimpleGrid>
       </div>
-    </div >
+    </div>
   );
 }
