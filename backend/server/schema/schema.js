@@ -10,8 +10,8 @@ const KommuneType = new GraphQLObjectType({
   name: "Kommune",
   fields: () => ({
     id: { type: GraphQLID },
-    region_nr: { type: GraphQLString },
-    region: { type: GraphQLString },
+    munNumber: { type: GraphQLString },
+    name: { type: GraphQLString },
     Befolkning: { type: GraphQLString },
     ArealKm2: { type: GraphQLString },
     LandarealKm2: { type: GraphQLString },
@@ -33,9 +33,9 @@ const RootQuery = new GraphQLObjectType({
     },
     kommune: {
       type: KommuneType,
-      args: { region_nr: { type: GraphQLString } },
+      args: { munNumber: { type: GraphQLString } },
       resolve(parent, args) {
-        return dataSet.find((kommune) => kommune.region_nr === args.region_nr);
+        return dataSet.find((kommune) => kommune.munNumber === args.munNumber);
       },
     },
   },
@@ -43,8 +43,8 @@ const RootQuery = new GraphQLObjectType({
 
 const dataSet = [
   {
-    region_nr: "3013",
-    region: "Marker",
+    munNumber: "3013",
+    name: "Marker",
     Befolkning: 3578,
     ArealKm2: 413,
     LandarealKm2: 368,
@@ -56,8 +56,8 @@ const dataSet = [
     writingLanguage: "bokmål",
   },
   {
-    region_nr: "3014",
-    region: "Indre Østfold",
+    munNumber: "3014",
+    name: "Indre Østfold",
     Befolkning: 45608,
     ArealKm2: 792,
     LandarealKm2: 755,
@@ -69,8 +69,8 @@ const dataSet = [
     writingLanguage: "bokmål",
   },
   {
-    region_nr: "3015",
-    region: "Skiptvet",
+    munNumber: "3015",
+    name: "Skiptvet",
     Befolkning: 3846,
     ArealKm2: 101,
     LandarealKm2: 93,
