@@ -1,6 +1,7 @@
 import { Card, Image, Text, Group, Button } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { KommuneCardProps } from '../../types/propTypes';
+import './KommuneCard.css';
 
 export default function KommuneCard({
   name,
@@ -16,8 +17,8 @@ export default function KommuneCard({
         spacing={20}>
         <Image
           src={weaponImg}
-          height={130}
-          width={100}
+          height={90}
+          width={70}
         />
         <div>
           <Text
