@@ -3,6 +3,9 @@
   width: 100%;
   position: sticky;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  top: 0;
+  background-color: #f3f9fc;
+  z-index: 2;
 }
 
 .logo {
