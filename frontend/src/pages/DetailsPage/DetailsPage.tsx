@@ -46,22 +46,22 @@ const reviews = [
 
 export default function DetailsPage() {
   return (
-    <>
-    <KommuneDetails />
-    <div className="reviews">
-      {reviews.map((review) => {
-        return (
-          <ReviewCard
-            key={review.id}
-            title={review.title}
-            description={review.description}
-            rating={review.rating}
-            name={review.name}
-            date={review.date}
-          />
-        );
-      })}
+    <div className='detailsPage'>
+      <KommuneDetails />
+      <div className='reviews'>
+        {reviews.map((review) => {
+          return (
+            <ReviewCard
+              key={review.id}
+              title={review.title}
+              description={review.description}
+              rating={review.rating}
+              name={review.name}
+              date={review.date}
+            />
+          );
+        })}
+      </div>
     </div>
-    </>
   );
 }

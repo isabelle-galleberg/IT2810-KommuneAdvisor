@@ -11,15 +11,20 @@ export default function ReviewCard({
 }: ReviewCardProps) {
   return (
     <div className='reviewCard'>
-      <Rating
-        initialValue={rating}
-        readonly
-        size={20}
-        iconsCount={rating}
-      />
-      <div className='title'>{title}</div>
-      <div className='description'>{description}</div>
-      <div className='date'>{date + ' ' + name}</div>
+      <div className='reviewCardTop'>
+        <Rating
+          initialValue={rating}
+          readonly
+          size={20}
+          iconsCount={rating}
+        />
+        <div className='date'>{date}</div>
+      </div>
+      <div className='reviewCardBottom'>
+        <div className='title'>{title}</div>
+        <div className='description'>{description}</div>
+        <div className='name'>{`- ${name}`}</div>
+      </div>
     </div>
   );
 }
