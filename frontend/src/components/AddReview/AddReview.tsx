@@ -79,6 +79,7 @@ export default function AddReview() {
                 onClick={handleRating}
                 onPointerLeave={() => updateRatingDescription(rating)}
                 onPointerMove={(value: number) => updateRatingDescription(value)}
+                size={30}
               />
               {ratingDescription}
             </div>
