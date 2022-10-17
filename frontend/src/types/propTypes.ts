@@ -13,10 +13,11 @@ export interface InputFieldsProps {
   sort: string;
 }
 export interface ReviewCardProps {
-  rating: number;
   title: string;
-  text: string;
-  date: Date;
+  description: string;
+  rating: number;
+  name: string;
+  date: string;
 }
 export interface SearchProps {
   setSearch: (search: string) => void;

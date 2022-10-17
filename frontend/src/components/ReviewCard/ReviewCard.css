@@ -6,34 +6,19 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-  padding: 5px;
-  height: 100%;
+  padding: 5px 10px;
   width: clamp(200px, calc(75vw), 550px);
 }
 
 .title {
-  font-size: 18px;
   font-weight: bold;
-  margin-left: 8px;
 }
 
-.text {
-  font-size: 16px;
-  margin-left: 8px;
+.description {
+  font-size: 14px;
 }
 
 .date {
   font-size: 12px;
-  margin-left: 8px;
   color: #6e6e6e;
-}
-
-.rating {
-  margin-left: 8px;
-}
-
-.star {
-  margin-right: 5px;
-  height: 20px;
-  width: 20px;
 }
