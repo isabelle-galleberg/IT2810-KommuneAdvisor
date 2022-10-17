@@ -1,0 +1,58 @@
+.detailsPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.detailsPageTop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.kommuneDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10vw;
+  margin-top: 20px;
+}
+
+.weaponImg {
+  width: 50px;
+}
+
+.mapImg {
+  width: 200px;
+}
+
+.line {
+  background-color: #405a7e;
+  height: 2px;
+  width: clamp(100px, calc(100vw - 50px), 600px);
+}
+
+p {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 500px) {
+  .kommuneDetails {
+    flex-direction: column;
+    gap: 0px;
+  }
+  .mapImg {
+    width: 150px;
+  }
+  .weaponImg {
+    width: 30px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 16px;
+  }
+}

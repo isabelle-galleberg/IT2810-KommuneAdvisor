@@ -1,31 +1,28 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import DetailsPage from './pages/DetailsPage/DetailsPage';
 import MainPage from './pages/MainPage/MainPage';
 import Navbar from './components/Navbar/Navbar';
+import KommuneDetails from './components/KommuneDetails/KommuneDetails';
+import DetailsPage from './pages/DetailsPage/DetailsPage';
 
 function App() {
   return (
     <div>
-      <div>
-        <Navbar />
-      </div>
-      <div className='content'>
-        <BrowserRouter>
-          <Routes>
-            <Route
-              path='/'
-              element={<MainPage />}
-            />
-          </Routes>
-          <Routes>
-            <Route
-              path='/kommune'
-              element={<DetailsPage />}
-            />
-          </Routes>
-        </BrowserRouter>
-      </div>
+      <Navbar />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path='/'
+            element={<MainPage />}
+          />
+        </Routes>
+        <Routes>
+          <Route
+            path='kommune/:kommuneSlug'
+            element={<DetailsPage />}
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
