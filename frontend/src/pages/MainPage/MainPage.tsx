@@ -87,9 +87,9 @@ export default function MainPage() {
         <SimpleGrid
           breakpoints={[
             { minWidth: 0, cols: 1 },
-            { minWidth: 800, cols: 2 },
-            { minWidth: 1200, cols: 3 },
-            { minWidth: 1600, cols: 4 },
+            { minWidth: 600, cols: 2 },
+            { minWidth: 900, cols: 3 },
+            { minWidth: 1200, cols: 4 },
           ]}>
           {kommuner.map((kommune) => {
             return (
