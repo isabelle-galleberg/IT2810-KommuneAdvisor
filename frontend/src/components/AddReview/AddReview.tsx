@@ -5,28 +5,27 @@ import { Rating } from 'react-simple-star-rating';
 
 export default function AddReview() {
   const [opened, setOpened] = useState(false);
-  const [rating, setRating] = useState(0);
-  const [ratingDescription, setRatingDescription] = useState<string>('');
-  const [name, setName] = useState<string>('');
-  const [title, setTitle] = useState<string>('');
-  const [description, setDescription] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState(false);
+  const [ratingDescription, setRatingDescription] = useState<string>('');
+  const [review, setReview] = useState<{ rating: number, name: string, title: string, description: string }>({
+    rating: 0,
+    name: '',
+    title: '',
+    description: '',
+  });
 
   function openModal() {
+    // resets values
+    setReview({ rating: 0, name: '', title: '', description: '' });
     setOpened(true);
-    // resets the values
-    setRating(0);
-    setName('');
-    setTitle('');
-    setDescription('');
   }
 
   function addReview() {
-    if (rating === 0 || name === '' || title === '' || description === '') {
+    if (review.rating === 0 || review.name === '' || review.title === '' || review.description === '') {
       setErrorMessage(true);
     }
     else {
-      console.log(rating, name, title, description);
+      console.log(review);
       setOpened(false);
       handleRating(0);
     }
@@ -37,21 +36,21 @@ export default function AddReview() {
   }
 
   const handleRating = (rating: number) => {
-    setRating(rating);
+    setReview({ ...review, rating: rating });
     updateRatingDescription(rating);
   }
 
   function updateName(name: string) {
     setErrorMessage(false);
-    setName(name);
+    setReview({ ...review, name: name });
   }
   function updateTitle(title: string) {
     setErrorMessage(false);
-    setTitle(title);
+    setReview({ ...review, title: title });
   }
   function updateDescription(description: string) {
     setErrorMessage(false);
-    setDescription(description);
+    setReview({ ...review, description: description });
   }
 
   function updateRatingDescription(rating: number) {
@@ -77,7 +76,7 @@ export default function AddReview() {
               <Rating
                 className='rating'
                 onClick={handleRating}
-                onPointerLeave={() => updateRatingDescription(rating)}
+                onPointerLeave={() => updateRatingDescription(review.rating)}
                 onPointerMove={(value: number) => updateRatingDescription(value)}
                 size={30}
               />
