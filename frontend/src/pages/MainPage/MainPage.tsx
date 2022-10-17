@@ -72,7 +72,7 @@ export default function MainPage() {
   console.log(search);
 
   return (
-    <div>
+    <div className='mainPage'>
       <Search
         setSearch={setSearch}
         search={search}></Search>
