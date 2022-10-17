@@ -1,0 +1,39 @@
+.inputFields {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropdown {
+  display: flex;
+  gap: 25px;
+}
+
+/* sort dropdown */
+.mantine-1ajyf09 {
+  background-color: #acc7e9;
+  border: 1px solid #405a7e;
+  width: 212px;
+}
+
+/* filter dropdown */
+.mantine-qew57g {
+  background-color: #acc7e9;
+  border: 1px solid #405a7e;
+  width: 212px;
+}
+
+/* label dropdown */
+.mantine-ittua2 {
+  margin-left: 5px;
+}
+
+@media (max-width: 500px) {
+  .dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+  }
+}
