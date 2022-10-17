@@ -1,5 +1,10 @@
+import AddReview from '../../components/AddReview/AddReview';
 import './DetailsPage.css';
 
 export default function DetailsPage() {
-  return <div>DetailsPage</div>;
+  return (
+    <div>
+      <AddReview></AddReview>
+    </div>
+  );
 }
