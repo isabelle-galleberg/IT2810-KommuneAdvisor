@@ -12,6 +12,13 @@ export interface InputFieldsProps {
   setSort: (sort: string) => void;
   sort: string;
 }
+export interface ReviewCardProps {
+  title: string;
+  description: string;
+  rating: number;
+  name: string;
+  date: string;
+}
 export interface SearchProps {
   setSearch: (search: string) => void;
   search: string;
