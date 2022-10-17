@@ -1,0 +1,74 @@
+.modalContainer {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+}
+
+.ratingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #405A7E;
+  font-size: small;
+}
+
+/* button */
+.mantine-8nr514 {
+  background-color: #405A7E;
+  margin: 15px;
+  width: 160px;
+}
+
+.mantine-8nr514:hover {
+  background-color: #405A7E;
+}
+
+/* modal */
+.mantine-1abbsss {
+  background-color: #F3F9FC;
+}
+
+/* textarea */
+.mantine-1g5p8t1 {
+  width: 350px;
+}
+
+/* textinput */
+.mantine-gqmpge {
+  width: 350px;
+}
+
+/* label, textarea and textinput */
+.mantine-ittua2 {
+  margin-left: 5px;
+}
+
+.errorMessage {
+  color: rgba(226, 67, 41, 1);
+}
+
+@media (max-width: 551px) {
+  .buttonsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+  }
+
+  /* modal */
+  .mantine-1abbsss {
+    width: 100%;
+  }
+}
+
+@media (max-width: 405px) {
+
+  .mantine-gqmpge,
+  .rating,
+  .mantine-1g5p8t1 {
+    width: 100%;
+  }
+}

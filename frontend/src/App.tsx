@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import MainPage from './pages/MainPage/MainPage';
 import Navbar from './components/Navbar/Navbar';
-import KommuneDetails from './components/KommuneDetails/KommuneDetails';
+import DetailsPage from './pages/DetailsPage/DetailsPage';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route
             path='kommune/:kommuneSlug'
-            element={<KommuneDetails />}
+            element={<DetailsPage />}
           />
         </Routes>
       </BrowserRouter>

@@ -1,3 +1,4 @@
+import AddReview from '../../components/AddReview/AddReview';
 import KommuneDetails from '../../components/KommuneDetails/KommuneDetails';
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
 import './DetailsPage.css';
@@ -49,6 +50,7 @@ export default function DetailsPage() {
     <div className='detailsPage'>
       <KommuneDetails />
       <div className='reviews'>
+        <AddReview></AddReview>
         {reviews.map((review) => {
           return (
             <ReviewCard
