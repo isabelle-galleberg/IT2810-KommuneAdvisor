@@ -1,25 +1,17 @@
-import { createStyles, Card, Image, Text, Group, Button } from '@mantine/core';
+import { Card, Image, Text, Group, Button } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { KommuneCardProps } from '../../types/propTypes';
-
-const useStyles = createStyles(() => ({
-  card: {
-    width: '265px',
-    height: '150px',
-  },
-}));
+import './KommuneCard.css';
 
 export default function KommuneCard({
   name,
   county,
   weaponImg,
 }: KommuneCardProps) {
-  const { classes } = useStyles();
-
   return (
     <Card
       withBorder
-      className={classes.card}>
+      className='kommuneCard'>
       <Group
         noWrap
         spacing={20}>
