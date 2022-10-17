@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import DetailsPage from './pages/DetailsPage/DetailsPage';
 import MainPage from './pages/MainPage/MainPage';
 import Navbar from './components/Navbar/Navbar';
+import DetailsPage from './pages/DetailsPage/DetailsPage';
 
 function App() {
   return (

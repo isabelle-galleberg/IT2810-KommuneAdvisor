@@ -1,7 +1,7 @@
 export interface KommuneCardProps {
-  kommune: string;
+  name: string;
   county: string;
-  weapon: string;
+  weaponImg: string;
 }
 
 export interface InputFieldsProps {

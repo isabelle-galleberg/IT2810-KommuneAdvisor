@@ -1,3 +1,4 @@
+import KommuneDetails from '../../components/KommuneDetails/KommuneDetails';
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
 import './DetailsPage.css';
 
@@ -45,6 +46,8 @@ const reviews = [
 
 export default function DetailsPage() {
   return (
+    <>
+    <KommuneDetails />
     <div className="reviews">
       {reviews.map((review) => {
         return (
@@ -59,5 +62,6 @@ export default function DetailsPage() {
         );
       })}
     </div>
+    </>
   );
 }
