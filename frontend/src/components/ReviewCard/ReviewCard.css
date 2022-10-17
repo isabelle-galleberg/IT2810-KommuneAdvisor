@@ -1,0 +1,36 @@
+.reviewCard {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #3a73c5;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px;
+  width: clamp(200px, calc(75vw), 550px);
+}
+
+.reviewCardTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.reviewCardBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.description {
+  font-size: 14px;
+}
+
+.date,
+.name {
+  font-size: 12px;
+  color: #6e6e6e;
+}
