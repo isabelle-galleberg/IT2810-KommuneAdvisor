@@ -66,28 +66,9 @@
 
 @media (max-width: 405px) {
 
-  /* textarea */
+  .mantine-gqmpge,
+  .rating,
   .mantine-1g5p8t1 {
-    width: 100%;
-  }
-
-  /* textinput */
-  .mantine-gqmpge {
-    width: 100%;
-  }
-
-  /* button */
-  /* .mantine-8nr514 {
-    width: 100%;
-  } */
-
-  /* rating */
-  .rating {
-    width: 100%;
-  }
-
-  .ratingContainer {
-    display: flex;
     width: 100%;
   }
 }
