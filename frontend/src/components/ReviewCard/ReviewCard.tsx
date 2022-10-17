@@ -1,6 +1,6 @@
-import { ReviewCardProps } from '../../types/propTypes';
 import './ReviewCard.css';
 import { Rating } from 'react-simple-star-rating';
+import { Review } from '../../types/review';
 
 export default function ReviewCard({
   title,
@@ -8,7 +8,7 @@ export default function ReviewCard({
   rating,
   name,
   date,
-}: ReviewCardProps) {
+}: Review) {
   return (
     <div className='reviewCard'>
       <div className='reviewCardTop'>
