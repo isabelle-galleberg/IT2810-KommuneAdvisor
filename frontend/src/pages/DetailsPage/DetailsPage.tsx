@@ -50,7 +50,7 @@ export default function DetailsPage() {
     <div className='detailsPage'>
       <KommuneDetails />
       <div className='reviews'>
-        <AddReview></AddReview>
+        <AddReview />
         {reviews.map((review) => {
           return (
             <ReviewCard
