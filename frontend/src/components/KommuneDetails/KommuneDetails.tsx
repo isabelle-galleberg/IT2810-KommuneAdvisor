@@ -26,6 +26,13 @@ export default function KommuneDetails() {
   return (
     <div className='detailsPage'>
       <div className='detailsPageTop'>
+        <a href='/'>
+          <img
+            className='backArrow'
+            src={require('../../assets/backArrow.png')}
+            alt=''
+          />
+        </a>
         <img
           src={kommuneData.weaponImg}
           className='weaponImg'
