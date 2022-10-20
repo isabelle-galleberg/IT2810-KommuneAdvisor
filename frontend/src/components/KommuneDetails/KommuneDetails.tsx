@@ -18,10 +18,7 @@ export default function KommuneDetails() {
     mapImg: require('../../assets/map.png'),
   };
 
-  const url = `https://no.wikipedia.org/wiki/${kommuneData.name.replace(
-    ' ',
-    '_'
-  )}`;
+  const url = `https://snl.no/${kommuneData.name.replace(' ', '_')}`;
 
   const nonCapitalizedLanguage = kommuneData.language;
   const capitalizedLanguage =
