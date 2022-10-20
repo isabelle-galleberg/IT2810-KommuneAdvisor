@@ -47,15 +47,3 @@ const RootQuery = new GraphQLObjectType({
 module.exports = new GraphQLSchema({
   query: RootQuery,
 });
-
-
-_id,
-kommuneNumber,
-name,
-population,
-areaInSquareKm,
-landAreaInSquareKm,
-populationByArea,
-mapUrl,
-logoUrl,
-writtenLanguage,
