@@ -20,6 +20,14 @@
   margin-top: 20px;
 }
 
+.backArrow {
+  max-width: 60px;
+  position: absolute;
+  left: 5%;
+  margin-top: -15px;
+  cursor: pointer;
+}
+
 .weaponImg {
   width: 50px;
 }
@@ -43,15 +51,24 @@ p {
     flex-direction: column;
     gap: 0px;
   }
+
   .mapImg {
     width: 150px;
   }
+
+  .backArrow {
+    max-width: 40px;
+  }
+
   .weaponImg {
     width: 30px;
+    z-index: 1;
   }
+
   h1 {
     font-size: 24px;
   }
+
   p {
     font-size: 16px;
   }
