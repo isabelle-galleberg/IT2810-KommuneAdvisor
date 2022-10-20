@@ -8,7 +8,7 @@ export default function KommuneDetails() {
 
   // Dummy data
   const kommuneData = {
-    name: 'Trondheim',
+    name: 'Lier',
     weaponImg: require('../../assets/lier.svg.png'),
     rating: 3,
     county: 'Viken',
@@ -18,47 +18,54 @@ export default function KommuneDetails() {
     mapImg: require('../../assets/map.png'),
   };
 
+  const url = `https://no.wikipedia.org/wiki/${kommuneData.name.replace(
+    ' ',
+    '_'
+  )}`;
+
   return (
-    <div>
-      <div className='detailsPage'>
-        <div className='detailsPageTop'>
+    <div className='detailsPage'>
+      <div className='detailsPageTop'>
+        <a href='/'>
           <img
-            src={kommuneData.weaponImg}
-            className='weaponImg'
+            className='backArrow'
+            src={require('../../assets/backArrow.png')}
+            alt=''
           />
-          <h1>{kommuneData.name}</h1>
-        </div>
-        <div className='line'></div>
-        <div className='kommuneDetails'>
-          <div>
-            <Rating
-              initialValue={kommuneData.rating}
-              readonly
-              size={30}
-            />
-            <p>📍 {kommuneData.county}</p>
-            <p>👨‍👩‍👧‍👧 {kommuneData.population}</p>
-            <p>🏔 {kommuneData.area}</p>
-            <p>📝 {kommuneData.language}</p>
-            <p>
-              Les mer her:{' '}
-              <a
-                href={`https://no.wikipedia.org/wiki/${kommuneData.name.replace(
-                  ' ',
-                  '_'
-                )}`}
-                target='_blank'
-                rel='noreferrer'>
-                {kommuneData.name}
-              </a>
-            </p>
-          </div>
-          <img
-            src={kommuneData.mapImg}
-            alt='kommuneMap'
-            width={200}
+        </a>
+        <img
+          src={kommuneData.weaponImg}
+          className='weaponImg'
+        />
+        <h1>{kommuneData.name}</h1>
+      </div>
+      <div className='line'></div>
+      <div className='kommuneDetails'>
+        <div>
+          <Rating
+            initialValue={kommuneData.rating}
+            readonly
+            size={30}
           />
+          <p>📍 {kommuneData.county}</p>
+          <p>👨‍👩‍👧‍👧 {kommuneData.population}</p>
+          <p>🏔 {kommuneData.area}</p>
+          <p>📝 {kommuneData.language}</p>
+          <p>
+            Les mer her:{' '}
+            <a
+              href={url}
+              target='_blank'
+              rel='noreferrer'>
+              {kommuneData.name}
+            </a>
+          </p>
         </div>
+        <img
+          src={kommuneData.mapImg}
+          alt='kommuneMap'
+          className='mapImg'
+        />
       </div>
     </div>
   );

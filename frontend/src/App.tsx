@@ -7,25 +7,21 @@ import DetailsPage from './pages/DetailsPage/DetailsPage';
 function App() {
   return (
     <div>
-      <div>
-        <Navbar />
-      </div>
-      <div className='content'>
-        <BrowserRouter>
-          <Routes>
-            <Route
-              path='/'
-              element={<MainPage />}
-            />
-          </Routes>
-          <Routes>
-            <Route
-              path='/kommune'
-              element={<DetailsPage />}
-            />
-          </Routes>
-        </BrowserRouter>
-      </div>
+      <Navbar />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path='/'
+            element={<MainPage />}
+          />
+        </Routes>
+        <Routes>
+          <Route
+            path='kommune/:kommuneSlug'
+            element={<DetailsPage />}
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
