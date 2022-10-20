@@ -1,36 +1,28 @@
-import { createStyles, Card, Image, Text, Group, Button } from '@mantine/core';
+import { Card, Image, Text, Group, Button } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { KommuneCardProps } from '../../types/propTypes';
-
-const useStyles = createStyles((theme) => ({
-  body: {
-    padding: theme.spacing.md,
-  },
-  card: {
-    width: '350px',
-  },
-}));
+import { Rating } from 'react-simple-star-rating';
+import './KommuneCard.css';
 
 export default function KommuneCard({
   name,
   county,
   weaponImg,
+  rating
 }: KommuneCardProps) {
-  const { classes } = useStyles();
-
   return (
     <Card
       withBorder
-      className={classes.card}>
+      className='kommuneCard'>
       <Group
         noWrap
         spacing={20}>
         <Image
           src={weaponImg}
-          height={130}
-          width={100}
+          height={90}
+          width={70}
         />
-        <div className={classes.body}>
+        <div>
           <Text
             mt='xs'
             mb='xs'
@@ -53,7 +45,11 @@ export default function KommuneCard({
             </Button>
           </Link>
         </div>
+        <div className='kommuneCardRating'>
+          <Rating size={20} iconsCount={1} readonly initialValue={1}></Rating>
+          <p className='averageRating'>({rating})</p>
+        </div>
       </Group>
-    </Card>
+    </Card >
   );
 }
