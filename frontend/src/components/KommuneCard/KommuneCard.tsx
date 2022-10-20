@@ -1,12 +1,14 @@
 import { Card, Image, Text, Group, Button } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { KommuneCardProps } from '../../types/propTypes';
+import { Rating } from 'react-simple-star-rating';
 import './KommuneCard.css';
 
 export default function KommuneCard({
   name,
   county,
   weaponImg,
+  rating
 }: KommuneCardProps) {
   return (
     <Card
@@ -43,7 +45,11 @@ export default function KommuneCard({
             </Button>
           </Link>
         </div>
+        <div className='kommuneCardRating'>
+          <Rating size={20} iconsCount={1} readonly initialValue={1}></Rating>
+          <p className='averageRating'>({rating})</p>
+        </div>
       </Group>
-    </Card>
+    </Card >
   );
 }

@@ -18,14 +18,23 @@ export default function KommuneDetails() {
     mapImg: require('../../assets/map.png'),
   };
 
-  const url = `https://no.wikipedia.org/wiki/${kommuneData.name.replace(
-    ' ',
-    '_'
-  )}`;
+  const url = `https://snl.no/${kommuneData.name.replace(' ', '_')}`;
+
+  const nonCapitalizedLanguage = kommuneData.language;
+  const capitalizedLanguage =
+    nonCapitalizedLanguage.charAt(0).toUpperCase() +
+    nonCapitalizedLanguage.slice(1);
 
   return (
     <div className='detailsPage'>
       <div className='detailsPageTop'>
+        <a href='/'>
+          <img
+            className='backArrow'
+            src={require('../../assets/backArrow.png')}
+            alt=''
+          />
+        </a>
         <img
           src={kommuneData.weaponImg}
           className='weaponImg'
@@ -42,8 +51,10 @@ export default function KommuneDetails() {
           />
           <p>📍 {kommuneData.county}</p>
           <p>👨‍👩‍👧‍👧 {kommuneData.population}</p>
-          <p>🏔 {kommuneData.area}</p>
-          <p>📝 {kommuneData.language}</p>
+          <p>
+            🏔 {kommuneData.area} km<sup>2</sup>
+          </p>
+          <p>📝 {capitalizedLanguage}</p>
           <p>
             Les mer her:{' '}
             <a
