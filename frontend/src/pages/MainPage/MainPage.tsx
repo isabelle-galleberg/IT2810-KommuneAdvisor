@@ -11,48 +11,56 @@ const kommuner = [
     kommune: 'Lier',
     county: 'Viken',
     weapon: require('../../assets/lier.svg.png'),
+    rating: 3,
   },
   {
     id: 2,
     kommune: 'Berlevåg',
     county: 'Troms og Finnmark',
     weapon: require('../../assets/berlevag.svg.png'),
+    rating: 3,
   },
   {
     id: 3,
     kommune: 'Vardø',
     county: 'Troms og Finnmark',
     weapon: require('../../assets/sande.svg.png'),
+    rating: 3,
   },
   {
     id: 4,
     kommune: 'Sande',
     county: 'Møre og Romsdal',
     weapon: require('../../assets/vardo.svg.png'),
+    rating: 3,
   },
   {
     id: 5,
     kommune: 'Lier',
     county: 'Viken',
     weapon: require('../../assets/lier.svg.png'),
+    rating: 3,
   },
   {
     id: 6,
     kommune: 'Berlevåg',
     county: 'Troms og Finnmark',
     weapon: require('../../assets/berlevag.svg.png'),
+    rating: 3,
   },
   {
     id: 7,
     kommune: 'Vardø',
     county: 'Troms og Finnmark',
     weapon: require('../../assets/sande.svg.png'),
+    rating: 3,
   },
   {
     id: 8,
     kommune: 'Sande',
     county: 'Møre og Romsdal',
     weapon: require('../../assets/vardo.svg.png'),
+    rating: 3,
   },
 ];
 
@@ -98,6 +106,7 @@ export default function MainPage() {
                 name={kommune.kommune}
                 county={kommune.county}
                 weaponImg={kommune.weapon}
+                rating={kommune.rating}
               />
             );
           })}
