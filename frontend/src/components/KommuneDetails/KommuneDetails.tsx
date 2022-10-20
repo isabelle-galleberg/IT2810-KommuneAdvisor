@@ -23,6 +23,11 @@ export default function KommuneDetails() {
     '_'
   )}`;
 
+  const nonCapitalizedLanguage = kommuneData.language;
+  const capitalizedLanguage =
+    nonCapitalizedLanguage.charAt(0).toUpperCase() +
+    nonCapitalizedLanguage.slice(1);
+
   return (
     <div className='detailsPage'>
       <div className='detailsPageTop'>
@@ -49,8 +54,10 @@ export default function KommuneDetails() {
           />
           <p>📍 {kommuneData.county}</p>
           <p>👨‍👩‍👧‍👧 {kommuneData.population}</p>
-          <p>🏔 {kommuneData.area}</p>
-          <p>📝 {kommuneData.language}</p>
+          <p>
+            🏔 {kommuneData.area} km<sup>2</sup>
+          </p>
+          <p>📝 {capitalizedLanguage}</p>
           <p>
             Les mer her:{' '}
             <a
