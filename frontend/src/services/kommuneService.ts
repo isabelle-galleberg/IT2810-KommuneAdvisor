@@ -4,7 +4,7 @@ async function getMunicipalityByNumber(
   munNumber: string
 ): Promise<Kommune | null> {
   try {
-    const response = await fetch('http://localhost:5000/graphql?', {
+    const response = await fetch(process.env.API_URL + '/graphql?', {
       body: '{"query":"{kommune(munNumber: "3014") {id, munNumber, name, Befolkning, ArealKm2, LandarealKm2, InnbyggerePerKm2Landareal, mapImg, weaponImg, writingLanguage}}","variables":null}',
       method: 'POST',
     });
@@ -18,7 +18,7 @@ async function getMunicipalityByNumber(
 
 async function getAllMunicipalities(): Promise<Kommune[]> {
   try {
-    const response = await fetch('http://localhost:5000/graphql?', {
+    const response = await fetch(process.env.API_URL + '/graphql?', {
       body: '{"query":"{kommuner {id, munNumber, name, Befolkning, ArealKm2, LandarealKm2, InnbyggerePerKm2Landareal, mapImg, weaponImg, writingLanguage}}","variables":null}',
       method: 'POST',
     });
