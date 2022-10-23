@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from './store';
 
 interface KommuneState {
   kommune: string;
@@ -20,10 +19,6 @@ export const kommuneSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { updateKommune } = kommuneSlice.actions;
-
-// Brukes denne?
-export const selectKommune = (state: RootState) => state.kommuneInput.kommune;
 
 export default kommuneSlice.reducer;

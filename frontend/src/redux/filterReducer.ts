@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from './store';
 
 interface FilterState {
   filter: string;
@@ -21,8 +20,5 @@ export const filterSlice = createSlice({
 });
 
 export const { updateFilter } = filterSlice.actions;
-
-// Brukes denne?
-export const selectFilter = (state: RootState) => state.filterInput.filter;
 
 export default filterSlice.reducer;
