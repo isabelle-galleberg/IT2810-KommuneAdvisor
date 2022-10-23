@@ -25,9 +25,6 @@ export default function InputFields() {
     dispatch(updateFilter(filter));
   };
 
-  // Global state
-  console.log(county, filter);
-
   return (
     <div className='inputFields'>
       <div className='dropdown'>
@@ -43,7 +40,12 @@ export default function InputFields() {
         <Select
           defaultValue={filter}
           label='Sorter'
-          data={['Alfabetisk', 'Ranking', 'Areal']}
+          data={[
+            'Areal',
+            'Befolkning',
+            'Rangering høy-lav',
+            'Rangering lav-høy',
+          ]}
           clearable
           onChange={changeFilter}
           dropdownPosition='bottom'
