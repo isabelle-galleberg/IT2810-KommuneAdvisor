@@ -4,6 +4,8 @@ const {
   GraphQLString,
   GraphQLList,
   GraphQLSchema,
+  GraphQLEnumType,
+  GraphQLFloat,
 } = require("graphql");
 
 const kommuner = require("../models/kommune");
@@ -29,8 +31,39 @@ const RootQuery = new GraphQLObjectType({
   fields: {
     kommuner: {
       type: new GraphQLList(KommuneType),
+      args: {
+        sortBy: {
+          type: new GraphQLEnumType({
+            name: "sort",
+            values: {
+              name: { value: "name" },
+              population: { value: "population" },
+              area: { value: "area" },
+            },
+            defaultValue: "name",
+          }),
+        },
+        sortDirection: {
+          type: new GraphQLEnumType({
+            name: "sortDirection",
+            values: {
+              ascending: { value: "ascending" },
+              descending: { value: "descending" },
+            },
+            defaultValue: "ascending",
+          }),
+        },
+        page: { type: GraphQLFloat, defaultValue: 1 },
+      },
       resolve(parent, args) {
-        return kommuner.find({});
+        let query = kommuner.find({});
+        if (args.sortBy) {
+          query = query.sort({
+            [args.sortBy]: args.sortDirection === "descending" ? -1 : 1,
+          });
+        }
+        query.skip((args.page - 1) * 10).limit(10);
+        return query;
       },
     },
     kommune: {
