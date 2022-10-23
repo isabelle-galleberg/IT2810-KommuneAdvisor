@@ -8,7 +8,7 @@ export default function KommuneCard({
   name,
   county,
   weaponImg,
-  rating
+  rating,
 }: KommuneCardProps) {
   return (
     <Card
@@ -46,10 +46,14 @@ export default function KommuneCard({
           </Link>
         </div>
         <div className='kommuneCardRating'>
-          <Rating size={20} iconsCount={1} readonly initialValue={1}></Rating>
+          <Rating
+            size={20}
+            iconsCount={1}
+            readonly
+            initialValue={1}></Rating>
           <p className='averageRating'>({rating})</p>
         </div>
       </Group>
-    </Card >
+    </Card>
   );
 }
