@@ -6,19 +6,21 @@ const {
   GraphQLSchema,
 } = require("graphql");
 
+const kommuner = require("../models/kommune");
+
 const KommuneType = new GraphQLObjectType({
   name: "Kommune",
   fields: () => ({
-    id: { type: GraphQLID },
-    region_nr: { type: GraphQLString },
-    region: { type: GraphQLString },
-    Befolkning: { type: GraphQLString },
-    ArealKm2: { type: GraphQLString },
-    LandarealKm2: { type: GraphQLString },
-    InnbyggerePerKm2Landareal: { type: GraphQLString },
-    mapImg: { type: GraphQLString },
-    weaponImg: { type: GraphQLString },
-    writingLanguage: { type: GraphQLString },
+    _id: { type: GraphQLID },
+    kommuneNumber: { type: GraphQLString },
+    name: { type: GraphQLString },
+    population: { type: GraphQLString },
+    areaInSquareKm: { type: GraphQLString },
+    landAreaInSquareKm: { type: GraphQLString },
+    populationByArea: { type: GraphQLString },
+    mapUrl: { type: GraphQLString },
+    logoUrl: { type: GraphQLString },
+    writtenLanguage: { type: GraphQLString },
   }),
 });
 
@@ -28,60 +30,18 @@ const RootQuery = new GraphQLObjectType({
     kommuner: {
       type: new GraphQLList(KommuneType),
       resolve(parent, args) {
-        return dataSet;
+        return kommuner.find({});
       },
     },
     kommune: {
-      type: KommuneType,
-      args: { region_nr: { type: GraphQLString } },
+      type: new GraphQLList(KommuneType),
+      args: { kommuneNumber: { type: GraphQLString } },
       resolve(parent, args) {
-        return dataSet.find((kommune) => kommune.region_nr === args.region_nr);
+        return kommuner.find({ kommuneNumber: args.kommuneNumber });
       },
     },
   },
 });
-
-const dataSet = [
-  {
-    region_nr: "3013",
-    region: "Marker",
-    Befolkning: 3578,
-    ArealKm2: 413,
-    LandarealKm2: 368,
-    InnbyggerePerKm2Landareal: 10,
-    mapImg:
-      "upload.wikimedia.org/wikipedia/commons/thumb/e/e0/NO_3013_Marker.svg/512px-NO_3013_Marker.svg.png",
-    weaponImg:
-      "upload.wikimedia.org/wikipedia/commons/thumb/4/46/Marker_komm.svg/512px-Marker_komm.svg.png",
-    writingLanguage: "bokmål",
-  },
-  {
-    region_nr: "3014",
-    region: "Indre Østfold",
-    Befolkning: 45608,
-    ArealKm2: 792,
-    LandarealKm2: 755,
-    InnbyggerePerKm2Landareal: 60,
-    mapImg:
-      "upload.wikimedia.org/wikipedia/commons/thumb/3/3b/NO_3014_Indre_%C3%98stfold.svg/512px-NO_3014_Indre_%C3%98stfold.svg.png",
-    weaponImg:
-      "upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Indre_%C3%98stfold_komm.svg/512px-Indre_%C3%98stfold_komm.svg.png",
-    writingLanguage: "bokmål",
-  },
-  {
-    region_nr: "3015",
-    region: "Skiptvet",
-    Befolkning: 3846,
-    ArealKm2: 101,
-    LandarealKm2: 93,
-    InnbyggerePerKm2Landareal: 41,
-    mapImg:
-      "upload.wikimedia.org/wikipedia/commons/thumb/e/ec/NO_3015_Skiptvet.svg/512px-NO_3015_Skiptvet.svg.png",
-    weaponImg:
-      "upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Skiptvet_komm.svg/512px-Skiptvet_komm.svg.png",
-    writingLanguage: "bokmål",
-  },
-];
 
 module.exports = new GraphQLSchema({
   query: RootQuery,
