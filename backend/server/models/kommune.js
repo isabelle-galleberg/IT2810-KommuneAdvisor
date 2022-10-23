@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const KommuneSchema = new mongoose.Schema(
   {
-    _id: { type: Number },
     kommuneNumber: { type: String },
     name: { type: String },
     population: { type: String },
@@ -12,6 +11,9 @@ const KommuneSchema = new mongoose.Schema(
     mapUrl: { type: String },
     logoUrl: { type: String },
     writtenLanguage: { type: String },
+    kommuneRating: [
+      { type: mongoose.Schema.Types.ObjectId, ref: "kommuneRating" },
+    ],
   },
   { collection: "kommuner" }
 );
