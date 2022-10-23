@@ -34,11 +34,10 @@ const RootQuery = new GraphQLObjectType({
       },
     },
     kommune: {
-      type: KommuneType,
+      type: new GraphQLList(KommuneType),
       args: { kommuneNumber: { type: GraphQLString } },
       resolve(parent, args) {
-        var x = kommuner.find({ name: "Halden" });
-        return x;
+        return kommuner.find({ kommuneNumber: args.kommuneNumber });
       },
     },
   },
