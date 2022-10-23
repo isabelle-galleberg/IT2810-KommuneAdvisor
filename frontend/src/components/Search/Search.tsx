@@ -1,6 +1,7 @@
 import './Search.css';
 import { ActionIcon, Select } from '@mantine/core';
-import { SearchProps } from '../../types/propTypes';
+import { updateKommune } from '../../redux/kommuneReducer';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 
 const dummyKommuner = [
   'Lier',
@@ -12,9 +13,12 @@ const dummyKommuner = [
   'Stavanger',
 ];
 
-export default function Search({ setSearch, search }: SearchProps) {
-  const updateSearch = (search: string) => {
-    setSearch(search);
+export default function Search() {
+  const kommune = useAppSelector((state) => state.kommuneInput.kommune);
+  const dispatch = useAppDispatch();
+
+  const changeSearch = (search: string) => {
+    dispatch(updateKommune(search));
   };
 
   return (
@@ -26,7 +30,8 @@ export default function Search({ setSearch, search }: SearchProps) {
         rightSectionWidth={42}
         dropdownPosition='bottom'
         data={dummyKommuner}
-        onChange={updateSearch}
+        defaultValue={kommune}
+        onChange={changeSearch}
         rightSection={
           <ActionIcon
             size={32}

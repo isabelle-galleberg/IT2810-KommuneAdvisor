@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Rating } from 'react-simple-star-rating';
 import './KommuneDetails.css';
 
@@ -28,13 +28,13 @@ export default function KommuneDetails() {
   return (
     <div className='detailsPage'>
       <div className='detailsPageTop'>
-        <a href='/'>
+        <Link to='/'>
           <img
             className='backArrow'
             src={require('../../assets/backArrow.png')}
             alt=''
           />
-        </a>
+        </Link>
         <img
           src={kommuneData.weaponImg}
           className='weaponImg'
