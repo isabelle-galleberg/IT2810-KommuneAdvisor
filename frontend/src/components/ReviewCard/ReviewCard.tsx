@@ -16,7 +16,6 @@ export default function ReviewCard({
           initialValue={rating}
           readonly
           size={20}
-          iconsCount={rating}
         />
         <div className='date'>{date}</div>
       </div>
