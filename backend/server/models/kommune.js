@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const KommuneSchema = new mongoose.Schema(
   {
+    _id: { type: String },
     kommuneNumber: { type: String },
     name: { type: String },
     population: { type: String },
