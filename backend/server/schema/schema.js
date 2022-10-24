@@ -54,15 +54,22 @@ const RootQuery = new GraphQLObjectType({
           }),
         },
         page: { type: GraphQLFloat, defaultValue: 1 },
+        pageSize: { type: GraphQLFloat, defaultValue: 10 },
+        search: { type: GraphQLString },
+        county: { type: GraphQLString },
       },
       resolve(parent, args) {
         let query = kommuner.find({});
+        if (args.search)
+          query = query.find({
+            name: { $regex: args.search, $options: "i" },
+          });
         if (args.sortBy) {
           query = query.sort({
             [args.sortBy]: args.sortDirection === "descending" ? -1 : 1,
           });
         }
-        query.skip((args.page - 1) * 10).limit(10);
+        query.skip((args.page - 1) * args.pageSize).limit(args.pageSize);
         return query;
       },
     },
