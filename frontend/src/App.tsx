@@ -6,8 +6,9 @@ import DetailsPage from './pages/DetailsPage/DetailsPage';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 function App() {
+  console.log(process.env.REACT_APP_API_URL);
   const client = new ApolloClient({
-    uri: process.env.API_URL,
+    uri: process.env.REACT_APP_API_URL + '/graphql',
     cache: new InMemoryCache(),
   });
   return (
