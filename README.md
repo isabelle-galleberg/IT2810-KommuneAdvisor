@@ -1,5 +1,5 @@
 # KommuneAdvisor 
-KommuneAdvisor is a web application that ...
+KommuneAdvisor is a web application that lets you find information about and rate the Norwegian municipalities, also known as kommuner. A user can search for a kommune on the main page. Kommuner can be filtered on county and sorted by area, population and ratings. From search results, the user can click on a kommune to view details.
 
 ## 💻Project setup
 
@@ -18,19 +18,24 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
 ## 🔎Search
+
 Search result pagination.  Detail view of objects. Sorting and filtering. 
 
 ## 🌍Global state management
-Redux
+In this application we have implemented global state management using [Redux Toolkit](https://redux-toolkit.js.org) for the search field and dropdown menus. A user can then filter kommuner, click on a kommune to view the details page, then go back to the search results and see that the filters are persisted. 
+
+
 
 ## 👩‍💻Web accessibility
 Component library Mantine. Scales after screen size. 
 
 ## 💾Backend
+MongoDB is a document database. 
 
 ### MongoDB
 
 ### GraphQL
+We used GraphQL for the backend. 
 
 ## 🧪Testing
 
@@ -40,11 +45,12 @@ We have used the testing framework Jest for some unit tests, using its built-in 
 ### Cypress
 
 
-## 🚀Git guidelines
+## 🚀Git guidelines and code quality
+
+We have used formatting tools Prettier and ESLint to ensure a common coding style and good code quality. 
 
 All development tasks are documented in a issue with appropriate labels. After assigning yourself to an issue, the issue should be solved in its own branch. We have disabled pushing to main branch, such that the only way to add code is though merge requests. When merging with main branch, the commits should be squashed.
 
-We have used formatting tools Prettier and ESLint to ensure a common coding style and good code quality. 
 
 ### Semantic Commit Messages
 
