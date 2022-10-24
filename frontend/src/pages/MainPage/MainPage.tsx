@@ -2,95 +2,101 @@ import './MainPage.css';
 import KommuneCard from '../../components/KommuneCard/KommuneCard';
 import { SimpleGrid } from '@mantine/core';
 import InputFields from '../../components/InputFields/InputFields';
-import { useState } from 'react';
 import Search from '../../components/Search/Search';
+import { useAppSelector } from '../../redux/hooks';
+import { useEffect } from 'react';
 
-const kommuner = [
+const dummy = [
   {
     id: 1,
-    kommune: 'Lier',
+    name: 'Lier',
     county: 'Viken',
-    weapon: require('../../assets/lier.svg.png'),
-    rating: 3,
+    weaponImg: require('../../assets/lier.svg.png'),
+    rating: 1,
+    area: 100,
+    population: 3333,
   },
   {
     id: 2,
-    kommune: 'Berlevåg',
+    name: 'Berlevåg',
     county: 'Troms og Finnmark',
-    weapon: require('../../assets/berlevag.svg.png'),
-    rating: 3,
+    weaponImg: require('../../assets/berlevag.svg.png'),
+    rating: 2,
+    area: 400,
+    population: 5723,
   },
   {
     id: 3,
-    kommune: 'Vardø',
+    name: 'Vardø',
     county: 'Troms og Finnmark',
-    weapon: require('../../assets/sande.svg.png'),
+    weaponImg: require('../../assets/sande.svg.png'),
     rating: 3,
+    area: 400,
+    population: 5753,
   },
   {
     id: 4,
-    kommune: 'Sande',
+    name: 'Sande',
     county: 'Møre og Romsdal',
-    weapon: require('../../assets/vardo.svg.png'),
-    rating: 3,
+    weaponImg: require('../../assets/vardo.svg.png'),
+    rating: 2,
+    area: 100,
+    population: 25201,
   },
   {
     id: 5,
-    kommune: 'Lier',
+    name: 'Lier',
     county: 'Viken',
-    weapon: require('../../assets/lier.svg.png'),
-    rating: 3,
+    weaponImg: require('../../assets/lier.svg.png'),
+    rating: 1,
+    area: 400,
+    population: 30123,
   },
   {
     id: 6,
-    kommune: 'Berlevåg',
+    name: 'Berlevåg',
     county: 'Troms og Finnmark',
-    weapon: require('../../assets/berlevag.svg.png'),
-    rating: 3,
+    weaponImg: require('../../assets/berlevag.svg.png'),
+    rating: 5,
+    area: 100,
+    population: 5723,
   },
   {
     id: 7,
-    kommune: 'Vardø',
+    name: 'Vardø',
     county: 'Troms og Finnmark',
-    weapon: require('../../assets/sande.svg.png'),
-    rating: 3,
+    weaponImg: require('../../assets/sande.svg.png'),
+    rating: 5,
+    area: 103,
+    population: 512,
   },
   {
     id: 8,
-    kommune: 'Sande',
-    county: 'Møre og Romsdal',
-    weapon: require('../../assets/vardo.svg.png'),
-    rating: 3,
+    name: 'Oslo',
+    county: 'Oslo',
+    weaponImg: require('../../assets/vardo.svg.png'),
+    rating: 1,
+    area: 100,
+    population: 1505005,
   },
 ];
 
 export default function MainPage() {
-  const [search, setSearch] = useState<string>('');
-  const [countys, setCountys] = useState<string[]>([]);
-  const [sort, setSort] = useState<string>('');
-  const [parameters, setParameters] = useState<{
-    county: string;
-    sort: string;
-  }>({
-    county: '',
-    sort: '',
-  });
+  // globals states from Redux
+  const kommune = useAppSelector((state) => state.kommuneInput.kommune);
+  const county = useAppSelector((state) => state.countyInput.county);
+  const filter = useAppSelector((state) => state.filterInput.filter);
+  // store kommuner from backend here
+  // const [kommuner, setKommuner] = useState<any>([]);
 
-  console.log(parameters);
-  console.log(search);
+  useEffect(() => {
+    console.log(kommune, county, filter);
+  }, [kommune, county, filter]);
 
   return (
     <div className='mainPage'>
-      <Search
-        setSearch={setSearch}
-        search={search}></Search>
-      <InputFields
-        parameters={parameters}
-        setParameters={setParameters}
-        countys={countys}
-        setCountys={setCountys}
-        setSort={setSort}
-        sort={sort}></InputFields>
+      <Search />
+      <InputFields />
       <div className='cards'>
         <SimpleGrid
           breakpoints={[
@@ -99,14 +105,15 @@ export default function MainPage() {
             { minWidth: 900, cols: 3 },
             { minWidth: 1200, cols: 4 },
           ]}>
-          {kommuner.map((kommune) => {
+          {/* replace type any when fetching kommuner from backend */}
+          {dummy.map((k: any) => {
             return (
               <KommuneCard
-                key={kommune.id}
-                name={kommune.kommune}
-                county={kommune.county}
-                weaponImg={kommune.weapon}
-                rating={kommune.rating}
+                key={k.id}
+                name={k.name}
+                county={k.county}
+                weaponImg={k.weaponImg}
+                rating={k.rating}
               />
             );
           })}

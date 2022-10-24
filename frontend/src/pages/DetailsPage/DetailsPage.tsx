@@ -42,6 +42,7 @@ const reviews = [
     rating: 3,
     name: 'Ola Olè',
     date: '10.10.2020',
+    id: 5,
   },
 ];
 
