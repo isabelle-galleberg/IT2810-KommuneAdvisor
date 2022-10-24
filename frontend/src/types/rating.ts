@@ -1,6 +1,6 @@
 export interface Rating {
     name: string;
-    rating: Number;
+    rating: number;
     title: string;
     description: string;
     timestamp: Date;
