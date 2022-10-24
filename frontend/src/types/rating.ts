@@ -1,8 +1,8 @@
 export interface Rating {
     name: string;
-    rating: string;
+    rating: Number;
     title: string;
     description: string;
-    timestamp: string;
+    timestamp: Date;
     kommuneNumber: string;
   }
