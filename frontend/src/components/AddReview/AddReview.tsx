@@ -3,8 +3,11 @@ import { Modal, Button, Group, Textarea, TextInput } from '@mantine/core';
 import './AddReview.css';
 import { Rating } from 'react-simple-star-rating';
 import { Review } from '../../types/review';
+import { POST_REVIEW } from '../../services/reviewService';
+import { useMutation } from '@apollo/client';
 
 export default function AddReview() {
+  const [postReview, { data, loading, error }] = useMutation(POST_REVIEW);
   const [opened, setOpened] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
   const [ratingDescription, setRatingDescription] = useState<string>('');
@@ -30,7 +33,15 @@ export default function AddReview() {
     ) {
       setErrorMessage(true);
     } else {
-      console.log(review);
+      postReview({
+        variables: {
+          name: review.name,
+          rating: review.rating,
+          title: review.title,
+          description: review.description,
+          kommuneId: '6357acb76a202c0bdb806f48'
+        }
+      });
       setOpened(false);
       handleRating(0);
     }

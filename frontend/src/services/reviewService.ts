@@ -1,0 +1,21 @@
+import { gql } from '@apollo/client';
+
+export const POST_REVIEW = gql`
+  mutation (
+    $name: String!
+    $rating: Int!
+    $title: String!
+    $description: String!
+    $kommuneId: ID!
+  ){
+    addKommuneRating(
+      name: $name,
+      rating: $rating,
+      title: $title,
+      description: $description,
+      kommuneId: $kommuneId
+      ){
+      timestamp
+    }
+  }
+  `;

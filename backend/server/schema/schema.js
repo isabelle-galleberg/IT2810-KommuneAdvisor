@@ -5,6 +5,7 @@ const {
   GraphQLString,
   GraphQLList,
   GraphQLSchema,
+  GraphQLEnumType,
   GraphQLFloat,
   GraphQLNonNull,
 } = require("graphql");
@@ -111,7 +112,7 @@ const RootMutation = new GraphQLObjectType({
       type: KommuneRatingType,
       args: {
         name: { type: GraphQLNonNull(GraphQLString) },
-        rating: { type: GraphQLInt }, 
+        rating: { type: GraphQLInt },
         title: { type: GraphQLNonNull(GraphQLString) },
         description: { type: GraphQLNonNull(GraphQLString) },
         kommuneId: { type: GraphQLNonNull(GraphQLID) },

@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const KommuneRatingSchema = new mongoose.Schema(
   {
-    _id: { type: String },
     name: { type: String },
     rating: { type: Number },
     title: { type: String },
