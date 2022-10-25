@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const KommuneRatingSchema = new mongoose.Schema(
+const countyScheme = new mongoose.Schema(
   {
     _id: { type: String },
     name: { type: String },
@@ -9,4 +9,4 @@ const KommuneRatingSchema = new mongoose.Schema(
   { collection: "county" }
 );
 
-module.exports = mongoose.model("county", KommuneRatingSchema);
+module.exports = mongoose.model("county", countyScheme);
