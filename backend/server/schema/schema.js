@@ -1,38 +1,49 @@
 const {
-	GraphQLObjectType,
-	GraphQLID,
-	GraphQLInt,
-	GraphQLString,
-	GraphQLList,
-	GraphQLSchema,
-	GraphQLEnumType,
-	GraphQLFloat,
-	GraphQLNonNull,
+  GraphQLObjectType,
+  GraphQLID,
+  GraphQLInt,
+  GraphQLString,
+  GraphQLList,
+  GraphQLEnumType,
+  GraphQLSchema,
+  GraphQLFloat,
+  GraphQLNonNull,
 } = require("graphql");
 
 const kommuner = require("../models/kommune");
 const kommuneRating = require("../models/kommuneRating");
-
+const county = require("../models/county");
 const KommuneType = new GraphQLObjectType({
-	name: "Kommune",
-	fields: () => ({
-		_id: { type: GraphQLID },
-		kommuneNumber: { type: GraphQLString },
-		name: { type: GraphQLString },
-		population: { type: GraphQLInt },
-		areaInSquareKm: { type: GraphQLFloat },
-		landAreaInSquareKm: { type: GraphQLFloat },
-		populationByArea: { type: GraphQLFloat },
-		mapUrl: { type: GraphQLString },
-		logoUrl: { type: GraphQLString },
-		writtenLanguage: { type: GraphQLString },
-		kommuneRating: {
-			type: new GraphQLList(KommuneRatingType),
-			resolve(parent, args) {
-				return kommuneRating.find({ kommuneId: parent._id });
-			},
-		},
-	}),
+  name: "Kommune",
+  fields: () => ({
+    _id: { type: GraphQLID },
+    kommuneNumber: { type: GraphQLString },
+    name: { type: GraphQLString },
+    countyNumber: { type: GraphQLString },
+    population: { type: GraphQLInt },
+    areaInSquareKm: { type: GraphQLFloat },
+    landAreaInSquareKm: { type: GraphQLFloat },
+    populationByArea: { type: GraphQLFloat },
+    mapUrl: { type: GraphQLString },
+    logoUrl: { type: GraphQLString },
+    writtenLanguage: { type: GraphQLString },
+    kommuneRating: {
+      type: new GraphQLList(KommuneRatingType),
+      resolve(parent, args) {
+        return kommuneRating.find({ kommuneId: parent._id });
+      },
+    },
+    county: {
+      type: GraphQLString,
+      resolve(parent, args) {
+        return county
+          .findOne({ countyNumber: parent.countyNumber })
+          .then((county) => {
+            return county.name;
+          });
+      },
+    },
+  }),
 });
 
 const KommuneRatingType = new GraphQLObjectType({
@@ -106,31 +117,31 @@ const RootQuery = new GraphQLObjectType({
 });
 
 const RootMutation = new GraphQLObjectType({
-	name: "RootMutationType",
-	fields: {
-		addKommuneRating: {
-			type: KommuneRatingType,
-			args: {
-				name: { type: GraphQLNonNull(GraphQLString) },
-				rating: { type: GraphQLInt },
-				title: { type: GraphQLNonNull(GraphQLString) },
-				description: { type: GraphQLNonNull(GraphQLString) },
-				kommuneId: { type: GraphQLNonNull(GraphQLID) },
-			},
-			resolve(parent, args) {
-				const { name, rating, title, description, kommuneId } = args;
-				const newKommuneRating = new kommuneRating({
-					name,
-					rating,
-					title,
-					description,
-					kommuneId,
-					timestamp: new Date(),
-				});
-				return newKommuneRating.save();
-			},
-		},
-	},
+  name: "RootMutationType",
+  fields: {
+    addKommuneRating: {
+      type: KommuneRatingType,
+      args: {
+        name: { type: GraphQLNonNull(GraphQLString) },
+        rating: { type: GraphQLInt },
+        title: { type: GraphQLNonNull(GraphQLString) },
+        description: { type: GraphQLNonNull(GraphQLString) },
+        kommuneId: { type: GraphQLNonNull(GraphQLID) },
+      },
+      resolve(parent, args) {
+        const { name, rating, title, description, kommuneId } = args;
+        const newKommuneRating = new kommuneRating({
+          name,
+          rating,
+          title,
+          description,
+          kommuneId,
+          timestamp: new Date(),
+        });
+        return newKommuneRating.save();
+      },
+    },
+  },
 });
 
 module.exports = new GraphQLSchema({
