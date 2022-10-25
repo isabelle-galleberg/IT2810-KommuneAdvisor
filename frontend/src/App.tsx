@@ -3,25 +3,33 @@ import './App.css';
 import MainPage from './pages/MainPage/MainPage';
 import Navbar from './components/Navbar/Navbar';
 import DetailsPage from './pages/DetailsPage/DetailsPage';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 function App() {
+  console.log(process.env.REACT_APP_API_URL);
+  const client = new ApolloClient({
+    uri: process.env.REACT_APP_API_URL + '/graphql',
+    cache: new InMemoryCache(),
+  });
   return (
     <div>
-      <Navbar />
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path='/'
-            element={<MainPage />}
-          />
-        </Routes>
-        <Routes>
-          <Route
-            path='kommune/:kommuneSlug'
-            element={<DetailsPage />}
-          />
-        </Routes>
-      </BrowserRouter>
+      <ApolloProvider client={client}>
+        <Navbar />
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path='/'
+              element={<MainPage />}
+            />
+          </Routes>
+          <Routes>
+            <Route
+              path='kommune/:kommuneSlug'
+              element={<DetailsPage />}
+            />
+          </Routes>
+        </BrowserRouter>
+      </ApolloProvider>
     </div>
   );
 }
