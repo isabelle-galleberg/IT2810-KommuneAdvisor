@@ -12,6 +12,7 @@ const KommuneSchema = new mongoose.Schema(
     mapUrl: { type: String },
     logoUrl: { type: String },
     writtenLanguage: { type: String },
+    countyNumber: { type: String },
     kommuneRating: [
       { type: mongoose.Schema.Types.ObjectId, ref: "kommuneRating" },
     ],

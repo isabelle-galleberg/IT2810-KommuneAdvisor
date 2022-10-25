@@ -4,6 +4,7 @@ const {
   GraphQLInt,
   GraphQLString,
   GraphQLList,
+  GraphQLEnumType,
   GraphQLSchema,
   GraphQLFloat,
   GraphQLNonNull,
@@ -11,13 +12,14 @@ const {
 
 const kommuner = require("../models/kommune");
 const kommuneRating = require("../models/kommuneRating");
-
+const county = require("../models/county");
 const KommuneType = new GraphQLObjectType({
   name: "Kommune",
   fields: () => ({
     _id: { type: GraphQLID },
     kommuneNumber: { type: GraphQLString },
     name: { type: GraphQLString },
+    countyNumber: { type: GraphQLString },
     population: { type: GraphQLInt },
     areaInSquareKm: { type: GraphQLFloat },
     landAreaInSquareKm: { type: GraphQLFloat },
@@ -29,6 +31,16 @@ const KommuneType = new GraphQLObjectType({
       type: new GraphQLList(KommuneRatingType),
       resolve(parent, args) {
         return kommuneRating.find({ kommuneId: parent._id });
+      },
+    },
+    county: {
+      type: GraphQLString,
+      resolve(parent, args) {
+        return county
+          .findOne({ countyNumber: parent.countyNumber })
+          .then((county) => {
+            return county.name;
+          });
       },
     },
   }),
@@ -111,7 +123,7 @@ const RootMutation = new GraphQLObjectType({
       type: KommuneRatingType,
       args: {
         name: { type: GraphQLNonNull(GraphQLString) },
-        rating: { type: GraphQLInt }, 
+        rating: { type: GraphQLInt },
         title: { type: GraphQLNonNull(GraphQLString) },
         description: { type: GraphQLNonNull(GraphQLString) },
         kommuneId: { type: GraphQLNonNull(GraphQLID) },
