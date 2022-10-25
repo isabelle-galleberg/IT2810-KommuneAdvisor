@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client/core';
 
-export const getKommune = (kommuneNr: string) => {
+export const GET_KOMMUNE = (kommuneNr: string) => {
   return gql`
         query {
             kommune(kommuneNumber: "${kommuneNr}") {
@@ -23,16 +23,14 @@ export const getKommune = (kommuneNr: string) => {
     `;
 };
 
-export const getAllKommuner = () => {
-  return gql`
-    query {
-      kommuner {
-        name
-        logoUrl
-        kommuneRating {
-          rating
-        }
+export const GET_ALL_KOMMUNER = gql`
+  query {
+    kommuner {
+      name
+      logoUrl
+      kommuneRating {
+        rating
       }
     }
-  `;
-};
+  }
+`;
