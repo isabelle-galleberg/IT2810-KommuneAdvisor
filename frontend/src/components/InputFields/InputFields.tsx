@@ -41,8 +41,10 @@ export default function InputFields() {
           defaultValue={filter}
           label='Sorter'
           data={[
-            'Areal',
-            'Befolkning',
+            'Areal høy-lav',
+            'Areal lav-høy',
+            'Befolkning høy-lav',
+            'Befolkning lav-høy',
             'Rangering høy-lav',
             'Rangering lav-høy',
           ]}

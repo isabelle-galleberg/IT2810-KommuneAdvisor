@@ -5,32 +5,60 @@ import InputFields from '../../components/InputFields/InputFields';
 import Search from '../../components/Search/Search';
 import { useAppSelector } from '../../redux/hooks';
 import { useQuery } from '@apollo/client';
-import { GET_ALL_KOMMUNER, GET_KOMMUNE } from '../../services/kommuneService';
+import { GET_ALL_KOMMUNER } from '../../services/kommuneService';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function MainPage() {
   // globals states from Redux
   const kommune = useAppSelector((state) => state.kommuneInput.kommune);
   const county = useAppSelector((state) => state.countyInput.county);
   const filter = useAppSelector((state) => state.filterInput.filter);
+  // sorting values for GraphQL query
+  const [sortBy, setSortBy] = useState('');
+  const [sortDirection, setSortDirection] = useState('');
+
+  // create separate function for filtering
+  useEffect(() => {
+    switch (filter) {
+      case 'Befolkning høy-lav':
+        setSortBy('population');
+        setSortDirection('descending');
+        break;
+      case 'Befolkning lav-høy':
+        setSortBy('population');
+        setSortDirection('ascending');
+        break;
+      case 'Areal høy-lav':
+        setSortBy('area');
+        setSortDirection('descending');
+        break;
+      case 'Areal lav-høy':
+        setSortBy('area');
+        setSortDirection('ascending');
+        break;
+      case 'Rangering høy-lav':
+        setSortBy('rating');
+        setSortDirection('descending');
+        break;
+      case 'Rangering lav-høy':
+        setSortBy('rating');
+        setSortDirection('ascending');
+        break;
+      default:
+        setSortBy('name');
+        setSortDirection('ascending');
+    }
+  }, [filter]);
 
   const { loading, error, data } = useQuery(GET_ALL_KOMMUNER, {
     variables: {
-      search: 'vadsø',
-      sortBy: 'name',
-      sortDirection: 'ascending',
-      pageSize: 100,
+      search: 'Vadsø',
+      sortBy: sortBy,
+      sortDirection: sortDirection,
+      pageSize: 20,
     },
   });
-
-  // const hei = () => {
-  //   if (kommune) {
-  //     return GET_KOMMUNE(kommune);
-  //   } else {
-  //     return GET_ALL_KOMMUNER('name', 'ascending', 50);
-  //   }
-  // };
 
   if (loading) return <LoadingSpinner />;
   if (error) console.log(error);
@@ -49,14 +77,15 @@ export default function MainPage() {
             { minWidth: 900, cols: 3 },
             { minWidth: 1200, cols: 4 },
           ]}>
+          {/* Replace type any! Replace rating with value from backend */}
           {data && data.kommuner ? (
-            data.kommuner.map((k: any) => {
+            data.kommuner.map((kommune: any) => {
               return (
                 <KommuneCard
-                  key={k.name}
-                  name={k.name}
-                  weaponImg={k.logoUrl}
-                  county={k.county}
+                  key={kommune.name}
+                  name={kommune.name}
+                  weaponImg={kommune.logoUrl}
+                  county={kommune.county.name}
                   rating={0}
                 />
               );

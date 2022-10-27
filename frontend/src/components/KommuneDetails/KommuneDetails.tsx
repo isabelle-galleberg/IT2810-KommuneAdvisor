@@ -18,7 +18,7 @@ export default function KommuneDetails() {
 
   return (
     <>
-      {data && data.kommune && data.kommune[0] ? (
+      {data && data.kommune && data.kommune ? (
         <div className='detailsPage'>
           <div className='detailsPageTop'>
             <Link to='/'>
@@ -29,10 +29,10 @@ export default function KommuneDetails() {
               />
             </Link>
             <img
-              src={data.kommune[0].logoUrl}
+              src={data.kommune.logoUrl}
               className='weaponImg'
             />
-            <h1>{data.kommune[0].name}</h1>
+            <h1>{data.kommune.name}</h1>
           </div>
           <div className='line'></div>
           <div className='kommuneDetails'>
@@ -42,13 +42,13 @@ export default function KommuneDetails() {
                 readonly
                 size={30}
               />
-              <p>📍 {data.kommune[0].county}</p>
-              <p>👨‍👩‍👧‍👧 {data.kommune[0].population}</p>
+              <p>📍 {data.kommune.county.name}</p>
+              <p>👨‍👩‍👧‍👧 {data.kommune.population}</p>
               <p>
-                🏔 {data.kommune[0].areaInSquareKm}
+                🏔 {data.kommune.areaInSquareKm}
                 km<sup>2</sup>
               </p>
-              <p>📝 {data.kommune[0].writtenLanguage}</p>
+              <p>📝 {data.kommune.writtenLanguage}</p>
               <p>
                 Les mer her:{' '}
                 <a
@@ -60,7 +60,7 @@ export default function KommuneDetails() {
               </p>
             </div>
             <img
-              src={data.kommune[0].mapUrl}
+              src={data.kommune.mapUrl}
               alt='kommuneMap'
               className='mapImg'
             />
