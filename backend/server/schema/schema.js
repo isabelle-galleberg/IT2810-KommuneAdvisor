@@ -81,6 +81,7 @@ const RootQuery = new GraphQLObjectType({
 							name: { value: "name" },
 							population: { value: "population" },
 							area: { value: "landAreaInSquareKm" },
+							rating: { value: "rating" },
 						},
 						defaultValue: "name",
 					}),
@@ -95,13 +96,16 @@ const RootQuery = new GraphQLObjectType({
 						defaultValue: "ascending",
 					}),
 				},
-				page: { type: GraphQLFloat, defaultValue: 1 },
-				pageSize: { type: GraphQLFloat, defaultValue: 10 },
+				page: { type: GraphQLInt, defaultValue: 1 },
+				pageSize: { type: GraphQLInt, defaultValue: 10 },
 				search: { type: GraphQLString },
 				county: { type: GraphQLString },
 			},
 			resolve(parent, args) {
 				let query = kommuner.find({});
+				if (args.county) {
+					query = query.find({ county: args.county });
+				}
 				if (args.search)
 					query = query.find({
 						name: { $regex: args.search, $options: "i" },
@@ -120,6 +124,12 @@ const RootQuery = new GraphQLObjectType({
 			args: { kommuneNumber: { type: GraphQLString } },
 			resolve(parent, args) {
 				return kommuner.findOne({ kommuneNumber: args.kommuneNumber });
+			},
+		},
+		counties: {
+			type: new GraphQLList(CountyType),
+			resolve(parent, args) {
+				return county.find({});
 			},
 		},
 	},
