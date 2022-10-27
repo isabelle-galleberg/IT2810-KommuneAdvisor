@@ -4,6 +4,9 @@ export const GET_KOMMUNE = gql`
   query Kommune($kommuneName: String) {
     kommune(kommuneName: $kommuneName) {
       name
+      county {
+        name
+      }
       population
       areaInSquareKm
       mapUrl
@@ -28,6 +31,9 @@ export const GET_ALL_KOMMUNER = gql`
       pageSize: $pageSize
     ) {
       name
+      county {
+        name
+      }
       logoUrl
       areaInSquareKm
       kommuneRating {
