@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 const KommuneRatingSchema = new mongoose.Schema(
 	{
 		name: { type: String },
@@ -7,7 +6,7 @@ const KommuneRatingSchema = new mongoose.Schema(
 		title: { type: String },
 		description: { type: String },
 		timestamp: { type: Date },
-		kommuneId: { type: String },
+		kommune: { type: mongoose.Types.ObjectId, ref: "Kommuner" },
 	},
 	{ collection: "kommuneRating" }
 );
