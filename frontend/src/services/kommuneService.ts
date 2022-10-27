@@ -21,8 +21,14 @@ export const GET_KOMMUNE = gql`
 `;
 
 export const GET_ALL_KOMMUNER = gql`
-  query Kommuner($sortBy: sort, $sortDirection: sortDirection, $pageSize: Int) {
+  query Kommuner(
+    $search: String
+    $sortBy: sort
+    $sortDirection: sortDirection
+    $pageSize: Int
+  ) {
     kommuner(
+      search: $search
       sortBy: $sortBy
       sortDirection: $sortDirection
       pageSize: $pageSize

@@ -17,6 +17,7 @@ export default function MainPage() {
 
   const { loading, error, data } = useQuery(GET_ALL_KOMMUNER, {
     variables: {
+      search: 'vadsø',
       sortBy: 'name',
       sortDirection: 'ascending',
       pageSize: 100,
@@ -36,7 +37,9 @@ export default function MainPage() {
 
   return (
     <div className='mainPage'>
-      <Search />
+      <div className='search'>
+        <input type='text' />
+      </div>
       <InputFields />
       <div className='cards'>
         <SimpleGrid
