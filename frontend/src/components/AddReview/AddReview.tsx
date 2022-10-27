@@ -14,7 +14,7 @@ export default function AddReview({
 }: AddReviewProps) {
   const { kommuneSlug } = useParams();
   const { loading: loadingKommuneId, error: errorKommuneId, data: dataKommuneId } = useQuery(GET_KOMMUNE_ID, {
-    variables: { name: kommuneSlug },
+    variables: { kommuneName: kommuneSlug },
   });
   const [postReview, { data: dataPostReview, loading: loadingPostReview, error: errorPostReview }] = useMutation(POST_REVIEW);
   const [opened, setOpened] = useState(false);
@@ -49,9 +49,12 @@ export default function AddReview({
           rating: review.rating,
           title: review.title,
           description: review.description,
-          kommuneId: dataKommuneId?.kommune[0]._id
+          kommuneId: dataKommuneId.kommune._id
         }
       });
+      review._id = response.data._id;
+      review.timestamp = response.data.timestamp;
+      onCreate(review);
       setOpened(false);
     }
   }

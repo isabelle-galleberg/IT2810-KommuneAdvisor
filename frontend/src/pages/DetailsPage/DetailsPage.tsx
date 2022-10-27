@@ -11,12 +11,12 @@ import './DetailsPage.css';
 export default function DetailsPage() {
   const { kommuneSlug } = useParams();
   const { loading: loadingReviews, error: errorReviews, data: dataReviews } = useQuery(GET_REVIEWS, {
-    variables: { name: kommuneSlug },
+    variables: { kommuneName: kommuneSlug },
   });
   const [reviews, setReviews] = useState([] as Review[])
 
   useEffect(() => {
-    setReviews(dataReviews?.kommune[0].kommuneRating);
+    setReviews(dataReviews?.kommune.kommuneRating);
   }, [dataReviews])
 
   function addReview(review: any) {
