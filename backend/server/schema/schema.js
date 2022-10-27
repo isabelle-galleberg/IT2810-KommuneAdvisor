@@ -39,13 +39,9 @@ const KommuneType = new GraphQLObjectType({
       },
     },
     county: {
-      type: GraphQLString,
+      type: CountyType,
       resolve(parent, args) {
-        return county
-          .findOne({ countyNumber: parent.countyNumber })
-          .then((county) => {
-            return county.name;
-          });
+        return county.findOne({ countyNumber: parent.countyNumber });
       },
     },
   }),
