@@ -3,14 +3,8 @@ import { Select } from '@mantine/core';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { updateCounty } from '../../redux/countyReducer';
 import { updateFilter } from '../../redux/filterReducer';
-
-const dummyCountys = [
-  'Viken',
-  'Troms og Finnmark',
-  'Møre og Romsdal',
-  'Oslo',
-  'Trøndelag',
-];
+import { GET_ALL_COUNTIES } from '../../services/countyService';
+import { useQuery } from '@apollo/client';
 
 export default function InputFields() {
   const county = useAppSelector((state) => state.countyInput.county);
@@ -20,23 +14,36 @@ export default function InputFields() {
   const changeCounty = (county: string) => {
     dispatch(updateCounty(county));
   };
-
   const changeFilter = (filter: string) => {
     dispatch(updateFilter(filter));
   };
 
+  const { error, data } = useQuery(GET_ALL_COUNTIES);
+  if (error) {
+    console.log(error);
+  }
+
   return (
     <div className='inputFields'>
       <div className='dropdown'>
-        <Select
-          defaultValue={county}
-          label='Filtrer på fylke'
-          data={dummyCountys}
-          searchable
-          clearable
-          onChange={changeCounty}
-          dropdownPosition='bottom'
-        />
+        {data?.counties ? (
+          <Select
+            defaultValue={county}
+            label='Filtrer på fylke'
+            data={data.counties
+              .map(
+                (county: { name: string; __typename: string; _id: string }) =>
+                  county.name
+              )
+              .sort()}
+            searchable
+            clearable
+            onChange={changeCounty}
+            dropdownPosition='bottom'
+          />
+        ) : (
+          <div>No counties</div>
+        )}
         <Select
           defaultValue={filter}
           label='Sorter'
