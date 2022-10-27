@@ -1,76 +1,74 @@
+import { useQuery } from '@apollo/client';
 import { Link, useParams } from 'react-router-dom';
 import { Rating } from 'react-simple-star-rating';
+import { GET_KOMMUNE } from '../../services/kommuneService';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import './KommuneDetails.css';
 
 export default function KommuneDetails() {
-  // This will be used later to fetch data from the backend
+  // url param kommune/:name
   const { kommuneSlug } = useParams();
 
-  // Dummy data
-  const kommuneData = {
-    name: 'Lier',
-    weaponImg: require('../../assets/lier.svg.png'),
-    rating: 3,
-    county: 'Viken',
-    population: '407 704',
-    area: '100 000',
-    language: 'bokmål',
-    mapImg: require('../../assets/map.png'),
-  };
+  const { loading, error, data } = useQuery(GET_KOMMUNE, {
+    variables: { kommuneName: kommuneSlug },
+  });
 
-  const url = `https://snl.no/${kommuneData.name.replace(' ', '_')}`;
-
-  const nonCapitalizedLanguage = kommuneData.language;
-  const capitalizedLanguage =
-    nonCapitalizedLanguage.charAt(0).toUpperCase() +
-    nonCapitalizedLanguage.slice(1);
+  if (loading) return <LoadingSpinner />;
+  if (error) console.log(error);
 
   return (
-    <div className='detailsPage'>
-      <div className='detailsPageTop'>
-        <Link to='/'>
-          <img
-            className='backArrow'
-            src={require('../../assets/backArrow.png')}
-            alt=''
-          />
-        </Link>
-        <img
-          src={kommuneData.weaponImg}
-          className='weaponImg'
-        />
-        <h1>{kommuneData.name}</h1>
-      </div>
-      <div className='line'></div>
-      <div className='kommuneDetails'>
-        <div>
-          <Rating
-            initialValue={kommuneData.rating}
-            readonly
-            size={30}
-          />
-          <p>📍 {kommuneData.county}</p>
-          <p>👨‍👩‍👧‍👧 {kommuneData.population}</p>
-          <p>
-            🏔 {kommuneData.area} km<sup>2</sup>
-          </p>
-          <p>📝 {capitalizedLanguage}</p>
-          <p>
-            Les mer her:{' '}
-            <a
-              href={url}
-              target='_blank'
-              rel='noreferrer'>
-              {kommuneData.name}
-            </a>
-          </p>
+    <>
+      {data && data.kommune && data.kommune ? (
+        <div className='detailsPage'>
+          <div className='detailsPageTop'>
+            <Link to='/'>
+              <img
+                className='backArrow'
+                src={require('../../assets/backArrow.png')}
+                alt=''
+              />
+            </Link>
+            <img
+              src={data.kommune.logoUrl}
+              className='weaponImg'
+            />
+            <h1>{data.kommune.name}</h1>
+          </div>
+          <div className='line'></div>
+          <div className='kommuneDetails'>
+            <div>
+              <Rating
+                initialValue={3}
+                readonly
+                size={30}
+              />
+              <p>📍 {data.kommune.county.name}</p>
+              <p>👨‍👩‍👧‍👧 {data.kommune.population}</p>
+              <p>
+                🏔 {data.kommune.areaInSquareKm}
+                km<sup>2</sup>
+              </p>
+              <p>📝 {data.kommune.writtenLanguage}</p>
+              <p>
+                Les mer her:{' '}
+                <a
+                  href={`https://snl.no/${kommuneSlug}`}
+                  target='_blank'
+                  rel='noreferrer'>
+                  {kommuneSlug}
+                </a>
+              </p>
+            </div>
+            <img
+              src={data.kommune.mapUrl}
+              alt='kommuneMap'
+              className='mapImg'
+            />
+          </div>
         </div>
-        <img
-          src={kommuneData.mapImg}
-          alt='kommuneMap'
-          className='mapImg'
-        />
-      </div>
-    </div>
+      ) : (
+        <div>Kommune not found</div>
+      )}
+    </>
   );
 }
