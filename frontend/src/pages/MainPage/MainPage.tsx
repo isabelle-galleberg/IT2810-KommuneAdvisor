@@ -15,8 +15,8 @@ export default function MainPage() {
   const county = useAppSelector((state) => state.countyInput.county);
   const filter = useAppSelector((state) => state.filterInput.filter);
   // sorting values for GraphQL query
-  const [sortBy, setSortBy] = useState('');
-  const [sortDirection, setSortDirection] = useState('');
+  const [sortBy, setSortBy] = useState('name');
+  const [sortDirection, setSortDirection] = useState('ascending');
 
   // create separate function for filtering
   useEffect(() => {
