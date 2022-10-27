@@ -3,21 +3,22 @@ import KommuneCard from '../../components/KommuneCard/KommuneCard';
 import { Button, Loader, SimpleGrid } from '@mantine/core';
 import InputFields from '../../components/InputFields/InputFields';
 import Search from '../../components/Search/Search';
-import { useAppSelector } from '../../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { useQuery } from '@apollo/client';
 import { GET_ALL_KOMMUNER } from '../../services/kommuneService';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { useEffect, useState } from 'react';
+import { updateKommune } from '../../redux/kommuneReducer';
 
 export default function MainPage() {
   // globals states from Redux
-  const kommune = useAppSelector((state) => state.kommuneInput.kommune);
+  const searchInput = useAppSelector((state) => state.kommuneInput.kommune);
   const county = useAppSelector((state) => state.countyInput.county);
   const filter = useAppSelector((state) => state.filterInput.filter);
+
   // sorting values for GraphQL query
   const [sortBy, setSortBy] = useState('name');
   const [sortDirection, setSortDirection] = useState('ascending');
-  const [searchInput, setSearchInput] = useState('');
 
   // create separate function for filtering
   useEffect(() => {
@@ -61,8 +62,10 @@ export default function MainPage() {
     },
   });
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchInput(e.target.value);
+  const dispatch = useAppDispatch();
+
+  const changeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(updateKommune(e.target.value));
   };
 
   if (error) console.log(error);
@@ -73,7 +76,7 @@ export default function MainPage() {
         <input
           type='text'
           value={searchInput}
-          onChange={handleSearch}
+          onChange={changeSearch}
         />
       </div>
       <InputFields />
