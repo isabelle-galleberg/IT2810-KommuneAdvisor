@@ -19,8 +19,7 @@ export default function KommuneCard({
         spacing={20}>
         <Image
           src={weaponImg}
-          height={90}
-          width={70}
+          className='weaponImg'
         />
         <div>
           <Text
