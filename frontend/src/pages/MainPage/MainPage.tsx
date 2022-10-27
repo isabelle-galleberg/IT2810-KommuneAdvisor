@@ -17,6 +17,7 @@ export default function MainPage() {
   // sorting values for GraphQL query
   const [sortBy, setSortBy] = useState('');
   const [sortDirection, setSortDirection] = useState('');
+  const [searchInput, setSearchInput] = useState('');
 
   // create separate function for filtering
   useEffect(() => {
@@ -53,20 +54,27 @@ export default function MainPage() {
 
   const { loading, error, data } = useQuery(GET_ALL_KOMMUNER, {
     variables: {
-      search: 'Vadsø',
+      search: searchInput,
       sortBy: sortBy,
       sortDirection: sortDirection,
       pageSize: 20,
     },
   });
 
-  if (loading) return <LoadingSpinner />;
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(e.target.value);
+  };
+
   if (error) console.log(error);
 
   return (
     <div className='mainPage'>
       <div className='search'>
-        <input type='text' />
+        <input
+          type='text'
+          value={searchInput}
+          onChange={handleSearch}
+        />
       </div>
       <InputFields />
       <div className='cards'>
@@ -78,6 +86,7 @@ export default function MainPage() {
             { minWidth: 1200, cols: 4 },
           ]}>
           {/* Replace type any! Replace rating with value from backend */}
+          {loading && <LoadingSpinner />}
           {data && data.kommuner ? (
             data.kommuner.map((kommune: any) => {
               return (
