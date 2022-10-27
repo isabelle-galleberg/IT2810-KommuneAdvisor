@@ -42,7 +42,7 @@ export default function KommuneDetails() {
                 readonly
                 size={30}
               />
-              <p>📍 {data.kommune.county}</p>
+              <p>📍 {data.kommune.county.name}</p>
               <p>👨‍👩‍👧‍👧 {data.kommune.population}</p>
               <p>
                 🏔 {data.kommune.areaInSquareKm}
