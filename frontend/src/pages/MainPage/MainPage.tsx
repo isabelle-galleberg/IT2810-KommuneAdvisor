@@ -4,94 +4,63 @@ import { SimpleGrid } from '@mantine/core';
 import InputFields from '../../components/InputFields/InputFields';
 import Search from '../../components/Search/Search';
 import { useAppSelector } from '../../redux/hooks';
-import { useEffect } from 'react';
-
-const dummy = [
-  {
-    id: 1,
-    name: 'Lier',
-    county: 'Viken',
-    weaponImg: require('../../assets/lier.svg.png'),
-    rating: 1,
-    area: 100,
-    population: 3333,
-  },
-  {
-    id: 2,
-    name: 'Berlevåg',
-    county: 'Troms og Finnmark',
-    weaponImg: require('../../assets/berlevag.svg.png'),
-    rating: 2,
-    area: 400,
-    population: 5723,
-  },
-  {
-    id: 3,
-    name: 'Vardø',
-    county: 'Troms og Finnmark',
-    weaponImg: require('../../assets/sande.svg.png'),
-    rating: 3,
-    area: 400,
-    population: 5753,
-  },
-  {
-    id: 4,
-    name: 'Sande',
-    county: 'Møre og Romsdal',
-    weaponImg: require('../../assets/vardo.svg.png'),
-    rating: 2,
-    area: 100,
-    population: 25201,
-  },
-  {
-    id: 5,
-    name: 'Lier',
-    county: 'Viken',
-    weaponImg: require('../../assets/lier.svg.png'),
-    rating: 1,
-    area: 400,
-    population: 30123,
-  },
-  {
-    id: 6,
-    name: 'Berlevåg',
-    county: 'Troms og Finnmark',
-    weaponImg: require('../../assets/berlevag.svg.png'),
-    rating: 5,
-    area: 100,
-    population: 5723,
-  },
-  {
-    id: 7,
-    name: 'Vardø',
-    county: 'Troms og Finnmark',
-    weaponImg: require('../../assets/sande.svg.png'),
-    rating: 5,
-    area: 103,
-    population: 512,
-  },
-  {
-    id: 8,
-    name: 'Oslo',
-    county: 'Oslo',
-    weaponImg: require('../../assets/vardo.svg.png'),
-    rating: 1,
-    area: 100,
-    population: 1505005,
-  },
-];
+import { useQuery } from '@apollo/client';
+import { GET_ALL_KOMMUNER } from '../../services/kommuneService';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
+import { useEffect, useState } from 'react';
 
 export default function MainPage() {
   // globals states from Redux
   const kommune = useAppSelector((state) => state.kommuneInput.kommune);
   const county = useAppSelector((state) => state.countyInput.county);
   const filter = useAppSelector((state) => state.filterInput.filter);
-  // store kommuner from backend here
-  // const [kommuner, setKommuner] = useState<any>([]);
+  // sorting values for GraphQL query
+  const [sortBy, setSortBy] = useState('');
+  const [sortDirection, setSortDirection] = useState('');
 
+  // create separate function for filtering
   useEffect(() => {
-    console.log(kommune, county, filter);
-  }, [kommune, county, filter]);
+    switch (filter) {
+      case 'Befolkning høy-lav':
+        setSortBy('population');
+        setSortDirection('descending');
+        break;
+      case 'Befolkning lav-høy':
+        setSortBy('population');
+        setSortDirection('ascending');
+        break;
+      case 'Areal høy-lav':
+        setSortBy('area');
+        setSortDirection('descending');
+        break;
+      case 'Areal lav-høy':
+        setSortBy('area');
+        setSortDirection('ascending');
+        break;
+      case 'Rangering høy-lav':
+        setSortBy('rating');
+        setSortDirection('descending');
+        break;
+      case 'Rangering lav-høy':
+        setSortBy('rating');
+        setSortDirection('ascending');
+        break;
+      default:
+        setSortBy('name');
+        setSortDirection('ascending');
+    }
+  }, [filter]);
+
+  const { loading, error, data } = useQuery(GET_ALL_KOMMUNER, {
+    variables: {
+      sortBy: sortBy,
+      sortDirection: sortDirection,
+      pageSize: 20,
+    },
+  });
+
+  if (loading) return <LoadingSpinner />;
+  if (error) console.log(error);
 
   return (
     <div className='mainPage'>
@@ -105,18 +74,22 @@ export default function MainPage() {
             { minWidth: 900, cols: 3 },
             { minWidth: 1200, cols: 4 },
           ]}>
-          {/* replace type any when fetching kommuner from backend */}
-          {dummy.map((k: any) => {
-            return (
-              <KommuneCard
-                key={k.id}
-                name={k.name}
-                county={k.county}
-                weaponImg={k.weaponImg}
-                rating={k.rating}
-              />
-            );
-          })}
+          {/* Replace type any! Replace rating with value from backend */}
+          {data && data.kommuner ? (
+            data.kommuner.map((kommune: any) => {
+              return (
+                <KommuneCard
+                  key={kommune.name}
+                  name={kommune.name}
+                  weaponImg={kommune.logoUrl}
+                  county={kommune.county.name}
+                  rating={0}
+                />
+              );
+            })
+          ) : (
+            <div>Kommuner not found</div>
+          )}
         </SimpleGrid>
       </div>
     </div>
