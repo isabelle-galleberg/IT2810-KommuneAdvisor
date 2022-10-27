@@ -97,9 +97,9 @@ const RootQuery = new GraphQLObjectType({
     },
     kommune: {
       type: new GraphQLList(KommuneType),
-      args: { kommuneNumber: { type: GraphQLString } },
+      args: { name: { type: GraphQLString } },
       resolve(parent, args) {
-        return kommuner.find({ kommuneNumber: args.kommuneNumber });
+        return kommuner.find({ name: args.name });
       },
     },
   },

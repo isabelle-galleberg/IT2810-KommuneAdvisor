@@ -7,7 +7,7 @@ export default function ReviewCard({
   description,
   rating,
   name,
-  date,
+  timestamp,
 }: Review) {
   return (
     <div className='reviewCard'>
@@ -17,7 +17,7 @@ export default function ReviewCard({
           readonly
           size={20}
         />
-        <div className='date'>{date}</div>
+        <div className='date'>{timestamp}</div>
       </div>
       <div className='reviewCardBottom'>
         <div className='title'>{title}</div>

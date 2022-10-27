@@ -1,27 +1,24 @@
 import { gql } from '@apollo/client/core';
 
-export const GET_KOMMUNE = (kommuneNr: string) => {
-  return gql`
-        query {
-            kommune(kommuneNumber: "${kommuneNr}") {
-                kommuneNumber
+export const GET_KOMMUNE = gql`
+    query Kommune($name: String!){
+        kommune(name: $name) {
+            name
+            population
+            areaInSquareKm
+            mapUrl
+            logoUrl
+            writtenLanguage
+            kommuneRating {
                 name
-                population
-                areaInSquareKm
-                mapUrl
-                logoUrl
-                writtenLanguage
-                kommuneRating {
-                    name
-                    rating
-                    title
-                    description
-                    timestamp
-                }
+                rating
+                title
+                description
+                timestamp
             }
         }
-    `;
-};
+    }
+`;
 
 export const GET_ALL_KOMMUNER = gql`
   query {
@@ -31,6 +28,14 @@ export const GET_ALL_KOMMUNER = gql`
       kommuneRating {
         rating
       }
+    }
+  }
+`;
+
+export const GET_KOMMUNE_ID = gql`
+  query Kommune($name: String!){
+    kommune(name: $name) {
+      _id
     }
   }
 `;
