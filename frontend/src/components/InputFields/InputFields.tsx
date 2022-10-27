@@ -18,10 +18,20 @@ export default function InputFields() {
     dispatch(updateFilter(filter));
   };
 
+  // get counties from GraphQL
   const { error, data } = useQuery(GET_ALL_COUNTIES);
   if (error) {
     console.log(error);
   }
+
+  // counties sorted alphabetically, with value of countyId
+  const counties = data?.counties
+    .map((county: { name: string; __typename: string; _id: string }) => {
+      return { label: county.name, value: county._id };
+    })
+    .sort((a: { label: string }, b: { label: string }) =>
+      a.label > b.label ? 1 : -1
+    );
 
   return (
     <div className='inputFields'>
@@ -30,20 +40,13 @@ export default function InputFields() {
           <Select
             defaultValue={county}
             label='Filtrer på fylke'
-            data={data.counties
-              .map(
-                (county: { name: string; __typename: string; _id: string }) =>
-                  county.name
-              )
-              .sort()}
+            data={counties}
             searchable
             clearable
             onChange={changeCounty}
             dropdownPosition='bottom'
           />
-        ) : (
-          <div>No counties</div>
-        )}
+        ) : null}
         <Select
           defaultValue={filter}
           label='Sorter'

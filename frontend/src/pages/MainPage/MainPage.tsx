@@ -56,6 +56,7 @@ export default function MainPage() {
       sortBy: sortBy,
       sortDirection: sortDirection,
       pageSize: 20,
+      county: county,
     },
   });
 
