@@ -19,7 +19,6 @@ const KommuneType = new GraphQLObjectType({
     _id: { type: GraphQLID },
     kommuneNumber: { type: GraphQLString },
     name: { type: GraphQLString },
-    countyNumber: { type: GraphQLString },
     population: { type: GraphQLInt },
     areaInSquareKm: { type: GraphQLFloat },
     landAreaInSquareKm: { type: GraphQLFloat },
@@ -27,6 +26,12 @@ const KommuneType = new GraphQLObjectType({
     mapUrl: { type: GraphQLString },
     logoUrl: { type: GraphQLString },
     writtenLanguage: { type: GraphQLString },
+    county: {
+      type: CountyType,
+      resolve(parent, args) {
+        return county.findById(parent.county);
+      },
+    },
     kommuneRating: {
       type: new GraphQLList(KommuneRatingType),
       resolve(parent, args) {
@@ -56,6 +61,14 @@ const KommuneRatingType = new GraphQLObjectType({
     description: { type: GraphQLString },
     timestamp: { type: GraphQLString },
     kommuneNumber: { type: GraphQLString },
+  }),
+});
+
+const CountyType = new GraphQLObjectType({
+  name: "County",
+  fields: () => ({
+    _id: { type: GraphQLString },
+    name: { type: GraphQLString },
   }),
 });
 
@@ -103,14 +116,14 @@ const RootQuery = new GraphQLObjectType({
           });
         }
         query.skip((args.page - 1) * args.pageSize).limit(args.pageSize);
-        return query;
+        return query.populate("county");
       },
     },
     kommune: {
-      type: new GraphQLList(KommuneType),
+      type: KommuneType,
       args: { kommuneNumber: { type: GraphQLString } },
       resolve(parent, args) {
-        return kommuner.find({ kommuneNumber: args.kommuneNumber });
+        return kommuner.findOne({ kommuneNumber: args.kommuneNumber });
       },
     },
   },
