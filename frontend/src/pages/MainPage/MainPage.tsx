@@ -51,7 +51,6 @@ export default function MainPage() {
     }
   }, [filter]);
 
-
   const { loading, error, data } = useQuery(GET_ALL_KOMMUNER, {
     variables: {
       sortBy: sortBy,

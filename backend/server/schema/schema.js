@@ -41,7 +41,7 @@ const KommuneType = new GraphQLObjectType({
 		county: {
 			type: CountyType,
 			resolve(parent, args) {
-				return county.findOne({ countyNumber: parent.countyNumber });
+				return county.findOne({ _id: parent.county });
 			},
 		},
 	}),
