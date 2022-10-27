@@ -29,6 +29,7 @@ export const GET_ALL_KOMMUNER = gql`
     ) {
       name
       logoUrl
+      areaInSquareKm
       kommuneRating {
         rating
       }
