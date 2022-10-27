@@ -85,8 +85,8 @@ export default function MainPage() {
             { minWidth: 900, cols: 3 },
             { minWidth: 1200, cols: 4 },
           ]}>
-          {/* Replace type any! Replace rating with value from backend */}
           {loading && <LoadingSpinner />}
+          {/* Replace type any! Replace rating with value from backend */}
           {data && data.kommuner ? (
             data.kommuner.map((kommune: any) => {
               return (
