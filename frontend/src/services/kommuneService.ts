@@ -45,6 +45,7 @@ export const GET_ALL_KOMMUNER = gql`
       kommuneRating {
         rating
       }
+      averageRating
     }
   }
 `;
