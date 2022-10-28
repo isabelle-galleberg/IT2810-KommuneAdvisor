@@ -100,7 +100,7 @@ const RootQuery = new GraphQLObjectType({
         search: { type: GraphQLString },
         county: { type: GraphQLString },
       },
-      resolve(args: any) {
+      resolve(_parent: any, args: any) {
         let query = Kommune.find({});
         if (args.county) {
           query = query.find({ county: args.county });
@@ -122,7 +122,6 @@ const RootQuery = new GraphQLObjectType({
       type: KommuneType,
       args: { kommuneName: { type: GraphQLString } },
       resolve(_parent: any, args: any) {
-        console.log(args);
         return Kommune.findOne({ name: args.kommuneName.replace('_', ' ') });
       },
     },
