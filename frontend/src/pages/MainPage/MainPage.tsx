@@ -1,14 +1,14 @@
 import './MainPage.css';
 import KommuneCard from '../../components/KommuneCard/KommuneCard';
-import { Button, Loader, SimpleGrid } from '@mantine/core';
+import { SimpleGrid, TextInput } from '@mantine/core';
 import InputFields from '../../components/InputFields/InputFields';
-import Search from '../../components/Search/Search';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { useQuery } from '@apollo/client';
 import { GET_ALL_KOMMUNER } from '../../services/kommuneService';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { useEffect, useState } from 'react';
 import { updateKommune } from '../../redux/kommuneReducer';
+import { IconSearch } from '@tabler/icons';
 
 export default function MainPage() {
   // globals states from Redux
@@ -72,11 +72,18 @@ export default function MainPage() {
 
   return (
     <div className='mainPage'>
-      <div className='search'>
-        <input
-          type='text'
+      <div className='searchField'>
+        <TextInput
+          label='Søk etter en kommune'
           value={searchInput}
           onChange={changeSearch}
+          rightSection={
+            <IconSearch
+              size={18}
+              stroke={1.5}
+              color='#f3f9fc'
+            />
+          }
         />
       </div>
       <InputFields />
@@ -90,21 +97,19 @@ export default function MainPage() {
           ]}>
           {loading && <LoadingSpinner />}
           {/* Replace type any! Replace rating with value from backend */}
-          {data && data.kommuner ? (
-            data.kommuner.map((kommune: any) => {
-              return (
-                <KommuneCard
-                  key={kommune.name}
-                  name={kommune.name}
-                  weaponImg={kommune.logoUrl}
-                  county={kommune.county.name}
-                  rating={0}
-                />
-              );
-            })
-          ) : (
-            <div>Kommuner not found</div>
-          )}
+          {data && data.kommuner
+            ? data.kommuner.map((kommune: any) => {
+                return (
+                  <KommuneCard
+                    key={kommune.name}
+                    name={kommune.name}
+                    weaponImg={kommune.logoUrl}
+                    county={kommune.county.name}
+                    rating={0}
+                  />
+                );
+              })
+            : null}
         </SimpleGrid>
       </div>
     </div>

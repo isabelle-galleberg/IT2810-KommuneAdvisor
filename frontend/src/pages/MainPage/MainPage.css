@@ -3,3 +3,24 @@
   justify-content: center;
   padding: 3%;
 }
+
+.searchField {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* search */
+.mantine-16u1lte,
+.mantine-i0taq {
+  background-color: #405a7e;
+  border: 1px solid black;
+  color: #f3f9fc;
+  width: 210px;
+  padding: 5px;
+}
+
+.mantine-1pwvbwf:hover {
+  background-color: #405a7e;
+}
