@@ -12,7 +12,11 @@ export default function ReviewCard({
   return (
     <div className='reviewCard'>
       <div className='reviewCardTop'>
-        <Rating initialValue={rating} readonly size={20} />
+        <Rating
+          initialValue={rating}
+          readonly
+          size={20}
+        />
         <div className='date'>{date}</div>
       </div>
       <div className='reviewCardBottom'>

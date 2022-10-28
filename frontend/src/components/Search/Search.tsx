@@ -33,7 +33,9 @@ export default function Search() {
         defaultValue={kommune}
         onChange={changeSearch}
         rightSection={
-          <ActionIcon size={32} radius='md'>
+          <ActionIcon
+            size={32}
+            radius='md'>
             <img
               className='searchIcon'
               src={require('../../assets/search.png')}
