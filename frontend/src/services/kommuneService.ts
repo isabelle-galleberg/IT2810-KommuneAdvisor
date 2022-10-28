@@ -24,11 +24,17 @@ export const GET_KOMMUNE = gql`
 `;
 
 export const GET_ALL_KOMMUNER = gql`
-  query Kommuner($sortBy: sort, $sortDirection: sortDirection, $pageSize: Int) {
+  query Kommuner(
+    $sortBy: sort
+    $sortDirection: sortDirection
+    $pageSize: Int
+    $county: String
+  ) {
     kommuner(
       sortBy: $sortBy
       sortDirection: $sortDirection
       pageSize: $pageSize
+      county: $county
     ) {
       name
       county {
