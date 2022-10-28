@@ -83,7 +83,7 @@ export default function MainPage() {
                   name={kommune.name}
                   weaponImg={kommune.logoUrl}
                   county={kommune.county.name}
-                  rating={0}
+                  rating={kommune.averageRating}
                 />
               );
             })

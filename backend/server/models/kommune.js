@@ -11,6 +11,7 @@ const KommuneSchema = new mongoose.Schema(
     mapUrl: { type: String },
     logoUrl: { type: String },
     writtenLanguage: { type: String },
+    averageRating: { type: Number, default: 0 },
     kommuneRating: [
       { type: mongoose.Schema.Types.String, ref: "kommuneRating" },
     ],
