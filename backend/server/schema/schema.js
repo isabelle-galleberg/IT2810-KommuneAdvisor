@@ -10,11 +10,11 @@ const {
   GraphQLNonNull,
 } = require('graphql');
 
-const { ObjectId } = require("mongodb");
+const { ObjectId } = require('mongodb');
 
-const kommuner = require("../models/kommune");
-const kommuneRating = require("../models/kommuneRating");
-const county = require("../models/county");
+const kommuner = require('../models/kommune');
+const kommuneRating = require('../models/kommuneRating');
+const county = require('../models/county');
 const KommuneType = new GraphQLObjectType({
   name: 'Kommune',
   fields: () => ({
@@ -78,7 +78,7 @@ const RootQuery = new GraphQLObjectType({
               name: { value: 'name' },
               population: { value: 'population' },
               area: { value: 'landAreaInSquareKm' },
-              rating: { value: 'rating' },
+              rating: { value: 'averageRating' },
             },
             defaultValue: 'name',
           }),
