@@ -1,15 +1,15 @@
-const fs = require("fs");
-const kommune = require("../server/models/kommune");
-const county = require("../server/models/county");
-const mongoose = require("mongoose");
-require("dotenv").config();
-const connectDB = require("../server/config/db");
-const kommuneRating = require("../server/models/kommuneRating");
+const fs = require('fs');
+const kommune = require('../server/models/kommune');
+const county = require('../server/models/county');
+const mongoose = require('mongoose');
+require('dotenv').config();
+const connectDB = require('../server/config/db');
+const kommuneRating = require('../server/models/kommuneRating');
 
 connectDB().then(async () => {
   await kommuneRating.deleteMany({});
   await county.deleteMany({});
-  fs.readFile("./data/fylker.json", (err, rawdata) => {
+  fs.readFile('./data/fylker.json', (err, rawdata) => {
     const couties = JSON.parse(rawdata);
     const importData = async () => {
       for (const _county of couties) {
@@ -27,7 +27,7 @@ connectDB().then(async () => {
     importData();
   });
   await kommune.deleteMany({});
-  fs.readFile("./data/export.json", (err, rawkommuner) => {
+  fs.readFile('./data/export.json', (err, rawkommuner) => {
     const kommuner = JSON.parse(rawkommuner);
     const importData = async () => {
       for (const _kommune of kommuner) {
@@ -52,10 +52,10 @@ connectDB().then(async () => {
       }
     };
     importData();
-    console.log("Data imported");
+    console.log('Data imported');
     kommune
       .findOne({})
-      .populate("county")
+      .populate('county')
       .then((kommune) => {
         console.log(kommune);
       });

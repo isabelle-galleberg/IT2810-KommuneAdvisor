@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const KommuneSchema = new mongoose.Schema(
   {
@@ -13,11 +13,11 @@ const KommuneSchema = new mongoose.Schema(
     writtenLanguage: { type: String },
     averageRating: { type: Number, default: 0 },
     kommuneRating: [
-      { type: mongoose.Schema.Types.String, ref: "kommuneRating" },
+      { type: mongoose.Schema.Types.String, ref: 'kommuneRating' },
     ],
     county: { type: mongoose.Schema.Types.Number },
   },
-  { collection: "kommuner" }
+  { collection: 'kommuner' }
 );
 
-module.exports = mongoose.model("Kommuner", KommuneSchema);
+module.exports = mongoose.model('Kommuner', KommuneSchema);
