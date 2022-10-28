@@ -28,13 +28,20 @@ export default function KommuneDetails() {
                 alt=''
               />
             </Link>
-            <img src={data.kommune.logoUrl} className='weaponImg' />
+            <img
+              src={data.kommune.logoUrl}
+              className='weaponImg'
+            />
             <h1>{data.kommune.name}</h1>
           </div>
           <div className='line'></div>
           <div className='kommuneDetails'>
             <div>
-              <Rating initialValue={3} readonly size={30} />
+              <Rating
+                initialValue={3}
+                readonly
+                size={30}
+              />
               <p>📍 {data.kommune.county.name}</p>
               <p>👨‍👩‍👧‍👧 {data.kommune.population}</p>
               <p>
