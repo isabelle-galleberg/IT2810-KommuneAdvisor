@@ -16,16 +16,10 @@ function App() {
         <Navbar />
         <BrowserRouter>
           <Routes>
-            <Route
-              path='/'
-              element={<MainPage />}
-            />
+            <Route path='/' element={<MainPage />} />
           </Routes>
           <Routes>
-            <Route
-              path='kommune/:kommuneSlug'
-              element={<DetailsPage />}
-            />
+            <Route path='kommune/:kommuneSlug' element={<DetailsPage />} />
           </Routes>
         </BrowserRouter>
       </ApolloProvider>
