@@ -34,14 +34,8 @@ const KommuneType = new GraphQLObjectType({
     },
     kommuneRating: {
       type: new GraphQLList(KommuneRatingType),
-      resolve(parent, args) {
-        return kommuneRating.find({ kommuneId: parent._id });
-      },
-    },
-    county: {
-      type: CountyType,
-      resolve(parent, args) {
-        return county.findOne({ _id: parent.county });
+      async resolve(parent, args) {
+        return kommuneRating.find({ kommune: parent._id }).exec();
       },
     },
   }),
@@ -56,7 +50,7 @@ const KommuneRatingType = new GraphQLObjectType({
     title: { type: GraphQLString },
     description: { type: GraphQLString },
     timestamp: { type: GraphQLString },
-    kommuneNumber: { type: GraphQLString },
+    kommune: { type: GraphQLString },
   }),
 });
 
@@ -116,7 +110,7 @@ const RootQuery = new GraphQLObjectType({
           });
         }
         query.skip((args.page - 1) * args.pageSize).limit(args.pageSize);
-        return query.populate("county");
+        return query;
       },
     },
     kommune: {
@@ -154,7 +148,7 @@ const RootMutation = new GraphQLObjectType({
           rating,
           title,
           description,
-          kommuneId,
+          kommune: new mongoose.Types.ObjectId(kommuneId),
           timestamp: new Date(),
         });
         return newKommuneRating.save();
