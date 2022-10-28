@@ -78,7 +78,7 @@ const RootQuery = new GraphQLObjectType({
               name: { value: "name" },
               population: { value: "population" },
               area: { value: "landAreaInSquareKm" },
-              rating: { value: "rating" },
+              rating: { value: "averageRating" },
             },
             defaultValue: "name",
           }),
