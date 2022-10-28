@@ -10,6 +10,8 @@ const {
   GraphQLNonNull,
 } = require("graphql");
 
+const { ObjectId } = require("mongodb");
+
 const kommuner = require("../models/kommune");
 const kommuneRating = require("../models/kommuneRating");
 const county = require("../models/county");
@@ -26,6 +28,7 @@ const KommuneType = new GraphQLObjectType({
     mapUrl: { type: GraphQLString },
     logoUrl: { type: GraphQLString },
     writtenLanguage: { type: GraphQLString },
+    averageRating: { type: GraphQLFloat },
     county: {
       type: CountyType,
       resolve(parent, args) {
@@ -141,14 +144,24 @@ const RootMutation = new GraphQLObjectType({
         description: { type: GraphQLNonNull(GraphQLString) },
         kommuneId: { type: GraphQLNonNull(GraphQLID) },
       },
-      resolve(parent, args) {
+      async resolve(parent, args) {
         const { name, rating, title, description, kommuneId } = args;
+        const kommuneRatings = await kommuneRating.find({
+          kommune: kommuneId,
+        });
+        const ratings = await kommuneRatings.map((rating) => rating.rating);
+        ratings.push(args.rating);
+        const sum = ratings.reduce((a, b) => a + b, 0);
+        const averageRating = sum / ratings.length;
+        const kommune = await kommuner.findById(kommuneId);
+        kommune.averageRating = averageRating;
+        kommune.save();
         const newKommuneRating = new kommuneRating({
           name,
           rating,
           title,
           description,
-          kommune: new mongoose.Types.ObjectId(kommuneId),
+          kommune: new ObjectId(kommuneId),
           timestamp: new Date(),
         });
         return newKommuneRating.save();
