@@ -8,13 +8,13 @@ const {
   GraphQLSchema,
   GraphQLFloat,
   GraphQLNonNull,
-} = require("graphql");
+} = require('graphql');
 
-const kommuner = require("../models/kommune");
-const kommuneRating = require("../models/kommuneRating");
-const county = require("../models/county");
+const kommuner = require('../models/kommune');
+const kommuneRating = require('../models/kommuneRating');
+const county = require('../models/county');
 const KommuneType = new GraphQLObjectType({
-  name: "Kommune",
+  name: 'Kommune',
   fields: () => ({
     _id: { type: GraphQLID },
     kommuneNumber: { type: GraphQLString },
@@ -42,7 +42,7 @@ const KommuneType = new GraphQLObjectType({
 });
 
 const KommuneRatingType = new GraphQLObjectType({
-  name: "KommuneRating",
+  name: 'KommuneRating',
   fields: () => ({
     _id: { type: GraphQLID },
     name: { type: GraphQLString },
@@ -55,7 +55,7 @@ const KommuneRatingType = new GraphQLObjectType({
 });
 
 const CountyType = new GraphQLObjectType({
-  name: "County",
+  name: 'County',
   fields: () => ({
     _id: { type: GraphQLString },
     name: { type: GraphQLString },
@@ -63,31 +63,31 @@ const CountyType = new GraphQLObjectType({
 });
 
 const RootQuery = new GraphQLObjectType({
-  name: "RootQueryType",
+  name: 'RootQueryType',
   fields: {
     kommuner: {
       type: new GraphQLList(KommuneType),
       args: {
         sortBy: {
           type: new GraphQLEnumType({
-            name: "sort",
+            name: 'sort',
             values: {
-              name: { value: "name" },
-              population: { value: "population" },
-              area: { value: "landAreaInSquareKm" },
-              rating: { value: "rating" },
+              name: { value: 'name' },
+              population: { value: 'population' },
+              area: { value: 'landAreaInSquareKm' },
+              rating: { value: 'rating' },
             },
-            defaultValue: "name",
+            defaultValue: 'name',
           }),
         },
         sortDirection: {
           type: new GraphQLEnumType({
-            name: "sortDirection",
+            name: 'sortDirection',
             values: {
-              ascending: { value: "ascending" },
-              descending: { value: "descending" },
+              ascending: { value: 'ascending' },
+              descending: { value: 'descending' },
             },
-            defaultValue: "ascending",
+            defaultValue: 'ascending',
           }),
         },
         page: { type: GraphQLInt, defaultValue: 1 },
@@ -102,11 +102,11 @@ const RootQuery = new GraphQLObjectType({
         }
         if (args.search)
           query = query.find({
-            name: { $regex: args.search, $options: "i" },
+            name: { $regex: args.search, $options: 'i' },
           });
         if (args.sortBy) {
           query = query.sort({
-            [args.sortBy]: args.sortDirection === "descending" ? -1 : 1,
+            [args.sortBy]: args.sortDirection === 'descending' ? -1 : 1,
           });
         }
         query.skip((args.page - 1) * args.pageSize).limit(args.pageSize);
@@ -117,7 +117,7 @@ const RootQuery = new GraphQLObjectType({
       type: KommuneType,
       args: { kommuneName: { type: GraphQLString } },
       resolve(parent, args) {
-        return kommuner.findOne({ name: args.kommuneName.replace("_", " ") });
+        return kommuner.findOne({ name: args.kommuneName.replace('_', ' ') });
       },
     },
     counties: {
@@ -130,7 +130,7 @@ const RootQuery = new GraphQLObjectType({
 });
 
 const RootMutation = new GraphQLObjectType({
-  name: "RootMutationType",
+  name: 'RootMutationType',
   fields: {
     addKommuneRating: {
       type: KommuneRatingType,
