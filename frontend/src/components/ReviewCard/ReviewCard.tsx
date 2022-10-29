@@ -9,6 +9,8 @@ export default function ReviewCard({
   name,
   timestamp,
 }: Review) {
+  //convert from timestamp to date
+  const date = (new Date(Number(timestamp)).toLocaleString()).split(",")[0];
   return (
     <div className='reviewCard'>
       <div className='reviewCardTop'>
@@ -17,7 +19,7 @@ export default function ReviewCard({
           readonly
           size={20}
         />
-        <div className='date'>{timestamp}</div>
+        <div className='date'>{date}</div>
       </div>
       <div className='reviewCardBottom'>
         <div className='title'>{title}</div>
