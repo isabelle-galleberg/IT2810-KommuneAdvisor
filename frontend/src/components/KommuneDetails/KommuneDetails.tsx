@@ -7,10 +7,10 @@ import './KommuneDetails.css';
 
 export default function KommuneDetails() {
   // url param kommune/:name
-  const { kommuneSlug } = useParams();
+  const { id } = useParams();
 
   const { loading, error, data } = useQuery(GET_KOMMUNE, {
-    variables: { kommuneName: kommuneSlug },
+    variables: { id: id },
   });
 
   if (loading) return <LoadingSpinner />;
@@ -57,10 +57,10 @@ export default function KommuneDetails() {
               <p>
                 Les mer her:{' '}
                 <a
-                  href={`https://snl.no/${kommuneSlug}`}
+                  href={data.kommune.snlLink}
                   target='_blank'
                   rel='noreferrer'>
-                  {kommuneSlug}
+                  {data.kommune.name}
                 </a>
               </p>
             </div>

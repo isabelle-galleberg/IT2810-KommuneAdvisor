@@ -1,7 +1,7 @@
 import { Rating } from './rating';
 
 export interface Kommune {
-  kommuneNumber: string;
+  _id: string;
   name: string;
   population: number;
   areaInSquareKm: number;
