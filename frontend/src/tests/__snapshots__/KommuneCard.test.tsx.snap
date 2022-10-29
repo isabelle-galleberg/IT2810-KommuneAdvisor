@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<KommuneCard /> should match snapshot with data 1`] = `
+<div
+  className="mantine-Paper-root mantine-Card-root kommuneCard mantine-rph89u"
+>
+  <div
+    className="mantine-Group-root mantine-1hwpv8j"
+  >
+    <div
+      className="mantine-Image-root weaponImg mantine-15po0m8"
+      style={
+        Object {
+          "height": "auto",
+          "width": "100%",
+        }
+      }
+    >
+      <figure
+        className="mantine-11nhzn5 mantine-Image-figure"
+      >
+        <div
+          className="mantine-qqmv3w mantine-Image-imageWrapper"
+        >
+          <img
+            className="mantine-3y8yz3 mantine-Image-image"
+            onError={[Function]}
+            onLoad={[Function]}
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Oslo_komm.svg/1024px-Oslo_komm.svg.png"
+            style={
+              Object {
+                "height": "auto",
+                "objectFit": "cover",
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+      </figure>
+    </div>
+    <div>
+      <div
+        className="mantine-Text-root mantine-k0qooo"
+      >
+        Oslo
+      </div>
+      <div
+        className="mantine-Text-root mantine-rwoji2"
+      >
+        📍
+        Oslo
+      </div>
+      <a
+        href="/kommune/Oslo"
+        onClick={[Function]}
+      >
+        <button
+          className="mantine-UnstyledButton-root mantine-Button-root mantine-1nia2br"
+          data-button={true}
+          type="button"
+        >
+          <div
+            className="mantine-3xbgk5 mantine-Button-inner"
+          >
+            <span
+              className="mantine-qo1k2 mantine-Button-label"
+              style={
+                Object {
+                  "textTransform": undefined,
+                }
+              }
+            >
+              Vis mer
+            </span>
+          </div>
+        </button>
+      </a>
+    </div>
+    <div
+      className="kommuneCardRating"
+    >
+      <span
+        className="style-module_starRatingWrap__q-lJC"
+        style={
+          Object {
+            "direction": "ltr",
+          }
+        }
+      >
+        <span
+          aria-hidden="true"
+          className="style-module_simpleStarRating__nWUxf react-simple-star-rating"
+          style={
+            Object {
+              "cursor": "",
+            }
+          }
+        >
+          <span
+            className="style-module_emptyIcons__Bg-FZ empty-icons"
+            style={
+              Object {
+                "color": "#cccccc",
+              }
+            }
+          >
+            <svg
+              className="star-svg"
+              fill="currentColor"
+              height={20}
+              stroke="currentColor"
+              strokeWidth={0}
+              viewBox="0 0 24 24"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+          </span>
+          <span
+            className="style-module_fillIcons__6---A filled-icons"
+            style={
+              Object {
+                "color": "#ffbc0b",
+                "left": 0,
+                "transition": "",
+                "width": "100%",
+              }
+            }
+            title="5 out of 1"
+          >
+            <svg
+              className="star-svg"
+              fill="currentColor"
+              height={20}
+              stroke="currentColor"
+              strokeWidth={0}
+              viewBox="0 0 24 24"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+          </span>
+        </span>
+      </span>
+      <p
+        className="kommuneCardAverageRating"
+      >
+        (
+        4.5
+        )
+      </p>
+    </div>
+  </div>
+</div>
+`;
