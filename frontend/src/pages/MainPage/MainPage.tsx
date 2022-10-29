@@ -56,6 +56,7 @@ export default function MainPage() {
       sortBy: sortBy,
       sortDirection: sortDirection,
       pageSize: 20,
+      county: county,
     },
   });
 
@@ -83,7 +84,7 @@ export default function MainPage() {
                   name={kommune.name}
                   weaponImg={kommune.logoUrl}
                   county={kommune.county.name}
-                  rating={0}
+                  rating={kommune.averageRating}
                 />
               );
             })
