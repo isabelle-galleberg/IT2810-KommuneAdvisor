@@ -37,11 +37,16 @@ export default function KommuneDetails() {
           <div className='line'></div>
           <div className='kommuneDetails'>
             <div>
-              <Rating
-                initialValue={3}
-                readonly
-                size={30}
-              />
+              <div className='rating'>
+                <Rating
+                  initialValue={data.kommune.averageRating}
+                  readonly
+                  size={30}
+                />
+                <div className='averageRating'>
+                  ({data.kommune.averageRating})
+                </div>
+              </div>
               <p>📍 {data.kommune.county.name}</p>
               <p>👨‍👩‍👧‍👧 {data.kommune.population}</p>
               <p>
