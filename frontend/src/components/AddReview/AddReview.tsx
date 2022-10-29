@@ -52,8 +52,8 @@ export default function AddReview({
           kommuneId: dataKommuneId.kommune._id
         }
       });
-      review._id = response.data._id;
-      review.timestamp = response.data.timestamp;
+      review._id = response.data.addKommuneRating._id;
+      review.timestamp = response.data.addKommuneRating.timestamp;
       onCreate(review);
       setOpened(false);
     }
