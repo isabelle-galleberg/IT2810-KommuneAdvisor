@@ -16,7 +16,7 @@ export default function KommuneCard({
       className='kommuneCard'>
       <Group
         noWrap
-        spacing={20}>
+        spacing={15}>
         <Image
           src={weaponImg}
           className='weaponImg'
