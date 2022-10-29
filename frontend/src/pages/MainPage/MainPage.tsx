@@ -59,6 +59,7 @@ export default function MainPage() {
       sortBy: sortBy,
       sortDirection: sortDirection,
       pageSize: 20,
+      county: county,
     },
   });
 
@@ -97,19 +98,21 @@ export default function MainPage() {
           ]}>
           {loading && <LoadingSpinner />}
           {/* Replace type any! Replace rating with value from backend */}
-          {data && data.kommuner
-            ? data.kommuner.map((kommune: any) => {
-                return (
-                  <KommuneCard
-                    key={kommune.name}
-                    name={kommune.name}
-                    weaponImg={kommune.logoUrl}
-                    county={kommune.county.name}
-                    rating={0}
-                  />
-                );
-              })
-            : null}
+          {data && data.kommuner ? (
+            data.kommuner.map((kommune: any) => {
+              return (
+                <KommuneCard
+                  key={kommune.name}
+                  name={kommune.name}
+                  weaponImg={kommune.logoUrl}
+                  county={kommune.county.name}
+                  rating={kommune.averageRating}
+                />
+              );
+            })
+          ) : (
+            <div>Kommuner not found</div>
+          )}
         </SimpleGrid>
       </div>
     </div>

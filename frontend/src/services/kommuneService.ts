@@ -29,12 +29,14 @@ export const GET_ALL_KOMMUNER = gql`
     $sortBy: sort
     $sortDirection: sortDirection
     $pageSize: Int
+    $county: String
   ) {
     kommuner(
       search: $search
       sortBy: $sortBy
       sortDirection: $sortDirection
       pageSize: $pageSize
+      county: $county
     ) {
       name
       county {
@@ -45,6 +47,7 @@ export const GET_ALL_KOMMUNER = gql`
       kommuneRating {
         rating
       }
+      averageRating
     }
   }
 `;
