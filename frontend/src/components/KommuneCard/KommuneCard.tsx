@@ -50,7 +50,7 @@ export default function KommuneCard({
             iconsCount={1}
             readonly
             initialValue={1}></Rating>
-          <p className='averageRating'>({rating})</p>
+          <p className='kommuneCardAverageRating'>({rating})</p>
         </div>
       </Group>
     </Card>
