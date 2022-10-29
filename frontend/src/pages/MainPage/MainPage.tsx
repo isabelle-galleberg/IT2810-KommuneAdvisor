@@ -97,22 +97,20 @@ export default function MainPage() {
             { minWidth: 1200, cols: 4 },
           ]}>
           {loading && <LoadingSpinner />}
-          {/* Replace type any! Replace rating with value from backend */}
-          {data && data.kommuner ? (
-            data.kommuner.map((kommune: any) => {
-              return (
-                <KommuneCard
-                  key={kommune.name + kommune.county.name}
-                  name={kommune.name}
-                  weaponImg={kommune.logoUrl}
-                  county={kommune.county.name}
-                  rating={kommune.averageRating}
-                />
-              );
-            })
-          ) : (
-            <div>Kommuner not found</div>
-          )}
+          {/* Replace type any! */}
+          {data && data.kommuner
+            ? data.kommuner.map((kommune: any) => {
+                return (
+                  <KommuneCard
+                    key={kommune.name + kommune.county.name}
+                    name={kommune.name}
+                    weaponImg={kommune.logoUrl}
+                    county={kommune.county.name}
+                    rating={kommune.averageRating}
+                  />
+                );
+              })
+            : null}
         </SimpleGrid>
       </div>
     </div>
