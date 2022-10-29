@@ -28,7 +28,7 @@ export default function DetailsPage() {
       <KommuneDetails />
       <div className='reviews'>
         <AddReview onCreate={addReview} />
-        {reviews?.map((review: Review) => {
+        {reviews?.slice(0).reverse().map((review: Review) => {
           return (
             <ReviewCard
               key={review._id}
