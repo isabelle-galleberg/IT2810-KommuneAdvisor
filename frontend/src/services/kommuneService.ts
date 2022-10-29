@@ -19,6 +19,7 @@ export const GET_KOMMUNE = gql`
         description
         timestamp
       }
+      averageRating
     }
   }
 `;
