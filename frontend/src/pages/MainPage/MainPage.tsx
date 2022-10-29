@@ -102,7 +102,7 @@ export default function MainPage() {
             data.kommuner.map((kommune: any) => {
               return (
                 <KommuneCard
-                  key={kommune.name}
+                  key={kommune.name + kommune.county.name}
                   name={kommune.name}
                   weaponImg={kommune.logoUrl}
                   county={kommune.county.name}
