@@ -13,8 +13,8 @@
   flex-direction: row;
   align-items: center;
   position: absolute;
-  right: 16px;
-  top: 22px;
+  top: 7px;
+  right: 7px;
 }
 
 .averageRating {
