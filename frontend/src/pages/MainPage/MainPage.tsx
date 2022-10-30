@@ -1,96 +1,93 @@
 import './MainPage.css';
 import KommuneCard from '../../components/KommuneCard/KommuneCard';
-import { SimpleGrid } from '@mantine/core';
+import { SimpleGrid, TextInput } from '@mantine/core';
 import InputFields from '../../components/InputFields/InputFields';
-import { useState } from 'react';
-import Search from '../../components/Search/Search';
-
-const kommuner = [
-  {
-    id: 1,
-    kommune: 'Lier',
-    county: 'Viken',
-    weapon: require('../../assets/lier.svg.png'),
-    rating: 3,
-  },
-  {
-    id: 2,
-    kommune: 'Berlevåg',
-    county: 'Troms og Finnmark',
-    weapon: require('../../assets/berlevag.svg.png'),
-    rating: 3,
-  },
-  {
-    id: 3,
-    kommune: 'Vardø',
-    county: 'Troms og Finnmark',
-    weapon: require('../../assets/sande.svg.png'),
-    rating: 3,
-  },
-  {
-    id: 4,
-    kommune: 'Sande',
-    county: 'Møre og Romsdal',
-    weapon: require('../../assets/vardo.svg.png'),
-    rating: 3,
-  },
-  {
-    id: 5,
-    kommune: 'Lier',
-    county: 'Viken',
-    weapon: require('../../assets/lier.svg.png'),
-    rating: 3,
-  },
-  {
-    id: 6,
-    kommune: 'Berlevåg',
-    county: 'Troms og Finnmark',
-    weapon: require('../../assets/berlevag.svg.png'),
-    rating: 3,
-  },
-  {
-    id: 7,
-    kommune: 'Vardø',
-    county: 'Troms og Finnmark',
-    weapon: require('../../assets/sande.svg.png'),
-    rating: 3,
-  },
-  {
-    id: 8,
-    kommune: 'Sande',
-    county: 'Møre og Romsdal',
-    weapon: require('../../assets/vardo.svg.png'),
-    rating: 3,
-  },
-];
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { useQuery } from '@apollo/client';
+import { GET_ALL_KOMMUNER } from '../../services/kommuneService';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
+import { useEffect, useState } from 'react';
+import { updateKommune } from '../../redux/kommuneReducer';
+import { IconSearch } from '@tabler/icons';
 
 export default function MainPage() {
-  const [search, setSearch] = useState<string>('');
-  const [countys, setCountys] = useState<string[]>([]);
-  const [sort, setSort] = useState<string>('');
-  const [parameters, setParameters] = useState<{
-    county: string;
-    sort: string;
-  }>({
-    county: '',
-    sort: '',
+  // globals states from Redux
+  const searchInput = useAppSelector((state) => state.kommuneInput.kommune);
+  const county = useAppSelector((state) => state.countyInput.county);
+  const filter = useAppSelector((state) => state.filterInput.filter);
+
+  // sorting values for GraphQL query
+  const [sortBy, setSortBy] = useState('name');
+  const [sortDirection, setSortDirection] = useState('ascending');
+
+  // create separate function for filtering
+  useEffect(() => {
+    switch (filter) {
+      case 'Befolkning høy-lav':
+        setSortBy('population');
+        setSortDirection('descending');
+        break;
+      case 'Befolkning lav-høy':
+        setSortBy('population');
+        setSortDirection('ascending');
+        break;
+      case 'Areal høy-lav':
+        setSortBy('area');
+        setSortDirection('descending');
+        break;
+      case 'Areal lav-høy':
+        setSortBy('area');
+        setSortDirection('ascending');
+        break;
+      case 'Rangering høy-lav':
+        setSortBy('rating');
+        setSortDirection('descending');
+        break;
+      case 'Rangering lav-høy':
+        setSortBy('rating');
+        setSortDirection('ascending');
+        break;
+      default:
+        setSortBy('name');
+        setSortDirection('ascending');
+    }
+  }, [filter]);
+
+  const { loading, error, data } = useQuery(GET_ALL_KOMMUNER, {
+    variables: {
+      search: searchInput,
+      sortBy: sortBy,
+      sortDirection: sortDirection,
+      pageSize: 20,
+      county: county,
+    },
   });
 
-  console.log(parameters);
-  console.log(search);
+  const dispatch = useAppDispatch();
+
+  const changeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(updateKommune(e.target.value));
+  };
+
+  if (error) console.log(error);
 
   return (
     <div className='mainPage'>
-      <Search
-        setSearch={setSearch}
-        search={search}></Search>
-      <InputFields
-        parameters={parameters}
-        setParameters={setParameters}
-        countys={countys}
-        setCountys={setCountys}
-        setSort={setSort}
-        sort={sort}></InputFields>
+      <div className='searchField'>
+        <TextInput
+          label='Søk etter en kommune'
+          value={searchInput}
+          onChange={changeSearch}
+          rightSection={
+            <IconSearch
+              size={18}
+              stroke={1.5}
+              color='#f3f9fc'
+            />
+          }
+        />
+      </div>
+      <InputFields />
       <div className='cards'>
         <SimpleGrid
           breakpoints={[
@@ -99,17 +96,22 @@ export default function MainPage() {
             { minWidth: 900, cols: 3 },
             { minWidth: 1200, cols: 4 },
           ]}>
-          {kommuner.map((kommune) => {
-            return (
-              <KommuneCard
-                key={kommune.id}
-                name={kommune.kommune}
-                county={kommune.county}
-                weaponImg={kommune.weapon}
-                rating={kommune.rating}
-              />
-            );
-          })}
+          {loading && <LoadingSpinner />}
+          {/* Replace type any! */}
+          {data && data.kommuner
+            ? data.kommuner.map((kommune: any) => {
+                return (
+                  <KommuneCard
+                    key={kommune._id}
+                    id={kommune._id}
+                    name={kommune.name}
+                    weaponImg={kommune.logoUrl}
+                    county={kommune.county.name}
+                    rating={kommune.averageRating}
+                  />
+                );
+              })
+            : null}
         </SimpleGrid>
       </div>
     </div>

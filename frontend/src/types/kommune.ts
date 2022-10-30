@@ -1,10 +1,13 @@
+import { Rating } from './rating';
+
 export interface Kommune {
+  _id: string;
   name: string;
-  weaponImg: string;
-  rating: number;
+  population: number;
+  areaInSquareKm: number;
+  mapUrl: string;
+  logoUrl: string;
+  writtenLanguage: string;
   county: string;
-  population: string;
-  area: string;
-  language: string;
-  mapImg: string;
+  kommuneRating: Rating[];
 }
