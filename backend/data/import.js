@@ -33,7 +33,7 @@ connectDB().then(async () => {
       for (const _kommune of kommuner) {
         try {
           const newKommune = new kommune({
-            kommuneNumber: _kommune.kommuneNumber,
+            _id: _kommune._id,
             name: _kommune.name,
             population: _kommune.population,
             areaInSquareKm: _kommune.areaInSquareKm,
@@ -41,6 +41,7 @@ connectDB().then(async () => {
             populationByArea: _kommune.populationByArea,
             mapUrl: _kommune.mapUrl,
             logoUrl: _kommune.logoUrl,
+            snlLink: _kommune.snlLink,
             writtenLanguage: _kommune.writtenLanguage,
             kommuneRating: _kommune.kommuneRating,
             county: _kommune.county,
@@ -53,11 +54,5 @@ connectDB().then(async () => {
     };
     importData();
     console.log('Data imported');
-    kommune
-      .findOne({})
-      .populate('county')
-      .then((kommune) => {
-        console.log(kommune);
-      });
   });
 });
