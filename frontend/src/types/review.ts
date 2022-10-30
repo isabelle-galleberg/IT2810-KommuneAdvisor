@@ -1,7 +1,8 @@
 export interface Review {
+  _id?: string;
   title: string;
   description: string;
   rating: number;
   name: string;
-  date?: string;
+  timestamp?: string;
 }

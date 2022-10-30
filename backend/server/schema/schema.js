@@ -4,8 +4,8 @@ const {
   GraphQLInt,
   GraphQLString,
   GraphQLList,
-  GraphQLEnumType,
   GraphQLSchema,
+  GraphQLEnumType,
   GraphQLFloat,
   GraphQLNonNull,
 } = require('graphql');
