@@ -20,7 +20,7 @@ export default function DetailsPage() {
   }, [dataReviews])
 
   function addReview(review: any) {
-    setReviews([review, ...reviews])
+    setReviews([...reviews, review])
   }
 
   return (
