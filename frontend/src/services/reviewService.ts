@@ -22,8 +22,8 @@ export const POST_REVIEW = gql`
 `;
 
 export const GET_REVIEWS = gql`
-  query Kommune($kommuneName: String!){
-    kommune(kommuneName: $kommuneName) {
+  query Kommune($id: String){
+    kommune(id: $id) {
       kommuneRating {
           name
           rating

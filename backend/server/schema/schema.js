@@ -10,8 +10,6 @@ const {
   GraphQLNonNull,
 } = require('graphql');
 
-const { ObjectId } = require('mongodb');
-
 const kommuner = require('../models/kommune');
 const kommuneRating = require('../models/kommuneRating');
 const county = require('../models/county');
@@ -19,13 +17,13 @@ const KommuneType = new GraphQLObjectType({
   name: 'Kommune',
   fields: () => ({
     _id: { type: GraphQLID },
-    kommuneNumber: { type: GraphQLString },
     name: { type: GraphQLString },
     population: { type: GraphQLInt },
     areaInSquareKm: { type: GraphQLFloat },
     landAreaInSquareKm: { type: GraphQLFloat },
     populationByArea: { type: GraphQLFloat },
     mapUrl: { type: GraphQLString },
+    snlLink: { type: GraphQLString },
     logoUrl: { type: GraphQLString },
     writtenLanguage: { type: GraphQLString },
     averageRating: { type: GraphQLFloat },
@@ -118,9 +116,9 @@ const RootQuery = new GraphQLObjectType({
     },
     kommune: {
       type: KommuneType,
-      args: { kommuneName: { type: GraphQLString } },
+      args: { id: { type: GraphQLString } },
       resolve(parent, args) {
-        return kommuner.findOne({ name: args.kommuneName.replace('_', ' ') });
+        return kommuner.findOne({ _id: args.id });
       },
     },
     counties: {
@@ -161,7 +159,7 @@ const RootMutation = new GraphQLObjectType({
           rating,
           title,
           description,
-          kommune: new ObjectId(kommuneId),
+          kommune: kommuneId,
           timestamp: new Date(),
         });
         return newKommuneRating.save();

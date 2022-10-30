@@ -5,6 +5,7 @@ import { Rating } from 'react-simple-star-rating';
 import './KommuneCard.css';
 
 export default function KommuneCard({
+  id,
   name,
   county,
   weaponImg,
@@ -16,7 +17,7 @@ export default function KommuneCard({
       className='kommuneCard'>
       <Group
         noWrap
-        spacing={20}>
+        spacing={15}>
         <Image
           src={weaponImg}
           className='weaponImg'
@@ -34,7 +35,7 @@ export default function KommuneCard({
             color='dimmed'>
             📍{county}
           </Text>
-          <Link to={`kommune/${name.replace(' ', '_')}`}>
+          <Link to={`kommune/${id}`}>
             <Button
               variant='light'
               color='blue'
@@ -50,7 +51,7 @@ export default function KommuneCard({
             iconsCount={1}
             readonly
             initialValue={1}></Rating>
-          <p className='averageRating'>({rating})</p>
+          <p className='kommuneCardAverageRating'>({rating})</p>
         </div>
       </Group>
     </Card>

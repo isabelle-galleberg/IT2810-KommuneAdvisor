@@ -7,10 +7,10 @@ import './KommuneDetails.css';
 
 export default function KommuneDetails() {
   // url param kommune/:name
-  const { kommuneSlug } = useParams();
+  const { id } = useParams();
 
   const { loading, error, data } = useQuery(GET_KOMMUNE, {
-    variables: { kommuneName: kommuneSlug },
+    variables: { id: id },
   });
 
   if (loading) return <LoadingSpinner />;
@@ -37,11 +37,16 @@ export default function KommuneDetails() {
           <div className='line'></div>
           <div className='kommuneDetails'>
             <div>
-              <Rating
-                initialValue={3}
-                readonly
-                size={30}
-              />
+              <div className='rating'>
+                <Rating
+                  initialValue={data.kommune.averageRating}
+                  readonly
+                  size={30}
+                />
+                <div className='averageRating'>
+                  ({data.kommune.averageRating})
+                </div>
+              </div>
               <p>📍 {data.kommune.county.name}</p>
               <p>👨‍👩‍👧‍👧 {data.kommune.population}</p>
               <p>
@@ -52,10 +57,10 @@ export default function KommuneDetails() {
               <p>
                 Les mer her:{' '}
                 <a
-                  href={`https://snl.no/${kommuneSlug}`}
+                  href={data.kommune.snlLink}
                   target='_blank'
                   rel='noreferrer'>
-                  {kommuneSlug}
+                  {data.kommune.name}
                 </a>
               </p>
             </div>

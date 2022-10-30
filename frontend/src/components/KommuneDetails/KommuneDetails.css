@@ -29,6 +29,17 @@
   cursor: pointer;
 }
 
+.rating {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.averageRating {
+  color: rgb(58, 54, 54);
+  margin-top: 5px;
+}
+
 .weaponImg {
   width: 50px;
 }

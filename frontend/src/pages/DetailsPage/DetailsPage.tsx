@@ -7,17 +7,20 @@ import { GET_REVIEWS } from '../../services/reviewService';
 import { Review } from '../../types/review';
 import { useEffect, useState } from 'react';
 import './DetailsPage.css';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 export default function DetailsPage() {
-  const { kommuneSlug } = useParams();
-  const { loading: loadingReviews, error: errorReviews, data: dataReviews } = useQuery(GET_REVIEWS, {
-    variables: { kommuneName: kommuneSlug },
+  const { id } = useParams();
+  const { loading, error, data } = useQuery(GET_REVIEWS, {
+    variables: { id: id },
   });
   const [reviews, setReviews] = useState([] as Review[])
 
+  if (error) console.log(error);
+
   useEffect(() => {
-    setReviews(dataReviews?.kommune.kommuneRating);
-  }, [dataReviews])
+    setReviews(data?.kommune.kommuneRating);
+  }, [data])
 
   function addReview(review: any) {
     setReviews([...reviews, review])

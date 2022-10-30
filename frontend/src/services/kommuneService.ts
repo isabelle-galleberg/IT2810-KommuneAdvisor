@@ -1,9 +1,11 @@
 import { gql } from '@apollo/client/core';
 
 export const GET_KOMMUNE = gql`
-  query Kommune($kommuneName: String) {
-    kommune(kommuneName: $kommuneName) {
+  query Kommune($id: String) {
+    kommune(id: $id) {
+      _id
       name
+      snlLink
       county {
         name
       }
@@ -19,23 +21,27 @@ export const GET_KOMMUNE = gql`
         description
         timestamp
       }
+      averageRating
     }
   }
 `;
 
 export const GET_ALL_KOMMUNER = gql`
   query Kommuner(
+    $search: String
     $sortBy: sort
     $sortDirection: sortDirection
     $pageSize: Int
     $county: String
   ) {
     kommuner(
+      search: $search
       sortBy: $sortBy
       sortDirection: $sortDirection
       pageSize: $pageSize
       county: $county
     ) {
+      _id
       name
       county {
         name
@@ -46,14 +52,6 @@ export const GET_ALL_KOMMUNER = gql`
         rating
       }
       averageRating
-    }
-  }
-`;
-
-export const GET_KOMMUNE_ID = gql`
-  query Kommune($kommuneName: String!){
-    kommune(kommuneName: $kommuneName) {
-      _id
     }
   }
 `;

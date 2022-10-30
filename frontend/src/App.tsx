@@ -23,7 +23,7 @@ function App() {
           </Routes>
           <Routes>
             <Route
-              path='kommune/:kommuneSlug'
+              path='kommune/:id'
               element={<DetailsPage />}
             />
           </Routes>

@@ -3,20 +3,17 @@ import { Modal, Button, Group, Textarea, TextInput } from '@mantine/core';
 import { Rating } from 'react-simple-star-rating';
 import { Review } from '../../types/review';
 import { POST_REVIEW } from '../../services/reviewService';
-import { useMutation, useQuery } from '@apollo/client';
-import { GET_KOMMUNE_ID } from '../../services/kommuneService';
+import { useMutation } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import { AddReviewProps } from '../../types/propTypes';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import './AddReview.css';
 
 export default function AddReview({
   onCreate
 }: AddReviewProps) {
-  const { kommuneSlug } = useParams();
-  const { loading: loadingKommuneId, error: errorKommuneId, data: dataKommuneId } = useQuery(GET_KOMMUNE_ID, {
-    variables: { kommuneName: kommuneSlug },
-  });
-  const [postReview, { data: dataPostReview, loading: loadingPostReview, error: errorPostReview }] = useMutation(POST_REVIEW);
+  const { id } = useParams();
+  const [postReview, { loading, error }] = useMutation(POST_REVIEW);
   const [opened, setOpened] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
   const [ratingDescription, setRatingDescription] = useState<string>('');
@@ -26,6 +23,9 @@ export default function AddReview({
     title: '',
     description: '',
   });
+
+  if (loading) return <LoadingSpinner />;
+  if (error) console.log(error);
 
   function openModal() {
     // resets values
@@ -49,7 +49,7 @@ export default function AddReview({
           rating: review.rating,
           title: review.title,
           description: review.description,
-          kommuneId: dataKommuneId.kommune._id
+          kommuneId: id
         }
       });
       review._id = response.data.addKommuneRating._id;
