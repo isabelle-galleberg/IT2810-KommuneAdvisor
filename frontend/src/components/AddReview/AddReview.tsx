@@ -1,10 +1,19 @@
 import { useState } from 'react';
 import { Modal, Button, Group, Textarea, TextInput } from '@mantine/core';
-import './AddReview.css';
 import { Rating } from 'react-simple-star-rating';
 import { Review } from '../../types/review';
+import { POST_REVIEW } from '../../services/reviewService';
+import { useMutation } from '@apollo/client';
+import { useParams } from 'react-router-dom';
+import { AddReviewProps } from '../../types/propTypes';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
+import './AddReview.css';
 
-export default function AddReview() {
+export default function AddReview({
+  onCreate
+}: AddReviewProps) {
+  const { id } = useParams();
+  const [postReview, { loading, error }] = useMutation(POST_REVIEW);
   const [opened, setOpened] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
   const [ratingDescription, setRatingDescription] = useState<string>('');
@@ -15,13 +24,17 @@ export default function AddReview() {
     description: '',
   });
 
+  if (loading) return <LoadingSpinner />;
+  if (error) console.log(error);
+
   function openModal() {
     // resets values
     setReview({ rating: 0, name: '', title: '', description: '' });
+    handleRating(0);
     setOpened(true);
   }
 
-  function addReview() {
+  async function addReview() {
     if (
       review.rating === 0 ||
       review.name === '' ||
@@ -30,9 +43,19 @@ export default function AddReview() {
     ) {
       setErrorMessage(true);
     } else {
-      console.log(review);
+      const response = await postReview({
+        variables: {
+          name: review.name,
+          rating: review.rating,
+          title: review.title,
+          description: review.description,
+          kommuneId: id
+        }
+      });
+      review._id = response.data.addKommuneRating._id;
+      review.timestamp = response.data.addKommuneRating.timestamp;
+      onCreate(review);
       setOpened(false);
-      handleRating(0);
     }
   }
 
@@ -58,7 +81,6 @@ export default function AddReview() {
     setErrorMessage(false);
     setReview({ ...review, description: description });
   }
-
   function updateRatingDescription(rating: number) {
     setErrorMessage(false);
     if (rating == 1) setRatingDescription('Forferdelig');
