@@ -32,7 +32,7 @@ export default function KommuneDetails() {
               src={data.kommune.logoUrl}
               className='weaponImg'
             />
-            <h1>{data.kommune.name}</h1>
+            <h1 data-cy='kommune-name'>{data.kommune.name}</h1>
           </div>
           <div className='line'></div>
           <div className='kommuneDetails'>

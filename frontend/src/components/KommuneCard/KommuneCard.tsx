@@ -14,16 +14,19 @@ export default function KommuneCard({
   return (
     <Card
       withBorder
+      data-cy='kommune-card'
       className='kommuneCard'>
       <Group
         noWrap
         spacing={15}>
         <Image
+          data-cy='kommune-logo'
           src={weaponImg}
           className='weaponImg'
         />
         <div>
           <Text
+            data-cy='kommune-name'
             mt='xs'
             mb='xs'
             weight='700'
@@ -31,11 +34,14 @@ export default function KommuneCard({
             {name}
           </Text>
           <Text
+            data-cy='kommune-county'
             size='sm'
             color='dimmed'>
             📍{county}
           </Text>
-          <Link to={`kommune/${id}`}>
+          <Link
+            data-cy='btn-show-details'
+            to={`kommune/${id}`}>
             <Button
               variant='light'
               color='blue'
@@ -51,7 +57,11 @@ export default function KommuneCard({
             iconsCount={1}
             readonly
             initialValue={1}></Rating>
-          <p className='kommuneCardAverageRating'>({rating})</p>
+          <p
+            data-cy='kommune-rating'
+            className='kommuneCardAverageRating'>
+            ({rating})
+          </p>
         </div>
       </Group>
     </Card>
