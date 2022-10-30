@@ -9,6 +9,8 @@ import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { useEffect, useState } from 'react';
 import { updateKommune } from '../../redux/kommuneReducer';
 import { IconSearch } from '@tabler/icons';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import { any } from 'prop-types';
 
 export default function MainPage() {
   // globals states from Redux
@@ -19,6 +21,11 @@ export default function MainPage() {
   // sorting values for GraphQL query
   const [sortBy, setSortBy] = useState('name');
   const [sortDirection, setSortDirection] = useState('ascending');
+
+  const [loadedData, setLoadedData] = useState([]);
+  const [pageCounter, setPageCounter] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   // create separate function for filtering
   useEffect(() => {
@@ -51,17 +58,26 @@ export default function MainPage() {
         setSortBy('name');
         setSortDirection('ascending');
     }
+    fetchMoreData();
   }, [filter]);
 
-  const { loading, error, data } = useQuery(GET_ALL_KOMMUNER, {
-    variables: {
-      search: searchInput,
-      sortBy: sortBy,
-      sortDirection: sortDirection,
-      pageSize: 20,
-      county: county,
-    },
-  });
+  const fetchMoreData = () => {
+    setTimeout(() => {
+      const { loading, error, data } = useQuery(GET_ALL_KOMMUNER, {
+        variables: {
+          search: searchInput,
+          sortBy: sortBy,
+          sortDirection: sortDirection,
+          pageSize: 20,
+          county: county,
+          page: pageCounter,
+        },
+      });
+      setLoading(loading);  
+      setLoadedData(loadedData.concat(data.kommuner));
+      setPageCounter(pageCounter + 1);
+    }, 1500);
+  };
 
   const dispatch = useAppDispatch();
 
@@ -71,6 +87,8 @@ export default function MainPage() {
 
   if (error) console.log(error);
 
+  console.log(loadedData);
+
   return (
     <div className='mainPage'>
       <div className='searchField'>
@@ -78,7 +96,7 @@ export default function MainPage() {
           label='Søk etter en kommune'
           value={searchInput}
           onChange={changeSearch}
-          rightSection={
+          rightSection={  
             <IconSearch
               size={18}
               stroke={1.5}
@@ -98,20 +116,26 @@ export default function MainPage() {
           ]}>
           {loading && <LoadingSpinner />}
           {/* Replace type any! */}
-          {data && data.kommuner
-            ? data.kommuner.map((kommune: any) => {
-                return (
-                  <KommuneCard
-                    key={kommune._id}
-                    id={kommune._id}
-                    name={kommune.name}
-                    weaponImg={kommune.logoUrl}
-                    county={kommune.county.name}
-                    rating={kommune.averageRating}
-                  />
-                );
-              })
-            : null}
+          <InfiniteScroll
+            dataLength={loadedData?.length}
+            next={fetchMoreData}
+            hasMore={loadedData?.length < 356}
+            loader={<LoadingSpinner />}>
+            {loadedData && loadedData
+              ? loadedData.map((kommune: any) => {
+                  return (
+                    <KommuneCard
+                      key={kommune._id}
+                      id={kommune._id}
+                      name={kommune.name}
+                      weaponImg={kommune.logoUrl}
+                      county={kommune.county.name}
+                      rating={kommune.averageRating}
+                    />
+                  );
+                })
+              : null}
+          </InfiniteScroll>
         </SimpleGrid>
       </div>
     </div>
