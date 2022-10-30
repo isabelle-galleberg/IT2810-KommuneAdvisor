@@ -1,8 +1,9 @@
 [
   {
-    "kommuneNumber": "3001",
-    "county": 30,
+    "_id": "3001",
+    "county": "30",
     "name": "Halden",
+    "snlLink": "https://snl.no/Halden",
     "population": 31444,
     "areaInSquareKm": 642,
     "landAreaInSquareKm": 595,
@@ -12,9 +13,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3002",
-    "county": 30,
+    "_id": "3002",
+    "county": "30",
     "name": "Moss",
+    "snlLink": "https://snl.no/Moss",
     "population": 50290,
     "areaInSquareKm": 138,
     "landAreaInSquareKm": 128,
@@ -24,9 +26,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3003",
-    "county": 30,
+    "_id": "3003",
+    "county": "30",
     "name": "Sarpsborg",
+    "snlLink": "https://snl.no/Sarpsborg",
     "population": 58182,
     "areaInSquareKm": 406,
     "landAreaInSquareKm": 370,
@@ -36,9 +39,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3004",
-    "county": 30,
+    "_id": "3004",
+    "county": "30",
     "name": "Fredrikstad",
+    "snlLink": "https://snl.no/Fredrikstad",
     "population": 83892,
     "areaInSquareKm": 293,
     "landAreaInSquareKm": 284,
@@ -48,9 +52,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3005",
-    "county": 30,
+    "_id": "3005",
+    "county": "30",
     "name": "Drammen",
+    "snlLink": "https://snl.no/Drammen",
     "population": 102273,
     "areaInSquareKm": 318,
     "landAreaInSquareKm": 305,
@@ -60,9 +65,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3006",
-    "county": 30,
+    "_id": "3006",
+    "county": "30",
     "name": "Kongsberg",
+    "snlLink": "https://snl.no/Kongsberg",
     "population": 27879,
     "areaInSquareKm": 793,
     "landAreaInSquareKm": 754,
@@ -72,9 +78,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3007",
-    "county": 30,
+    "_id": "3007",
+    "county": "30",
     "name": "Ringerike",
+    "snlLink": "https://snl.no/Ringerike",
     "population": 31011,
     "areaInSquareKm": 1555,
     "landAreaInSquareKm": 1422,
@@ -84,9 +91,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3011",
-    "county": 30,
+    "_id": "3011",
+    "county": "30",
     "name": "Hvaler",
+    "snlLink": "https://snl.no/Hvaler",
     "population": 4741,
     "areaInSquareKm": 90,
     "landAreaInSquareKm": 90,
@@ -96,9 +104,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3012",
-    "county": 30,
+    "_id": "3012",
+    "county": "30",
     "name": "Aremark",
+    "snlLink": "https://snl.no/Aremark",
     "population": 1315,
     "areaInSquareKm": 319,
     "landAreaInSquareKm": 282,
@@ -108,9 +117,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3013",
-    "county": 30,
+    "_id": "3013",
+    "county": "30",
     "name": "Marker",
+    "snlLink": "https://snl.no/Marker",
     "population": 3596,
     "landAreaInSquareKm": 368,
     "areaInSquareKm": 413,
@@ -120,9 +130,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3014",
-    "county": 30,
+    "_id": "3014",
+    "county": "30",
     "name": "Indre Østfold",
+    "snlLink": "https://snl.no/Indre_Østfold",
     "population": 45608,
     "areaInSquareKm": 792,
     "landAreaInSquareKm": 755,
@@ -132,9 +143,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3015",
-    "county": 30,
+    "_id": "3015",
+    "county": "30",
     "name": "Skiptvet",
+    "snlLink": "https://snl.no/Skiptvet",
     "population": 3846,
     "areaInSquareKm": 101,
     "landAreaInSquareKm": 93,
@@ -144,9 +156,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3016",
-    "county": 30,
+    "_id": "3016",
+    "county": "30",
     "name": "Rakkestad",
+    "snlLink": "https://snl.no/Rakkestad",
     "population": 8312,
     "areaInSquareKm": 435,
     "landAreaInSquareKm": 421,
@@ -156,9 +169,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3017",
-    "county": 30,
+    "_id": "3017",
+    "county": "30",
     "name": "Råde",
+    "snlLink": "https://snl.no/Råde",
     "population": 7633,
     "areaInSquareKm": 119,
     "landAreaInSquareKm": 105,
@@ -168,9 +182,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3018",
-    "county": 30,
+    "_id": "3018",
+    "county": "30",
     "name": "Våler",
+    "snlLink": "https://snl.no/Våler",
     "population": 5913,
     "areaInSquareKm": 257,
     "landAreaInSquareKm": 239,
@@ -180,9 +195,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3019",
-    "county": 30,
+    "_id": "3019",
+    "county": "30",
     "name": "Vestby",
+    "snlLink": "https://snl.no/Vestby",
     "population": 18699,
     "areaInSquareKm": 134,
     "landAreaInSquareKm": 134,
@@ -192,9 +208,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3020",
-    "county": 30,
+    "_id": "3020",
+    "county": "30",
     "name": "Nordre Follo",
+    "snlLink": "https://snl.no/Nordre_Follo",
     "population": 61032,
     "areaInSquareKm": 203,
     "landAreaInSquareKm": 196,
@@ -204,9 +221,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3021",
-    "county": 30,
+    "_id": "3021",
+    "county": "30",
     "name": "Ås",
+    "snlLink": "https://snl.no/Ås",
     "population": 20780,
     "areaInSquareKm": 103,
     "landAreaInSquareKm": 101,
@@ -216,9 +234,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3022",
-    "county": 30,
+    "_id": "3022",
+    "county": "30",
     "name": "Frogn",
+    "snlLink": "https://snl.no/Frogn",
     "population": 16084,
     "areaInSquareKm": 86,
     "landAreaInSquareKm": 85,
@@ -228,9 +247,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3023",
-    "county": 30,
+    "_id": "3023",
+    "county": "30",
     "name": "Nesodden",
+    "snlLink": "https://snl.no/Nesodden",
     "population": 19939,
     "areaInSquareKm": 61,
     "landAreaInSquareKm": 61,
@@ -240,9 +260,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3024",
-    "county": 30,
+    "_id": "3024",
+    "county": "30",
     "name": "Bærum",
+    "snlLink": "https://snl.no/Bærum",
     "population": 128982,
     "areaInSquareKm": 192,
     "landAreaInSquareKm": 189,
@@ -252,9 +273,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3025",
-    "county": 30,
+    "_id": "3025",
+    "county": "30",
     "name": "Asker",
+    "snlLink": "https://snl.no/Asker",
     "population": 96088,
     "areaInSquareKm": 377,
     "landAreaInSquareKm": 364,
@@ -264,9 +286,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3026",
-    "county": 30,
+    "_id": "3026",
+    "county": "30",
     "name": "Aurskog-Høland",
+    "snlLink": "https://snl.no/Aurskog-Høland",
     "population": 17754,
     "areaInSquareKm": 1145,
     "landAreaInSquareKm": 1053,
@@ -276,9 +299,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3027",
-    "county": 30,
+    "_id": "3027",
+    "county": "30",
     "name": "Rælingen",
+    "snlLink": "https://snl.no/Rælingen",
     "population": 19024,
     "areaInSquareKm": 72,
     "landAreaInSquareKm": 56,
@@ -288,9 +312,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3028",
-    "county": 30,
+    "_id": "3028",
+    "county": "30",
     "name": "Enebakk",
+    "snlLink": "https://snl.no/Enebakk",
     "population": 11249,
     "areaInSquareKm": 233,
     "landAreaInSquareKm": 195,
@@ -300,9 +325,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3029",
-    "county": 30,
+    "_id": "3029",
+    "county": "30",
     "name": "Lørenskog",
+    "snlLink": "https://snl.no/Lørenskog",
     "population": 44693,
     "areaInSquareKm": 71,
     "landAreaInSquareKm": 67,
@@ -312,9 +338,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3030",
-    "county": 30,
+    "_id": "3030",
+    "county": "30",
     "name": "Lillestrøm",
+    "snlLink": "https://snl.no/Lillestrøm",
     "population": 89095,
     "areaInSquareKm": 457,
     "landAreaInSquareKm": 410,
@@ -324,9 +351,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3031",
-    "county": 30,
+    "_id": "3031",
+    "county": "30",
     "name": "Nittedal",
+    "snlLink": "https://snl.no/Nittedal",
     "population": 24947,
     "areaInSquareKm": 186,
     "landAreaInSquareKm": 179,
@@ -336,9 +364,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3032",
-    "county": 30,
+    "_id": "3032",
+    "county": "30",
     "name": "Gjerdrum",
+    "snlLink": "https://snl.no/Gjerdrum",
     "population": 6989,
     "areaInSquareKm": 83,
     "landAreaInSquareKm": 82,
@@ -348,9 +377,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3033",
-    "county": 30,
+    "_id": "3033",
+    "county": "30",
     "name": "Ullensaker",
+    "snlLink": "https://snl.no/Ullensaker",
     "population": 41565,
     "areaInSquareKm": 252,
     "landAreaInSquareKm": 250,
@@ -360,9 +390,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3034",
-    "county": 30,
+    "_id": "3034",
+    "county": "30",
     "name": "Nes",
+    "snlLink": "https://snl.no/Nes",
     "population": 23898,
     "areaInSquareKm": 641,
     "landAreaInSquareKm": 612,
@@ -372,9 +403,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3035",
-    "county": 30,
+    "_id": "3035",
+    "county": "30",
     "name": "Eidsvoll",
+    "snlLink": "https://snl.no/Eidsvoll",
     "population": 26716,
     "areaInSquareKm": 457,
     "landAreaInSquareKm": 386,
@@ -384,9 +416,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3036",
-    "county": 30,
+    "_id": "3036",
+    "county": "30",
     "name": "Nannestad",
+    "snlLink": "https://snl.no/Nannestad",
     "population": 15074,
     "areaInSquareKm": 341,
     "landAreaInSquareKm": 324,
@@ -396,9 +429,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3037",
-    "county": 30,
+    "_id": "3037",
+    "county": "30",
     "name": "Hurdal",
+    "snlLink": "https://snl.no/Hurdal",
     "population": 2905,
     "areaInSquareKm": 285,
     "landAreaInSquareKm": 261,
@@ -408,9 +442,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3038",
-    "county": 30,
+    "_id": "3038",
+    "county": "30",
     "name": "Hole",
+    "snlLink": "https://snl.no/Hole",
     "population": 6859,
     "areaInSquareKm": 193,
     "landAreaInSquareKm": 135,
@@ -420,9 +455,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3039",
-    "county": 30,
+    "_id": "3039",
+    "county": "30",
     "name": "Flå",
+    "snlLink": "https://snl.no/Flå",
     "population": 1057,
     "areaInSquareKm": 704,
     "landAreaInSquareKm": 671,
@@ -432,9 +468,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3040",
-    "county": 30,
+    "_id": "3040",
+    "county": "30",
     "name": "Nesbyen",
+    "snlLink": "https://snl.no/Nesbyen",
     "population": 3273,
     "areaInSquareKm": 810,
     "landAreaInSquareKm": 772,
@@ -444,9 +481,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3041",
-    "county": 30,
+    "_id": "3041",
+    "county": "30",
     "name": "Gol",
+    "snlLink": "https://snl.no/Gol",
     "population": 4667,
     "areaInSquareKm": 533,
     "landAreaInSquareKm": 514,
@@ -456,9 +494,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "3042",
-    "county": 30,
+    "_id": "3042",
+    "county": "30",
     "name": "Hemsedal",
+    "snlLink": "https://snl.no/Hemsedal",
     "population": 2611,
     "areaInSquareKm": 754,
     "landAreaInSquareKm": 712,
@@ -468,9 +507,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "3043",
-    "county": 30,
+    "_id": "3043",
+    "county": "30",
     "name": "Ål",
+    "snlLink": "https://snl.no/Ål",
     "population": 4650,
     "areaInSquareKm": 1175,
     "landAreaInSquareKm": 1081,
@@ -480,9 +520,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "3044",
-    "county": 30,
+    "_id": "3044",
+    "county": "30",
     "name": "Hol",
+    "snlLink": "https://snl.no/Hol",
     "population": 4504,
     "areaInSquareKm": 1855,
     "landAreaInSquareKm": 1653,
@@ -492,9 +533,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3045",
-    "county": 30,
+    "_id": "3045",
+    "county": "30",
     "name": "Sigdal",
+    "snlLink": "https://snl.no/Sigdal",
     "population": 3492,
     "areaInSquareKm": 842,
     "landAreaInSquareKm": 811,
@@ -504,9 +546,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3046",
-    "county": 30,
+    "_id": "3046",
+    "county": "30",
     "name": "Krødsherad",
+    "snlLink": "https://snl.no/Krødsherad",
     "population": 2189,
     "areaInSquareKm": 374,
     "landAreaInSquareKm": 340,
@@ -516,9 +559,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3047",
-    "county": 30,
+    "_id": "3047",
+    "county": "30",
     "name": "Modum",
+    "snlLink": "https://snl.no/Modum",
     "population": 14273,
     "areaInSquareKm": 517,
     "landAreaInSquareKm": 463,
@@ -528,9 +572,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3048",
-    "county": 30,
+    "_id": "3048",
+    "county": "30",
     "name": "Øvre Eiker",
+    "snlLink": "https://snl.no/Øvre_Eiker",
     "population": 20044,
     "areaInSquareKm": 457,
     "landAreaInSquareKm": 418,
@@ -540,9 +585,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3049",
-    "county": 30,
+    "_id": "3049",
+    "county": "30",
     "name": "Lier",
+    "snlLink": "https://snl.no/Lier",
     "population": 27584,
     "areaInSquareKm": 302,
     "landAreaInSquareKm": 282,
@@ -552,9 +598,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3050",
-    "county": 30,
+    "_id": "3050",
+    "county": "30",
     "name": "Flesberg",
+    "snlLink": "https://snl.no/Flesberg",
     "population": 2720,
     "areaInSquareKm": 562,
     "landAreaInSquareKm": 538,
@@ -564,9 +611,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3051",
-    "county": 30,
+    "_id": "3051",
+    "county": "30",
     "name": "Rollag",
+    "snlLink": "https://snl.no/Rollag",
     "population": 1370,
     "areaInSquareKm": 449,
     "landAreaInSquareKm": 430,
@@ -576,9 +624,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3052",
-    "county": 30,
+    "_id": "3052",
+    "county": "30",
     "name": "Nore og Uvdal",
+    "snlLink": "https://snl.no/Nore_og_Uvdal",
     "population": 2455,
     "areaInSquareKm": 2502,
     "landAreaInSquareKm": 2266,
@@ -588,9 +637,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3053",
-    "county": 30,
+    "_id": "3053",
+    "county": "30",
     "name": "Jevnaker",
+    "snlLink": "https://snl.no/Jevnaker",
     "population": 6908,
     "areaInSquareKm": 226,
     "landAreaInSquareKm": 194,
@@ -600,9 +650,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3054",
-    "county": 30,
+    "_id": "3054",
+    "county": "30",
     "name": "Lunner",
+    "snlLink": "https://snl.no/Lunner",
     "population": 9144,
     "areaInSquareKm": 292,
     "landAreaInSquareKm": 272,
@@ -612,9 +663,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "0301",
-    "county": 3,
+    "_id": "0301",
+    "county": "3",
     "name": "Oslo kommune",
+    "snlLink": "https://snl.no/Oslo_kommune",
     "population": 699827,
     "areaInSquareKm": 454,
     "landAreaInSquareKm": 426,
@@ -624,9 +676,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3401",
-    "county": 34,
+    "_id": "3401",
+    "county": "34",
     "name": "Kongsvinger",
+    "snlLink": "https://snl.no/Kongsvinger",
     "population": 17949,
     "areaInSquareKm": 1036,
     "landAreaInSquareKm": 953,
@@ -636,9 +689,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3403",
-    "county": 34,
+    "_id": "3403",
+    "county": "34",
     "name": "Hamar",
+    "snlLink": "https://snl.no/Hamar",
     "population": 31999,
     "areaInSquareKm": 351,
     "landAreaInSquareKm": 338,
@@ -648,9 +702,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3405",
-    "county": 34,
+    "_id": "3405",
+    "county": "34",
     "name": "Lillehammer",
+    "snlLink": "https://snl.no/Lillehammer",
     "population": 28425,
     "areaInSquareKm": 478,
     "landAreaInSquareKm": 451,
@@ -660,9 +715,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3407",
-    "county": 34,
+    "_id": "3407",
+    "county": "34",
     "name": "Gjøvik",
+    "snlLink": "https://snl.no/Gjøvik",
     "population": 30267,
     "areaInSquareKm": 671,
     "landAreaInSquareKm": 629,
@@ -672,9 +728,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3411",
-    "county": 34,
+    "_id": "3411",
+    "county": "34",
     "name": "Ringsaker",
+    "snlLink": "https://snl.no/Ringsaker",
     "population": 35073,
     "areaInSquareKm": 1280,
     "landAreaInSquareKm": 1123,
@@ -684,9 +741,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3412",
-    "county": 34,
+    "_id": "3412",
+    "county": "34",
     "name": "Løten",
+    "snlLink": "https://snl.no/Løten",
     "population": 7715,
     "areaInSquareKm": 369,
     "landAreaInSquareKm": 362,
@@ -696,9 +754,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3413",
-    "county": 34,
+    "_id": "3413",
+    "county": "34",
     "name": "Stange",
+    "snlLink": "https://snl.no/Stange",
     "population": 21156,
     "areaInSquareKm": 724,
     "landAreaInSquareKm": 641,
@@ -708,9 +767,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3414",
-    "county": 34,
+    "_id": "3414",
+    "county": "34",
     "name": "Nord-Odal",
+    "snlLink": "https://snl.no/Nord-Odal",
     "population": 5016,
     "areaInSquareKm": 508,
     "landAreaInSquareKm": 475,
@@ -720,9 +780,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3415",
-    "county": 34,
+    "_id": "3415",
+    "county": "34",
     "name": "Sør-Odal",
+    "snlLink": "https://snl.no/Sør-Odal",
     "population": 7978,
     "areaInSquareKm": 517,
     "landAreaInSquareKm": 479,
@@ -732,9 +793,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3416",
-    "county": 34,
+    "_id": "3416",
+    "county": "34",
     "name": "Eidskog",
+    "snlLink": "https://snl.no/Eidskog",
     "population": 6032,
     "areaInSquareKm": 640,
     "landAreaInSquareKm": 603,
@@ -744,9 +806,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3417",
-    "county": 34,
+    "_id": "3417",
+    "county": "34",
     "name": "Grue",
+    "snlLink": "https://snl.no/Grue",
     "population": 4548,
     "areaInSquareKm": 837,
     "landAreaInSquareKm": 778,
@@ -756,9 +819,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3418",
-    "county": 34,
+    "_id": "3418",
+    "county": "34",
     "name": "Åsnes",
+    "snlLink": "https://snl.no/Åsnes",
     "population": 7211,
     "areaInSquareKm": 1041,
     "landAreaInSquareKm": 1004,
@@ -768,9 +832,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3419",
-    "county": 34,
+    "_id": "3419",
+    "county": "34",
     "name": "Våler",
+    "snlLink": "https://snl.no/Våler",
     "population": 3597,
     "areaInSquareKm": 705,
     "landAreaInSquareKm": 678,
@@ -780,9 +845,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3420",
-    "county": 34,
+    "_id": "3420",
+    "county": "34",
     "name": "Elverum",
+    "snlLink": "https://snl.no/Elverum",
     "population": 21435,
     "areaInSquareKm": 1229,
     "landAreaInSquareKm": 1209,
@@ -792,9 +858,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3421",
-    "county": 34,
+    "_id": "3421",
+    "county": "34",
     "name": "Trysil",
+    "snlLink": "https://snl.no/Trysil",
     "population": 6603,
     "areaInSquareKm": 3014,
     "landAreaInSquareKm": 2941,
@@ -804,9 +871,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3422",
-    "county": 34,
+    "_id": "3422",
+    "county": "34",
     "name": "Åmot",
+    "snlLink": "https://snl.no/Åmot",
     "population": 4195,
     "areaInSquareKm": 1340,
     "landAreaInSquareKm": 1293,
@@ -816,9 +884,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3423",
-    "county": 34,
+    "_id": "3423",
+    "county": "34",
     "name": "Stor-Elvdal",
+    "snlLink": "https://snl.no/Stor-Elvdal",
     "population": 2318,
     "areaInSquareKm": 2166,
     "landAreaInSquareKm": 2127,
@@ -828,9 +897,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3424",
-    "county": 34,
+    "_id": "3424",
+    "county": "34",
     "name": "Rendalen",
+    "snlLink": "https://snl.no/Rendalen",
     "population": 1722,
     "areaInSquareKm": 3180,
     "landAreaInSquareKm": 3061,
@@ -840,9 +910,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3425",
-    "county": 34,
+    "_id": "3425",
+    "county": "34",
     "name": "Engerdal",
+    "snlLink": "https://snl.no/Engerdal",
     "population": 1253,
     "areaInSquareKm": 2197,
     "landAreaInSquareKm": 1916,
@@ -852,9 +923,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3426",
-    "county": 34,
+    "_id": "3426",
+    "county": "34",
     "name": "Tolga",
+    "snlLink": "https://snl.no/Tolga",
     "population": 1551,
     "areaInSquareKm": 1123,
     "landAreaInSquareKm": 1097,
@@ -864,9 +936,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3427",
-    "county": 34,
+    "_id": "3427",
+    "county": "34",
     "name": "Tynset",
+    "snlLink": "https://snl.no/Tynset",
     "population": 5581,
     "areaInSquareKm": 1880,
     "landAreaInSquareKm": 1823,
@@ -876,9 +949,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3428",
-    "county": 34,
+    "_id": "3428",
+    "county": "34",
     "name": "Alvdal",
+    "snlLink": "https://snl.no/Alvdal",
     "population": 2445,
     "areaInSquareKm": 942,
     "landAreaInSquareKm": 919,
@@ -888,9 +962,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3429",
-    "county": 34,
+    "_id": "3429",
+    "county": "34",
     "name": "Folldal",
+    "snlLink": "https://snl.no/Folldal",
     "population": 1530,
     "areaInSquareKm": 1277,
     "landAreaInSquareKm": 1260,
@@ -900,9 +975,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3430",
-    "county": 34,
+    "_id": "3430",
+    "county": "34",
     "name": "Os",
+    "snlLink": "https://snl.no/Os",
     "population": 1855,
     "areaInSquareKm": 1040,
     "landAreaInSquareKm": 1007,
@@ -912,9 +988,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3431",
-    "county": 34,
+    "_id": "3431",
+    "county": "34",
     "name": "Dovre",
+    "snlLink": "https://snl.no/Dovre",
     "population": 2498,
     "areaInSquareKm": 1364,
     "landAreaInSquareKm": 1349,
@@ -924,9 +1001,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3432",
-    "county": 34,
+    "_id": "3432",
+    "county": "34",
     "name": "Lesja",
+    "snlLink": "https://snl.no/Lesja",
     "population": 1986,
     "areaInSquareKm": 2260,
     "landAreaInSquareKm": 2169,
@@ -936,9 +1014,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3433",
-    "county": 34,
+    "_id": "3433",
+    "county": "34",
     "name": "Skjåk",
+    "snlLink": "https://snl.no/Skjåk",
     "population": 2151,
     "areaInSquareKm": 2076,
     "landAreaInSquareKm": 1967,
@@ -948,9 +1027,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "3434",
-    "county": 34,
+    "_id": "3434",
+    "county": "34",
     "name": "Lom",
+    "snlLink": "https://snl.no/Lom",
     "population": 2211,
     "areaInSquareKm": 1969,
     "landAreaInSquareKm": 1887,
@@ -960,9 +1040,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "3435",
-    "county": 34,
+    "_id": "3435",
+    "county": "34",
     "name": "Vågå",
+    "snlLink": "https://snl.no/Vågå",
     "population": 3591,
     "areaInSquareKm": 1330,
     "landAreaInSquareKm": 1252,
@@ -972,9 +1053,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "3436",
-    "county": 34,
+    "_id": "3436",
+    "county": "34",
     "name": "Nord-Fron",
+    "snlLink": "https://snl.no/Nord-Fron",
     "population": 5628,
     "areaInSquareKm": 1141,
     "landAreaInSquareKm": 1092,
@@ -984,9 +1066,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "3437",
-    "county": 34,
+    "_id": "3437",
+    "county": "34",
     "name": "Sel",
+    "snlLink": "https://snl.no/Sel",
     "population": 5531,
     "areaInSquareKm": 905,
     "landAreaInSquareKm": 888,
@@ -996,9 +1079,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3438",
-    "county": 34,
+    "_id": "3438",
+    "county": "34",
     "name": "Sør-Fron",
+    "snlLink": "https://snl.no/Sør-Fron",
     "population": 3064,
     "areaInSquareKm": 742,
     "landAreaInSquareKm": 712,
@@ -1008,9 +1092,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3439",
-    "county": 34,
+    "_id": "3439",
+    "county": "34",
     "name": "Ringebu",
+    "snlLink": "https://snl.no/Ringebu",
     "population": 4385,
     "areaInSquareKm": 1248,
     "landAreaInSquareKm": 1221,
@@ -1020,9 +1105,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3440",
-    "county": 34,
+    "_id": "3440",
+    "county": "34",
     "name": "Øyer",
+    "snlLink": "https://snl.no/Øyer",
     "population": 5082,
     "areaInSquareKm": 640,
     "landAreaInSquareKm": 616,
@@ -1032,9 +1118,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3441",
-    "county": 34,
+    "_id": "3441",
+    "county": "34",
     "name": "Gausdal",
+    "snlLink": "https://snl.no/Gausdal",
     "population": 6079,
     "areaInSquareKm": 1191,
     "landAreaInSquareKm": 1146,
@@ -1044,9 +1131,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3442",
-    "county": 34,
+    "_id": "3442",
+    "county": "34",
     "name": "Østre Toten",
+    "snlLink": "https://snl.no/Østre_Toten",
     "population": 14827,
     "areaInSquareKm": 563,
     "landAreaInSquareKm": 485,
@@ -1056,9 +1144,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3443",
-    "county": 34,
+    "_id": "3443",
+    "county": "34",
     "name": "Vestre Toten",
+    "snlLink": "https://snl.no/Vestre_Toten",
     "population": 13572,
     "areaInSquareKm": 251,
     "landAreaInSquareKm": 232,
@@ -1068,9 +1157,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3446",
-    "county": 34,
+    "_id": "3446",
+    "county": "34",
     "name": "Gran",
+    "snlLink": "https://snl.no/Gran",
     "population": 13633,
     "areaInSquareKm": 757,
     "landAreaInSquareKm": 657,
@@ -1080,9 +1170,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3447",
-    "county": 34,
+    "_id": "3447",
+    "county": "34",
     "name": "Søndre Land",
+    "snlLink": "https://snl.no/Søndre_Land",
     "population": 5535,
     "areaInSquareKm": 728,
     "landAreaInSquareKm": 659,
@@ -1092,9 +1183,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3448",
-    "county": 34,
+    "_id": "3448",
+    "county": "34",
     "name": "Nordre Land",
+    "snlLink": "https://snl.no/Nordre_Land",
     "population": 6577,
     "areaInSquareKm": 955,
     "landAreaInSquareKm": 920,
@@ -1104,9 +1196,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3449",
-    "county": 34,
+    "_id": "3449",
+    "county": "34",
     "name": "Sør-Aurdal",
+    "snlLink": "https://snl.no/Sør-Aurdal",
     "population": 2889,
     "areaInSquareKm": 1109,
     "landAreaInSquareKm": 1068,
@@ -1116,9 +1209,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3450",
-    "county": 34,
+    "_id": "3450",
+    "county": "34",
     "name": "Etnedal",
+    "snlLink": "https://snl.no/Etnedal",
     "population": 1256,
     "areaInSquareKm": 459,
     "landAreaInSquareKm": 443,
@@ -1128,9 +1222,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3451",
-    "county": 34,
+    "_id": "3451",
+    "county": "34",
     "name": "Nord-Aurdal",
+    "snlLink": "https://snl.no/Nord-Aurdal",
     "population": 6354,
     "areaInSquareKm": 906,
     "landAreaInSquareKm": 849,
@@ -1140,9 +1235,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3452",
-    "county": 34,
+    "_id": "3452",
+    "county": "34",
     "name": "Vestre Slidre",
+    "snlLink": "https://snl.no/Vestre_Slidre",
     "population": 2111,
     "areaInSquareKm": 457,
     "landAreaInSquareKm": 415,
@@ -1152,9 +1248,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "3453",
-    "county": 34,
+    "_id": "3453",
+    "county": "34",
     "name": "Øystre Slidre",
+    "snlLink": "https://snl.no/Øystre_Slidre",
     "population": 3252,
     "areaInSquareKm": 969,
     "landAreaInSquareKm": 886,
@@ -1164,9 +1261,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "3454",
-    "county": 34,
+    "_id": "3454",
+    "county": "34",
     "name": "Vang",
+    "snlLink": "https://snl.no/Vang",
     "population": 1587,
     "areaInSquareKm": 1505,
     "landAreaInSquareKm": 1310,
@@ -1176,9 +1274,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "3801",
-    "county": 38,
+    "_id": "3801",
+    "county": "38",
     "name": "Horten",
+    "snlLink": "https://snl.no/Horten",
     "population": 27502,
     "areaInSquareKm": 71,
     "landAreaInSquareKm": 69,
@@ -1188,9 +1287,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3802",
-    "county": 38,
+    "_id": "3802",
+    "county": "38",
     "name": "Holmestrand",
+    "snlLink": "https://snl.no/Holmestrand",
     "population": 25681,
     "areaInSquareKm": 432,
     "landAreaInSquareKm": 412,
@@ -1200,9 +1300,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3803",
-    "county": 38,
+    "_id": "3803",
+    "county": "38",
     "name": "Tønsberg",
+    "snlLink": "https://snl.no/Tønsberg",
     "population": 57794,
     "areaInSquareKm": 329,
     "landAreaInSquareKm": 326,
@@ -1212,9 +1313,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3804",
-    "county": 38,
+    "_id": "3804",
+    "county": "38",
     "name": "Sandefjord",
+    "snlLink": "https://snl.no/Sandefjord",
     "population": 64943,
     "areaInSquareKm": 422,
     "landAreaInSquareKm": 414,
@@ -1224,9 +1326,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3805",
-    "county": 38,
+    "_id": "3805",
+    "county": "38",
     "name": "Larvik",
+    "snlLink": "https://snl.no/Larvik",
     "population": 47777,
     "areaInSquareKm": 813,
     "landAreaInSquareKm": 771,
@@ -1236,9 +1339,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3806",
-    "county": 38,
+    "_id": "3806",
+    "county": "38",
     "name": "Porsgrunn",
+    "snlLink": "https://snl.no/Porsgrunn",
     "population": 36624,
     "areaInSquareKm": 164,
     "landAreaInSquareKm": 161,
@@ -1248,9 +1352,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "3807",
-    "county": 38,
+    "_id": "3807",
+    "county": "38",
     "name": "Skien",
+    "snlLink": "https://snl.no/Skien",
     "population": 55513,
     "areaInSquareKm": 779,
     "landAreaInSquareKm": 719,
@@ -1260,9 +1365,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3808",
-    "county": 38,
+    "_id": "3808",
+    "county": "38",
     "name": "Notodden",
+    "snlLink": "https://snl.no/Notodden",
     "population": 13029,
     "areaInSquareKm": 984,
     "landAreaInSquareKm": 912,
@@ -1272,9 +1378,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3811",
-    "county": 38,
+    "_id": "3811",
+    "county": "38",
     "name": "Færder",
+    "snlLink": "https://snl.no/Færder",
     "population": 27165,
     "areaInSquareKm": 100,
     "landAreaInSquareKm": 100,
@@ -1284,9 +1391,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3812",
-    "county": 38,
+    "_id": "3812",
+    "county": "38",
     "name": "Siljan",
+    "snlLink": "https://snl.no/Siljan",
     "population": 2349,
     "areaInSquareKm": 214,
     "landAreaInSquareKm": 202,
@@ -1296,9 +1404,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3813",
-    "county": 38,
+    "_id": "3813",
+    "county": "38",
     "name": "Bamble",
+    "snlLink": "https://snl.no/Bamble",
     "population": 14056,
     "areaInSquareKm": 304,
     "landAreaInSquareKm": 282,
@@ -1308,9 +1417,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3814",
-    "county": 38,
+    "_id": "3814",
+    "county": "38",
     "name": "Kragerø",
+    "snlLink": "https://snl.no/Kragerø",
     "population": 10351,
     "areaInSquareKm": 305,
     "landAreaInSquareKm": 289,
@@ -1320,9 +1430,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3815",
-    "county": 38,
+    "_id": "3815",
+    "county": "38",
     "name": "Drangedal",
+    "snlLink": "https://snl.no/Drangedal",
     "population": 4093,
     "areaInSquareKm": 1063,
     "landAreaInSquareKm": 995,
@@ -1332,9 +1443,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3816",
-    "county": 38,
+    "_id": "3816",
+    "county": "38",
     "name": "Nome",
+    "snlLink": "https://snl.no/Nome",
     "population": 6494,
     "areaInSquareKm": 430,
     "landAreaInSquareKm": 385,
@@ -1344,9 +1456,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3817",
-    "county": 38,
+    "_id": "3817",
+    "county": "38",
     "name": "Midt-Telemark",
+    "snlLink": "https://snl.no/Midt-Telemark",
     "population": 10539,
     "areaInSquareKm": 519,
     "landAreaInSquareKm": 487,
@@ -1356,9 +1469,10 @@
     "writtenLanguage": "Nynorsk"
   },
   {
-    "kommuneNumber": "3818",
-    "county": 38,
+    "_id": "3818",
+    "county": "38",
     "name": "Tinn",
+    "snlLink": "https://snl.no/Tinn",
     "population": 5512,
     "areaInSquareKm": 2045,
     "landAreaInSquareKm": 1848,
@@ -1368,9 +1482,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "3819",
-    "county": 38,
+    "_id": "3819",
+    "county": "38",
     "name": "Hjartdal",
+    "snlLink": "https://snl.no/Hjartdal",
     "population": 1562,
     "areaInSquareKm": 792,
     "landAreaInSquareKm": 737,
@@ -1380,9 +1495,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "3820",
-    "county": 38,
+    "_id": "3820",
+    "county": "38",
     "name": "Seljord",
+    "snlLink": "https://snl.no/Seljord",
     "population": 2889,
     "areaInSquareKm": 715,
     "landAreaInSquareKm": 669,
@@ -1392,9 +1508,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "3821",
-    "county": 38,
+    "_id": "3821",
+    "county": "38",
     "name": "Kviteseid",
+    "snlLink": "https://snl.no/Kviteseid",
     "population": 2452,
     "areaInSquareKm": 708,
     "landAreaInSquareKm": 623,
@@ -1404,9 +1521,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "3822",
-    "county": 38,
+    "_id": "3822",
+    "county": "38",
     "name": "Nissedal",
+    "snlLink": "https://snl.no/Nissedal",
     "population": 1414,
     "areaInSquareKm": 905,
     "landAreaInSquareKm": 786,
@@ -1416,9 +1534,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "3823",
-    "county": 38,
+    "_id": "3823",
+    "county": "38",
     "name": "Fyresdal",
+    "snlLink": "https://snl.no/Fyresdal",
     "population": 1198,
     "areaInSquareKm": 1280,
     "landAreaInSquareKm": 1107,
@@ -1428,9 +1547,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "3824",
-    "county": 38,
+    "_id": "3824",
+    "county": "38",
     "name": "Tokke",
+    "snlLink": "https://snl.no/Tokke",
     "population": 2140,
     "areaInSquareKm": 985,
     "landAreaInSquareKm": 905,
@@ -1440,9 +1560,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "3825",
-    "county": 38,
+    "_id": "3825",
+    "county": "38",
     "name": "Vinje",
+    "snlLink": "https://snl.no/Vinje",
     "population": 3755,
     "areaInSquareKm": 3106,
     "landAreaInSquareKm": 2725,
@@ -1452,9 +1573,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4201",
-    "county": 42,
+    "_id": "4201",
+    "county": "42",
     "name": "Risør",
+    "snlLink": "https://snl.no/Risør",
     "population": 6735,
     "areaInSquareKm": 193,
     "landAreaInSquareKm": 179,
@@ -1464,9 +1586,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "4202",
-    "county": 42,
+    "_id": "4202",
+    "county": "42",
     "name": "Grimstad",
+    "snlLink": "https://snl.no/Grimstad",
     "population": 24017,
     "areaInSquareKm": 304,
     "landAreaInSquareKm": 272,
@@ -1476,9 +1599,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "4203",
-    "county": 42,
+    "_id": "4203",
+    "county": "42",
     "name": "Arendal",
+    "snlLink": "https://snl.no/Arendal",
     "population": 45509,
     "areaInSquareKm": 270,
     "landAreaInSquareKm": 255,
@@ -1488,9 +1612,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "4204",
-    "county": 42,
+    "_id": "4204",
+    "county": "42",
     "name": "Kristiansand",
+    "snlLink": "https://snl.no/Kristiansand",
     "population": 113737,
     "areaInSquareKm": 645,
     "landAreaInSquareKm": 610,
@@ -1500,9 +1625,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "4205",
-    "county": 42,
+    "_id": "4205",
+    "county": "42",
     "name": "Lindesnes",
+    "snlLink": "https://snl.no/Lindesnes",
     "population": 23147,
     "areaInSquareKm": 934,
     "landAreaInSquareKm": 883,
@@ -1512,9 +1638,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "4206",
-    "county": 42,
+    "_id": "4206",
+    "county": "42",
     "name": "Farsund",
+    "snlLink": "https://snl.no/Farsund",
     "population": 9622,
     "areaInSquareKm": 263,
     "landAreaInSquareKm": 252,
@@ -1524,9 +1651,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "4207",
-    "county": 42,
+    "_id": "4207",
+    "county": "42",
     "name": "Flekkefjord",
+    "snlLink": "https://snl.no/Flekkefjord",
     "population": 9048,
     "areaInSquareKm": 544,
     "landAreaInSquareKm": 482,
@@ -1536,9 +1664,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "4211",
-    "county": 42,
+    "_id": "4211",
+    "county": "42",
     "name": "Gjerstad",
+    "snlLink": "https://snl.no/Gjerstad",
     "population": 2427,
     "areaInSquareKm": 322,
     "landAreaInSquareKm": 308,
@@ -1548,9 +1677,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "4212",
-    "county": 42,
+    "_id": "4212",
+    "county": "42",
     "name": "Vegårshei",
+    "snlLink": "https://snl.no/Vegårshei",
     "population": 2131,
     "areaInSquareKm": 356,
     "landAreaInSquareKm": 322,
@@ -1560,9 +1690,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "4213",
-    "county": 42,
+    "_id": "4213",
+    "county": "42",
     "name": "Tvedestrand",
+    "snlLink": "https://snl.no/Tvedestrand",
     "population": 6115,
     "areaInSquareKm": 215,
     "landAreaInSquareKm": 204,
@@ -1572,9 +1703,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "4214",
-    "county": 42,
+    "_id": "4214",
+    "county": "42",
     "name": "Froland",
+    "snlLink": "https://snl.no/Froland",
     "population": 6098,
     "areaInSquareKm": 645,
     "landAreaInSquareKm": 601,
@@ -1584,9 +1716,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "4215",
-    "county": 42,
+    "_id": "4215",
+    "county": "42",
     "name": "Lillesand",
+    "snlLink": "https://snl.no/Lillesand",
     "population": 11279,
     "areaInSquareKm": 190,
     "landAreaInSquareKm": 180,
@@ -1596,9 +1729,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "4216",
-    "county": 42,
+    "_id": "4216",
+    "county": "42",
     "name": "Birkenes",
+    "snlLink": "https://snl.no/Birkenes",
     "population": 5342,
     "areaInSquareKm": 637,
     "landAreaInSquareKm": 596,
@@ -1608,9 +1742,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "4217",
-    "county": 42,
+    "_id": "4217",
+    "county": "42",
     "name": "Åmli",
+    "snlLink": "https://snl.no/Åmli",
     "population": 1801,
     "areaInSquareKm": 1131,
     "landAreaInSquareKm": 1058,
@@ -1620,9 +1755,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4218",
-    "county": 42,
+    "_id": "4218",
+    "county": "42",
     "name": "Iveland",
+    "snlLink": "https://snl.no/Iveland",
     "population": 1323,
     "areaInSquareKm": 262,
     "landAreaInSquareKm": 246,
@@ -1632,9 +1768,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "4219",
-    "county": 42,
+    "_id": "4219",
+    "county": "42",
     "name": "Evje og Hornnes",
+    "snlLink": "https://snl.no/Evje_og_Hornnes",
     "population": 3653,
     "areaInSquareKm": 587,
     "landAreaInSquareKm": 549,
@@ -1644,9 +1781,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "4220",
-    "county": 42,
+    "_id": "4220",
+    "county": "42",
     "name": "Bygland",
+    "snlLink": "https://snl.no/Bygland",
     "population": 1134,
     "areaInSquareKm": 1312,
     "landAreaInSquareKm": 1150,
@@ -1656,9 +1794,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4221",
-    "county": 42,
+    "_id": "4221",
+    "county": "42",
     "name": "Valle",
+    "snlLink": "https://snl.no/Valle",
     "population": 1169,
     "areaInSquareKm": 1265,
     "landAreaInSquareKm": 1130,
@@ -1668,9 +1807,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4222",
-    "county": 42,
+    "_id": "4222",
+    "county": "42",
     "name": "Bykle",
+    "snlLink": "https://snl.no/Bykle",
     "population": 935,
     "areaInSquareKm": 1467,
     "landAreaInSquareKm": 1254,
@@ -1680,9 +1820,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4223",
-    "county": 42,
+    "_id": "4223",
+    "county": "42",
     "name": "Vennesla",
+    "snlLink": "https://snl.no/Vennesla",
     "population": 15123,
     "areaInSquareKm": 384,
     "landAreaInSquareKm": 362,
@@ -1692,9 +1833,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "4224",
-    "county": 42,
+    "_id": "4224",
+    "county": "42",
     "name": "Åseral",
+    "snlLink": "https://snl.no/Åseral",
     "population": 912,
     "areaInSquareKm": 888,
     "landAreaInSquareKm": 797,
@@ -1704,9 +1846,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4225",
-    "county": 42,
+    "_id": "4225",
+    "county": "42",
     "name": "Lyngdal",
+    "snlLink": "https://snl.no/Lyngdal",
     "population": 10480,
     "areaInSquareKm": 643,
     "landAreaInSquareKm": 606,
@@ -1716,9 +1859,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "4226",
-    "county": 42,
+    "_id": "4226",
+    "county": "42",
     "name": "Hægebostad",
+    "snlLink": "https://snl.no/Hægebostad",
     "population": 1704,
     "areaInSquareKm": 461,
     "landAreaInSquareKm": 424,
@@ -1728,9 +1872,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4227",
-    "county": 42,
+    "_id": "4227",
+    "county": "42",
     "name": "Kvinesdal",
+    "snlLink": "https://snl.no/Kvinesdal",
     "population": 5883,
     "areaInSquareKm": 963,
     "landAreaInSquareKm": 887,
@@ -1740,9 +1885,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "4228",
-    "county": 42,
+    "_id": "4228",
+    "county": "42",
     "name": "Sirdal",
+    "snlLink": "https://snl.no/Sirdal",
     "population": 1810,
     "areaInSquareKm": 1554,
     "landAreaInSquareKm": 1373,
@@ -1752,9 +1898,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1101",
-    "county": 11,
+    "_id": "1101",
+    "county": "11",
     "name": "Eigersund",
+    "snlLink": "https://snl.no/Eigersund",
     "population": 14860,
     "areaInSquareKm": 432,
     "landAreaInSquareKm": 387,
@@ -1764,9 +1911,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1103",
-    "county": 11,
+    "_id": "1103",
+    "county": "11",
     "name": "Stavanger",
+    "snlLink": "https://snl.no/Stavanger",
     "population": 144699,
     "areaInSquareKm": 263,
     "landAreaInSquareKm": 257,
@@ -1776,9 +1924,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1106",
-    "county": 11,
+    "_id": "1106",
+    "county": "11",
     "name": "Haugesund",
+    "snlLink": "https://snl.no/Haugesund",
     "population": 37444,
     "areaInSquareKm": 73,
     "landAreaInSquareKm": 68,
@@ -1788,9 +1937,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1108",
-    "county": 11,
+    "_id": "1108",
+    "county": "11",
     "name": "Sandnes",
+    "snlLink": "https://snl.no/Sandnes",
     "population": 81305,
     "areaInSquareKm": 1041,
     "landAreaInSquareKm": 944,
@@ -1800,9 +1950,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1111",
-    "county": 11,
+    "_id": "1111",
+    "county": "11",
     "name": "Sokndal",
+    "snlLink": "https://snl.no/Sokndal",
     "population": 3281,
     "areaInSquareKm": 295,
     "landAreaInSquareKm": 267,
@@ -1812,9 +1963,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1112",
-    "county": 11,
+    "_id": "1112",
+    "county": "11",
     "name": "Lund",
+    "snlLink": "https://snl.no/Lund",
     "population": 3178,
     "areaInSquareKm": 408,
     "landAreaInSquareKm": 354,
@@ -1824,9 +1976,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1114",
-    "county": 11,
+    "_id": "1114",
+    "county": "11",
     "name": "Bjerkreim",
+    "snlLink": "https://snl.no/Bjerkreim",
     "population": 2789,
     "areaInSquareKm": 651,
     "landAreaInSquareKm": 577,
@@ -1836,9 +1989,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1119",
-    "county": 11,
+    "_id": "1119",
+    "county": "11",
     "name": "Hå",
+    "snlLink": "https://snl.no/Hå",
     "population": 19296,
     "areaInSquareKm": 258,
     "landAreaInSquareKm": 248,
@@ -1848,9 +2002,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1120",
-    "county": 11,
+    "_id": "1120",
+    "county": "11",
     "name": "Klepp",
+    "snlLink": "https://snl.no/Klepp",
     "population": 20163,
     "areaInSquareKm": 113,
     "landAreaInSquareKm": 102,
@@ -1860,9 +2015,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1121",
-    "county": 11,
+    "_id": "1121",
+    "county": "11",
     "name": "Time",
+    "snlLink": "https://snl.no/Time",
     "population": 19353,
     "areaInSquareKm": 183,
     "landAreaInSquareKm": 171,
@@ -1872,9 +2028,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1122",
-    "county": 11,
+    "_id": "1122",
+    "county": "11",
     "name": "Gjesdal",
+    "snlLink": "https://snl.no/Gjesdal",
     "population": 12131,
     "areaInSquareKm": 618,
     "landAreaInSquareKm": 558,
@@ -1884,9 +2041,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1124",
-    "county": 11,
+    "_id": "1124",
+    "county": "11",
     "name": "Sola",
+    "snlLink": "https://snl.no/Sola",
     "population": 27568,
     "areaInSquareKm": 69,
     "landAreaInSquareKm": 69,
@@ -1896,9 +2054,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1127",
-    "county": 11,
+    "_id": "1127",
+    "county": "11",
     "name": "Randaberg",
+    "snlLink": "https://snl.no/Randaberg",
     "population": 11454,
     "areaInSquareKm": 25,
     "landAreaInSquareKm": 24,
@@ -1908,9 +2067,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1130",
-    "county": 11,
+    "_id": "1130",
+    "county": "11",
     "name": "Strand",
+    "snlLink": "https://snl.no/Strand",
     "population": 13268,
     "areaInSquareKm": 262,
     "landAreaInSquareKm": 236,
@@ -1920,9 +2080,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1133",
-    "county": 11,
+    "_id": "1133",
+    "county": "11",
     "name": "Hjelmeland",
+    "snlLink": "https://snl.no/Hjelmeland",
     "population": 2534,
     "areaInSquareKm": 1068,
     "landAreaInSquareKm": 948,
@@ -1932,9 +2093,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1134",
-    "county": 11,
+    "_id": "1134",
+    "county": "11",
     "name": "Suldal",
+    "snlLink": "https://snl.no/Suldal",
     "population": 3784,
     "areaInSquareKm": 1737,
     "landAreaInSquareKm": 1583,
@@ -1944,9 +2106,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1135",
-    "county": 11,
+    "_id": "1135",
+    "county": "11",
     "name": "Sauda",
+    "snlLink": "https://snl.no/Sauda",
     "population": 4525,
     "areaInSquareKm": 547,
     "landAreaInSquareKm": 508,
@@ -1956,9 +2119,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1144",
-    "county": 11,
+    "_id": "1144",
+    "county": "11",
     "name": "Kvitsøy",
+    "snlLink": "https://snl.no/Kvitsøy",
     "population": 523,
     "areaInSquareKm": 6,
     "landAreaInSquareKm": 6,
@@ -1968,9 +2132,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1145",
-    "county": 11,
+    "_id": "1145",
+    "county": "11",
     "name": "Bokn",
+    "snlLink": "https://snl.no/Bokn",
     "population": 855,
     "areaInSquareKm": 47,
     "landAreaInSquareKm": 45,
@@ -1980,9 +2145,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1146",
-    "county": 11,
+    "_id": "1146",
+    "county": "11",
     "name": "Tysvær",
+    "snlLink": "https://snl.no/Tysvær",
     "population": 11283,
     "areaInSquareKm": 425,
     "landAreaInSquareKm": 400,
@@ -1992,9 +2158,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1149",
-    "county": 11,
+    "_id": "1149",
+    "county": "11",
     "name": "Karmøy",
+    "snlLink": "https://snl.no/Karmøy",
     "population": 42541,
     "areaInSquareKm": 230,
     "landAreaInSquareKm": 220,
@@ -2004,9 +2171,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1151",
-    "county": 11,
+    "_id": "1151",
+    "county": "11",
     "name": "Utsira",
+    "snlLink": "https://snl.no/Utsira",
     "population": 188,
     "areaInSquareKm": 6,
     "landAreaInSquareKm": 6,
@@ -2016,9 +2184,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1160",
-    "county": 11,
+    "_id": "1160",
+    "county": "11",
     "name": "Vindafjord",
+    "snlLink": "https://snl.no/Vindafjord",
     "population": 8775,
     "areaInSquareKm": 621,
     "landAreaInSquareKm": 599,
@@ -2028,9 +2197,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4601",
-    "county": 46,
+    "_id": "4601",
+    "county": "46",
     "name": "Bergen",
+    "snlLink": "https://snl.no/Bergen",
     "population": 286930,
     "areaInSquareKm": 465,
     "landAreaInSquareKm": 445,
@@ -2040,9 +2210,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "4602",
-    "county": 46,
+    "_id": "4602",
+    "county": "46",
     "name": "Kinn",
+    "snlLink": "https://snl.no/Kinn",
     "population": 17131,
     "areaInSquareKm": 812,
     "landAreaInSquareKm": 763,
@@ -2052,9 +2223,10 @@
     "writtenLanguage": "Nynorsk"
   },
   {
-    "kommuneNumber": "4611",
-    "county": 46,
+    "_id": "4611",
+    "county": "46",
     "name": "Etne",
+    "snlLink": "https://snl.no/Etne",
     "population": 4043,
     "areaInSquareKm": 735,
     "landAreaInSquareKm": 691,
@@ -2064,9 +2236,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4612",
-    "county": 46,
+    "_id": "4612",
+    "county": "46",
     "name": "Sveio",
+    "snlLink": "https://snl.no/Sveio",
     "population": 5775,
     "areaInSquareKm": 246,
     "landAreaInSquareKm": 224,
@@ -2076,9 +2249,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4613",
-    "county": 46,
+    "_id": "4613",
+    "county": "46",
     "name": "Bømlo",
+    "snlLink": "https://snl.no/Bømlo",
     "population": 12061,
     "areaInSquareKm": 247,
     "landAreaInSquareKm": 235,
@@ -2088,9 +2262,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4614",
-    "county": 46,
+    "_id": "4614",
+    "county": "46",
     "name": "Stord",
+    "snlLink": "https://snl.no/Stord",
     "population": 18919,
     "areaInSquareKm": 144,
     "landAreaInSquareKm": 137,
@@ -2100,9 +2275,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4615",
-    "county": 46,
+    "_id": "4615",
+    "county": "46",
     "name": "Fitjar",
+    "snlLink": "https://snl.no/Fitjar",
     "population": 3117,
     "areaInSquareKm": 142,
     "landAreaInSquareKm": 134,
@@ -2112,9 +2288,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4616",
-    "county": 46,
+    "_id": "4616",
+    "county": "46",
     "name": "Tysnes",
+    "snlLink": "https://snl.no/Tysnes",
     "population": 2883,
     "areaInSquareKm": 255,
     "landAreaInSquareKm": 245,
@@ -2124,9 +2301,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4617",
-    "county": 46,
+    "_id": "4617",
+    "county": "46",
     "name": "Kvinnherad",
+    "snlLink": "https://snl.no/Kvinnherad",
     "population": 13017,
     "areaInSquareKm": 1091,
     "landAreaInSquareKm": 1043,
@@ -2136,9 +2314,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4618",
-    "county": 46,
+    "_id": "4618",
+    "county": "46",
     "name": "Ullensvang",
+    "snlLink": "https://snl.no/Ullensvang",
     "population": 10881,
     "areaInSquareKm": 3230,
     "landAreaInSquareKm": 2964,
@@ -2148,9 +2327,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4619",
-    "county": 46,
+    "_id": "4619",
+    "county": "46",
     "name": "Eidfjord",
+    "snlLink": "https://snl.no/Eidfjord",
     "population": 937,
     "areaInSquareKm": 1498,
     "landAreaInSquareKm": 1389,
@@ -2160,9 +2340,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4620",
-    "county": 46,
+    "_id": "4620",
+    "county": "46",
     "name": "Ulvik",
+    "snlLink": "https://snl.no/Ulvik",
     "population": 1051,
     "areaInSquareKm": 722,
     "landAreaInSquareKm": 663,
@@ -2172,9 +2353,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4621",
-    "county": 46,
+    "_id": "4621",
+    "county": "46",
     "name": "Voss",
+    "snlLink": "https://snl.no/Voss",
     "population": 15875,
     "areaInSquareKm": 2042,
     "landAreaInSquareKm": 1958,
@@ -2184,9 +2366,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4622",
-    "county": 46,
+    "_id": "4622",
+    "county": "46",
     "name": "Kvam",
+    "snlLink": "https://snl.no/Kvam",
     "population": 8497,
     "areaInSquareKm": 617,
     "landAreaInSquareKm": 580,
@@ -2196,9 +2379,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4623",
-    "county": 46,
+    "_id": "4623",
+    "county": "46",
     "name": "Samnanger",
+    "snlLink": "https://snl.no/Samnanger",
     "population": 2501,
     "areaInSquareKm": 269,
     "landAreaInSquareKm": 257,
@@ -2208,9 +2392,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4624",
-    "county": 46,
+    "_id": "4624",
+    "county": "46",
     "name": "Bjørnafjorden",
+    "snlLink": "https://snl.no/Bjørnafjorden",
     "population": 25213,
     "areaInSquareKm": 517,
     "landAreaInSquareKm": 487,
@@ -2220,9 +2405,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4625",
-    "county": 46,
+    "_id": "4625",
+    "county": "46",
     "name": "Austevoll",
+    "snlLink": "https://snl.no/Austevoll",
     "population": 5283,
     "areaInSquareKm": 117,
     "landAreaInSquareKm": 114,
@@ -2232,9 +2418,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4626",
-    "county": 46,
+    "_id": "4626",
+    "county": "46",
     "name": "Øygarden",
+    "snlLink": "https://snl.no/Øygarden",
     "population": 39032,
     "areaInSquareKm": 315,
     "landAreaInSquareKm": 300,
@@ -2244,9 +2431,10 @@
     "writtenLanguage": "Nynorsk"
   },
   {
-    "kommuneNumber": "4627",
-    "county": 46,
+    "_id": "4627",
+    "county": "46",
     "name": "Askøy",
+    "snlLink": "https://snl.no/Askøy",
     "population": 29816,
     "areaInSquareKm": 101,
     "landAreaInSquareKm": 94,
@@ -2256,9 +2444,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "4628",
-    "county": 46,
+    "_id": "4628",
+    "county": "46",
     "name": "Vaksdal",
+    "snlLink": "https://snl.no/Vaksdal",
     "population": 3867,
     "areaInSquareKm": 715,
     "landAreaInSquareKm": 682,
@@ -2268,9 +2457,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4629",
-    "county": 46,
+    "_id": "4629",
+    "county": "46",
     "name": "Modalen",
+    "snlLink": "https://snl.no/Modalen",
     "population": 378,
     "areaInSquareKm": 412,
     "landAreaInSquareKm": 379,
@@ -2280,9 +2470,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4630",
-    "county": 46,
+    "_id": "4630",
+    "county": "46",
     "name": "Osterøy",
+    "snlLink": "https://snl.no/Osterøy",
     "population": 8131,
     "areaInSquareKm": 255,
     "landAreaInSquareKm": 244,
@@ -2292,9 +2483,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4631",
-    "county": 46,
+    "_id": "4631",
+    "county": "46",
     "name": "Alver",
+    "snlLink": "https://snl.no/Alver",
     "population": 29593,
     "areaInSquareKm": 679,
     "landAreaInSquareKm": 651,
@@ -2304,9 +2496,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4632",
-    "county": 46,
+    "_id": "4632",
+    "county": "46",
     "name": "Austrheim",
+    "snlLink": "https://snl.no/Austrheim",
     "population": 2889,
     "areaInSquareKm": 58,
     "landAreaInSquareKm": 57,
@@ -2316,9 +2509,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4633",
-    "county": 46,
+    "_id": "4633",
+    "county": "46",
     "name": "Fedje",
+    "snlLink": "https://snl.no/Fedje",
     "population": 502,
     "areaInSquareKm": 9,
     "landAreaInSquareKm": 9,
@@ -2328,9 +2522,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4634",
-    "county": 46,
+    "_id": "4634",
+    "county": "46",
     "name": "Masfjorden",
+    "snlLink": "https://snl.no/Masfjorden",
     "population": 1629,
     "areaInSquareKm": 556,
     "landAreaInSquareKm": 509,
@@ -2340,9 +2535,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4635",
-    "county": 46,
+    "_id": "4635",
+    "county": "46",
     "name": "Gulen",
+    "snlLink": "https://snl.no/Gulen",
     "population": 2230,
     "areaInSquareKm": 599,
     "landAreaInSquareKm": 577,
@@ -2352,9 +2548,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4636",
-    "county": 46,
+    "_id": "4636",
+    "county": "46",
     "name": "Solund",
+    "snlLink": "https://snl.no/Solund",
     "population": 768,
     "areaInSquareKm": 228,
     "landAreaInSquareKm": 219,
@@ -2364,9 +2561,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4637",
-    "county": 46,
+    "_id": "4637",
+    "county": "46",
     "name": "Hyllestad",
+    "snlLink": "https://snl.no/Hyllestad",
     "population": 1290,
     "areaInSquareKm": 259,
     "landAreaInSquareKm": 248,
@@ -2376,9 +2574,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4638",
-    "county": 46,
+    "_id": "4638",
+    "county": "46",
     "name": "Høyanger",
+    "snlLink": "https://snl.no/Høyanger",
     "population": 3965,
     "areaInSquareKm": 1001,
     "landAreaInSquareKm": 928,
@@ -2388,9 +2587,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4639",
-    "county": 46,
+    "_id": "4639",
+    "county": "46",
     "name": "Vik",
+    "snlLink": "https://snl.no/Vik",
     "population": 2560,
     "areaInSquareKm": 833,
     "landAreaInSquareKm": 795,
@@ -2400,9 +2600,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4640",
-    "county": 46,
+    "_id": "4640",
+    "county": "46",
     "name": "Sogndal",
+    "snlLink": "https://snl.no/Sogndal",
     "population": 12097,
     "areaInSquareKm": 1258,
     "landAreaInSquareKm": 1229,
@@ -2412,9 +2613,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4641",
-    "county": 46,
+    "_id": "4641",
+    "county": "46",
     "name": "Aurland",
+    "snlLink": "https://snl.no/Aurland",
     "population": 1766,
     "areaInSquareKm": 1468,
     "landAreaInSquareKm": 1376,
@@ -2424,9 +2626,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4642",
-    "county": 46,
+    "_id": "4642",
+    "county": "46",
     "name": "Lærdal",
+    "snlLink": "https://snl.no/Lærdal",
     "population": 2117,
     "areaInSquareKm": 1343,
     "landAreaInSquareKm": 1275,
@@ -2436,9 +2639,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4643",
-    "county": 46,
+    "_id": "4643",
+    "county": "46",
     "name": "Årdal",
+    "snlLink": "https://snl.no/Årdal",
     "population": 5204,
     "areaInSquareKm": 977,
     "landAreaInSquareKm": 930,
@@ -2448,9 +2652,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4644",
-    "county": 46,
+    "_id": "4644",
+    "county": "46",
     "name": "Luster",
+    "snlLink": "https://snl.no/Luster",
     "population": 5246,
     "areaInSquareKm": 2706,
     "landAreaInSquareKm": 2597,
@@ -2460,9 +2665,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4645",
-    "county": 46,
+    "_id": "4645",
+    "county": "46",
     "name": "Askvoll",
+    "snlLink": "https://snl.no/Askvoll",
     "population": 2951,
     "areaInSquareKm": 326,
     "landAreaInSquareKm": 313,
@@ -2472,9 +2678,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4646",
-    "county": 46,
+    "_id": "4646",
+    "county": "46",
     "name": "Fjaler",
+    "snlLink": "https://snl.no/Fjaler",
     "population": 2901,
     "areaInSquareKm": 417,
     "landAreaInSquareKm": 390,
@@ -2484,9 +2691,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4647",
-    "county": 46,
+    "_id": "4647",
+    "county": "46",
     "name": "Sunnfjord",
+    "snlLink": "https://snl.no/Sunnfjord",
     "population": 22116,
     "areaInSquareKm": 2208,
     "landAreaInSquareKm": 2065,
@@ -2496,9 +2704,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4648",
-    "county": 46,
+    "_id": "4648",
+    "county": "46",
     "name": "Bremanger",
+    "snlLink": "https://snl.no/Bremanger",
     "population": 3521,
     "areaInSquareKm": 833,
     "landAreaInSquareKm": 786,
@@ -2508,9 +2717,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4649",
-    "county": 46,
+    "_id": "4649",
+    "county": "46",
     "name": "Stad",
+    "snlLink": "https://snl.no/Stad",
     "population": 9527,
     "areaInSquareKm": 753,
     "landAreaInSquareKm": 695,
@@ -2520,9 +2730,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4650",
-    "county": 46,
+    "_id": "4650",
+    "county": "46",
     "name": "Gloppen",
+    "snlLink": "https://snl.no/Gloppen",
     "population": 5875,
     "areaInSquareKm": 1031,
     "landAreaInSquareKm": 963,
@@ -2532,9 +2743,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "4651",
-    "county": 46,
+    "_id": "4651",
+    "county": "46",
     "name": "Stryn",
+    "snlLink": "https://snl.no/Stryn",
     "population": 7207,
     "areaInSquareKm": 1382,
     "landAreaInSquareKm": 1326,
@@ -2544,9 +2756,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1505",
-    "county": 15,
+    "_id": "1505",
+    "county": "15",
     "name": "Kristiansund",
+    "snlLink": "https://snl.no/Kristiansund",
     "population": 24013,
     "areaInSquareKm": 87,
     "landAreaInSquareKm": 86,
@@ -2556,9 +2769,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1506",
-    "county": 15,
+    "_id": "1506",
+    "county": "15",
     "name": "Molde",
+    "snlLink": "https://snl.no/Molde",
     "population": 32002,
     "areaInSquareKm": 1503,
     "landAreaInSquareKm": 1435,
@@ -2568,9 +2782,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1507",
-    "county": 15,
+    "_id": "1507",
+    "county": "15",
     "name": "Ålesund",
+    "snlLink": "https://snl.no/Ålesund",
     "population": 67114,
     "areaInSquareKm": 633,
     "landAreaInSquareKm": 607,
@@ -2580,9 +2795,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1511",
-    "county": 15,
+    "_id": "1511",
+    "county": "15",
     "name": "Vanylven",
+    "snlLink": "https://snl.no/Vanylven",
     "population": 3045,
     "areaInSquareKm": 385,
     "landAreaInSquareKm": 365,
@@ -2592,9 +2808,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1514",
-    "county": 15,
+    "_id": "1514",
+    "county": "15",
     "name": "Sande",
+    "snlLink": "https://snl.no/Sande",
     "population": 2422,
     "areaInSquareKm": 93,
     "landAreaInSquareKm": 90,
@@ -2604,9 +2821,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1515",
-    "county": 15,
+    "_id": "1515",
+    "county": "15",
     "name": "Herøy",
+    "snlLink": "https://snl.no/Herøy",
     "population": 8765,
     "areaInSquareKm": 120,
     "landAreaInSquareKm": 118,
@@ -2616,9 +2834,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1516",
-    "county": 15,
+    "_id": "1516",
+    "county": "15",
     "name": "Ulstein",
+    "snlLink": "https://snl.no/Ulstein",
     "population": 8557,
     "areaInSquareKm": 97,
     "landAreaInSquareKm": 95,
@@ -2628,9 +2847,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1517",
-    "county": 15,
+    "_id": "1517",
+    "county": "15",
     "name": "Hareid",
+    "snlLink": "https://snl.no/Hareid",
     "population": 5126,
     "areaInSquareKm": 82,
     "landAreaInSquareKm": 77,
@@ -2640,9 +2860,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1520",
-    "county": 15,
+    "_id": "1520",
+    "county": "15",
     "name": "Ørsta",
+    "snlLink": "https://snl.no/Ørsta",
     "population": 10833,
     "areaInSquareKm": 662,
     "landAreaInSquareKm": 650,
@@ -2652,9 +2873,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1525",
-    "county": 15,
+    "_id": "1525",
+    "county": "15",
     "name": "Stranda",
+    "snlLink": "https://snl.no/Stranda",
     "population": 4467,
     "areaInSquareKm": 866,
     "landAreaInSquareKm": 845,
@@ -2664,9 +2886,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1528",
-    "county": 15,
+    "_id": "1528",
+    "county": "15",
     "name": "Sykkylven",
+    "snlLink": "https://snl.no/Sykkylven",
     "population": 7558,
     "areaInSquareKm": 338,
     "landAreaInSquareKm": 329,
@@ -2676,9 +2899,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1531",
-    "county": 15,
+    "_id": "1531",
+    "county": "15",
     "name": "Sula",
+    "snlLink": "https://snl.no/Sula",
     "population": 9547,
     "areaInSquareKm": 59,
     "landAreaInSquareKm": 57,
@@ -2688,9 +2912,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1532",
-    "county": 15,
+    "_id": "1532",
+    "county": "15",
     "name": "Giske",
+    "snlLink": "https://snl.no/Giske",
     "population": 8597,
     "areaInSquareKm": 41,
     "landAreaInSquareKm": 40,
@@ -2700,9 +2925,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1535",
-    "county": 15,
+    "_id": "1535",
+    "county": "15",
     "name": "Vestnes",
+    "snlLink": "https://snl.no/Vestnes",
     "population": 6936,
     "areaInSquareKm": 405,
     "landAreaInSquareKm": 399,
@@ -2712,9 +2938,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1539",
-    "county": 15,
+    "_id": "1539",
+    "county": "15",
     "name": "Rauma",
+    "snlLink": "https://snl.no/Rauma",
     "population": 7019,
     "areaInSquareKm": 1449,
     "landAreaInSquareKm": 1390,
@@ -2724,9 +2951,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1547",
-    "county": 15,
+    "_id": "1547",
+    "county": "15",
     "name": "Aukra",
+    "snlLink": "https://snl.no/Aukra",
     "population": 3518,
     "areaInSquareKm": 61,
     "landAreaInSquareKm": 61,
@@ -2736,9 +2964,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1554",
-    "county": 15,
+    "_id": "1554",
+    "county": "15",
     "name": "Averøy",
+    "snlLink": "https://snl.no/Averøy",
     "population": 5828,
     "areaInSquareKm": 176,
     "landAreaInSquareKm": 173,
@@ -2748,9 +2977,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1557",
-    "county": 15,
+    "_id": "1557",
+    "county": "15",
     "name": "Gjemnes",
+    "snlLink": "https://snl.no/Gjemnes",
     "population": 2669,
     "areaInSquareKm": 382,
     "landAreaInSquareKm": 371,
@@ -2760,9 +2990,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1560",
-    "county": 15,
+    "_id": "1560",
+    "county": "15",
     "name": "Tingvoll",
+    "snlLink": "https://snl.no/Tingvoll",
     "population": 2960,
     "areaInSquareKm": 337,
     "landAreaInSquareKm": 322,
@@ -2772,9 +3003,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1563",
-    "county": 15,
+    "_id": "1563",
+    "county": "15",
     "name": "Sunndal",
+    "snlLink": "https://snl.no/Sunndal",
     "population": 6932,
     "areaInSquareKm": 1713,
     "landAreaInSquareKm": 1648,
@@ -2784,9 +3016,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1566",
-    "county": 15,
+    "_id": "1566",
+    "county": "15",
     "name": "Surnadal",
+    "snlLink": "https://snl.no/Surnadal",
     "population": 5849,
     "areaInSquareKm": 1366,
     "landAreaInSquareKm": 1315,
@@ -2796,9 +3029,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1573",
-    "county": 15,
+    "_id": "1573",
+    "county": "15",
     "name": "Smøla",
+    "snlLink": "https://snl.no/Smøla",
     "population": 2120,
     "areaInSquareKm": 272,
     "landAreaInSquareKm": 261,
@@ -2808,9 +3042,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1576",
-    "county": 15,
+    "_id": "1576",
+    "county": "15",
     "name": "Aure",
+    "snlLink": "https://snl.no/Aure",
     "population": 3384,
     "areaInSquareKm": 641,
     "landAreaInSquareKm": 622,
@@ -2820,9 +3055,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1577",
-    "county": 15,
+    "_id": "1577",
+    "county": "15",
     "name": "Volda",
+    "snlLink": "https://snl.no/Volda",
     "population": 10809,
     "areaInSquareKm": 877,
     "landAreaInSquareKm": 834,
@@ -2832,9 +3068,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1578",
-    "county": 15,
+    "_id": "1578",
+    "county": "15",
     "name": "Fjord",
+    "snlLink": "https://snl.no/Fjord",
     "population": 2491,
     "areaInSquareKm": 1191,
     "landAreaInSquareKm": 1144,
@@ -2844,9 +3081,10 @@
     "writtenLanguage": "nynorsk"
   },
   {
-    "kommuneNumber": "1579",
-    "county": 15,
+    "_id": "1579",
+    "county": "15",
     "name": "Hustadvika",
+    "snlLink": "https://snl.no/Hustadvika",
     "population": 13287,
     "areaInSquareKm": 522,
     "landAreaInSquareKm": 508,
@@ -2856,9 +3094,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5001",
-    "county": 50,
+    "_id": "5001",
+    "county": "50",
     "name": "Trondheim",
+    "snlLink": "https://snl.no/Trondheim",
     "population": 210496,
     "areaInSquareKm": 529,
     "landAreaInSquareKm": 497,
@@ -2868,9 +3107,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5006",
-    "county": 50,
+    "_id": "5006",
+    "county": "50",
     "name": "Steinkjer",
+    "snlLink": "https://snl.no/Steinkjer",
     "population": 24004,
     "areaInSquareKm": 2122,
     "landAreaInSquareKm": 1937,
@@ -2880,9 +3120,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5007",
-    "county": 50,
+    "_id": "5007",
+    "county": "50",
     "name": "Namsos",
+    "snlLink": "https://snl.no/Namsos",
     "population": 15001,
     "areaInSquareKm": 2132,
     "landAreaInSquareKm": 1998,
@@ -2892,9 +3133,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5014",
-    "county": 50,
+    "_id": "5014",
+    "county": "50",
     "name": "Frøya",
+    "snlLink": "https://snl.no/Frøya",
     "population": 5265,
     "areaInSquareKm": 241,
     "landAreaInSquareKm": 230,
@@ -2904,9 +3146,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5020",
-    "county": 50,
+    "_id": "5020",
+    "county": "50",
     "name": "Osen",
+    "snlLink": "https://snl.no/Osen",
     "population": 904,
     "areaInSquareKm": 387,
     "landAreaInSquareKm": 370,
@@ -2916,9 +3159,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5021",
-    "county": 50,
+    "_id": "5021",
+    "county": "50",
     "name": "Oppdal",
+    "snlLink": "https://snl.no/Oppdal",
     "population": 7066,
     "areaInSquareKm": 2274,
     "landAreaInSquareKm": 2201,
@@ -2928,9 +3172,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5022",
-    "county": 50,
+    "_id": "5022",
+    "county": "50",
     "name": "Rennebu",
+    "snlLink": "https://snl.no/Rennebu",
     "population": 2443,
     "areaInSquareKm": 948,
     "landAreaInSquareKm": 924,
@@ -2940,9 +3185,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5025",
-    "county": 50,
+    "_id": "5025",
+    "county": "50",
     "name": "Røros",
+    "snlLink": "https://snl.no/Røros",
     "population": 5572,
     "areaInSquareKm": 1957,
     "landAreaInSquareKm": 1756,
@@ -2952,9 +3198,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5026",
-    "county": 50,
+    "_id": "5026",
+    "county": "50",
     "name": "Holtålen",
+    "snlLink": "https://snl.no/Holtålen",
     "population": 1953,
     "areaInSquareKm": 1210,
     "landAreaInSquareKm": 1170,
@@ -2964,9 +3211,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5027",
-    "county": 50,
+    "_id": "5027",
+    "county": "50",
     "name": "Midtre Gauldal",
+    "snlLink": "https://snl.no/Midtre_Gauldal",
     "population": 6120,
     "areaInSquareKm": 1861,
     "landAreaInSquareKm": 1803,
@@ -2976,9 +3224,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5028",
-    "county": 50,
+    "_id": "5028",
+    "county": "50",
     "name": "Melhus",
+    "snlLink": "https://snl.no/Melhus",
     "population": 17123,
     "areaInSquareKm": 694,
     "landAreaInSquareKm": 653,
@@ -2988,9 +3237,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5029",
-    "county": 50,
+    "_id": "5029",
+    "county": "50",
     "name": "Skaun",
+    "snlLink": "https://snl.no/Skaun",
     "population": 8360,
     "areaInSquareKm": 224,
     "landAreaInSquareKm": 213,
@@ -3000,9 +3250,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5031",
-    "county": 50,
+    "_id": "5031",
+    "county": "50",
     "name": "Malvik",
+    "snlLink": "https://snl.no/Malvik",
     "population": 14425,
     "areaInSquareKm": 168,
     "landAreaInSquareKm": 162,
@@ -3012,9 +3263,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5032",
-    "county": 50,
+    "_id": "5032",
+    "county": "50",
     "name": "Selbu",
+    "snlLink": "https://snl.no/Selbu",
     "population": 4090,
     "areaInSquareKm": 1235,
     "landAreaInSquareKm": 1140,
@@ -3024,9 +3276,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5033",
-    "county": 50,
+    "_id": "5033",
+    "county": "50",
     "name": "Tydal",
+    "snlLink": "https://snl.no/Tydal",
     "population": 750,
     "areaInSquareKm": 1329,
     "landAreaInSquareKm": 1217,
@@ -3036,9 +3289,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5034",
-    "county": 50,
+    "_id": "5034",
+    "county": "50",
     "name": "Meråker",
+    "snlLink": "https://snl.no/Meråker",
     "population": 2399,
     "areaInSquareKm": 1274,
     "landAreaInSquareKm": 1188,
@@ -3048,9 +3302,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5035",
-    "county": 50,
+    "_id": "5035",
+    "county": "50",
     "name": "Stjørdal",
+    "snlLink": "https://snl.no/Stjørdal",
     "population": 24287,
     "areaInSquareKm": 938,
     "landAreaInSquareKm": 913,
@@ -3060,9 +3315,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5036",
-    "county": 50,
+    "_id": "5036",
+    "county": "50",
     "name": "Frosta",
+    "snlLink": "https://snl.no/Frosta",
     "population": 2608,
     "areaInSquareKm": 76,
     "landAreaInSquareKm": 74,
@@ -3072,9 +3328,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5037",
-    "county": 50,
+    "_id": "5037",
+    "county": "50",
     "name": "Levanger",
+    "snlLink": "https://snl.no/Levanger",
     "population": 20171,
     "areaInSquareKm": 646,
     "landAreaInSquareKm": 610,
@@ -3084,9 +3341,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5038",
-    "county": 50,
+    "_id": "5038",
+    "county": "50",
     "name": "Verdal",
+    "snlLink": "https://snl.no/Verdal",
     "population": 14955,
     "areaInSquareKm": 1548,
     "landAreaInSquareKm": 1475,
@@ -3096,9 +3354,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5041",
-    "county": 50,
+    "_id": "5041",
+    "county": "50",
     "name": "Snåsa",
+    "snlLink": "https://snl.no/Snåsa",
     "population": 2033,
     "areaInSquareKm": 2343,
     "landAreaInSquareKm": 2146,
@@ -3108,9 +3367,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5042",
-    "county": 50,
+    "_id": "5042",
+    "county": "50",
     "name": "Lierne",
+    "snlLink": "https://snl.no/Lierne",
     "population": 1309,
     "areaInSquareKm": 2962,
     "landAreaInSquareKm": 2630,
@@ -3120,9 +3380,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5043",
-    "county": 50,
+    "_id": "5043",
+    "county": "50",
     "name": "Røyrvik",
+    "snlLink": "https://snl.no/Røyrvik",
     "population": 441,
     "areaInSquareKm": 1585,
     "landAreaInSquareKm": 1330,
@@ -3132,9 +3393,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5044",
-    "county": 50,
+    "_id": "5044",
+    "county": "50",
     "name": "Namsskogan",
+    "snlLink": "https://snl.no/Namsskogan",
     "population": 818,
     "areaInSquareKm": 1417,
     "landAreaInSquareKm": 1353,
@@ -3144,9 +3406,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5045",
-    "county": 50,
+    "_id": "5045",
+    "county": "50",
     "name": "Grong",
+    "snlLink": "https://snl.no/Grong",
     "population": 2287,
     "areaInSquareKm": 1136,
     "landAreaInSquareKm": 1095,
@@ -3156,9 +3419,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5046",
-    "county": 50,
+    "_id": "5046",
+    "county": "50",
     "name": "Høylandet",
+    "snlLink": "https://snl.no/Høylandet",
     "population": 1193,
     "areaInSquareKm": 755,
     "landAreaInSquareKm": 703,
@@ -3168,9 +3432,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5047",
-    "county": 50,
+    "_id": "5047",
+    "county": "50",
     "name": "Overhalla",
+    "snlLink": "https://snl.no/Overhalla",
     "population": 3817,
     "areaInSquareKm": 730,
     "landAreaInSquareKm": 689,
@@ -3180,9 +3445,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5049",
-    "county": 50,
+    "_id": "5049",
+    "county": "50",
     "name": "Flatanger",
+    "snlLink": "https://snl.no/Flatanger",
     "population": 1101,
     "areaInSquareKm": 459,
     "landAreaInSquareKm": 434,
@@ -3192,9 +3458,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5052",
-    "county": 50,
+    "_id": "5052",
+    "county": "50",
     "name": "Leka",
+    "snlLink": "https://snl.no/Leka",
     "population": 570,
     "areaInSquareKm": 110,
     "landAreaInSquareKm": 108,
@@ -3204,9 +3471,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5053",
-    "county": 50,
+    "_id": "5053",
+    "county": "50",
     "name": "Inderøy",
+    "snlLink": "https://snl.no/Inderøy",
     "population": 6794,
     "areaInSquareKm": 366,
     "landAreaInSquareKm": 351,
@@ -3216,9 +3484,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5054",
-    "county": 50,
+    "_id": "5054",
+    "county": "50",
     "name": "Indre Fosen",
+    "snlLink": "https://snl.no/Indre_Fosen",
     "population": 9899,
     "areaInSquareKm": 1096,
     "landAreaInSquareKm": 1030,
@@ -3228,9 +3497,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5055",
-    "county": 50,
+    "_id": "5055",
+    "county": "50",
     "name": "Heim",
+    "snlLink": "https://snl.no/Heim",
     "population": 5884,
     "areaInSquareKm": 1025,
     "landAreaInSquareKm": 980,
@@ -3240,9 +3510,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5056",
-    "county": 50,
+    "_id": "5056",
+    "county": "50",
     "name": "Hitra",
+    "snlLink": "https://snl.no/Hitra",
     "population": 5156,
     "areaInSquareKm": 756,
     "landAreaInSquareKm": 715,
@@ -3252,9 +3523,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5057",
-    "county": 50,
+    "_id": "5057",
+    "county": "50",
     "name": "Ørland",
+    "snlLink": "https://snl.no/Ørland",
     "population": 10371,
     "areaInSquareKm": 457,
     "landAreaInSquareKm": 429,
@@ -3264,9 +3536,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5058",
-    "county": 50,
+    "_id": "5058",
+    "county": "50",
     "name": "Åfjord",
+    "snlLink": "https://snl.no/Åfjord",
     "population": 4252,
     "areaInSquareKm": 1329,
     "landAreaInSquareKm": 1251,
@@ -3276,9 +3549,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5059",
-    "county": 50,
+    "_id": "5059",
+    "county": "50",
     "name": "Orkland",
+    "snlLink": "https://snl.no/Orkland",
     "population": 18502,
     "areaInSquareKm": 1906,
     "landAreaInSquareKm": 1818,
@@ -3288,9 +3562,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5060",
-    "county": 50,
+    "_id": "5060",
+    "county": "50",
     "name": "Nærøysund",
+    "snlLink": "https://snl.no/Nærøysund",
     "population": 9732,
     "areaInSquareKm": 1346,
     "landAreaInSquareKm": 1286,
@@ -3300,9 +3575,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5061",
-    "county": 50,
+    "_id": "5061",
+    "county": "50",
     "name": "Rindal",
+    "snlLink": "https://snl.no/Rindal",
     "population": 1980,
     "areaInSquareKm": 632,
     "landAreaInSquareKm": 612,
@@ -3312,9 +3588,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1804",
-    "county": 18,
+    "_id": "1804",
+    "county": "18",
     "name": "Bodø",
+    "snlLink": "https://snl.no/Bodø",
     "population": 52803,
     "areaInSquareKm": 1395,
     "landAreaInSquareKm": 1311,
@@ -3324,9 +3601,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1806",
-    "county": 18,
+    "_id": "1806",
+    "county": "18",
     "name": "Narvik",
+    "snlLink": "https://snl.no/Narvik",
     "population": 21530,
     "areaInSquareKm": 3432,
     "landAreaInSquareKm": 3195,
@@ -3336,9 +3614,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1811",
-    "county": 18,
+    "_id": "1811",
+    "county": "18",
     "name": "Bindal",
+    "snlLink": "https://snl.no/Bindal",
     "population": 1406,
     "areaInSquareKm": 1266,
     "landAreaInSquareKm": 1192,
@@ -3348,9 +3627,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1812",
-    "county": 18,
+    "_id": "1812",
+    "county": "18",
     "name": "Sømna",
+    "snlLink": "https://snl.no/Sømna",
     "population": 1981,
     "areaInSquareKm": 195,
     "landAreaInSquareKm": 192,
@@ -3360,9 +3640,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1813",
-    "county": 18,
+    "_id": "1813",
+    "county": "18",
     "name": "Brønnøy",
+    "snlLink": "https://snl.no/Brønnøy",
     "population": 7777,
     "areaInSquareKm": 1046,
     "landAreaInSquareKm": 999,
@@ -3372,9 +3653,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1815",
-    "county": 18,
+    "_id": "1815",
+    "county": "18",
     "name": "Vega",
+    "snlLink": "https://snl.no/Vega",
     "population": 1175,
     "areaInSquareKm": 165,
     "landAreaInSquareKm": 163,
@@ -3384,9 +3666,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1816",
-    "county": 18,
+    "_id": "1816",
+    "county": "18",
     "name": "Vevelstad",
+    "snlLink": "https://snl.no/Vevelstad",
     "population": 462,
     "areaInSquareKm": 539,
     "landAreaInSquareKm": 516,
@@ -3396,9 +3679,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1818",
-    "county": 18,
+    "_id": "1818",
+    "county": "18",
     "name": "Herøy",
+    "snlLink": "https://snl.no/Herøy",
     "population": 1825,
     "areaInSquareKm": 64,
     "landAreaInSquareKm": 64,
@@ -3408,9 +3692,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1820",
-    "county": 18,
+    "_id": "1820",
+    "county": "18",
     "name": "Alstahaug",
+    "snlLink": "https://snl.no/Alstahaug",
     "population": 7333,
     "areaInSquareKm": 188,
     "landAreaInSquareKm": 187,
@@ -3420,9 +3705,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1822",
-    "county": 18,
+    "_id": "1822",
+    "county": "18",
     "name": "Leirfjord",
+    "snlLink": "https://snl.no/Leirfjord",
     "population": 2257,
     "areaInSquareKm": 465,
     "landAreaInSquareKm": 451,
@@ -3432,9 +3718,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1824",
-    "county": 18,
+    "_id": "1824",
+    "county": "18",
     "name": "Vefsn",
+    "snlLink": "https://snl.no/Vefsn",
     "population": 13233,
     "areaInSquareKm": 1929,
     "landAreaInSquareKm": 1838,
@@ -3444,9 +3731,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1825",
-    "county": 18,
+    "_id": "1825",
+    "county": "18",
     "name": "Grane",
+    "snlLink": "https://snl.no/Grane",
     "population": 1461,
     "areaInSquareKm": 2004,
     "landAreaInSquareKm": 1881,
@@ -3456,9 +3744,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1826",
-    "county": 18,
+    "_id": "1826",
+    "county": "18",
     "name": "Hattfjelldal",
+    "snlLink": "https://snl.no/Hattfjelldal",
     "population": 1273,
     "areaInSquareKm": 2684,
     "landAreaInSquareKm": 2411,
@@ -3468,9 +3757,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1827",
-    "county": 18,
+    "_id": "1827",
+    "county": "18",
     "name": "Dønna",
+    "snlLink": "https://snl.no/Dønna",
     "population": 1369,
     "areaInSquareKm": 193,
     "landAreaInSquareKm": 186,
@@ -3480,9 +3770,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1828",
-    "county": 18,
+    "_id": "1828",
+    "county": "18",
     "name": "Nesna",
+    "snlLink": "https://snl.no/Nesna",
     "population": 1698,
     "areaInSquareKm": 183,
     "landAreaInSquareKm": 181,
@@ -3492,9 +3783,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1832",
-    "county": 18,
+    "_id": "1832",
+    "county": "18",
     "name": "Hemnes",
+    "snlLink": "https://snl.no/Hemnes",
     "population": 4420,
     "areaInSquareKm": 1590,
     "landAreaInSquareKm": 1430,
@@ -3504,9 +3796,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1833",
-    "county": 18,
+    "_id": "1833",
+    "county": "18",
     "name": "Rana",
+    "snlLink": "https://snl.no/Rana",
     "population": 26092,
     "areaInSquareKm": 4460,
     "landAreaInSquareKm": 4203,
@@ -3516,9 +3809,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1834",
-    "county": 18,
+    "_id": "1834",
+    "county": "18",
     "name": "Lurøy",
+    "snlLink": "https://snl.no/Lurøy",
     "population": 1869,
     "areaInSquareKm": 265,
     "landAreaInSquareKm": 258,
@@ -3528,9 +3822,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1835",
-    "county": 18,
+    "_id": "1835",
+    "county": "18",
     "name": "Træna",
+    "snlLink": "https://snl.no/Træna",
     "population": 450,
     "areaInSquareKm": 17,
     "landAreaInSquareKm": 16,
@@ -3540,9 +3835,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1836",
-    "county": 18,
+    "_id": "1836",
+    "county": "18",
     "name": "Rødøy",
+    "snlLink": "https://snl.no/Rødøy",
     "population": 1153,
     "areaInSquareKm": 711,
     "landAreaInSquareKm": 686,
@@ -3552,9 +3848,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1837",
-    "county": 18,
+    "_id": "1837",
+    "county": "18",
     "name": "Meløy",
+    "snlLink": "https://snl.no/Meløy",
     "population": 6214,
     "areaInSquareKm": 874,
     "landAreaInSquareKm": 798,
@@ -3564,9 +3861,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1838",
-    "county": 18,
+    "_id": "1838",
+    "county": "18",
     "name": "Gildeskål",
+    "snlLink": "https://snl.no/Gildeskål",
     "population": 1894,
     "areaInSquareKm": 665,
     "landAreaInSquareKm": 622,
@@ -3576,9 +3874,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1839",
-    "county": 18,
+    "_id": "1839",
+    "county": "18",
     "name": "Beiarn",
+    "snlLink": "https://snl.no/Beiarn",
     "population": 1012,
     "areaInSquareKm": 1222,
     "landAreaInSquareKm": 1179,
@@ -3588,9 +3887,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1840",
-    "county": 18,
+    "_id": "1840",
+    "county": "18",
     "name": "Saltdal",
+    "snlLink": "https://snl.no/Saltdal",
     "population": 4617,
     "areaInSquareKm": 2216,
     "landAreaInSquareKm": 2084,
@@ -3600,9 +3900,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1841",
-    "county": 18,
+    "_id": "1841",
+    "county": "18",
     "name": "Fauske",
+    "snlLink": "https://snl.no/Fauske",
     "population": 9603,
     "areaInSquareKm": 1197,
     "landAreaInSquareKm": 1108,
@@ -3612,9 +3913,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1845",
-    "county": 18,
+    "_id": "1845",
+    "county": "18",
     "name": "Sørfold",
+    "snlLink": "https://snl.no/Sørfold",
     "population": 1869,
     "areaInSquareKm": 1637,
     "landAreaInSquareKm": 1472,
@@ -3624,9 +3926,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1848",
-    "county": 18,
+    "_id": "1848",
+    "county": "18",
     "name": "Steigen",
+    "snlLink": "https://snl.no/Steigen",
     "population": 2591,
     "areaInSquareKm": 1009,
     "landAreaInSquareKm": 964,
@@ -3636,9 +3939,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1851",
-    "county": 18,
+    "_id": "1851",
+    "county": "18",
     "name": "Lødingen",
+    "snlLink": "https://snl.no/Lødingen",
     "population": 1976,
     "areaInSquareKm": 527,
     "landAreaInSquareKm": 508,
@@ -3648,9 +3952,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1853",
-    "county": 18,
+    "_id": "1853",
+    "county": "18",
     "name": "Evenes",
+    "snlLink": "https://snl.no/Evenes",
     "population": 1334,
     "areaInSquareKm": 253,
     "landAreaInSquareKm": 241,
@@ -3660,9 +3965,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1856",
-    "county": 18,
+    "_id": "1856",
+    "county": "18",
     "name": "Røst",
+    "snlLink": "https://snl.no/Røst",
     "population": 469,
     "areaInSquareKm": 10,
     "landAreaInSquareKm": 10,
@@ -3672,9 +3978,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1857",
-    "county": 18,
+    "_id": "1857",
+    "county": "18",
     "name": "Værøy",
+    "snlLink": "https://snl.no/Værøy",
     "population": 678,
     "areaInSquareKm": 19,
     "landAreaInSquareKm": 19,
@@ -3684,9 +3991,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1859",
-    "county": 18,
+    "_id": "1859",
+    "county": "18",
     "name": "Flakstad",
+    "snlLink": "https://snl.no/Flakstad",
     "population": 1216,
     "areaInSquareKm": 178,
     "landAreaInSquareKm": 169,
@@ -3696,9 +4004,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1860",
-    "county": 18,
+    "_id": "1860",
+    "county": "18",
     "name": "Vestvågøy",
+    "snlLink": "https://snl.no/Vestvågøy",
     "population": 11566,
     "areaInSquareKm": 424,
     "landAreaInSquareKm": 407,
@@ -3708,9 +4017,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1865",
-    "county": 18,
+    "_id": "1865",
+    "county": "18",
     "name": "Vågan",
+    "snlLink": "https://snl.no/Vågan",
     "population": 9724,
     "areaInSquareKm": 479,
     "landAreaInSquareKm": 460,
@@ -3720,9 +4030,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1866",
-    "county": 18,
+    "_id": "1866",
+    "county": "18",
     "name": "Hadsel",
+    "snlLink": "https://snl.no/Hadsel",
     "population": 8107,
     "areaInSquareKm": 567,
     "landAreaInSquareKm": 551,
@@ -3732,9 +4043,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "1867",
-    "county": 18,
+    "_id": "1867",
+    "county": "18",
     "name": "Bø",
+    "snlLink": "https://snl.no/Bø",
     "population": 2565,
     "areaInSquareKm": 247,
     "landAreaInSquareKm": 235,
@@ -3744,9 +4056,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1868",
-    "county": 18,
+    "_id": "1868",
+    "county": "18",
     "name": "Øksnes",
+    "snlLink": "https://snl.no/Øksnes",
     "population": 4458,
     "areaInSquareKm": 320,
     "landAreaInSquareKm": 311,
@@ -3756,9 +4069,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1870",
-    "county": 18,
+    "_id": "1870",
+    "county": "18",
     "name": "Sortland",
+    "snlLink": "https://snl.no/Sortland",
     "population": 10468,
     "areaInSquareKm": 722,
     "landAreaInSquareKm": 697,
@@ -3768,9 +4082,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1871",
-    "county": 18,
+    "_id": "1871",
+    "county": "18",
     "name": "Andøy",
+    "snlLink": "https://snl.no/Andøy",
     "population": 4572,
     "areaInSquareKm": 656,
     "landAreaInSquareKm": 617,
@@ -3780,9 +4095,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1874",
-    "county": 18,
+    "_id": "1874",
+    "county": "18",
     "name": "Moskenes",
+    "snlLink": "https://snl.no/Moskenes",
     "population": 982,
     "areaInSquareKm": 119,
     "landAreaInSquareKm": 110,
@@ -3792,9 +4108,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "1875",
-    "county": 18,
+    "_id": "1875",
+    "county": "18",
     "name": "Hamarøy",
+    "snlLink": "https://snl.no/Hamarøy",
     "population": 2708,
     "areaInSquareKm": 2020,
     "landAreaInSquareKm": 1838,
@@ -3804,9 +4121,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5401",
-    "county": 54,
+    "_id": "5401",
+    "county": "54",
     "name": "Tromsø",
+    "snlLink": "https://snl.no/Tromsø",
     "population": 77544,
     "areaInSquareKm": 2521,
     "landAreaInSquareKm": 2472,
@@ -3816,9 +4134,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5402",
-    "county": 54,
+    "_id": "5402",
+    "county": "54",
     "name": "Harstad",
+    "snlLink": "https://snl.no/Harstad",
     "population": 24804,
     "areaInSquareKm": 445,
     "landAreaInSquareKm": 428,
@@ -3828,9 +4147,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5403",
-    "county": 54,
+    "_id": "5403",
+    "county": "54",
     "name": "Alta",
+    "snlLink": "https://snl.no/Alta",
     "population": 21144,
     "areaInSquareKm": 3850,
     "landAreaInSquareKm": 3653,
@@ -3840,9 +4160,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5404",
-    "county": 54,
+    "_id": "5404",
+    "county": "54",
     "name": "Vardø",
+    "snlLink": "https://snl.no/Vardø",
     "population": 1897,
     "areaInSquareKm": 601,
     "landAreaInSquareKm": 586,
@@ -3852,9 +4173,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5405",
-    "county": 54,
+    "_id": "5405",
+    "county": "54",
     "name": "Vadsø",
+    "snlLink": "https://snl.no/Vadsø",
     "population": 5568,
     "areaInSquareKm": 1258,
     "landAreaInSquareKm": 1234,
@@ -3864,9 +4186,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5406",
-    "county": 54,
+    "_id": "5406",
+    "county": "54",
     "name": "Hammerfest",
+    "snlLink": "https://snl.no/Hammerfest",
     "population": 11274,
     "areaInSquareKm": 2693,
     "landAreaInSquareKm": 2558,
@@ -3876,9 +4199,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5411",
-    "county": 54,
+    "_id": "5411",
+    "county": "54",
     "name": "Kvæfjord",
+    "snlLink": "https://snl.no/Kvæfjord",
     "population": 2789,
     "areaInSquareKm": 513,
     "landAreaInSquareKm": 497,
@@ -3888,9 +4212,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5412",
-    "county": 54,
+    "_id": "5412",
+    "county": "54",
     "name": "Tjeldsund",
+    "snlLink": "https://snl.no/Tjeldsund",
     "population": 4201,
     "areaInSquareKm": 814,
     "landAreaInSquareKm": 775,
@@ -3900,9 +4225,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5413",
-    "county": 54,
+    "_id": "5413",
+    "county": "54",
     "name": "Ibestad",
+    "snlLink": "https://snl.no/Ibestad",
     "population": 1289,
     "areaInSquareKm": 241,
     "landAreaInSquareKm": 234,
@@ -3912,9 +4238,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5414",
-    "county": 54,
+    "_id": "5414",
+    "county": "54",
     "name": "Gratangen",
+    "snlLink": "https://snl.no/Gratangen",
     "population": 1070,
     "areaInSquareKm": 313,
     "landAreaInSquareKm": 306,
@@ -3924,9 +4251,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5415",
-    "county": 54,
+    "_id": "5415",
+    "county": "54",
     "name": "Lavangen",
+    "snlLink": "https://snl.no/Lavangen",
     "population": 970,
     "areaInSquareKm": 302,
     "landAreaInSquareKm": 296,
@@ -3936,9 +4264,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5416",
-    "county": 54,
+    "_id": "5416",
+    "county": "54",
     "name": "Bardu",
+    "snlLink": "https://snl.no/Bardu",
     "population": 3993,
     "areaInSquareKm": 2704,
     "landAreaInSquareKm": 2514,
@@ -3948,9 +4277,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5417",
-    "county": 54,
+    "_id": "5417",
+    "county": "54",
     "name": "Salangen",
+    "snlLink": "https://snl.no/Salangen",
     "population": 2087,
     "areaInSquareKm": 458,
     "landAreaInSquareKm": 438,
@@ -3960,9 +4290,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5418",
-    "county": 54,
+    "_id": "5418",
+    "county": "54",
     "name": "Målselv",
+    "snlLink": "https://snl.no/Målselv",
     "population": 6599,
     "areaInSquareKm": 3324,
     "landAreaInSquareKm": 3203,
@@ -3972,9 +4303,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5419",
-    "county": 54,
+    "_id": "5419",
+    "county": "54",
     "name": "Sørreisa",
+    "snlLink": "https://snl.no/Sørreisa",
     "population": 3414,
     "areaInSquareKm": 363,
     "landAreaInSquareKm": 347,
@@ -3984,9 +4316,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5420",
-    "county": 54,
+    "_id": "5420",
+    "county": "54",
     "name": "Dyrøy",
+    "snlLink": "https://snl.no/Dyrøy",
     "population": 1068,
     "areaInSquareKm": 289,
     "landAreaInSquareKm": 277,
@@ -3996,9 +4329,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5421",
-    "county": 54,
+    "_id": "5421",
+    "county": "54",
     "name": "Senja",
+    "snlLink": "https://snl.no/Senja",
     "population": 14738,
     "areaInSquareKm": 1955,
     "landAreaInSquareKm": 1861,
@@ -4008,9 +4342,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5422",
-    "county": 54,
+    "_id": "5422",
+    "county": "54",
     "name": "Balsfjord",
+    "snlLink": "https://snl.no/Balsfjord",
     "population": 5576,
     "areaInSquareKm": 1497,
     "landAreaInSquareKm": 1440,
@@ -4020,9 +4355,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5423",
-    "county": 54,
+    "_id": "5423",
+    "county": "54",
     "name": "Karlsøy",
+    "snlLink": "https://snl.no/Karlsøy",
     "population": 2179,
     "areaInSquareKm": 1092,
     "landAreaInSquareKm": 1051,
@@ -4032,9 +4368,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5424",
-    "county": 54,
+    "_id": "5424",
+    "county": "54",
     "name": "Lyngen",
+    "snlLink": "https://snl.no/Lyngen",
     "population": 2729,
     "areaInSquareKm": 813,
     "landAreaInSquareKm": 795,
@@ -4044,9 +4381,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5425",
-    "county": 54,
+    "_id": "5425",
+    "county": "54",
     "name": "Storfjord",
+    "snlLink": "https://snl.no/Storfjord",
     "population": 1836,
     "areaInSquareKm": 1543,
     "landAreaInSquareKm": 1477,
@@ -4056,9 +4394,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5426",
-    "county": 54,
+    "_id": "5426",
+    "county": "54",
     "name": "Kåfjord",
+    "snlLink": "https://snl.no/Kåfjord",
     "population": 2012,
     "areaInSquareKm": 991,
     "landAreaInSquareKm": 950,
@@ -4068,9 +4407,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5427",
-    "county": 54,
+    "_id": "5427",
+    "county": "54",
     "name": "Skjervøy",
+    "snlLink": "https://snl.no/Skjervøy",
     "population": 2804,
     "areaInSquareKm": 474,
     "landAreaInSquareKm": 465,
@@ -4080,9 +4420,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5428",
-    "county": 54,
+    "_id": "5428",
+    "county": "54",
     "name": "Nordreisa",
+    "snlLink": "https://snl.no/Nordreisa",
     "population": 4746,
     "areaInSquareKm": 3438,
     "landAreaInSquareKm": 3335,
@@ -4092,9 +4433,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5429",
-    "county": 54,
+    "_id": "5429",
+    "county": "54",
     "name": "Kvænangen",
+    "snlLink": "https://snl.no/Kvænangen",
     "population": 1159,
     "areaInSquareKm": 2109,
     "landAreaInSquareKm": 2008,
@@ -4104,9 +4446,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5430",
-    "county": 54,
+    "_id": "5430",
+    "county": "54",
     "name": "Kautokeino",
+    "snlLink": "https://snl.no/Kautokeino",
     "population": 2877,
     "areaInSquareKm": 9707,
     "landAreaInSquareKm": 8969,
@@ -4116,9 +4459,10 @@
     "writtenLanguage": "Bokmål"
   },
   {
-    "kommuneNumber": "5432",
-    "county": 54,
+    "_id": "5432",
+    "county": "54",
     "name": "Loppa",
+    "snlLink": "https://snl.no/Loppa",
     "population": 859,
     "areaInSquareKm": 689,
     "landAreaInSquareKm": 671,
@@ -4128,9 +4472,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5433",
-    "county": 54,
+    "_id": "5433",
+    "county": "54",
     "name": "Hasvik",
+    "snlLink": "https://snl.no/Hasvik",
     "population": 964,
     "areaInSquareKm": 556,
     "landAreaInSquareKm": 534,
@@ -4140,9 +4485,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5434",
-    "county": 54,
+    "_id": "5434",
+    "county": "54",
     "name": "Måsøy",
+    "snlLink": "https://snl.no/Måsøy",
     "population": 1162,
     "areaInSquareKm": 1137,
     "landAreaInSquareKm": 1068,
@@ -4152,9 +4498,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5435",
-    "county": 54,
+    "_id": "5435",
+    "county": "54",
     "name": "Nordkapp",
+    "snlLink": "https://snl.no/Nordkapp",
     "population": 2947,
     "areaInSquareKm": 926,
     "landAreaInSquareKm": 892,
@@ -4164,9 +4511,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5436",
-    "county": 54,
+    "_id": "5436",
+    "county": "54",
     "name": "Porsanger",
+    "snlLink": "https://snl.no/Porsanger",
     "population": 3904,
     "areaInSquareKm": 4873,
     "landAreaInSquareKm": 4639,
@@ -4176,9 +4524,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5437",
-    "county": 54,
+    "_id": "5437",
+    "county": "54",
     "name": "Karasjok",
+    "snlLink": "https://snl.no/Karasjok",
     "population": 2584,
     "areaInSquareKm": 5453,
     "landAreaInSquareKm": 5210,
@@ -4188,9 +4537,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5438",
-    "county": 54,
+    "_id": "5438",
+    "county": "54",
     "name": "Lebesby",
+    "snlLink": "https://snl.no/Lebesby",
     "population": 1221,
     "areaInSquareKm": 3459,
     "landAreaInSquareKm": 3232,
@@ -4200,9 +4550,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5439",
-    "county": 54,
+    "_id": "5439",
+    "county": "54",
     "name": "Gamvik",
+    "snlLink": "https://snl.no/Gamvik",
     "population": 1057,
     "areaInSquareKm": 1416,
     "landAreaInSquareKm": 1355,
@@ -4212,9 +4563,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5440",
-    "county": 54,
+    "_id": "5440",
+    "county": "54",
     "name": "Berlevåg",
+    "snlLink": "https://snl.no/Berlevåg",
     "population": 906,
     "areaInSquareKm": 1122,
     "landAreaInSquareKm": 1083,
@@ -4224,9 +4576,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5441",
-    "county": 54,
-    "name": "Deatnu - Tana",
+    "_id": "5441",
+    "county": "54",
+    "name": "Tana",
+    "snlLink": "https://snl.no/Tana",
     "population": 2821,
     "areaInSquareKm": 4051,
     "landAreaInSquareKm": 3833,
@@ -4236,9 +4589,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5442",
-    "county": 54,
+    "_id": "5442",
+    "county": "54",
     "name": "Nesseby",
+    "snlLink": "https://snl.no/Nesseby",
     "population": 854,
     "areaInSquareKm": 1437,
     "landAreaInSquareKm": 1366,
@@ -4248,9 +4602,10 @@
     "writtenLanguage": "bokmål"
   },
   {
-    "kommuneNumber": "5443",
-    "county": 54,
+    "_id": "5443",
+    "county": "54",
     "name": "Båtsfjord",
+    "snlLink": "https://snl.no/Båtsfjord",
     "population": 2165,
     "areaInSquareKm": 1435,
     "landAreaInSquareKm": 1416,
@@ -4260,9 +4615,10 @@
     "writtenLanguage": "nøytral"
   },
   {
-    "kommuneNumber": "5444",
-    "county": 54,
+    "_id": "5444",
+    "county": "54",
     "name": "Sør-Varanger",
+    "snlLink": "https://snl.no/Sør-Varanger",
     "population": 9925,
     "areaInSquareKm": 3971,
     "landAreaInSquareKm": 3459,
