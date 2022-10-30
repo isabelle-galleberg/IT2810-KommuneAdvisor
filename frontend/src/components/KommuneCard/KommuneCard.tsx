@@ -5,6 +5,7 @@ import { Rating } from 'react-simple-star-rating';
 import './KommuneCard.css';
 
 export default function KommuneCard({
+  id,
   name,
   county,
   weaponImg,
@@ -34,7 +35,7 @@ export default function KommuneCard({
             color='dimmed'>
             📍{county}
           </Text>
-          <Link to={`kommune/${name.replace(' ', '_')}`}>
+          <Link to={`kommune/${id}`}>
             <Button
               variant='light'
               color='blue'

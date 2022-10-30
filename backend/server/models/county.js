@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const countyScheme = new mongoose.Schema(
   {
-    _id: { type: mongoose.Schema.Types.Number },
+    _id: { type: mongoose.Schema.Types.String },
     name: { type: String },
   },
   { collection: 'county' }

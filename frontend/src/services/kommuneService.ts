@@ -1,9 +1,11 @@
 import { gql } from '@apollo/client/core';
 
 export const GET_KOMMUNE = gql`
-  query Kommune($kommuneName: String) {
-    kommune(kommuneName: $kommuneName) {
+  query Kommune($id: String) {
+    kommune(id: $id) {
+      _id
       name
+      snlLink
       county {
         name
       }
@@ -39,6 +41,7 @@ export const GET_ALL_KOMMUNER = gql`
       pageSize: $pageSize
       county: $county
     ) {
+      _id
       name
       county {
         name
