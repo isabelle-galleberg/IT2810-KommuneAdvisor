@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { useQuery } from '@apollo/client';
 import {
   GET_ALL_KOMMUNER,
+  GET_KOMMUNER_COUNT,
 } from '../../services/kommuneService';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { useEffect, useState } from 'react';
@@ -67,11 +68,25 @@ export default function MainPage() {
       search: searchInput,
       sortBy: sortBy,
       sortDirection: sortDirection,
-      pageSize: 20,
+      pageSize: 24,
       county: county,
       page: page,
     },
   });
+
+  const {
+    loading: loading2,
+    error: error2,
+    data: data2,
+  } = useQuery(GET_KOMMUNER_COUNT, {
+    variables: {
+      county: county,
+      search: searchInput,
+    },
+  });
+
+  const yo = data2?.kommunerCount;
+
   const changePage = (page: number) => {
     dispatch(updatePage(page));
   };
@@ -79,7 +94,6 @@ export default function MainPage() {
   useEffect(() => {
     changePage(1);
   }, [searchInput, county, filter]);
-
 
   const changeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(updateKommune(e.target.value));
@@ -132,7 +146,7 @@ export default function MainPage() {
       <Pagination
         page={page}
         onChange={changePage}
-        total={Math.ceil(356 / 20)}
+        total={Math.ceil(yo / 24)}
       />
     </div>
   );
