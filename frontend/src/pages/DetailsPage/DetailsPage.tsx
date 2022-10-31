@@ -1,66 +1,45 @@
+import { useQuery } from '@apollo/client';
 import AddReview from '../../components/AddReview/AddReview';
 import KommuneDetails from '../../components/KommuneDetails/KommuneDetails';
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
+import { useParams } from 'react-router-dom';
+import { GET_REVIEWS } from '../../services/reviewService';
+import { Review } from '../../types/review';
+import { useEffect, useState } from 'react';
 import './DetailsPage.css';
-
-const reviews = [
-  {
-    title: 'Great product',
-    description: 'I visited Trondheim kommune and it was so pretty, omg!',
-    rating: 3,
-    name: 'Ola Olè',
-    date: '10.10.2020',
-    id: 1,
-  },
-  {
-    title: 'Great product',
-    description: 'I visited Trondheim kommune and it was so pretty, omg!',
-    rating: 3,
-    name: 'Ola Olè',
-    date: '10.10.2020',
-    id: 2,
-  },
-  {
-    title: 'Great product',
-    description: 'I visited Trondheim kommune and it was so pretty, omg!',
-    rating: 3,
-    name: 'Ola Olè',
-    date: '10.10.2020',
-    id: 3,
-  },
-  {
-    title: 'Great product',
-    description: 'I visited Trondheim kommune and it was so pretty, omg!',
-    rating: 3,
-    name: 'Ola Olè',
-    date: '10.10.2020',
-    id: 4,
-  },
-  {
-    title: 'Great product',
-    description: 'I visited Trondheim kommune and it was so pretty, omg!',
-    rating: 3,
-    name: 'Ola Olè',
-    date: '10.10.2020',
-    id: 5,
-  },
-];
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 export default function DetailsPage() {
+  const { id } = useParams();
+  const { loading, error, data } = useQuery(GET_REVIEWS, {
+    variables: { id: id },
+  });
+  const [reviews, setReviews] = useState([] as Review[])
+
+  if (error) console.log(error);
+
+  useEffect(() => {
+    setReviews(data?.kommune.kommuneRating);
+  }, [data])
+
+  function addReview(review: any) {
+    setReviews([...reviews, review])
+  }
+
   return (
     <div className='detailsPage'>
       <KommuneDetails />
       <div className='reviews'>
-        <AddReview />
-        {reviews.map((review) => {
+        <AddReview onCreate={addReview} />
+        {reviews?.slice(0).reverse().map((review: Review) => {
           return (
             <ReviewCard
-              key={review.id}
+              key={review._id}
               title={review.title}
               description={review.description}
               rating={review.rating}
               name={review.name}
-              date={review.date}
+              timestamp={review.timestamp}
             />
           );
         })}
