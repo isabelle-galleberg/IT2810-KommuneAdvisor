@@ -15,6 +15,7 @@ import { updatePage } from '../../redux/pageReducer';
 export default function MainPage() {
   // globals states from Redux
   const searchInput = useAppSelector((state) => state.kommuneInput.kommune);
+  const dispatch = useAppDispatch();
   const county = useAppSelector((state) => state.countyInput.county);
   const filter = useAppSelector((state) => state.filterInput.filter);
   const page = useAppSelector((state) => state.pageInput.page);
@@ -64,20 +65,35 @@ export default function MainPage() {
       search: searchInput,
       sortBy: sortBy,
       sortDirection: sortDirection,
-      pageSize: 20,
+      pageSize: 24,
       county: county,
       page: page,
     },
   });
 
-  const dispatch = useAppDispatch();
+  const {
+    loading: loading2,
+    error: error2,
+    data: data2,
+  } = useQuery(GET_KOMMUNER_COUNT, {
+    variables: {
+      county: county,
+      search: searchInput,
+    },
+  });
 
-  const changeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(updateKommune(e.target.value));
-  };
+  const yo = data2?.kommunerCount;
 
   const changePage = (page: number) => {
     dispatch(updatePage(page));
+  };
+
+  useEffect(() => {
+    changePage(1);
+  }, [searchInput, county, filter]);
+
+  const changeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(updateKommune(e.target.value));
   };
 
   if (error) return <div>Kommuner not found</div>;
@@ -125,9 +141,10 @@ export default function MainPage() {
         </SimpleGrid>
       </div>
       <Pagination
+        className='pagination'
         page={page}
         onChange={changePage}
-        total={Math.ceil(356 / 20)}
+        total={Math.ceil(yo / 24)}
       />
     </div>
   );
