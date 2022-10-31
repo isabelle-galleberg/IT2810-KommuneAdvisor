@@ -19,11 +19,12 @@ export default function MainPage() {
   const dispatch = useAppDispatch();
   const searchInput = useAppSelector((state) => state.kommuneInput.kommune);
   const county = useAppSelector((state) => state.countyInput.county);
-  const filter = useAppSelector((state) => state.filterInput.filter);
+  const sortBy = useAppSelector((state) => state.filterInput.sortBy);
+  const sortDirection = useAppSelector(
+    (state) => state.filterInput.sortDirection
+  );
 
   // sorting values for GraphQL query
-  const [sortBy, setSortBy] = useState('name');
-  const [sortDirection, setSortDirection] = useState('ascending');
 
   const [kommuner, setKommuner] = useState([] as any[]);
   const [page, setPage] = useState(1);
@@ -56,41 +57,6 @@ export default function MainPage() {
     return false;
   }, [kommuner, countResponse]);
 
-  // create separate function for filtering
-  useEffect(() => {
-    if (!filter) return;
-
-    switch (filter) {
-      case 'Befolkning høy-lav':
-        setSortBy('population');
-        setSortDirection('descending');
-        break;
-      case 'Befolkning lav-høy':
-        setSortBy('population');
-        setSortDirection('ascending');
-        break;
-      case 'Areal høy-lav':
-        setSortBy('area');
-        setSortDirection('descending');
-        break;
-      case 'Areal lav-høy':
-        setSortBy('area');
-        setSortDirection('ascending');
-        break;
-      case 'Rangering høy-lav':
-        setSortBy('rating');
-        setSortDirection('descending');
-        break;
-      case 'Rangering lav-høy':
-        setSortBy('rating');
-        setSortDirection('ascending');
-        break;
-      default:
-        setSortBy('name');
-        setSortDirection('ascending');
-    }
-  });
-
   useEffect(() => {
     if (!countResponse) return;
 
@@ -103,10 +69,9 @@ export default function MainPage() {
 
   useEffect(() => {
     setKommuner([]);
-
     setPage(1);
     refetchKommuneCount();
-  }, [searchInput, county, filter]);
+  }, [searchInput, county, sortBy, sortDirection]);
 
   useEffect(() => {
     if (kommuneResponse) {

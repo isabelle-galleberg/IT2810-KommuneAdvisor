@@ -5,10 +5,14 @@ import { updateCounty } from '../../redux/countyReducer';
 import { updateFilter } from '../../redux/filterReducer';
 import { GET_ALL_COUNTIES } from '../../services/countyService';
 import { useQuery } from '@apollo/client';
+import { useMemo } from 'react';
 
 export default function InputFields() {
   const county = useAppSelector((state) => state.countyInput.county);
-  const filter = useAppSelector((state) => state.filterInput.filter);
+  const sortBy = useAppSelector((state) => state.filterInput.sortBy);
+  const sortDirection = useAppSelector(
+    (state) => state.filterInput.sortDirection
+  );
   const dispatch = useAppDispatch();
 
   const changeCounty = (county: string) => {
@@ -23,6 +27,22 @@ export default function InputFields() {
   if (error) {
     console.log(error);
   }
+
+  const getDefaultFilterValue = useMemo(() => {
+    if (sortBy == 'population' && sortDirection == 'descending')
+      return 'Befolkning høy-lav';
+    if (sortBy == 'population' && sortDirection == 'ascending')
+      return 'Befolkning lav-høy';
+    if (sortBy == 'area' && sortDirection == 'descending')
+      return 'Areal høy-lav';
+    if (sortBy == 'area' && sortDirection == 'ascending')
+      return 'Areal lav-høy';
+    if (sortBy == 'rating' && sortDirection == 'descending')
+      return 'Rangering høy-lav';
+    if (sortBy == 'rating' && sortDirection == 'ascending')
+      return 'Rangering lav-høy';
+    else return '';
+  }, [sortBy, sortDirection]);
 
   // counties sorted alphabetically, with value of countyId
   const counties = data?.counties
@@ -48,7 +68,7 @@ export default function InputFields() {
           />
         ) : null}
         <Select
-          defaultValue={filter}
+          defaultValue={getDefaultFilterValue}
           label='Sorter'
           data={[
             'Areal høy-lav',
