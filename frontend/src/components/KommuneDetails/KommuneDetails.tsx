@@ -44,7 +44,6 @@ export default function KommuneDetails({ refresh }: { refresh: boolean }) {
           <div className='line'></div>
           <div className='kommuneDetails'>
             <div>
-              <label>Gjennomsnittlig vurdering</label>
               <p className='rating'>
                 <Rating
                   initialValue={data.kommune.averageRating}
