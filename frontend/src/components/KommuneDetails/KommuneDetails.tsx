@@ -6,7 +6,7 @@ import { GET_KOMMUNE } from '../../services/kommuneService';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import './KommuneDetails.css';
 
-export default function KommuneDetails({refresh}: {refresh: boolean}) {
+export default function KommuneDetails({ refresh }: { refresh: boolean }) {
   // url param kommune/:id
   const { id } = useParams();
 
@@ -20,11 +20,11 @@ export default function KommuneDetails({refresh}: {refresh: boolean}) {
   }, [refresh]);
 
   if (loading) return <LoadingSpinner />;
-  if (error) console.log(error);
+  if (error) return <div>Kommune not found</div>;
 
   return (
     <>
-      {data && data.kommune && data.kommune ? (
+      {data && data.kommune && data.kommune && (
         <div className='detailsPage'>
           <div className='detailsPageTop'>
             <Link to='/'>
@@ -85,8 +85,6 @@ export default function KommuneDetails({refresh}: {refresh: boolean}) {
             />
           </div>
         </div>
-      ) : (
-        <div>Kommune not found</div>
       )}
     </>
   );
