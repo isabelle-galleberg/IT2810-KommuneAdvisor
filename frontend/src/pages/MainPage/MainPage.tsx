@@ -9,7 +9,7 @@ import {
   GET_KOMMUNER_COUNT,
 } from '../../services/kommuneService';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { updateKommune } from '../../redux/kommuneReducer';
 import { IconSearch } from '@tabler/icons';
 import { Kommune } from '../../types/kommune';
@@ -85,21 +85,18 @@ export default function MainPage() {
     },
   });
 
-  const yo = data2?.kommunerCount;
+  const totalKommuner = data2?.kommunerCount;
 
   const changePage = (page: number) => {
     dispatch(updatePage(page));
   };
 
-  useEffect(() => {
-    changePage(1);
-  }, [searchInput, county, filter]);
-
   const changeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(updateKommune(e.target.value));
+    changePage(1);
   };
 
-  if (error) return <div>Kommuner not found</div>;
+  if (error || error2) return <div>Kommuner not found</div>;
 
   return (
     <div className='mainPage'>
@@ -126,7 +123,7 @@ export default function MainPage() {
             { minWidth: 900, cols: 3 },
             { minWidth: 1200, cols: 4 },
           ]}>
-          {loading && <LoadingSpinner />}
+          {(loading || loading2) && <LoadingSpinner />}
           {data &&
             data.kommuner &&
             data.kommuner.map((kommune: Kommune) => {
@@ -147,7 +144,7 @@ export default function MainPage() {
         className='pagination'
         page={page}
         onChange={changePage}
-        total={Math.ceil(yo / 24)}
+        total={Math.ceil(totalKommuner / 24)}
       />
     </div>
   );
