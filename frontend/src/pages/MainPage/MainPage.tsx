@@ -9,7 +9,7 @@ import {
   GET_KOMMUNER_COUNT,
 } from '../../services/kommuneService';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { updateKommune } from '../../redux/kommuneReducer';
 import { IconSearch } from '@tabler/icons';
 import { Kommune } from '../../types/kommune';
@@ -17,8 +17,8 @@ import { updatePage } from '../../redux/pageReducer';
 
 export default function MainPage() {
   // globals states from Redux
-  const searchInput = useAppSelector((state) => state.kommuneInput.kommune);
   const dispatch = useAppDispatch();
+  const searchInput = useAppSelector((state) => state.kommuneInput.kommune);
   const county = useAppSelector((state) => state.countyInput.county);
   const filter = useAppSelector((state) => state.filterInput.filter);
   const page = useAppSelector((state) => state.pageInput.page);
@@ -75,9 +75,9 @@ export default function MainPage() {
   });
 
   const {
-    loading: loading2,
-    error: error2,
-    data: data2,
+    loading: loadingCount,
+    error: errorCount,
+    data: dataCount,
   } = useQuery(GET_KOMMUNER_COUNT, {
     variables: {
       county: county,
@@ -85,7 +85,7 @@ export default function MainPage() {
     },
   });
 
-  const totalKommuner = data2?.kommunerCount;
+  const totalKommuner = dataCount?.kommunerCount;
 
   const changePage = (page: number) => {
     dispatch(updatePage(page));
@@ -96,7 +96,7 @@ export default function MainPage() {
     changePage(1);
   };
 
-  if (error || error2) return <div>Kommuner not found</div>;
+  if (error || errorCount) return <div>Kommuner not found</div>;
 
   return (
     <div className='mainPage'>
@@ -123,7 +123,7 @@ export default function MainPage() {
             { minWidth: 900, cols: 3 },
             { minWidth: 1200, cols: 4 },
           ]}>
-          {(loading || loading2) && <LoadingSpinner />}
+          {(loading || loadingCount) && <LoadingSpinner />}
           {data &&
             data.kommuner &&
             data.kommuner.map((kommune: Kommune) => {
