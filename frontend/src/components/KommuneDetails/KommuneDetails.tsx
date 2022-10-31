@@ -44,7 +44,7 @@ export default function KommuneDetails({ refresh }: { refresh: boolean }) {
           <div className='line'></div>
           <div className='kommuneDetails'>
             <div>
-              <p className='rating'>
+              <div className='rating'>
                 <Rating
                   initialValue={data.kommune.averageRating}
                   readonly
@@ -55,7 +55,7 @@ export default function KommuneDetails({ refresh }: { refresh: boolean }) {
                     ? '(' + data.kommune.averageRating.toFixed(2) + ')'
                     : '(Ingen vurderinger)'}
                 </div>
-              </p>
+              </div>
               <label>📍 Fylke</label>
               <p>{data.kommune.county.name}</p>
               <label>👨‍👩‍👧‍👧 Innbyggertall</label>
