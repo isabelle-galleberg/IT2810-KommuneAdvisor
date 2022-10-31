@@ -1,28 +1,47 @@
-# KommuneAdvisor 
-KommuneAdvisor is a web application that lets you find information about and rate the Norwegian municipalities, also known as kommuner. A user can search for a kommune on the main page. Kommuner can be filtered on county and sorted by area, population and ratings. From search results, the user can click on a kommune to view details.
+#  🇳🇴KommuneAdvisor 
+KommuneAdvisor is a web application that lets you find information about and review the Norwegian municipalities, also known as kommuner. A user can search for a given kommune and filter kommuner on county. Kommuner can also be sorted by area, population and ratings, both ascending and descending. From the search results, the user can click on a kommune to view a details page with more information and ratings about this kommune. 
+
 
 ## 💻Project setup
 
 ### Frontend
-
 In the project directory, you can run:
-
+- `cd frontend` to navigate to the frontend directory
 - `npm start` to install dependencies and run the project in development mode
 - `npm test` to install dependencies run the test runner interactively
 - `npm run build` to build the app for production to the `build` folder
 - `npx run lint` to run prettier and eslint checks
 
+TODO: kommandoer for å kjøre Cypress tester. 
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### Backend
+In the project directory, you can run:
+- `cd backend` to navigate to the backend directory
+- `npm install` to install dependencies
+- `npm run dev` to run server using nodemon, automatically restarting server on file changes
+- `npx run lint` to run prettier and eslint checks
 
 
-## 🔎Search
+## 🔎Search 
+With the search field, the user can search for a kommune. Suggested kommuner based on the user inputs are displayed on the main page. 
 
-Search result pagination with infinite scroll.  Detail view of objects. Sorting and filtering. 
+### Sorting and filtering
+TODO: dette er implementert backend. (Hvorfor og hvordan?) Kobles opp mot verdier frontend. 
+
+### Infinite scroll
+TODO: infinite scroll implementasjon. 
+
+### Detail view
+From the search results, a user can click into the details page of a kommune. This does a new query to fetch information about the given kommune based on id. The id is also displayed in the url /kommune/:id on the details page. 
+
 
 ## 🌍Global state management
-In this application we have implemented global state management using [Redux Toolkit](https://redux-toolkit.js.org) for the search field and dropdown menus. A user can search for and filter kommuner, click on a kommune to view the details page, then go back to the search results and see that the values for search field and filter values have persisted. 
+The main purpose of global state is to share a state among multiple components in order to avoid prop drilling. In this application we have implemented global state management using [Redux Toolkit](https://redux-toolkit.js.org) for the search field and dropdown menus. A user can search for and filter kommuner, click on a kommune to view the details page, then go back to the search results and see that the values for search field and filter values have persisted. 
+
+We implemented the global states with Redux before fetching data from the backend, and therefore did not know that this could be done in the cache configuration with Apollo client. Although using Redux requires a bit more boilerplate code, it was quite simple to implement and works well with GraphQL. 
+
 
 
 ## 💅Web accessibility
@@ -36,25 +55,28 @@ The page is also navigable. By clicking on the logo in navbar og back-button, th
 
 
 ## 💾Backend
-MongoDB is a document database. 
 
 ### MongoDB
+TODO: implementasjon. 
+MongoDB is a document database. 
 
 ### GraphQL
+TODO: implementasjon.
 We used GraphQL for the backend. 
 
 ## 🧪Testing
 
 ### Jest
-We have used the testing framework Jest for some unit tests, using its built-in functions. One of the tests that were performed is to check whether the app crashes on render, by testing the `App` component. In addition, we have tested user interaction for the search input field. The service function `getRatingDescription` has also been tested, which is used to display the correct description of selected amount of stars. Snapshot tests are useful when wanting to make sure that the UI does not change unexpectedly. The tests generate a json version of a component, to check if this matches an earlier representation. We created snapshot tests for the `KommuneCard` and `ReviewCard` components with use of the react-test-renderer, to ensure that they rendered as expected with data.
+We have used the testing framework Jest to create unit tests, using its built-in functions. One of the tests that were performed is to check whether the app crashes on render, by testing the `App` component. In addition, we have tested user interaction for the search input field. The service function `getRatingDescription` has also been tested, which is used to display the correct description of selected amount of stars. Snapshot tests are useful when wanting to make sure that the UI does not change unexpectedly. The tests generate a json version of a component, to check if this matches an earlier representation. We created snapshot tests for the `KommuneCard` and `ReviewCard` components with use of the react-test-renderer, to ensure that they rendered as expected with data.
 
 
 ### Cypress
+TODO
 
 
 ## 🚀Git guidelines and code quality
 
-We have used formatting tools Prettier and ESLint to ensure a common coding style and good code quality. 
+We have used the formatting tool Prettier and linter ESLint to ensure a common coding style and good code quality. 
 
 All development tasks are documented in a issue with appropriate labels. After assigning yourself to an issue, the issue should be solved in its own branch. We have disabled pushing to main branch, such that the only way to add code is though merge requests. When merging with main branch, the commits should be squashed.
 
