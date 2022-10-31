@@ -6,7 +6,7 @@ import { GET_KOMMUNE } from '../../services/kommuneService';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import './KommuneDetails.css';
 
-export default function KommuneDetails(refresh: any) {
+export default function KommuneDetails({refresh}: {refresh: boolean}) {
   // url param kommune/:id
   const { id } = useParams();
 
