@@ -9,6 +9,7 @@ import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { useEffect, useState } from 'react';
 import { updateKommune } from '../../redux/kommuneReducer';
 import { IconSearch } from '@tabler/icons';
+import { Kommune } from '../../types/kommune';
 
 export default function MainPage() {
   // globals states from Redux
@@ -20,8 +21,11 @@ export default function MainPage() {
   const [sortBy, setSortBy] = useState('name');
   const [sortDirection, setSortDirection] = useState('ascending');
 
-  // create separate function for filtering
   useEffect(() => {
+    filterKommuner();
+  }, [filter]);
+
+  const filterKommuner = () => {
     switch (filter) {
       case 'Befolkning høy-lav':
         setSortBy('population');
@@ -51,7 +55,7 @@ export default function MainPage() {
         setSortBy('name');
         setSortDirection('ascending');
     }
-  }, [filter]);
+  };
 
   const { loading, error, data } = useQuery(GET_ALL_KOMMUNER, {
     variables: {
@@ -97,9 +101,8 @@ export default function MainPage() {
             { minWidth: 1200, cols: 4 },
           ]}>
           {loading && <LoadingSpinner />}
-          {/* Replace type any! */}
           {data && data.kommuner
-            ? data.kommuner.map((kommune: any) => {
+            ? data.kommuner.map((kommune: Kommune) => {
                 return (
                   <KommuneCard
                     key={kommune._id}

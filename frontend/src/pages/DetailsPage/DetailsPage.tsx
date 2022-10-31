@@ -21,7 +21,7 @@ export default function DetailsPage() {
     setReviews(data?.kommune.kommuneRating);
   }, [data]);
 
-  function addReview(review: any) {
+  function addReview(review: Review) {
     setReviews([...reviews, review]);
   }
 
