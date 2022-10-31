@@ -89,7 +89,7 @@ export default function MainPage() {
         setSortBy('name');
         setSortDirection('ascending');
     }
-  };
+  });
 
   useEffect(() => {
     if (!countResponse) return;
