@@ -190,7 +190,9 @@ exports[`<ReviewCard /> should match snapshot with data 1`] = `
     </span>
     <div
       className="date"
-    />
+    >
+      Invalid Date
+    </div>
   </div>
   <div
     className="reviewCardBottom"
