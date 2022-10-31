@@ -13,7 +13,6 @@ import { useEffect, useState } from 'react';
 import { updateKommune } from '../../redux/kommuneReducer';
 import { IconSearch } from '@tabler/icons';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { any } from 'prop-types';
 
 export default function MainPage() {
   // globals states from Redux
@@ -26,6 +25,7 @@ export default function MainPage() {
   const [sortBy, setSortBy] = useState('name');
   const [sortDirection, setSortDirection] = useState('ascending');
 
+  // values for handling infinite scroll
   const [loadedData, setLoadedData] = useState([] as any[]);
   const [pageCounter, setPageCounter] = useState(1);
 
@@ -52,7 +52,6 @@ export default function MainPage() {
 
   useEffect(() => {
     refetch();
-    console.log(kommuneCount);
   }, [pageCounter]);
 
   useEffect(() => {
@@ -99,21 +98,13 @@ export default function MainPage() {
         setSortBy('name');
         setSortDirection('ascending');
     }
-    // fetchData();
   }, [filter]);
-
-  // const fetchData = (): any => {
-  //   setLoading(loading);
-  //   setLoadedData(loadedData.concat(data.kommuner));
-  // };
 
   const changeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(updateKommune(e.target.value));
   };
 
   if (error) console.log(error);
-
-  console.log(loadedData);
 
   return (
     <div className='mainPage'>
