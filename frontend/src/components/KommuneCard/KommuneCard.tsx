@@ -51,7 +51,9 @@ export default function KommuneCard({
             iconsCount={1}
             readonly
             initialValue={1}></Rating>
-          <p className='kommuneCardAverageRating'>({rating})</p>
+          <p className='kommuneCardAverageRating'>
+            ({rating != 0 ? rating.toFixed(2) : '-'})
+          </p>
         </div>
       </Group>
     </Card>
