@@ -48,25 +48,15 @@ We implemented the global states with Redux before fetching data from the backen
 
 ## 💅Web accessibility
 
-[Web accessibility](https://monsido.com/web-accessibility) is the need for websites to utilize tools and technologies developed to aid the perception, understanding, contribution, navigation, and interaction of a person with disabilities on the site. We have used the component library [Mantine](https://mantine.dev) in order to achieve this. 
+[Web accessibility](https://monsido.com/web-accessibility) is the need for websites to utilize tools and technologies developed to aid the perception, understanding, contribution, navigation, and interaction of a person with disabilities on the site. We have used the component library [Mantine](https://mantine.dev) in order to achieve this.
 
-To make the page *perceivable*, 
+To make our website *perceivable*, the information about a kommune is displayed on the details page with a readable font and described with a label and emoji. All input fields are described with a label as well. When hovering a button, the cursor is changed to pointer, indicating that the user can click. All images have textual alternatives, implemented with the alt-attribute. 
 
-all buttons have a cursor pointer. The data that is displayed on the details page is described with a label and emoji, which does not depend on language. 
- Alt text
+To make the website *understanding*, feedback is given on user interaction. When hovering a kommune card or review, a shadown is added. While fetching data a loading icon is displayed, and if the data cannot be retrieved an error message is displayed. When creating a new review, the star rating displays a textual description according to the number of selected stars. 
 
-  For images we have text alternatives, using the alt-attribute.
+To ensure intuitive *navigation*, the user can view the kommune details page by clicking on the "Show more" button for the given kommune. In order to navigate back to the main page, the user can either click on the logo in the navbar or the back-button.
 
-
-To make the website *understanding*, feedback is given on user interaction. When hovering a kommune card or review, a shadown is added. While fetching data a loading icon is displayed, and if the data cannot be retrieved, then an error message is displayed.
-
-
-To ensure intuitive *navigation*, the user can view the kommune details page by clicking on the "Show more" button for the given kommune. In order to navigate back to the main page, the user can either click on the logo in the navbar or the back-button. 
-
-
-The application scales dynamically after screen size, and is therefore mobile responsive for screens larger than 300px. 
-
-
+The website scales dynamically after screen size, and is therefore mobile responsive for screens larger than 300px.
 
 ## 💾Backend
 
