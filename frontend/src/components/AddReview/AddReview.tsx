@@ -8,10 +8,9 @@ import { useParams } from 'react-router-dom';
 import { AddReviewProps } from '../../types/propTypes';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import './AddReview.css';
+import { getRatingDescription } from '../../services/getRatingDescription';
 
-export default function AddReview({
-  onCreate
-}: AddReviewProps) {
+export default function AddReview({ onCreate }: AddReviewProps) {
   const { id } = useParams();
   const [postReview, { loading, error }] = useMutation(POST_REVIEW);
   const [opened, setOpened] = useState(false);
@@ -49,8 +48,8 @@ export default function AddReview({
           rating: review.rating,
           title: review.title,
           description: review.description,
-          kommuneId: id
-        }
+          kommuneId: id,
+        },
       });
       review._id = response.data.addKommuneRating._id;
       review.timestamp = response.data.addKommuneRating.timestamp;
@@ -73,22 +72,20 @@ export default function AddReview({
     setErrorMessage(false);
     setReview({ ...review, name: name });
   }
+
   function updateTitle(title: string) {
     setErrorMessage(false);
     setReview({ ...review, title: title });
   }
+
   function updateDescription(description: string) {
     setErrorMessage(false);
     setReview({ ...review, description: description });
   }
+
   function updateRatingDescription(rating: number) {
     setErrorMessage(false);
-    if (rating == 1) setRatingDescription('Forferdelig');
-    else if (rating == 2) setRatingDescription('Dårlig');
-    else if (rating == 3) setRatingDescription('Gjennomsnitt');
-    else if (rating == 4) setRatingDescription('Svært bra');
-    else if (rating == 5) setRatingDescription('Ypperlig');
-    else setRatingDescription('');
+    setRatingDescription(getRatingDescription(rating));
   }
 
   return (
