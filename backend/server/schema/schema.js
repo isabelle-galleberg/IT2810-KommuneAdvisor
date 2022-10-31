@@ -96,7 +96,7 @@ const RootQuery = new GraphQLObjectType({
         search: { type: GraphQLString },
         county: { type: GraphQLString },
       },
-      resolve(parent, args) {
+      async resolve(parent, args) {
         let query = kommuner.find({});
         if (args.county) {
           query = query.find({ county: args.county });
@@ -108,6 +108,8 @@ const RootQuery = new GraphQLObjectType({
         if (args.sortBy) {
           query = query.sort({
             [args.sortBy]: args.sortDirection === 'descending' ? -1 : 1,
+            name: 1,
+            _id: 1,
           });
         }
         query.skip((args.page - 1) * args.pageSize).limit(args.pageSize);

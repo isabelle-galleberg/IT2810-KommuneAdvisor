@@ -9,11 +9,10 @@ import {
   GET_KOMMUNER_COUNT,
 } from '../../services/kommuneService';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { updateKommune } from '../../redux/kommuneReducer';
 import { IconSearch } from '@tabler/icons';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { any } from 'prop-types';
 
 export default function MainPage() {
   // globals states from Redux
@@ -26,10 +25,10 @@ export default function MainPage() {
   const [sortBy, setSortBy] = useState('name');
   const [sortDirection, setSortDirection] = useState('ascending');
 
-  const [loadedData, setLoadedData] = useState([] as any[]);
-  const [pageCounter, setPageCounter] = useState(1);
+  const [kommuner, setKommuner] = useState([] as any[]);
+  const [page, setPage] = useState(1);
 
-  const { data: kommuneCount, refetch: refetchKommuneCount } = useQuery(
+  const { data: countResponse, refetch: refetchKommuneCount } = useQuery(
     GET_KOMMUNER_COUNT,
     { variables: { search: searchInput, county: county } }
   );
@@ -37,39 +36,30 @@ export default function MainPage() {
   const {
     loading,
     error,
-    data: currentKommunePage,
-    refetch,
+    data: kommuneResponse,
+    refetch: refetchKommuner,
   } = useQuery(GET_ALL_KOMMUNER, {
     variables: {
       search: searchInput,
       sortBy: sortBy,
       sortDirection: sortDirection,
-      pageSize: 20,
+      pageSize: 24,
       county: county,
-      page: pageCounter,
+      page: page,
     },
   });
 
-  useEffect(() => {
-    refetch();
-    console.log(kommuneCount);
-  }, [pageCounter]);
-
-  useEffect(() => {
-    setLoadedData([]);
-    setPageCounter(1);
-    refetchKommuneCount();
-  }, [sortBy, sortDirection, county, searchInput]);
-
-  useEffect(() => {
-    const nyeKommuner = currentKommunePage?.kommuner;
-    if (nyeKommuner) {
-      setLoadedData([...loadedData, ...nyeKommuner]);
+  const hasMorePages = useMemo(() => {
+    if (countResponse && kommuneResponse) {
+      return kommuner.length < (countResponse?.kommunerCount ?? 0);
     }
-  }, [currentKommunePage]);
+    return false;
+  }, [kommuner, countResponse]);
 
   // create separate function for filtering
   useEffect(() => {
+    if (!filter) return;
+
     switch (filter) {
       case 'Befolkning høy-lav':
         setSortBy('population');
@@ -99,22 +89,39 @@ export default function MainPage() {
         setSortBy('name');
         setSortDirection('ascending');
     }
-    // fetchData();
   }, [filter]);
 
-  // const fetchData = (): any => {
-  //   setLoading(loading);
-  //   setLoadedData(loadedData.concat(data.kommuner));
-  // };
+  useEffect(() => {
+    if (!countResponse) return;
+
+    refetchKommuner();
+  }, [countResponse]);
+
+  useEffect(() => {
+    refetchKommuner();
+  }, [page]);
+
+  useEffect(() => {
+    setKommuner([]);
+
+    setPage(1);
+    refetchKommuneCount();
+  }, [searchInput, county, filter]);
+
+  useEffect(() => {
+    if (kommuneResponse) {
+      setKommuner([...kommuner, ...kommuneResponse.kommuner]);
+    }
+  }, [kommuneResponse]);
 
   const changeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(updateKommune(e.target.value));
+    setKommuner([]);
   };
 
-  if (error) console.log(error);
-
-  console.log(loadedData);
-
+  const nextPage = () => {
+    setPage((page) => page + 1);
+  };
   return (
     <div className='mainPage'>
       <div className='searchField'>
@@ -132,40 +139,40 @@ export default function MainPage() {
         />
       </div>
       <InputFields />
-      <div className='cards'>
-        <InfiniteScroll
-          dataLength={loadedData?.length}
-          next={() => {
-            setPageCounter(pageCounter + 1);
-          }}
-          hasMore={loadedData?.length < kommuneCount?.kommunerCount || false}
-          loader={null}>
-          <SimpleGrid
-            breakpoints={[
-              { minWidth: 0, cols: 1 },
-              { minWidth: 600, cols: 2 },
-              { minWidth: 900, cols: 3 },
-              { minWidth: 1200, cols: 4 },
-            ]}>
-            {loading && <LoadingSpinner />}
-            {/* Replace type any! */}
-            {loadedData && loadedData
-              ? loadedData.map((kommune: any) => {
+
+      {countResponse?.kommunerCount && true && (
+        <div className='cards'>
+          <InfiniteScroll
+            dataLength={kommuner.length}
+            next={nextPage}
+            hasMore={hasMorePages}
+            loader={null}>
+            <SimpleGrid
+              breakpoints={[
+                { minWidth: 0, cols: 1 },
+                { minWidth: 600, cols: 2 },
+                { minWidth: 900, cols: 3 },
+                { minWidth: 1200, cols: 4 },
+              ]}>
+              {loading && <LoadingSpinner />}
+              {/* Replace type any! */}
+              {kommuner &&
+                kommuner.map((kommune: any) => {
                   return (
                     <KommuneCard
                       key={kommune._id}
                       id={kommune._id}
                       name={kommune.name}
                       weaponImg={kommune.logoUrl}
-                      county={kommune.county.name}
+                      county={kommune.county?.name ?? ''}
                       rating={kommune.averageRating}
                     />
                   );
-                })
-              : null}
-          </SimpleGrid>
-        </InfiniteScroll>
-      </div>
+                })}
+            </SimpleGrid>
+          </InfiniteScroll>
+        </div>
+      )}
     </div>
   );
 }
