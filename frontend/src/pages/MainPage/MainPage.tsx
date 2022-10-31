@@ -4,7 +4,10 @@ import { SimpleGrid, TextInput } from '@mantine/core';
 import InputFields from '../../components/InputFields/InputFields';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { useQuery } from '@apollo/client';
-import { GET_ALL_KOMMUNER } from '../../services/kommuneService';
+import {
+  GET_ALL_KOMMUNER,
+  GET_KOMMUNER_COUNT,
+} from '../../services/kommuneService';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { useEffect, useState } from 'react';
 import { updateKommune } from '../../redux/kommuneReducer';
@@ -14,6 +17,7 @@ import { any } from 'prop-types';
 
 export default function MainPage() {
   // globals states from Redux
+  const dispatch = useAppDispatch();
   const searchInput = useAppSelector((state) => state.kommuneInput.kommune);
   const county = useAppSelector((state) => state.countyInput.county);
   const filter = useAppSelector((state) => state.filterInput.filter);
@@ -22,10 +26,47 @@ export default function MainPage() {
   const [sortBy, setSortBy] = useState('name');
   const [sortDirection, setSortDirection] = useState('ascending');
 
-  const [loadedData, setLoadedData] = useState([]);
+  const [loadedData, setLoadedData] = useState([] as any[]);
   const [pageCounter, setPageCounter] = useState(1);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+
+  const { data: kommuneCount, refetch: refetchKommuneCount } = useQuery(
+    GET_KOMMUNER_COUNT,
+    { variables: { search: searchInput, county: county } }
+  );
+
+  const {
+    loading,
+    error,
+    data: currentKommunePage,
+    refetch,
+  } = useQuery(GET_ALL_KOMMUNER, {
+    variables: {
+      search: searchInput,
+      sortBy: sortBy,
+      sortDirection: sortDirection,
+      pageSize: 20,
+      county: county,
+      page: pageCounter,
+    },
+  });
+
+  useEffect(() => {
+    refetch();
+    console.log(kommuneCount);
+  }, [pageCounter]);
+
+  useEffect(() => {
+    setLoadedData([]);
+    setPageCounter(1);
+    refetchKommuneCount();
+  }, [sortBy, sortDirection, county, searchInput]);
+
+  useEffect(() => {
+    const nyeKommuner = currentKommunePage?.kommuner;
+    if (nyeKommuner) {
+      setLoadedData([...loadedData, ...nyeKommuner]);
+    }
+  }, [currentKommunePage]);
 
   // create separate function for filtering
   useEffect(() => {
@@ -58,28 +99,13 @@ export default function MainPage() {
         setSortBy('name');
         setSortDirection('ascending');
     }
-    fetchMoreData();
+    // fetchData();
   }, [filter]);
 
-  const fetchMoreData = () => {
-    setTimeout(() => {
-      const { loading, error, data } = useQuery(GET_ALL_KOMMUNER, {
-        variables: {
-          search: searchInput,
-          sortBy: sortBy,
-          sortDirection: sortDirection,
-          pageSize: 20,
-          county: county,
-          page: pageCounter,
-        },
-      });
-      setLoading(loading);  
-      setLoadedData(loadedData.concat(data.kommuner));
-      setPageCounter(pageCounter + 1);
-    }, 1500);
-  };
-
-  const dispatch = useAppDispatch();
+  // const fetchData = (): any => {
+  //   setLoading(loading);
+  //   setLoadedData(loadedData.concat(data.kommuner));
+  // };
 
   const changeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(updateKommune(e.target.value));
@@ -96,7 +122,7 @@ export default function MainPage() {
           label='Søk etter en kommune'
           value={searchInput}
           onChange={changeSearch}
-          rightSection={  
+          rightSection={
             <IconSearch
               size={18}
               stroke={1.5}
@@ -107,20 +133,22 @@ export default function MainPage() {
       </div>
       <InputFields />
       <div className='cards'>
-        <SimpleGrid
-          breakpoints={[
-            { minWidth: 0, cols: 1 },
-            { minWidth: 600, cols: 2 },
-            { minWidth: 900, cols: 3 },
-            { minWidth: 1200, cols: 4 },
-          ]}>
-          {loading && <LoadingSpinner />}
-          {/* Replace type any! */}
-          <InfiniteScroll
-            dataLength={loadedData?.length}
-            next={fetchMoreData}
-            hasMore={loadedData?.length < 356}
-            loader={<LoadingSpinner />}>
+        <InfiniteScroll
+          dataLength={loadedData?.length}
+          next={() => {
+            setPageCounter(pageCounter + 1);
+          }}
+          hasMore={loadedData?.length < kommuneCount?.kommunerCount || false}
+          loader={null}>
+          <SimpleGrid
+            breakpoints={[
+              { minWidth: 0, cols: 1 },
+              { minWidth: 600, cols: 2 },
+              { minWidth: 900, cols: 3 },
+              { minWidth: 1200, cols: 4 },
+            ]}>
+            {loading && <LoadingSpinner />}
+            {/* Replace type any! */}
             {loadedData && loadedData
               ? loadedData.map((kommune: any) => {
                   return (
@@ -135,8 +163,8 @@ export default function MainPage() {
                   );
                 })
               : null}
-          </InfiniteScroll>
-        </SimpleGrid>
+          </SimpleGrid>
+        </InfiniteScroll>
       </div>
     </div>
   );

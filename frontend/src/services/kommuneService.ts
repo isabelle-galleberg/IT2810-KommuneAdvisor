@@ -57,3 +57,8 @@ export const GET_ALL_KOMMUNER = gql`
     }
   }
 `;
+export const GET_KOMMUNER_COUNT = gql`
+  query kommunerCount($county: String, $search: String) {
+    kommunerCount(search: $search, county: $county)
+  }
+`;

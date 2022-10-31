@@ -127,6 +127,25 @@ const RootQuery = new GraphQLObjectType({
         return county.find({});
       },
     },
+    kommunerCount: {
+      type: GraphQLInt,
+      args: {
+        search: { type: GraphQLString },
+        county: { type: GraphQLString },
+      },
+      resolve(parent, args) {
+        let query = kommuner.find({});
+        if (args.county) {
+          query = query.find({ county: args.county });
+        }
+        if (args.search)
+          query = query.find({
+            name: { $regex: args.search, $options: 'i' },
+          });
+
+        return query.count();
+      },
+    },
   },
 });
 
