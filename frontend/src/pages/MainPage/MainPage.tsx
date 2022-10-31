@@ -1,6 +1,6 @@
 import './MainPage.css';
 import KommuneCard from '../../components/KommuneCard/KommuneCard';
-import { SimpleGrid, TextInput } from '@mantine/core';
+import { Pagination, SimpleGrid, TextInput } from '@mantine/core';
 import InputFields from '../../components/InputFields/InputFields';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { useQuery } from '@apollo/client';
@@ -10,12 +10,14 @@ import { useEffect, useState } from 'react';
 import { updateKommune } from '../../redux/kommuneReducer';
 import { IconSearch } from '@tabler/icons';
 import { Kommune } from '../../types/kommune';
+import { updatePage } from '../../redux/pageReducer';
 
 export default function MainPage() {
   // globals states from Redux
   const searchInput = useAppSelector((state) => state.kommuneInput.kommune);
   const county = useAppSelector((state) => state.countyInput.county);
   const filter = useAppSelector((state) => state.filterInput.filter);
+  const page = useAppSelector((state) => state.pageInput.page);
 
   // sorting values for GraphQL query
   const [sortBy, setSortBy] = useState('name');
@@ -64,6 +66,7 @@ export default function MainPage() {
       sortDirection: sortDirection,
       pageSize: 20,
       county: county,
+      page: page,
     },
   });
 
@@ -71,6 +74,10 @@ export default function MainPage() {
 
   const changeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(updateKommune(e.target.value));
+  };
+
+  const changePage = (page: number) => {
+    dispatch(updatePage(page));
   };
 
   if (error) return <div>Kommuner not found</div>;
@@ -117,6 +124,11 @@ export default function MainPage() {
             })}
         </SimpleGrid>
       </div>
+      <Pagination
+        page={page}
+        onChange={changePage}
+        total={Math.ceil(356 / 20)}
+      />
     </div>
   );
 }

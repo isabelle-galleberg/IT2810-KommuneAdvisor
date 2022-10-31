@@ -32,6 +32,7 @@ export const GET_ALL_KOMMUNER = gql`
     $sortBy: sort
     $sortDirection: sortDirection
     $pageSize: Int
+    $page: Int
     $county: String
   ) {
     kommuner(
@@ -39,6 +40,7 @@ export const GET_ALL_KOMMUNER = gql`
       sortBy: $sortBy
       sortDirection: $sortDirection
       pageSize: $pageSize
+      page: $page
       county: $county
     ) {
       _id
