@@ -9,9 +9,7 @@ import { AddReviewProps } from '../../types/propTypes';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import './AddReview.css';
 
-export default function AddReview({
-  onCreate
-}: AddReviewProps) {
+export default function AddReview({ onCreate }: AddReviewProps) {
   const { id } = useParams();
   const [postReview, { loading, error }] = useMutation(POST_REVIEW);
   const [opened, setOpened] = useState(false);
@@ -49,8 +47,8 @@ export default function AddReview({
           rating: review.rating,
           title: review.title,
           description: review.description,
-          kommuneId: id
-        }
+          kommuneId: id,
+        },
       });
       review._id = response.data.addKommuneRating._id;
       review.timestamp = response.data.addKommuneRating.timestamp;
@@ -99,7 +97,9 @@ export default function AddReview({
         title='Gi kommunen en vurdering!'>
         {
           <div className='modalContainer'>
-            <div data-cy='add-review-rating' className='ratingContainer'>
+            <div
+              data-cy='add-review-rating'
+              className='ratingContainer'>
               <Rating
                 className='rating'
                 onClick={handleRating}
@@ -137,7 +137,11 @@ export default function AddReview({
               <div className='errorMessage'>Please fill in all the fields!</div>
             )}
             <div className='buttonsContainer'>
-              <Button data-cy='btn-add-review' onClick={() => addReview()}>Del</Button>
+              <Button
+                data-cy='btn-add-review'
+                onClick={() => addReview()}>
+                Del
+              </Button>
               <Button onClick={() => cancelReview()}>Avbryt</Button>
             </div>
           </div>
@@ -145,7 +149,11 @@ export default function AddReview({
       </Modal>
 
       <Group position='center'>
-        <Button data-cy='btn-add-review' onClick={() => openModal()}>Legg til vurdering</Button>
+        <Button
+          data-cy='btn-open-add-review'
+          onClick={() => openModal()}>
+          Legg til vurdering
+        </Button>
       </Group>
     </>
   );

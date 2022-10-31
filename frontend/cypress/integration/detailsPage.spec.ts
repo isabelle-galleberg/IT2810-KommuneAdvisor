@@ -32,7 +32,6 @@ describe('test the details page', () => {
     cy.get('[data-cy="loading-spinner"]').should('not.exist');
   });
 
-
   // Should contain all necessary information
   it('Should contain all necessary information', () => {
     cy.get('[data-cy="kommune-name"]').should('exist');
@@ -46,15 +45,15 @@ describe('test the details page', () => {
   });
 
   // Check link to SNL has a href
-  it("Has anchor tags", () => {
-    cy.contains("a");
+  it('Has anchor tags', () => {
+    cy.contains('a');
   });
 
   // Check back to list arrow
   it('Has a back arrow', () => {
-    cy.get('[data-cy="back-arrow"]').click()
+    cy.get('[data-cy="back-arrow"]').click();
     cy.url().then((url) => {
       cy.wrap(url).should('match', /.*\/localhost:3000\/$/i); //fix
     });
-  })
+  });
 });
