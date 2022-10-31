@@ -1,17 +1,23 @@
 import { useQuery } from '@apollo/client';
+import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Rating } from 'react-simple-star-rating';
 import { GET_KOMMUNE } from '../../services/kommuneService';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import './KommuneDetails.css';
 
-export default function KommuneDetails() {
-  // url param kommune/:name
+export default function KommuneDetails({refresh}: {refresh: boolean}) {
+  // url param kommune/:id
   const { id } = useParams();
 
-  const { loading, error, data } = useQuery(GET_KOMMUNE, {
+  const { loading, error, data, refetch } = useQuery(GET_KOMMUNE, {
     variables: { id: id },
   });
+  useEffect(() => {
+    if (refresh) {
+      refetch();
+    }
+  }, [refresh]);
 
   if (loading) return <LoadingSpinner />;
   if (error) console.log(error);
@@ -44,7 +50,9 @@ export default function KommuneDetails() {
                   size={30}
                 />
                 <div className='averageRating'>
-                  ({data.kommune.averageRating})
+                  {data.kommune.averageRating != 0
+                    ? '(' + data.kommune.averageRating.toFixed(2) + ')'
+                    : '(Ingen vurderinger)'}
                 </div>
               </div>
               <p>📍 {data.kommune.county.name}</p>
