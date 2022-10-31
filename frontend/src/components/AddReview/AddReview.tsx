@@ -111,11 +111,6 @@ export default function AddReview({ onCreate }: AddReviewProps) {
             <div className='textfieldContainer'>
               <TextInput
                 placeholder='Skriv her'
-                label='Oppgi navn'
-                onChange={(event) => updateName(event.currentTarget.value)}
-              />
-              <TextInput
-                placeholder='Skriv her'
                 label='Gi anmeldelsen en tittel'
                 onChange={(event) => updateTitle(event.currentTarget.value)}
               />
@@ -125,6 +120,11 @@ export default function AddReview({ onCreate }: AddReviewProps) {
                 onChange={(event) =>
                   updateDescription(event.currentTarget.value)
                 }
+              />
+              <TextInput
+                placeholder='Skriv her'
+                label='Oppgi navn'
+                onChange={(event) => updateName(event.currentTarget.value)}
               />
             </div>
             {errorMessage && (

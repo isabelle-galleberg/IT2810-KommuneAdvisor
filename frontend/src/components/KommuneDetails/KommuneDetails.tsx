@@ -44,7 +44,9 @@ export default function KommuneDetails() {
                   size={30}
                 />
                 <div className='averageRating'>
-                  ({data.kommune.averageRating})
+                  {data.kommune.averageRating != 0
+                    ? data.kommune.averageRating.toFixed(2)
+                    : '(Ingen vurderinger)'}
                 </div>
               </div>
               <p>📍 {data.kommune.county.name}</p>
