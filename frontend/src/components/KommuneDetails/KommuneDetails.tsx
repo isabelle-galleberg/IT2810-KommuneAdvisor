@@ -45,7 +45,7 @@ export default function KommuneDetails() {
                 />
                 <div className='averageRating'>
                   {data.kommune.averageRating != 0
-                    ? data.kommune.averageRating.toFixed(2)
+                    ? '(' + data.kommune.averageRating.toFixed(2) + ')'
                     : '(Ingen vurderinger)'}
                 </div>
               </div>
