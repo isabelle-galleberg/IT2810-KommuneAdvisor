@@ -2,14 +2,12 @@ import { configureStore } from '@reduxjs/toolkit';
 import kommuneReducer from './kommuneReducer';
 import countyReducer from './countyReducer';
 import filterReducer from './filterReducer';
-import pageReducer from './pageReducer';
 
 export const store = configureStore({
   reducer: {
     kommuneInput: kommuneReducer,
     countyInput: countyReducer,
     filterInput: filterReducer,
-    pageInput: pageReducer,
   },
 });
 
