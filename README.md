@@ -26,8 +26,8 @@ In this application we have implemented global state management using [Redux Too
 
 
 
-## 👩‍💻Web accessibility
-Component library Mantine. Scales after screen size. 
+## 💁‍♀️Web accessibility
+Component library Mantine. The application scales after screen size and is therefore mobile responsive. 
 
 ## 💾Backend
 MongoDB is a document database. 
@@ -40,7 +40,8 @@ We used GraphQL for the backend.
 ## 🧪Testing
 
 ### Jest
-We have used the testing framework Jest for some unit tests, using its built-in functions. One of the tests that were performed is to check whether the app crashes on render, by testing the `App` component.
+We have used the testing framework Jest for some unit tests, using its built-in functions. One of the tests that were performed is to check whether the app crashes on render, by testing the `App` component. In addition, we have tested user interaction for the search input field. The service function `getRatingDescription` has also been tested, which is used to display the correct description of selected amount of stars. Snapshot tests are useful when wanting to make sure that the UI does not change unexpectedly. The tests generate a json version of a component, to check if this matches an earlier representation. We created snapshot tests for the `KommuneCard` and `ReviewCard` components with use of the react-test-renderer, to ensure that they rendered as expected with data.
+
 
 ### Cypress
 
