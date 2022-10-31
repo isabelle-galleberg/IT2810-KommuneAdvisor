@@ -4,6 +4,7 @@ import KommuneCard from '../components/KommuneCard/KommuneCard';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 const data: KommuneCardProps = {
+  id: '1',
   name: 'Oslo',
   county: 'Oslo',
   rating: 4.5,
@@ -17,6 +18,7 @@ describe('<KommuneCard />', () => {
       .create(
         <Router>
           <KommuneCard
+            id={data.id}
             name={data.name}
             county={data.county}
             weaponImg={data.weaponImg}

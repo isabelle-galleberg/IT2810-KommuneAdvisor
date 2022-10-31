@@ -51,7 +51,7 @@ exports[`<KommuneCard /> should match snapshot with data 1`] = `
         Oslo
       </div>
       <a
-        href="/kommune/Oslo"
+        href="/kommune/1"
         onClick={[Function]}
       >
         <button
