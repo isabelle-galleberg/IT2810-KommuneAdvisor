@@ -43,7 +43,8 @@ export default function KommuneDetails({refresh}: {refresh: boolean}) {
           <div className='line'></div>
           <div className='kommuneDetails'>
             <div>
-              <div className='rating'>
+              <label>Gjennomsnittlig vurdering</label>
+              <p className='rating'>
                 <Rating
                   initialValue={data.kommune.averageRating}
                   readonly
@@ -54,14 +55,18 @@ export default function KommuneDetails({refresh}: {refresh: boolean}) {
                     ? '(' + data.kommune.averageRating.toFixed(2) + ')'
                     : '(Ingen vurderinger)'}
                 </div>
-              </div>
-              <p>📍 {data.kommune.county.name}</p>
-              <p>👨‍👩‍👧‍👧 {data.kommune.population}</p>
+              </p>
+              <label>📍 Fylke</label>
+              <p>{data.kommune.county.name}</p>
+              <label>👨‍👩‍👧‍👧 Innbyggertall</label>
+              <p>{data.kommune.population}</p>
+              <label>🏔 Areal</label>
               <p>
-                🏔 {data.kommune.areaInSquareKm}
+                {data.kommune.areaInSquareKm}
                 km<sup>2</sup>
               </p>
-              <p>📝 {data.kommune.writtenLanguage}</p>
+              <label>📝 Skriftspråk</label>
+              <p> {data.kommune.writtenLanguage}</p>
               <p>
                 Les mer her:{' '}
                 <a
