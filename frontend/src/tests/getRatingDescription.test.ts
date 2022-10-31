@@ -7,7 +7,7 @@ describe('getRatingDescription', () => {
     expect(getRatingDescription(input)).toEqual(output);
   });
 
-  test('it should return the empty string when rating is more than 5', () => {
+  test('it should return the empty string when rating is not 1-5', () => {
     const input = 7;
     const output = '';
     expect(getRatingDescription(input)).toEqual(output);
