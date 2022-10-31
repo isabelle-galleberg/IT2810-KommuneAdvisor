@@ -7,23 +7,22 @@ import { GET_REVIEWS } from '../../services/reviewService';
 import { Review } from '../../types/review';
 import { useEffect, useState } from 'react';
 import './DetailsPage.css';
-import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 export default function DetailsPage() {
   const { id } = useParams();
-  const { loading, error, data } = useQuery(GET_REVIEWS, {
+  const { error, data } = useQuery(GET_REVIEWS, {
     variables: { id: id },
   });
-  const [reviews, setReviews] = useState([] as Review[])
+  const [reviews, setReviews] = useState([] as Review[]);
 
   if (error) console.log(error);
 
   useEffect(() => {
     setReviews(data?.kommune.kommuneRating);
-  }, [data])
+  }, [data]);
 
   function addReview(review: any) {
-    setReviews([...reviews, review])
+    setReviews([...reviews, review]);
   }
 
   return (
@@ -31,18 +30,21 @@ export default function DetailsPage() {
       <KommuneDetails />
       <div className='reviews'>
         <AddReview onCreate={addReview} />
-        {reviews?.slice(0).reverse().map((review: Review) => {
-          return (
-            <ReviewCard
-              key={review._id}
-              title={review.title}
-              description={review.description}
-              rating={review.rating}
-              name={review.name}
-              timestamp={review.timestamp}
-            />
-          );
-        })}
+        {reviews
+          ?.slice(0)
+          .reverse()
+          .map((review: Review) => {
+            return (
+              <ReviewCard
+                key={review._id}
+                title={review.title}
+                description={review.description}
+                rating={review.rating}
+                name={review.name}
+                timestamp={review.timestamp}
+              />
+            );
+          })}
       </div>
     </div>
   );

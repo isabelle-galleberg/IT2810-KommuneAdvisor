@@ -10,7 +10,7 @@ export default function ReviewCard({
   timestamp,
 }: Review) {
   //convert from timestamp to date
-  const date = (new Date(Number(timestamp)).toLocaleString()).split(",")[0];
+  const date = new Date(Number(timestamp)).toLocaleString().split(',')[0];
   return (
     <div className='reviewCard'>
       <div className='reviewCardTop'>
