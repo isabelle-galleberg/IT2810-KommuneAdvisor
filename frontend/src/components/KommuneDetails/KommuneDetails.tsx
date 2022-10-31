@@ -31,12 +31,13 @@ export default function KommuneDetails({refresh}: {refresh: boolean}) {
               <img
                 className='backArrow'
                 src={require('../../assets/backArrow.png')}
-                alt=''
+                alt='backArrow'
               />
             </Link>
             <img
               src={data.kommune.logoUrl}
               className='weaponImg'
+              alt='kommuneWeaponImage'
             />
             <h1>{data.kommune.name}</h1>
           </div>
