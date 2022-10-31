@@ -1,17 +1,23 @@
 import { useQuery } from '@apollo/client';
+import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Rating } from 'react-simple-star-rating';
 import { GET_KOMMUNE } from '../../services/kommuneService';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import './KommuneDetails.css';
 
-export default function KommuneDetails() {
+export default function KommuneDetails(refresh: any) {
   // url param kommune/:id
   const { id } = useParams();
 
-  const { loading, error, data } = useQuery(GET_KOMMUNE, {
+  const { loading, error, data, refetch } = useQuery(GET_KOMMUNE, {
     variables: { id: id },
   });
+  useEffect(() => {
+    if (refresh) {
+      refetch();
+    }
+  }, [refresh]);
 
   if (loading) return <LoadingSpinner />;
   if (error) console.log(error);

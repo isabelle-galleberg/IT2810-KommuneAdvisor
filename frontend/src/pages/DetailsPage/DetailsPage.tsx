@@ -14,7 +14,7 @@ export default function DetailsPage() {
     variables: { id: id },
   });
   const [reviews, setReviews] = useState([] as Review[]);
-
+  const [refresh, setRefresh] = useState(false);
   if (error) console.log(error);
 
   useEffect(() => {
@@ -23,11 +23,13 @@ export default function DetailsPage() {
 
   function addReview(review: Review) {
     setReviews([...reviews, review]);
+    setRefresh(true);
+    setRefresh(false);
   }
 
   return (
     <div className='detailsPage'>
-      <KommuneDetails />
+      <KommuneDetails refresh={refresh} />
       <div className='reviews'>
         <AddReview onCreate={addReview} />
         {reviews
