@@ -73,7 +73,7 @@ export default function MainPage() {
     dispatch(updateKommune(e.target.value));
   };
 
-  if (error) console.log(error);
+  if (error) return <div>Kommuner not found</div>;
 
   return (
     <div className='mainPage'>
@@ -101,20 +101,20 @@ export default function MainPage() {
             { minWidth: 1200, cols: 4 },
           ]}>
           {loading && <LoadingSpinner />}
-          {data && data.kommuner
-            ? data.kommuner.map((kommune: Kommune) => {
-                return (
-                  <KommuneCard
-                    key={kommune._id}
-                    id={kommune._id}
-                    name={kommune.name}
-                    weaponImg={kommune.logoUrl}
-                    county={kommune.county.name}
-                    rating={kommune.averageRating}
-                  />
-                );
-              })
-            : null}
+          {data &&
+            data.kommuner &&
+            data.kommuner.map((kommune: Kommune) => {
+              return (
+                <KommuneCard
+                  key={kommune._id}
+                  id={kommune._id}
+                  name={kommune.name}
+                  weaponImg={kommune.logoUrl}
+                  county={kommune.county.name}
+                  rating={kommune.averageRating}
+                />
+              );
+            })}
         </SimpleGrid>
       </div>
     </div>

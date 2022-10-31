@@ -7,15 +7,15 @@ import { GET_REVIEWS } from '../../services/reviewService';
 import { Review } from '../../types/review';
 import { useEffect, useState } from 'react';
 import './DetailsPage.css';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 export default function DetailsPage() {
   const { id } = useParams();
-  const { error, data } = useQuery(GET_REVIEWS, {
+  const { loading, error, data } = useQuery(GET_REVIEWS, {
     variables: { id: id },
   });
   const [reviews, setReviews] = useState([] as Review[]);
   const [refresh, setRefresh] = useState(false);
-  if (error) console.log(error);
 
   useEffect(() => {
     setReviews(data?.kommune.kommuneRating);
@@ -26,6 +26,9 @@ export default function DetailsPage() {
     setRefresh(true);
     setRefresh(false);
   }
+
+  if (loading) return <LoadingSpinner />;
+  if (error) return <div>No reviews found</div>;
 
   return (
     <div className='detailsPage'>

@@ -6,7 +6,7 @@ import { GET_KOMMUNE } from '../../services/kommuneService';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import './KommuneDetails.css';
 
-export default function KommuneDetails({refresh}: {refresh: boolean}) {
+export default function KommuneDetails({ refresh }: { refresh: boolean }) {
   // url param kommune/:id
   const { id } = useParams();
 
@@ -20,30 +20,31 @@ export default function KommuneDetails({refresh}: {refresh: boolean}) {
   }, [refresh]);
 
   if (loading) return <LoadingSpinner />;
-  if (error) console.log(error);
+  if (error) return <div>Kommune not found</div>;
 
   return (
     <>
-      {data && data.kommune && data.kommune ? (
+      {data && data.kommune && data.kommune && (
         <div className='detailsPage'>
           <div className='detailsPageTop'>
             <Link to='/'>
               <img
                 className='backArrow'
                 src={require('../../assets/backArrow.png')}
-                alt=''
+                alt='backArrow'
               />
             </Link>
             <img
               src={data.kommune.logoUrl}
               className='weaponImg'
+              alt='kommuneWeaponImage'
             />
             <h1>{data.kommune.name}</h1>
           </div>
           <div className='line'></div>
           <div className='kommuneDetails'>
             <div>
-              <div className='rating'>
+              <p className='rating'>
                 <Rating
                   initialValue={data.kommune.averageRating}
                   readonly
@@ -54,14 +55,18 @@ export default function KommuneDetails({refresh}: {refresh: boolean}) {
                     ? '(' + data.kommune.averageRating.toFixed(2) + ')'
                     : '(Ingen vurderinger)'}
                 </div>
-              </div>
-              <p>📍 {data.kommune.county.name}</p>
-              <p>👨‍👩‍👧‍👧 {data.kommune.population}</p>
+              </p>
+              <label>📍 Fylke</label>
+              <p>{data.kommune.county.name}</p>
+              <label>👨‍👩‍👧‍👧 Innbyggertall</label>
+              <p>{data.kommune.population}</p>
+              <label>🏔 Areal</label>
               <p>
-                🏔 {data.kommune.areaInSquareKm}
+                {data.kommune.areaInSquareKm}
                 km<sup>2</sup>
               </p>
-              <p>📝 {data.kommune.writtenLanguage}</p>
+              <label>📝 Skriftspråk</label>
+              <p> {data.kommune.writtenLanguage}</p>
               <p>
                 Les mer her:{' '}
                 <a
@@ -79,8 +84,6 @@ export default function KommuneDetails({refresh}: {refresh: boolean}) {
             />
           </div>
         </div>
-      ) : (
-        <div>Kommune not found</div>
       )}
     </>
   );
