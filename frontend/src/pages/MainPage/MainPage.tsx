@@ -1,21 +1,27 @@
 import './MainPage.css';
 import KommuneCard from '../../components/KommuneCard/KommuneCard';
-import { SimpleGrid, TextInput } from '@mantine/core';
+import { Pagination, SimpleGrid, TextInput } from '@mantine/core';
 import InputFields from '../../components/InputFields/InputFields';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { useQuery } from '@apollo/client';
-import { GET_ALL_KOMMUNER } from '../../services/kommuneService';
+import {
+  GET_ALL_KOMMUNER,
+  GET_KOMMUNER_COUNT,
+} from '../../services/kommuneService';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { useEffect, useState } from 'react';
 import { updateKommune } from '../../redux/kommuneReducer';
 import { IconSearch } from '@tabler/icons';
 import { Kommune } from '../../types/kommune';
+import { updatePage } from '../../redux/pageReducer';
 
 export default function MainPage() {
   // globals states from Redux
+  const dispatch = useAppDispatch();
   const searchInput = useAppSelector((state) => state.kommuneInput.kommune);
   const county = useAppSelector((state) => state.countyInput.county);
   const filter = useAppSelector((state) => state.filterInput.filter);
+  const page = useAppSelector((state) => state.pageInput.page);
 
   // sorting values for GraphQL query
   const [sortBy, setSortBy] = useState('name');
@@ -62,18 +68,35 @@ export default function MainPage() {
       search: searchInput,
       sortBy: sortBy,
       sortDirection: sortDirection,
-      pageSize: 20,
+      pageSize: 24,
       county: county,
+      page: page,
     },
   });
 
-  const dispatch = useAppDispatch();
+  const {
+    loading: loadingCount,
+    error: errorCount,
+    data: dataCount,
+  } = useQuery(GET_KOMMUNER_COUNT, {
+    variables: {
+      county: county,
+      search: searchInput,
+    },
+  });
+
+  const totalKommuner = dataCount?.kommunerCount;
+
+  const changePage = (page: number) => {
+    dispatch(updatePage(page));
+  };
 
   const changeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(updateKommune(e.target.value));
+    changePage(1);
   };
 
-  if (error) return <div>Kommuner not found</div>;
+  if (error || errorCount) return <div>Kommuner not found</div>;
 
   return (
     <div className='mainPage'>
@@ -100,7 +123,7 @@ export default function MainPage() {
             { minWidth: 900, cols: 3 },
             { minWidth: 1200, cols: 4 },
           ]}>
-          {loading && <LoadingSpinner />}
+          {(loading || loadingCount) && <LoadingSpinner />}
           {data &&
             data.kommuner &&
             data.kommuner.map((kommune: Kommune) => {
@@ -117,6 +140,12 @@ export default function MainPage() {
             })}
         </SimpleGrid>
       </div>
+      <Pagination
+        className='pagination'
+        page={page}
+        onChange={changePage}
+        total={Math.ceil(totalKommuner / 24)}
+      />
     </div>
   );
 }
