@@ -4,7 +4,10 @@ import { Pagination, SimpleGrid, TextInput } from '@mantine/core';
 import InputFields from '../../components/InputFields/InputFields';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { useQuery } from '@apollo/client';
-import { GET_ALL_KOMMUNER } from '../../services/kommuneService';
+import {
+  GET_ALL_KOMMUNER,
+  GET_KOMMUNER_COUNT,
+} from '../../services/kommuneService';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { useEffect, useState } from 'react';
 import { updateKommune } from '../../redux/kommuneReducer';
