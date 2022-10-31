@@ -19,15 +19,21 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## 🔎Search
 
-Search result pagination.  Detail view of objects. Sorting and filtering. 
+Search result pagination with infinite scroll.  Detail view of objects. Sorting and filtering. 
 
 ## 🌍Global state management
-In this application we have implemented global state management using [Redux Toolkit](https://redux-toolkit.js.org) for the search field and dropdown menus. A user can then filter kommuner, click on a kommune to view the details page, then go back to the search results and see that the filters are persisted. 
+In this application we have implemented global state management using [Redux Toolkit](https://redux-toolkit.js.org) for the search field and dropdown menus. A user can search for and filter kommuner, click on a kommune to view the details page, then go back to the search results and see that the values for search field and filter values have persisted. 
 
 
+## 💅Web accessibility
+We have used the component library Mantine in order to create a user inteface that is consistent and simple. The application scales after screen size and is therefore mobile responsive. 
 
-## 💁‍♀️Web accessibility
-Component library Mantine. The application scales after screen size and is therefore mobile responsive. 
+The application gives feedback on user interaction. Hovering a kommune card changes the opacity and on data fetching a loading icon is displayed. 
+
+Error message? Vi har en tilbakeknapp. 
+
+The page is also navigable. By clicking on the logo in navbar og back-button, the user can easily navigate back to the home page. In order to navigate to the details page for a kommune there is a button "Show more" with cursor set to pointer. Button changes color on hover. 
+
 
 ## 💾Backend
 MongoDB is a document database. 
