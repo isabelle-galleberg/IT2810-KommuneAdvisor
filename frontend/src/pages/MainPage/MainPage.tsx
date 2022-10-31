@@ -21,8 +21,11 @@ export default function MainPage() {
   const [sortBy, setSortBy] = useState('name');
   const [sortDirection, setSortDirection] = useState('ascending');
 
-  // create separate function for filtering
   useEffect(() => {
+    filterKommuner();
+  }, [filter]);
+
+  const filterKommuner = () => {
     switch (filter) {
       case 'Befolkning høy-lav':
         setSortBy('population');
@@ -52,7 +55,7 @@ export default function MainPage() {
         setSortBy('name');
         setSortDirection('ascending');
     }
-  }, [filter]);
+  };
 
   const { loading, error, data } = useQuery(GET_ALL_KOMMUNER, {
     variables: {
