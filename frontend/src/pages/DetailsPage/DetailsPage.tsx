@@ -7,11 +7,10 @@ import { GET_REVIEWS } from '../../services/reviewService';
 import { Review } from '../../types/review';
 import { useEffect, useState } from 'react';
 import './DetailsPage.css';
-import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 export default function DetailsPage() {
   const { id } = useParams();
-  const { loading, error, data } = useQuery(GET_REVIEWS, {
+  const { error, data } = useQuery(GET_REVIEWS, {
     variables: { id: id },
   });
   const [reviews, setReviews] = useState([] as Review[]);

@@ -6,7 +6,7 @@ import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import './KommuneDetails.css';
 
 export default function KommuneDetails() {
-  // url param kommune/:name
+  // url param kommune/:id
   const { id } = useParams();
 
   const { loading, error, data } = useQuery(GET_KOMMUNE, {
