@@ -23,12 +23,14 @@ export default function KommuneDetails() {
           <div className='detailsPageTop'>
             <Link to='/'>
               <img
+                data-cy='back-arrow'
                 className='backArrow'
                 src={require('../../assets/backArrow.png')}
                 alt=''
               />
             </Link>
             <img
+              data-cy='kommune-logo'
               src={data.kommune.logoUrl}
               className='weaponImg'
             />
@@ -43,17 +45,17 @@ export default function KommuneDetails() {
                   readonly
                   size={30}
                 />
-                <div className='averageRating'>
+                <div data-cy='kommune-rating' className='averageRating'>
                   ({data.kommune.averageRating})
                 </div>
               </div>
-              <p>📍 {data.kommune.county.name}</p>
-              <p>👨‍👩‍👧‍👧 {data.kommune.population}</p>
-              <p>
+              <p data-cy='kommune-county'>📍 {data.kommune.county.name}</p>
+              <p data-cy='kommune-population'>👨‍👩‍👧‍👧 {data.kommune.population}</p>
+              <p data-cy='kommune-area'>
                 🏔 {data.kommune.areaInSquareKm}
                 km<sup>2</sup>
               </p>
-              <p>📝 {data.kommune.writtenLanguage}</p>
+              <p data-cy='kommune-written-language'>📝 {data.kommune.writtenLanguage}</p>
               <p>
                 Les mer her:{' '}
                 <a
@@ -65,6 +67,7 @@ export default function KommuneDetails() {
               </p>
             </div>
             <img
+              data-cy='kommune-map'
               src={data.kommune.mapUrl}
               alt='kommuneMap'
               className='mapImg'
