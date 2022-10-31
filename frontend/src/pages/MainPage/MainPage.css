@@ -24,3 +24,9 @@
 .mantine-1pwvbwf:hover {
   background-color: #405a7e;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

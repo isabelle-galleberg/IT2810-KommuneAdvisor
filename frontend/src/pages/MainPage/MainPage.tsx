@@ -4,9 +4,7 @@ import { Pagination, SimpleGrid, TextInput } from '@mantine/core';
 import InputFields from '../../components/InputFields/InputFields';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { useQuery } from '@apollo/client';
-import {
-  GET_ALL_KOMMUNER,
-} from '../../services/kommuneService';
+import { GET_ALL_KOMMUNER } from '../../services/kommuneService';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { useEffect, useState } from 'react';
 import { updateKommune } from '../../redux/kommuneReducer';
@@ -80,7 +78,6 @@ export default function MainPage() {
     changePage(1);
   }, [searchInput, county, filter]);
 
-
   const changeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(updateKommune(e.target.value));
   };
@@ -130,6 +127,7 @@ export default function MainPage() {
         </SimpleGrid>
       </div>
       <Pagination
+        className='pagination'
         page={page}
         onChange={changePage}
         total={Math.ceil(356 / 20)}
