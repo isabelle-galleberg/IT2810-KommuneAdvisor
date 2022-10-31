@@ -4,7 +4,9 @@ import { Pagination, SimpleGrid, TextInput } from '@mantine/core';
 import InputFields from '../../components/InputFields/InputFields';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { useQuery } from '@apollo/client';
-import { GET_ALL_KOMMUNER } from '../../services/kommuneService';
+import {
+  GET_ALL_KOMMUNER,
+} from '../../services/kommuneService';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import { useEffect, useState } from 'react';
 import { updateKommune } from '../../redux/kommuneReducer';
@@ -15,6 +17,7 @@ import { updatePage } from '../../redux/pageReducer';
 export default function MainPage() {
   // globals states from Redux
   const searchInput = useAppSelector((state) => state.kommuneInput.kommune);
+  const dispatch = useAppDispatch();
   const county = useAppSelector((state) => state.countyInput.county);
   const filter = useAppSelector((state) => state.filterInput.filter);
   const page = useAppSelector((state) => state.pageInput.page);
@@ -69,15 +72,17 @@ export default function MainPage() {
       page: page,
     },
   });
+  const changePage = (page: number) => {
+    dispatch(updatePage(page));
+  };
 
-  const dispatch = useAppDispatch();
+  useEffect(() => {
+    changePage(1);
+  }, [searchInput, county, filter]);
+
 
   const changeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(updateKommune(e.target.value));
-  };
-
-  const changePage = (page: number) => {
-    dispatch(updatePage(page));
   };
 
   if (error) return <div>Kommuner not found</div>;
