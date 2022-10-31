@@ -23,9 +23,12 @@ In the project directory, you can run:
 - `npm run dev` to run server using nodemon, automatically restarting server on file changes
 - `npx run lint` to run prettier and eslint checks
 
+The backend runs on [http://localhost:8000](http://localhost:8000).
+
 
 ## 🔎Search 
-With the search field, the user can search for a kommune. Suggested kommuner based on the user inputs are displayed on the main page. 
+With the search field, the user can search for a kommune. Suggested kommuner based on the user inputs will be displayed on the main page. 
+TODO: noe om hvordan dette fungerer. 
 
 ### Sorting and filtering
 TODO: dette er implementert backend. (Hvorfor og hvordan?) Kobles opp mot verdier frontend. 
@@ -34,7 +37,7 @@ TODO: dette er implementert backend. (Hvorfor og hvordan?) Kobles opp mot verdie
 TODO: infinite scroll implementasjon. 
 
 ### Detail view
-From the search results, a user can click into the details page of a kommune. This does a new query to fetch information about the given kommune based on id. The id is also displayed in the url /kommune/:id on the details page. 
+From the search results, a user can click into the details page of a kommune. This does a new query to fetch information about the given kommune based on id. The id is also displayed in the url for the details page `/kommune/:id`. 
 
 
 ## 🌍Global state management
@@ -43,15 +46,26 @@ The main purpose of global state is to share a state among multiple components i
 We implemented the global states with Redux before fetching data from the backend, and therefore did not know that this could be done in the cache configuration with Apollo client. Although using Redux requires a bit more boilerplate code, it was quite simple to implement and works well with GraphQL. 
 
 
-
 ## 💅Web accessibility
-We have used the component library Mantine in order to create a user inteface that is consistent and simple. The application scales after screen size and is therefore mobile responsive. 
 
-The application gives feedback on user interaction. Hovering a kommune card changes the opacity and on data fetching a loading icon is displayed. 
+[Web accessibility](https://monsido.com/web-accessibility) is the need for websites to utilize tools and technologies developed to aid the perception, understanding, contribution, navigation, and interaction of a person with disabilities on the site. We have used the component library [Mantine](https://mantine.dev) in order to achieve this. 
 
-Error message? Vi har en tilbakeknapp. 
+To make the page *perceivable*, 
 
-The page is also navigable. By clicking on the logo in navbar og back-button, the user can easily navigate back to the home page. In order to navigate to the details page for a kommune there is a button "Show more" with cursor set to pointer. Button changes color on hover. 
+all buttons have a cursor pointer. The data that is displayed on the details page is described with a label and emoji, which does not depend on language. 
+ Alt text
+
+  For images we have text alternatives, using the alt-attribute.
+
+
+To make the website *understanding*, feedback is given on user interaction. When hovering a kommune card or review, a shadown is added. While fetching data a loading icon is displayed, and if the data cannot be retrieved, then an error message is displayed.
+
+
+To ensure intuitive *navigation*, the user can view the kommune details page by clicking on the "Show more" button for the given kommune. In order to navigate back to the main page, the user can either click on the logo in the navbar or the back-button. 
+
+
+The application scales dynamically after screen size, and is therefore mobile responsive for screens larger than 300px. 
+
 
 
 ## 💾Backend
