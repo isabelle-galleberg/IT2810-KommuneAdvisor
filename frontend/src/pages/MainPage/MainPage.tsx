@@ -114,6 +114,7 @@ export default function MainPage() {
           label='Søk etter en kommune'
           value={searchInput}
           onChange={changeSearch}
+          data-cy='inp-search-kommune'
           rightSection={
             <IconSearch
               size={18}
@@ -124,7 +125,9 @@ export default function MainPage() {
         />
       </div>
       <InputFields />
-      <div className='cards'>
+      <div
+        className='cards'
+        data-cy='kommune-list'>
         <SimpleGrid
           breakpoints={[
             { minWidth: 0, cols: 1 },

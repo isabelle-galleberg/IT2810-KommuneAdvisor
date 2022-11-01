@@ -100,7 +100,9 @@ export default function AddReview({ onCreate }: AddReviewProps) {
         title='Gi kommunen en vurdering!'>
         {
           <div className='modalContainer'>
-            <div className='ratingContainer'>
+            <div
+              data-cy='add-review-rating'
+              className='ratingContainer'>
               <Rating
                 className='rating'
                 onClick={handleRating}
@@ -114,11 +116,13 @@ export default function AddReview({ onCreate }: AddReviewProps) {
             </div>
             <div className='textfieldContainer'>
               <TextInput
+                data-cy='add-review-title'
                 placeholder='Skriv her'
                 label='Gi anmeldelsen en tittel'
                 onChange={(event) => updateTitle(event.currentTarget.value)}
               />
               <Textarea
+                data-cy='add-review-description'
                 placeholder='Skriv her'
                 label='Legg igjen en anmeldelse'
                 onChange={(event) =>
@@ -126,6 +130,7 @@ export default function AddReview({ onCreate }: AddReviewProps) {
                 }
               />
               <TextInput
+                data-cy='add-review-name'
                 placeholder='Skriv her'
                 label='Oppgi navn'
                 onChange={(event) => updateName(event.currentTarget.value)}
@@ -135,7 +140,11 @@ export default function AddReview({ onCreate }: AddReviewProps) {
               <div className='errorMessage'>Please fill in all the fields!</div>
             )}
             <div className='buttonsContainer'>
-              <Button onClick={() => addReview()}>Del</Button>
+              <Button
+                data-cy='btn-add-review'
+                onClick={() => addReview()}>
+                Del
+              </Button>
               <Button onClick={() => cancelReview()}>Avbryt</Button>
             </div>
           </div>
@@ -143,7 +152,11 @@ export default function AddReview({ onCreate }: AddReviewProps) {
       </Modal>
 
       <Group position='center'>
-        <Button onClick={() => openModal()}>Legg til vurdering</Button>
+        <Button
+          data-cy='btn-open-add-review'
+          onClick={() => openModal()}>
+          Legg til vurdering
+        </Button>
       </Group>
     </>
   );

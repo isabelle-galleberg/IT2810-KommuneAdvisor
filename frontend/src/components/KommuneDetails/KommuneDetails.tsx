@@ -33,17 +33,19 @@ export default function KommuneDetails({ refresh }: { refresh: boolean }) {
           <div className='detailsPageTop'>
             <Link to='/'>
               <img
+                data-cy='back-arrow'
                 className='backArrow'
                 src={require('../../assets/backArrow.png')}
                 alt='backArrow'
               />
             </Link>
             <img
+              data-cy='kommune-logo'
               src={data.kommune.logoUrl}
               className='weaponImg'
               alt='kommuneWeaponImage'
             />
-            <h1>{data.kommune.name}</h1>
+            <h1 data-cy='kommune-name'>{data.kommune.name}</h1>
           </div>
           <div className='line'></div>
           <div className='kommuneDetails'>
@@ -54,23 +56,23 @@ export default function KommuneDetails({ refresh }: { refresh: boolean }) {
                   readonly
                   size={30}
                 />
-                <div>
+                <div data-cy='kommune-rating' className='averageRating'>
                   {data.kommune.averageRating != 0
                     ? '(' + data.kommune.averageRating.toFixed(2) + ')'
                     : '(Ingen vurderinger)'}
                 </div>
               </div>
               <label>📍 Fylke</label>
-              <p>{data.kommune.county.name}</p>
+              <p data-cy='kommune-county'>{data.kommune.county.name}</p>
               <label>👨‍👩‍👧‍👧 Innbyggertall</label>
-              <p>{data.kommune.population}</p>
+              <p data-cy='kommune-population'>{data.kommune.population}</p>
               <label>🏔 Areal</label>
-              <p>
+              <p data-cy='kommune-area'>
                 {data.kommune.areaInSquareKm}
                 km<sup>2</sup>
               </p>
               <label>📝 Skriftspråk</label>
-              <p> {data.kommune.writtenLanguage}</p>
+              <p data-cy='kommune-written-language'>{data.kommune.writtenLanguage}</p>
               <p>
                 Les mer her:{' '}
                 <a
@@ -82,6 +84,7 @@ export default function KommuneDetails({ refresh }: { refresh: boolean }) {
               </p>
             </div>
             <img
+              data-cy='kommune-map'
               src={data.kommune.mapUrl}
               alt='kommuneMap'
               className='mapImg'

@@ -6,6 +6,7 @@ export default function LoadingSpinner() {
     <Loader
       size='xl'
       className='loadingSpinner'
+      data-cy='loading-spinner'
     />
   );
 }
