@@ -24,5 +24,8 @@
     "src",
     "src/reducer.tsr.tssrc/reducer.tsducer.ts",
     "cypress"
-  ]
+  ],
+  "exclude": [
+    "cypress"
+  ],
 }

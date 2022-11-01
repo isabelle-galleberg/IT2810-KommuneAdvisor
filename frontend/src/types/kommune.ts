@@ -8,6 +8,7 @@ export interface Kommune {
   mapUrl: string;
   logoUrl: string;
   writtenLanguage: string;
-  county: string;
+  county: { name: string };
   kommuneRating: Rating[];
+  averageRating: number;
 }

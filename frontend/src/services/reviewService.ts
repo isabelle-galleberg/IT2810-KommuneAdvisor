@@ -7,30 +7,30 @@ export const POST_REVIEW = gql`
     $title: String!
     $description: String!
     $kommuneId: ID!
-  ){
+  ) {
     addKommuneRating(
-      name: $name,
-      rating: $rating,
-      title: $title,
-      description: $description,
+      name: $name
+      rating: $rating
+      title: $title
+      description: $description
       kommuneId: $kommuneId
-      ){
-        _id
-        timestamp
+    ) {
+      _id
+      timestamp
     }
   }
 `;
 
 export const GET_REVIEWS = gql`
-  query Kommune($id: String){
+  query Kommune($id: String) {
     kommune(id: $id) {
       kommuneRating {
-          name
-          rating
-          title
-          description
-          timestamp
-          _id
+        name
+        rating
+        title
+        description
+        timestamp
+        _id
       }
     }
   }

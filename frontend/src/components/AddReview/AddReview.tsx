@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom';
 import { AddReviewProps } from '../../types/propTypes';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import './AddReview.css';
+import { getRatingDescription } from '../../services/getRatingDescription';
 
 export default function AddReview({ onCreate }: AddReviewProps) {
   const { id } = useParams();
@@ -71,22 +72,20 @@ export default function AddReview({ onCreate }: AddReviewProps) {
     setErrorMessage(false);
     setReview({ ...review, name: name });
   }
+
   function updateTitle(title: string) {
     setErrorMessage(false);
     setReview({ ...review, title: title });
   }
+
   function updateDescription(description: string) {
     setErrorMessage(false);
     setReview({ ...review, description: description });
   }
+
   function updateRatingDescription(rating: number) {
     setErrorMessage(false);
-    if (rating == 1) setRatingDescription('Forferdelig');
-    else if (rating == 2) setRatingDescription('Dårlig');
-    else if (rating == 3) setRatingDescription('Gjennomsnitt');
-    else if (rating == 4) setRatingDescription('Svært bra');
-    else if (rating == 5) setRatingDescription('Ypperlig');
-    else setRatingDescription('');
+    setRatingDescription(getRatingDescription(rating));
   }
 
   return (
@@ -113,12 +112,6 @@ export default function AddReview({ onCreate }: AddReviewProps) {
             </div>
             <div className='textfieldContainer'>
               <TextInput
-                data-cy='add-review-name'
-                placeholder='Skriv her'
-                label='Oppgi navn'
-                onChange={(event) => updateName(event.currentTarget.value)}
-              />
-              <TextInput
                 data-cy='add-review-title'
                 placeholder='Skriv her'
                 label='Gi anmeldelsen en tittel'
@@ -131,6 +124,12 @@ export default function AddReview({ onCreate }: AddReviewProps) {
                 onChange={(event) =>
                   updateDescription(event.currentTarget.value)
                 }
+              />
+              <TextInput
+                data-cy='add-review-name'
+                placeholder='Skriv her'
+                label='Oppgi navn'
+                onChange={(event) => updateName(event.currentTarget.value)}
               />
             </div>
             {errorMessage && (

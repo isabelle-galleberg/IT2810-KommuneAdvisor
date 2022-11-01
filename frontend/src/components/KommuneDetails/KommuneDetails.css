@@ -1,3 +1,13 @@
+p {
+  font-size: 18px;
+  margin-top: 0px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
 .detailsPage {
   display: flex;
   flex-direction: column;
@@ -32,12 +42,9 @@
 .rating {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 5px;
-}
-
-.averageRating {
-  color: rgb(58, 54, 54);
-  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .weaponImg {
@@ -53,10 +60,6 @@
   background-color: #405a7e;
   height: 2px;
   width: clamp(100px, calc(100vw - 50px), 600px);
-}
-
-p {
-  font-size: 18px;
 }
 
 @media screen and (max-width: 500px) {

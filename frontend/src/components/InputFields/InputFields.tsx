@@ -5,17 +5,24 @@ import { updateCounty } from '../../redux/countyReducer';
 import { updateFilter } from '../../redux/filterReducer';
 import { GET_ALL_COUNTIES } from '../../services/countyService';
 import { useQuery } from '@apollo/client';
+import { updatePage } from '../../redux/pageReducer';
 
 export default function InputFields() {
+  // global states from Redux
   const county = useAppSelector((state) => state.countyInput.county);
   const filter = useAppSelector((state) => state.filterInput.filter);
   const dispatch = useAppDispatch();
 
+  // update county on change and set page to 1
   const changeCounty = (county: string) => {
     dispatch(updateCounty(county));
+    dispatch(updatePage(1));
   };
+  
+  // update filter on change and set page to 1
   const changeFilter = (filter: string) => {
     dispatch(updateFilter(filter));
+    dispatch(updatePage(1));
   };
 
   // get counties from GraphQL

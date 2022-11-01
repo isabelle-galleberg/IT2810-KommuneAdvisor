@@ -7,7 +7,7 @@ export default function Navbar() {
         <img
           className='logo'
           src={require('../../assets/logo.png')}
-          alt=''
+          alt='navbar'
         />
       </a>
     </div>

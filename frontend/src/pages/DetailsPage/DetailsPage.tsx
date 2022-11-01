@@ -14,35 +14,42 @@ export default function DetailsPage() {
   const { loading, error, data } = useQuery(GET_REVIEWS, {
     variables: { id: id },
   });
-  const [reviews, setReviews] = useState([] as Review[])
-
-  if (error) console.log(error);
+  const [reviews, setReviews] = useState([] as Review[]);
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     setReviews(data?.kommune.kommuneRating);
-  }, [data])
+  }, [data]);
 
-  function addReview(review: any) {
-    setReviews([...reviews, review])
+  function addReview(review: Review) {
+    setReviews([...reviews, review]);
+    setRefresh(true);
+    setRefresh(false);
   }
+
+  if (loading) return <LoadingSpinner />;
+  if (error) return <div>No reviews found</div>;
 
   return (
     <div className='detailsPage'>
-      <KommuneDetails />
+      <KommuneDetails refresh={refresh} />
       <div className='reviews'>
         <AddReview onCreate={addReview} />
-        {reviews?.slice(0).reverse().map((review: Review) => {
-          return (
-            <ReviewCard
-              key={review._id}
-              title={review.title}
-              description={review.description}
-              rating={review.rating}
-              name={review.name}
-              timestamp={review.timestamp}
-            />
-          );
-        })}
+        {reviews
+          ?.slice(0)
+          .reverse()
+          .map((review: Review) => {
+            return (
+              <ReviewCard
+                key={review._id}
+                title={review.title}
+                description={review.description}
+                rating={review.rating}
+                name={review.name}
+                timestamp={review.timestamp}
+              />
+            );
+          })}
       </div>
     </div>
   );
