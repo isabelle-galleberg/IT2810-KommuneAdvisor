@@ -2,8 +2,9 @@
 KommuneAdvisor is a web application that lets you find information about and review the Norwegian municipalities, also known as kommuner. A user can search for a given kommune and filter kommuner on county. Kommuner can also be sorted by area, population and ratings, both ascending and descending. From the search results, the user can click on a kommune to view a details page with more information and ratings about this kommune. 
 
 ## 📚Data
-### 🖼️Images
-The kommune logos and maps are rendered from wikipedia: 
+The kommune logos and maps are scraped from wikipedia: https://no.wikipedia.org/wiki/Norges_kommuner
+
+The numbers and statistics used in the application are gathered from Statistisk Sentralbyrå (SSB)
 
 ## 💻Project setup
 
@@ -75,8 +76,10 @@ We have used the testing framework Jest to create unit tests, using its built-in
 
 
 ### Cypress
-TODO
-
+The cypress tests are end-to-end tests. They are run from the frontend folder with:
+```
+npm run test:e2e
+```
 
 ## 🚀Git guidelines and code quality
 
