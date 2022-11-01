@@ -35,21 +35,25 @@ export default function DetailsPage() {
       <KommuneDetails refresh={refresh} />
       <div className='reviews'>
         <AddReview onCreate={addReview} />
-        {reviews
-          ?.slice(0)
-          .reverse()
-          .map((review: Review) => {
-            return (
-              <ReviewCard
-                key={review._id}
-                title={review.title}
-                description={review.description}
-                rating={review.rating}
-                name={review.name}
-                timestamp={review.timestamp}
-              />
-            );
-          })}
+        {reviews && reviews.length ? (
+          reviews
+            .slice(0)
+            .reverse()
+            .map((review: Review) => {
+              return (
+                <ReviewCard
+                  key={review._id}
+                  title={review.title}
+                  description={review.description}
+                  rating={review.rating}
+                  name={review.name}
+                  timestamp={review.timestamp}
+                />
+              );
+            })
+        ) : (
+          <div>Vær den første til å gi en vurdering!</div>
+        )}
       </div>
     </div>
   );
