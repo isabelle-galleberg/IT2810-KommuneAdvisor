@@ -10,15 +10,19 @@ export default function KommuneDetails({ refresh }: { refresh: boolean }) {
   // url param kommune/:id
   const { id } = useParams();
 
+  // get kommune data from GraphQL
   const { loading, error, data, refetch } = useQuery(GET_KOMMUNE, {
     variables: { id: id },
   });
+
+  // refetch data when the a new review is added to update kommune data
   useEffect(() => {
     if (refresh) {
       refetch();
     }
   }, [refresh]);
 
+  // loading and error handling
   if (loading) return <LoadingSpinner />;
   if (error) return <div>Kommune not found</div>;
 
