@@ -2,12 +2,6 @@
 
 KommuneAdvisor is a web application that lets you find information about and review the Norwegian municipalities, also known as kommuner. A user can search for a given kommune and filter kommuner on county. Kommuner can also be sorted by area, population and ratings, both ascending and descending. From the search results, the user can click on a kommune to view a details page with more information and ratings about this kommune.
 
-## 📚Data
-
-The kommune logos and maps are scraped from wikipedia: https://no.wikipedia.org/wiki/Norges_kommuner
-
-The numbers and statistics used in the application are gathered from Statistisk Sentralbyrå (SSB)
-
 ## 💻Project setup
 
 ### Frontend
@@ -81,6 +75,16 @@ MongoDB is a document database.
 
 TODO: implementasjon.
 We used GraphQL for the backend.
+
+## 📚Data
+
+The kommune logos and maps are scraped from wikipedia: https://no.wikipedia.org/wiki/Norges_kommuner
+
+The numbers and statistics used in the application are gathered from Statistisk Sentralbyrå (SSB)
+
+## Reflection and choices
+### Average rating
+The average rating is calculated by taking the sum of all ratings and dividing it by the number of ratings. This is done in the backend, and the average rating is stored in the database. This is done to avoid having to calculate the average rating for each kommune every time the user visits the details page. The average rating is also updated when a new review is created.
 
 ## 🧪Testing
 
