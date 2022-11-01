@@ -9,6 +9,7 @@ const initialState: FilterState = {
   filter: '',
 };
 
+// global state for filter, can be updated with updateFilter
 export const filterSlice = createSlice({
   name: 'filterInput',
   initialState,

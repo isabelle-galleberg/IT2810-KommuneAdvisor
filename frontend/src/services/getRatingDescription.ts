@@ -1,3 +1,5 @@
+
+// returns a description based on given rating value
 export function getRatingDescription(rating: number): string {
   switch (rating) {
     case 1:
