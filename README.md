@@ -1,6 +1,9 @@
 #  🇳🇴KommuneAdvisor 
 KommuneAdvisor is a web application that lets you find information about and review the Norwegian municipalities, also known as kommuner. A user can search for a given kommune and filter kommuner on county. Kommuner can also be sorted by area, population and ratings, both ascending and descending. From the search results, the user can click on a kommune to view a details page with more information and ratings about this kommune. 
 
+## 📚Data
+### 🖼️Images
+The kommune logos and maps are rendered from wikipedia: 
 
 ## 💻Project setup
 
