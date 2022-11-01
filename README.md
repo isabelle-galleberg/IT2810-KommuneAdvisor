@@ -66,15 +66,99 @@ The website scales dynamically after screen size, and is therefore mobile respon
 
 ## 💾Backend
 
+### Express
+
+The backend is build with node Express.
+
 ### MongoDB
 
-TODO: implementasjon.
 MongoDB is a document database.
+
+To implemenet mongo db on the Express backend we have used [mongoose](https://mongoosejs.com/)
+
+The database consists of three collections
+
+- county
+- kommune
+- kommuneRating
 
 ### GraphQL
 
-TODO: implementasjon.
-We used GraphQL for the backend.
+To query data from the backend we have buildt a GraphQL interface.
+
+## Endpoints
+
+Here are the GraphQL endpoints:
+
+### kommuner
+
+Endpoint to query all kommunes
+
+**Parameters**
+
+_sortBy_ - What to sort by (ex: name / population)
+
+_sortDirection_ - Which way to sort the reults (ex: ascending / descending)
+
+_search_ - Search for kommues (ex: Molde / Trondheim)
+
+_county_ - Filter by county (ex: Møre og Romsdal / Viken)
+
+**Fields**
+
+_\_id_ - Unique identifier, this is set as the national kommune number
+
+_name_ - Name of the kommune
+
+_population_ - The kommunes Population
+
+_areaInSquareKm_ - Size of the kommune in Km2.
+
+_landAreaInSquareKm_ - Size of the kommune in squareKm, excluding water.
+
+_populationByArea_ - Average population pr squareKm
+
+_mapUrl_ - Link to the map image
+
+_snlLink_ - Link to the SNL page
+
+_logoUrl_ - Link to the logo image
+
+_writtenLanguage_ - What written language the kommune uses
+
+_averageRating_ - The average of all kommuneRatings for the kommune
+
+_county_ - The county the kommune belongs to
+
+_kommuneRating_ - All the KommuneRatings for that kommune
+
+### kommunerCount
+
+Endpoint to query count of all kommuner
+
+**Parameters**
+
+_search_ - Search for kommues (ex: Molde / Trondheim)
+
+_county_ - Filter by county (ex: Møre og Romsdal / Viken)
+
+**Fields**
+
+_kommunerCount_ - Count of how many kommuner matched the filter.
+
+### county
+
+Endpoint to query all countys
+
+**Parameters**
+
+No parameters
+
+**Fields**
+
+_\_id_ - Unique identifyer, this is set as the national county number
+
+_name_ - Name of the county
 
 ## 📚Data
 
@@ -83,10 +167,15 @@ The kommune logos and maps are scraped from wikipedia: https://no.wikipedia.org/
 The numbers and statistics used in the application are gathered from Statistisk Sentralbyrå (SSB)
 
 ## Reflection and choices
+
 ### Average rating
+
 The average rating is calculated by taking the sum of all ratings and dividing it by the number of ratings. This is done in the backend, and the average rating is stored in the database. This is done to avoid having to calculate the average rating for each kommune every time the user visits the details page. The average rating is also updated when a new review is created.
+
 ### Timestamp
+
 We have chosen to store the date as a timestamp in the backend. This way it is easy to convert to other date formats and time zones later.
+
 ## 🧪Testing
 
 ### Jest
@@ -100,6 +189,7 @@ The Cypress tests are end-to-end tests. They are run from the frontend folder wi
 ```
 npm run test:e2e
 ```
+
 The naming convention of Cypress IDs is to use kebab-case, rather than camel-case, which is used in other parts of the application. This is done to better distinguish between the two types of IDs.
 
 ## 🚀Git guidelines and code quality
@@ -137,29 +227,78 @@ More Examples:
 
 References:
 
-<<<<<<< HEAD
-- https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
-- https://www.conventionalcommits.org/
-- https://seesparkbox.com/foundry/semantic_commit_messages
-- http://karma-runner.github.io/1.0/dev/git-commit-msg.html stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
-=======
 - [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
 - [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
 - [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
 - [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
 - [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
 
-## Test and Deploy
+## Deploy
 
-Use the built-in continuous integration in GitLab.
+## Frontend
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+**Cleanup and prepare**
 
----
+Terminal should be in frondend folder
+
+```cmd
+ssh USERNAME@it2810-22.idi.ntnu.no "sudo rm -r /var/www/html/kommuneadvisor"
+
+ssh USERNAME@it2810-22.idi.ntnu.no "rm -d deploy"
+
+ssh USERNAME@it2810-22.idi.ntnu.no "mkdir -p deploy"
+```
+
+### Build and deploy
+
+```cmd
+npm run build
+
+scp -r ./build USERNAME@it2810-22.idi.ntnu.no:deploy
+
+ssh USERNAME@it2810-22.idi.ntnu.no "sudo mv deploy /var/www/html/kommuneadvisor"
+
+ssh USERNAME@it2810-22.idi.ntnu.no "sudo systemctl restart apache2"
+```
+
+## Backend
+
+Terminal should be in backend folder
+
+```bash
+ssh USERNAME@it2810-22.idi.ntnu.no "rm -r -d deploy_backend"
+ssh USERNAME@it2810-22.idi.ntnu.no "mkdir -p deploy_backend"
+
+rm -d -r deploy
+mkdir deploy
+```
+
+```bash
+# prepare deployment package
+cp .\package.json .\deploy\package.json
+cp -r .\server\. .\deploy\server\
+cp -r .\data\. .\deploy\data\
+cp .env .\deploy\.env
+
+# deploy package
+scp -r ./deploy USERNAME@it2810-22.idi.ntnu.no:deploy_backend
+
+#connect to SSH server
+ssh USERNAME@it2810-22.idi.ntnu.no
+
+
+sudo systemctl stop kommuneadvisor
+sudo rm -v -d -r /var/www/kommuneadvisor_backend/*
+sudo mv -v deploy_backend/* /var/www/kommuneadvisor_backend
+cd /var/www/kommuneadvisor_backend/deploy
+sudo npm i
+
+sudo sudo systemctl start kommuneadvisor
+
+exit
+
+rm -r -d deploy
+```
 
 # Editing this README
 
@@ -220,4 +359,3 @@ For open source projects, say how it is licensed.
 ## Project status
 
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
->>>>>>> main
