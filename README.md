@@ -85,7 +85,8 @@ The numbers and statistics used in the application are gathered from Statistisk 
 ## Reflection and choices
 ### Average rating
 The average rating is calculated by taking the sum of all ratings and dividing it by the number of ratings. This is done in the backend, and the average rating is stored in the database. This is done to avoid having to calculate the average rating for each kommune every time the user visits the details page. The average rating is also updated when a new review is created.
-
+### Timestamp
+We have chosen to store the date as a timestamp in the backend. This way it is easy to convert to other date formats and time zones later.
 ## 🧪Testing
 
 ### Jest
