@@ -28,12 +28,6 @@ function App() {
             />
           </Routes>
         </BrowserRouter>
-        <footer>
-          <p>
-            Created with <span className='heart'>&hearts;</span> by Ole, Axel,
-            Eva and Isabelle
-          </p>
-        </footer>
       </ApolloProvider>
     </div>
   );
