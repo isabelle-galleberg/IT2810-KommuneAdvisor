@@ -18,7 +18,7 @@ export default function InputFields() {
     dispatch(updateCounty(county));
     dispatch(updatePage(1));
   };
-  
+
   // update filter on change and set page to 1
   const changeFilter = (filter: string) => {
     dispatch(updateFilter(filter));
@@ -26,10 +26,7 @@ export default function InputFields() {
   };
 
   // get counties from GraphQL
-  const { error, data } = useQuery(GET_ALL_COUNTIES);
-  if (error) {
-    console.log(error);
-  }
+  const { data } = useQuery(GET_ALL_COUNTIES);
 
   // counties sorted alphabetically, with value of countyId
   const counties = data?.counties

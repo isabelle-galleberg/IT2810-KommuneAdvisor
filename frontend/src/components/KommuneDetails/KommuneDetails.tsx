@@ -24,7 +24,7 @@ export default function KommuneDetails({ refresh }: { refresh: boolean }) {
 
   // loading and error handling
   if (loading) return <LoadingSpinner />;
-  if (error) return <div>Kommune not found</div>;
+  if (error) return <div>Kommune ikke funnet</div>;
 
   return (
     <>
@@ -72,7 +72,7 @@ export default function KommuneDetails({ refresh }: { refresh: boolean }) {
                 km<sup>2</sup>
               </p>
               <label>📝 Skriftspråk</label>
-              <p data-cy='kommune-written-language'>{data.kommune.writtenLanguage}</p>
+              <p data-cy='kommune-written-language'>{(data.kommune.writtenLanguage).charAt(0).toUpperCase() + (data.kommune.writtenLanguage).slice(1)}</p>
               <p>
                 Les mer her:{' '}
                 <a

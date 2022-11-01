@@ -38,7 +38,7 @@ export default function DetailsPage() {
 
   // loading and error handling
   if (loading) return <LoadingSpinner />;
-  if (error) return <div>No reviews found</div>;
+  if (error) return <div>Ingen vurdering funnet</div>;
 
   return (
     <div className='detailsPage'>

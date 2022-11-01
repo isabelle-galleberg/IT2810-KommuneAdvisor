@@ -1,10 +1,4 @@
 body {
   background-color: #f3f9fc;
-}
-
-footer {
-  display: flex;
-  margin-top: auto;
-  padding: 24px;
-  justify-content: flex-end;
+  padding-bottom: 40px;
 }
