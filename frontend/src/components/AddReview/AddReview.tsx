@@ -42,7 +42,7 @@ export default function AddReview({ onCreate }: AddReviewProps) {
       review.description === ''
     ) {
       setErrorMessage(true);
-    } 
+    }
     // post review to GraphQL
     else {
       const response = await postReview({
@@ -90,7 +90,7 @@ export default function AddReview({ onCreate }: AddReviewProps) {
 
   // loading and error handling
   if (loading) return <LoadingSpinner />;
-  if (error) return <div>Could not add review</div>;
+  if (error) return <div>Kunne ikke legge til vurdering</div>;
 
   return (
     <>
