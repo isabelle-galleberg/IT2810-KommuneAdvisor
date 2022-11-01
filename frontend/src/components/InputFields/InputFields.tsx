@@ -52,10 +52,12 @@ export default function InputFields() {
             clearable
             onChange={changeCounty}
             dropdownPosition='bottom'
+            data-cy='inp-filter-county'
           />
         ) : null}
         <Select
           defaultValue={filter}
+          data-cy='inp-sort'
           label='Sorter'
           data={[
             'Areal høy-lav',

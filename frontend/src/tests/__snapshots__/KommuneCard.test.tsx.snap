@@ -3,12 +3,14 @@
 exports[`<KommuneCard /> should match snapshot with data 1`] = `
 <div
   className="mantine-Paper-root mantine-Card-root kommuneCard mantine-rph89u"
+  data-cy="kommune-card"
 >
   <div
     className="mantine-Group-root mantine-1hwpv8j"
   >
     <div
       className="mantine-Image-root weaponImg mantine-15po0m8"
+      data-cy="kommune-logo"
       style={
         Object {
           "height": "auto",
@@ -41,16 +43,19 @@ exports[`<KommuneCard /> should match snapshot with data 1`] = `
     <div>
       <div
         className="mantine-Text-root mantine-k0qooo"
+        data-cy="kommune-name"
       >
         Oslo
       </div>
       <div
         className="mantine-Text-root mantine-rwoji2"
+        data-cy="kommune-county"
       >
         📍
         Oslo
       </div>
       <a
+        data-cy="btn-show-details"
         href="/kommune/1"
         onClick={[Function]}
       >
@@ -150,6 +155,7 @@ exports[`<KommuneCard /> should match snapshot with data 1`] = `
       </span>
       <div
         className="kommuneCardAverageRating"
+        data-cy="kommune-rating"
       >
         (
         4.50
