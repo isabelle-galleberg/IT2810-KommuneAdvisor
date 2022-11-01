@@ -7,8 +7,12 @@ export default function ReviewCard({
   description,
   rating,
   name,
-  date,
+  timestamp,
 }: Review) {
+
+  // convert from timestamp to date
+  const date = new Date(Number(timestamp)).toLocaleString().split(',')[0];
+
   return (
     <div className='reviewCard'>
       <div className='reviewCardTop'>
@@ -16,7 +20,6 @@ export default function ReviewCard({
           initialValue={rating}
           readonly
           size={20}
-          iconsCount={rating}
         />
         <div className='date'>{date}</div>
       </div>

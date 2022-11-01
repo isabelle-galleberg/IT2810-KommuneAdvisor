@@ -1,0 +1,13 @@
+[
+  { "_id": "03", "name": "Oslo" },
+  { "_id": "11", "name": "Rogaland" },
+  { "_id": "15", "name": "Møre og Romsdal" },
+  { "_id": "18", "name": "Nordland" },
+  { "_id": "30", "name": "Viken" },
+  { "_id": "34", "name": "Innlandet" },
+  { "_id": "38", "name": "Vestfold og Telemark" },
+  { "_id": "42", "name": "Agder" },
+  { "_id": "46", "name": "Vestland" },
+  { "_id": "50", "name": "Trøndelag" },
+  { "_id": "54", "name": "Troms og Finnmark" }
+]

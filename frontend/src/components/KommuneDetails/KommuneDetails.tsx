@@ -1,76 +1,94 @@
-import { useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+import { useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { Rating } from 'react-simple-star-rating';
+import { GET_KOMMUNE } from '../../services/kommuneService';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import './KommuneDetails.css';
 
-export default function KommuneDetails() {
-  // This will be used later to fetch data from the backend
-  const { kommuneSlug } = useParams();
+export default function KommuneDetails({ refresh }: { refresh: boolean }) {
+  // url param kommune/:id
+  const { id } = useParams();
 
-  // Dummy data
-  const kommuneData = {
-    name: 'Lier',
-    weaponImg: require('../../assets/lier.svg.png'),
-    rating: 3,
-    county: 'Viken',
-    population: '407 704',
-    area: '100 000',
-    language: 'bokmål',
-    mapImg: require('../../assets/map.png'),
-  };
+  // get kommune data from GraphQL
+  const { loading, error, data, refetch } = useQuery(GET_KOMMUNE, {
+    variables: { id: id },
+  });
 
-  const url = `https://snl.no/${kommuneData.name.replace(' ', '_')}`;
+  // refetch data when the a new review is added to update kommune data
+  useEffect(() => {
+    if (refresh) {
+      refetch();
+    }
+  }, [refresh]);
 
-  const nonCapitalizedLanguage = kommuneData.language;
-  const capitalizedLanguage =
-    nonCapitalizedLanguage.charAt(0).toUpperCase() +
-    nonCapitalizedLanguage.slice(1);
+  // loading and error handling
+  if (loading) return <LoadingSpinner />;
+  if (error) return <div>Kommune not found</div>;
 
   return (
-    <div className='detailsPage'>
-      <div className='detailsPageTop'>
-        <a href='/'>
-          <img
-            className='backArrow'
-            src={require('../../assets/backArrow.png')}
-            alt=''
-          />
-        </a>
-        <img
-          src={kommuneData.weaponImg}
-          className='weaponImg'
-        />
-        <h1>{kommuneData.name}</h1>
-      </div>
-      <div className='line'></div>
-      <div className='kommuneDetails'>
-        <div>
-          <Rating
-            initialValue={kommuneData.rating}
-            readonly
-            size={30}
-          />
-          <p>📍 {kommuneData.county}</p>
-          <p>👨‍👩‍👧‍👧 {kommuneData.population}</p>
-          <p>
-            🏔 {kommuneData.area} km<sup>2</sup>
-          </p>
-          <p>📝 {capitalizedLanguage}</p>
-          <p>
-            Les mer her:{' '}
-            <a
-              href={url}
-              target='_blank'
-              rel='noreferrer'>
-              {kommuneData.name}
-            </a>
-          </p>
+    <>
+      {data && data.kommune && data.kommune && (
+        <div className='detailsPage'>
+          <div className='detailsPageTop'>
+            <Link to='/'>
+              <img
+                className='backArrow'
+                src={require('../../assets/backArrow.png')}
+                alt='backArrow'
+              />
+            </Link>
+            <img
+              src={data.kommune.logoUrl}
+              className='weaponImg'
+              alt='kommuneWeaponImage'
+            />
+            <h1>{data.kommune.name}</h1>
+          </div>
+          <div className='line'></div>
+          <div className='kommuneDetails'>
+            <div>
+              <div className='rating'>
+                <Rating
+                  initialValue={data.kommune.averageRating}
+                  readonly
+                  size={30}
+                />
+                <div>
+                  {data.kommune.averageRating != 0
+                    ? '(' + data.kommune.averageRating.toFixed(2) + ')'
+                    : '(Ingen vurderinger)'}
+                </div>
+              </div>
+              <label>📍 Fylke</label>
+              <p>{data.kommune.county.name}</p>
+              <label>👨‍👩‍👧‍👧 Innbyggertall</label>
+              <p>{data.kommune.population}</p>
+              <label>🏔 Areal</label>
+              <p>
+                {data.kommune.areaInSquareKm}
+                km<sup>2</sup>
+              </p>
+              <label>📝 Skriftspråk</label>
+              <p> {data.kommune.writtenLanguage}</p>
+              <p>
+                Les mer her:{' '}
+                <a
+                  href={data.kommune.snlLink}
+                  target='_blank'
+                  rel='noreferrer'>
+                  {data.kommune.name}
+                </a>
+              </p>
+            </div>
+            <img
+              src={data.kommune.mapUrl}
+              alt='kommuneMap'
+              className='mapImg'
+            />
+          </div>
         </div>
-        <img
-          src={kommuneData.mapImg}
-          alt='kommuneMap'
-          className='mapImg'
-        />
-      </div>
-    </div>
+      )}
+    </>
   );
 }

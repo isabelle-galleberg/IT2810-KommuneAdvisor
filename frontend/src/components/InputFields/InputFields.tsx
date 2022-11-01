@@ -1,46 +1,72 @@
 import './InputFields.css';
 import { Select } from '@mantine/core';
-import { InputFieldsProps } from '../../types/propTypes';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { updateCounty } from '../../redux/countyReducer';
+import { updateFilter } from '../../redux/filterReducer';
+import { GET_ALL_COUNTIES } from '../../services/countyService';
+import { useQuery } from '@apollo/client';
+import { updatePage } from '../../redux/pageReducer';
 
-const dummyCountys = [
-  'Viken',
-  'Troms og Finnmark',
-  'Møre og Romsdal',
-  'Oslo',
-  'Trøndelag',
-];
+export default function InputFields() {
+  // global states from Redux
+  const county = useAppSelector((state) => state.countyInput.county);
+  const filter = useAppSelector((state) => state.filterInput.filter);
+  const dispatch = useAppDispatch();
 
-export default function InputFields({
-  setParameters,
-  parameters,
-  setCountys,
-  countys,
-  setSort,
-  sort,
-}: InputFieldsProps) {
-  const updateCounty = (county: string) => {
-    setParameters({ ...parameters, county: county });
+  // update county on change and set page to 1
+  const changeCounty = (county: string) => {
+    dispatch(updateCounty(county));
+    dispatch(updatePage(1));
   };
-  const updateSort = (sort: string) => {
-    setParameters({ ...parameters, sort: sort });
+  
+  // update filter on change and set page to 1
+  const changeFilter = (filter: string) => {
+    dispatch(updateFilter(filter));
+    dispatch(updatePage(1));
   };
+
+  // get counties from GraphQL
+  const { error, data } = useQuery(GET_ALL_COUNTIES);
+  if (error) {
+    console.log(error);
+  }
+
+  // counties sorted alphabetically, with value of countyId
+  const counties = data?.counties
+    .map((county: { name: string; __typename: string; _id: string }) => {
+      return { label: county.name, value: county._id };
+    })
+    .sort((a: { label: string }, b: { label: string }) =>
+      a.label > b.label ? 1 : -1
+    );
 
   return (
     <div className='inputFields'>
       <div className='dropdown'>
+        {data?.counties ? (
+          <Select
+            defaultValue={county}
+            label='Filtrer på fylke'
+            data={counties}
+            searchable
+            clearable
+            onChange={changeCounty}
+            dropdownPosition='bottom'
+          />
+        ) : null}
         <Select
-          label='Filtrer på fylke'
-          data={dummyCountys}
-          searchable
-          clearable
-          onChange={updateCounty}
-          dropdownPosition='bottom'
-        />
-        <Select
+          defaultValue={filter}
           label='Sorter'
-          data={['Alfabetisk', 'Ranking', 'Areal']}
+          data={[
+            'Areal høy-lav',
+            'Areal lav-høy',
+            'Befolkning høy-lav',
+            'Befolkning lav-høy',
+            'Rangering høy-lav',
+            'Rangering lav-høy',
+          ]}
           clearable
-          onChange={updateSort}
+          onChange={changeFilter}
           dropdownPosition='bottom'
         />
       </div>

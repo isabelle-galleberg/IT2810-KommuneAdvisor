@@ -1,10 +1,21 @@
 import { useState } from 'react';
 import { Modal, Button, Group, Textarea, TextInput } from '@mantine/core';
-import './AddReview.css';
 import { Rating } from 'react-simple-star-rating';
 import { Review } from '../../types/review';
+import { POST_REVIEW } from '../../services/reviewService';
+import { useMutation } from '@apollo/client';
+import { useParams } from 'react-router-dom';
+import { AddReviewProps } from '../../types/propTypes';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
+import './AddReview.css';
+import { getRatingDescription } from '../../services/getRatingDescription';
 
-export default function AddReview() {
+export default function AddReview({ onCreate }: AddReviewProps) {
+  // url param kommune/:id
+  const { id } = useParams();
+  // post review data to GraphQL
+  const [postReview, { loading, error }] = useMutation(POST_REVIEW);
+
   const [opened, setOpened] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
   const [ratingDescription, setRatingDescription] = useState<string>('');
@@ -18,10 +29,12 @@ export default function AddReview() {
   function openModal() {
     // resets values
     setReview({ rating: 0, name: '', title: '', description: '' });
+    handleRating(0);
     setOpened(true);
   }
 
-  function addReview() {
+  async function addReview() {
+    // display error message if required fields are empty
     if (
       review.rating === 0 ||
       review.name === '' ||
@@ -29,10 +42,22 @@ export default function AddReview() {
       review.description === ''
     ) {
       setErrorMessage(true);
-    } else {
-      console.log(review);
+    } 
+    // post review to GraphQL
+    else {
+      const response = await postReview({
+        variables: {
+          name: review.name,
+          rating: review.rating,
+          title: review.title,
+          description: review.description,
+          kommuneId: id,
+        },
+      });
+      review._id = response.data.addKommuneRating._id;
+      review.timestamp = response.data.addKommuneRating.timestamp;
+      onCreate(review);
       setOpened(false);
-      handleRating(0);
     }
   }
 
@@ -41,11 +66,11 @@ export default function AddReview() {
     handleRating(0);
   }
 
+  // update fields based on user input
   function handleRating(rating: number) {
     setReview({ ...review, rating: rating });
     updateRatingDescription(rating);
   }
-
   function updateName(name: string) {
     setErrorMessage(false);
     setReview({ ...review, name: name });
@@ -58,16 +83,14 @@ export default function AddReview() {
     setErrorMessage(false);
     setReview({ ...review, description: description });
   }
-
   function updateRatingDescription(rating: number) {
     setErrorMessage(false);
-    if (rating == 1) setRatingDescription('Forferdelig');
-    else if (rating == 2) setRatingDescription('Dårlig');
-    else if (rating == 3) setRatingDescription('Gjennomsnitt');
-    else if (rating == 4) setRatingDescription('Svært bra');
-    else if (rating == 5) setRatingDescription('Ypperlig');
-    else setRatingDescription('');
+    setRatingDescription(getRatingDescription(rating));
   }
+
+  // loading and error handling
+  if (loading) return <LoadingSpinner />;
+  if (error) return <div>Could not add review</div>;
 
   return (
     <>
@@ -92,11 +115,6 @@ export default function AddReview() {
             <div className='textfieldContainer'>
               <TextInput
                 placeholder='Skriv her'
-                label='Oppgi navn'
-                onChange={(event) => updateName(event.currentTarget.value)}
-              />
-              <TextInput
-                placeholder='Skriv her'
                 label='Gi anmeldelsen en tittel'
                 onChange={(event) => updateTitle(event.currentTarget.value)}
               />
@@ -106,6 +124,11 @@ export default function AddReview() {
                 onChange={(event) =>
                   updateDescription(event.currentTarget.value)
                 }
+              />
+              <TextInput
+                placeholder='Skriv her'
+                label='Oppgi navn'
+                onChange={(event) => updateName(event.currentTarget.value)}
               />
             </div>
             {errorMessage && (
