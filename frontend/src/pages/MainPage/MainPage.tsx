@@ -105,7 +105,7 @@ export default function MainPage() {
   };
 
   // error handling
-  if (errorKommuner || errorCount) return <div>Kommuner not found</div>;
+  if (errorKommuner || errorCount) return <div className='error'>Kommuner ikke funnet</div>;
 
   return (
     <div className='mainPage'>
