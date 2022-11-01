@@ -13,7 +13,8 @@ In the project directory, you can run:
 - `npm test` to install dependencies run the test runner interactively
 - `npm run build` to build the app for production to the `build` folder
 - `npx run lint` to run prettier and eslint checks
-- `npm run test:e2e` to run Cypress tests
+- `npm run test:e2e` to run Cypress tests (headlessly)
+- `npm run test:e2e-open` to run Cypress tests (with GUI)
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
@@ -28,11 +29,13 @@ In the project directory, you can run:
 
 The backend runs on [http://localhost:8000](http://localhost:8000).
 
+
 ## 🌍Global state management
 
 The main purpose of global state is to share a state among multiple components in order to avoid prop drilling. In this application we have implemented global state management using [Redux Toolkit](https://redux-toolkit.js.org) for the search field, dropdown menus and current page. A user can search for and filter kommuner, click on a kommune to view the details page, then go back to the search results and see that the values for search field, filter and page have persisted.
 
 We implemented the global states with Redux before fetching data from the backend, and therefore did not know that this could be done in the cache configuration with Apollo client. Although using Redux requires a bit more boilerplate code, it was quite simple to implement and works well with our GraphQL backend.
+
 
 ## 🔎Search
 
@@ -51,6 +54,7 @@ The kommune cards are paginated, displaying 24 kommuner at a time. We chose this
 
 From the search results, a user can click into the details page of a kommune. This does a new query to fetch information about the given kommune based on id. The id is also displayed in the url for the details page `/kommune/:id`.
 
+
 ## 💅Web accessibility
 
 [Web accessibility](https://monsido.com/web-accessibility) is the need for websites to utilize tools and technologies developed to aid the perception, understanding, contribution, navigation, and interaction of a person with disabilities on the site. We have used the component library [Mantine](https://mantine.dev) in order to achieve this.
@@ -63,33 +67,24 @@ To ensure intuitive _navigation_, the user can view the kommune details page by 
 
 The website scales dynamically after screen size, and is therefore mobile responsive for screens larger than 300px.
 
+
 ## 💾Backend
 
-### Express
-
-The backend is build with node Express.
+The backend is buildt with Node Express.
 
 ### MongoDB
 
-MongoDB is a document database.
-
-To implemenet mongo db on the Express backend we have used [mongoose](https://mongoosejs.com/)
-
-The database consists of three collections
-
+MongoDB is a document database. To implemenet mongoDB on the Express backend we have used [mongoose](https://mongoosejs.com/).
+The database consists of three collections:
 - county
 - kommune
 - kommuneRating
 
 ### GraphQL
 
-To query data from the backend we have buildt a GraphQL interface.
+To query data from the backend we have buildt a GraphQL interface. Here are the GraphQL endpoints:
 
-## Endpoints
-
-Here are the GraphQL endpoints:
-
-### kommuner
+#### kommuner
 
 Endpoint to query all kommunes
 
@@ -131,7 +126,7 @@ _county_ - The county the kommune belongs to
 
 _kommuneRating_ - All the KommuneRatings for that kommune
 
-### kommunerCount
+#### kommunerCount
 
 Endpoint to query count of all kommuner
 
@@ -145,7 +140,7 @@ _county_ - Filter by county (ex: Møre og Romsdal / Viken)
 
 _kommunerCount_ - Count of how many kommuner matched the filter.
 
-### county
+#### county
 
 Endpoint to query all countys
 
@@ -159,13 +154,10 @@ _\_id_ - Unique identifyer, this is set as the national county number
 
 _name_ - Name of the county
 
-## 📚Data
 
-The kommune logos and maps are scraped from wikipedia: https://no.wikipedia.org/wiki/Norges_kommuner
+## 📚Kommuner data
 
-The numbers and statistics used in the application are gathered from Statistisk Sentralbyrå (SSB)
-
-## Reflection and choices
+The kommune weapons and map images are scraped from [Wikipedia](https://no.wikipedia.org/wiki/Norges_kommuner). The numbers and statistics used in the application are gathered from [Statistisk Sentralbyrå (SSB)](https://www.ssb.no/kommunefakta). 
 
 ### Average rating
 
@@ -175,6 +167,7 @@ The average rating is calculated by taking the sum of all ratings and dividing i
 
 We have chosen to store the date as a timestamp in the backend. This way it is easy to convert to other date formats and time zones later.
 
+
 ## 🧪Testing
 
 ### Jest
@@ -182,21 +175,8 @@ We have chosen to store the date as a timestamp in the backend. This way it is e
 We have used the testing framework Jest to create unit tests, using its built-in functions. One of the tests that were performed is to check whether the app crashes on render, by testing the `App` component. In addition, we have tested user interaction for the search input field. The service function `getRatingDescription` has also been tested, which is used to display the correct description of selected amount of stars. Snapshot tests are useful when wanting to make sure that the UI does not change unexpectedly. The tests generate a json version of a component, to check if this matches an earlier representation. We created snapshot tests for the `KommuneCard` and `ReviewCard` components with use of the react-test-renderer, to ensure that they rendered as expected with data.
 
 ### Cypress
+Cypress is used for end-to-end testing. The naming convention of Cypress IDs is to use kebab-case, rather than camel-case, which is used in other parts of the application. This is done to better distinguish between the two types of IDs. We have created tests for the main page, details page and when adding a review. 
 
-The Cypress tests are end-to-end tests.
-They are run by entering the following command, while in the frontend directory:
-
-```
-npm run test:e2e
-```
-
-To run the tests with a visualization of the browser, enter the following command:
-
-```
-npm run test:e2e-open
-```
-
-The naming convention of Cypress IDs is to use kebab-case, rather than camel-case, which is used in other parts of the application. This is done to better distinguish between the two types of IDs.
 
 ## 🚀Git guidelines and code quality
 
@@ -230,79 +210,3 @@ More Examples:
 - `refactor`: (refactoring production code, eg. renaming a variable)
 - `test`: (adding missing tests, refactoring tests; no production code change)
 - `chore`: (updating grunt tasks etc; no production code change)
-  <<<<<<< HEAD
-
-References:
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Deploy
-
-## Frontend
-
-**Cleanup and prepare**
-
-Terminal should be in frondend folder
-
-```bash
-ssh USERNAME@it2810-22.idi.ntnu.no "sudo rm -r /var/www/html/kommuneadvisor"
-
-ssh USERNAME@it2810-22.idi.ntnu.no "rm -d deploy"
-
-ssh USERNAME@it2810-22.idi.ntnu.no "mkdir -p deploy"
-```
-
-### Build and deploy
-
-```bash
-npm run build
-
-scp -r ./build USERNAME@it2810-22.idi.ntnu.no:deploy
-
-ssh USERNAME@it2810-22.idi.ntnu.no "sudo mv deploy /var/www/html/kommuneadvisor"
-
-ssh USERNAME@it2810-22.idi.ntnu.no "sudo systemctl restart apache2"
-```
-
-## Backend
-
-Terminal should be in backend folder
-
-```bash
-ssh USERNAME@it2810-22.idi.ntnu.no "rm -r -d deploy_backend"
-ssh USERNAME@it2810-22.idi.ntnu.no "mkdir -p deploy_backend"
-
-rm -d -r deploy
-mkdir deploy
-```
-
-```bash
-# prepare deployment package
-cp .\package.json .\deploy\package.json
-cp -r .\server\. .\deploy\server\
-cp -r .\data\. .\deploy\data\
-cp .env .\deploy\.env
-
-# deploy package
-scp -r ./deploy USERNAME@it2810-22.idi.ntnu.no:deploy_backend
-
-#connect to SSH server
-ssh USERNAME@it2810-22.idi.ntnu.no
-
-
-sudo systemctl stop kommuneadvisor
-sudo rm -v -d -r /var/www/kommuneadvisor_backend/*
-sudo mv -v deploy_backend/* /var/www/kommuneadvisor_backend
-cd /var/www/kommuneadvisor_backend/deploy
-sudo npm i
-
-sudo sudo systemctl start kommuneadvisor
-
-exit
-
-rm -r -d deploy
-```
