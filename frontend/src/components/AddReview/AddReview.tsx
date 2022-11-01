@@ -11,8 +11,11 @@ import './AddReview.css';
 import { getRatingDescription } from '../../services/getRatingDescription';
 
 export default function AddReview({ onCreate }: AddReviewProps) {
+  // url param kommune/:id
   const { id } = useParams();
+  // post review data to GraphQL
   const [postReview, { loading, error }] = useMutation(POST_REVIEW);
+
   const [opened, setOpened] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
   const [ratingDescription, setRatingDescription] = useState<string>('');
@@ -23,9 +26,6 @@ export default function AddReview({ onCreate }: AddReviewProps) {
     description: '',
   });
 
-  if (loading) return <LoadingSpinner />;
-  if (error) console.log(error);
-
   function openModal() {
     // resets values
     setReview({ rating: 0, name: '', title: '', description: '' });
@@ -34,6 +34,7 @@ export default function AddReview({ onCreate }: AddReviewProps) {
   }
 
   async function addReview() {
+    // display error message if required fields are empty
     if (
       review.rating === 0 ||
       review.name === '' ||
@@ -41,7 +42,9 @@ export default function AddReview({ onCreate }: AddReviewProps) {
       review.description === ''
     ) {
       setErrorMessage(true);
-    } else {
+    } 
+    // post review to GraphQL
+    else {
       const response = await postReview({
         variables: {
           name: review.name,
@@ -63,30 +66,31 @@ export default function AddReview({ onCreate }: AddReviewProps) {
     handleRating(0);
   }
 
+  // update fields based on user input
   function handleRating(rating: number) {
     setReview({ ...review, rating: rating });
     updateRatingDescription(rating);
   }
-
   function updateName(name: string) {
     setErrorMessage(false);
     setReview({ ...review, name: name });
   }
-
   function updateTitle(title: string) {
     setErrorMessage(false);
     setReview({ ...review, title: title });
   }
-
   function updateDescription(description: string) {
     setErrorMessage(false);
     setReview({ ...review, description: description });
   }
-
   function updateRatingDescription(rating: number) {
     setErrorMessage(false);
     setRatingDescription(getRatingDescription(rating));
   }
+
+  // loading and error handling
+  if (loading) return <LoadingSpinner />;
+  if (error) return <div>Could not add review</div>;
 
   return (
     <>
