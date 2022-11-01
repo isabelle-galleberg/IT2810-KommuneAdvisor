@@ -6,21 +6,11 @@ describe('test add review', () => {
   it('add review', () => {
     cy.intercept('POST', '/graphql', (req) => {
       if (req.body.query.includes('addKommuneRating')) {
-        // Hei eva, her skal du expecte at alle feltene i requesten matcher en fasit.
-        // Fasiten ser sånn ut:
-        // let test = {
-        //   variables: {
-        //     name: 'asd',
-        //     rating: 3,
-        //     title: 'asd',
-        //     description: 'asd',
-        //     kommuneId: '5403',
-        //   },
-        //   query:
-        //     'mutation ($name: String!, $rating: Int!, $title: String!, $description: String!, $kommuneId: ID!) {\n  addKommuneRating(\n    name: $name\n    rating: $rating\n    title: $title\n    description: $description\n    kommuneId: $kommuneId\n  ) {\n    _id\n    timestamp\n    __typename\n  }\n}',
-        // };
-
-        expect(req.body.variables).to.have.property('name', 'asd');
+        expect(req.body.variables).to.have.property('name', 'test-navn');
+        expect(req.body.variables).to.have.property('rating', 3);
+        expect(req.body.variables).to.have.property('title', 'test-tittel');
+        expect(req.body.variables).to.have.property('description', 'test-beskrivelse');
+        expect(req.body.variables).to.have.property('kommuneId', '0301');
         req.reply({
           statusCode: 200,
           body: {
@@ -35,12 +25,17 @@ describe('test add review', () => {
         });
       }
     });
+    // type new review
     cy.get('[data-cy="btn-open-add-review"').click();
     cy.get('[data-cy="add-review-rating"').click().click();
-    cy.get('[data-cy="add-review-name"').type('navn');
-    cy.get('[data-cy="add-review-title"').type('tittel');
-    cy.get('[data-cy="add-review-description"').type('beskrivelse');
+    cy.get('[data-cy="add-review-title"').type('test-tittel');
+    cy.get('[data-cy="add-review-description"').type('test-beskrivelse');
+    cy.get('[data-cy="add-review-name"').type('test-navn');
 
+    // add new review
     cy.get('[data-cy="btn-add-review"').click();
+
+    // check if the review list contains the new review
+    cy.contains('div', /test-tittel/i).should('exist');
   });
 });
