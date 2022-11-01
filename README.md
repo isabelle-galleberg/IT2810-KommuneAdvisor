@@ -13,8 +13,7 @@ In the project directory, you can run:
 - `npm test` to install dependencies run the test runner interactively
 - `npm run build` to build the app for production to the `build` folder
 - `npx run lint` to run prettier and eslint checks
-
-TODO: kommandoer for å kjøre Cypress tester.
+- `npm run test:e2e` to run Cypress tests
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
@@ -101,14 +100,6 @@ We have used the testing framework Jest to create unit tests, using its built-in
 ### Cypress
 
 The Cypress tests are end-to-end tests.
-
-To run the cypress tests, start Frontend and Backend.
-
-From the frontend directory run:
-
-```
-npm run test:e2e
-```
 
 The naming convention of Cypress IDs is to use kebab-case, rather than camel-case, which is used in other parts of the application. This is done to better distinguish between the two types of IDs.
 
