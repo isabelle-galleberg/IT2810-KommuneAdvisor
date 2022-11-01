@@ -83,10 +83,15 @@ The kommune logos and maps are scraped from wikipedia: https://no.wikipedia.org/
 The numbers and statistics used in the application are gathered from Statistisk Sentralbyrå (SSB)
 
 ## Reflection and choices
+
 ### Average rating
+
 The average rating is calculated by taking the sum of all ratings and dividing it by the number of ratings. This is done in the backend, and the average rating is stored in the database. This is done to avoid having to calculate the average rating for each kommune every time the user visits the details page. The average rating is also updated when a new review is created.
+
 ### Timestamp
+
 We have chosen to store the date as a timestamp in the backend. This way it is easy to convert to other date formats and time zones later.
+
 ## 🧪Testing
 
 ### Jest
@@ -95,11 +100,16 @@ We have used the testing framework Jest to create unit tests, using its built-in
 
 ### Cypress
 
-The Cypress tests are end-to-end tests. They are run from the frontend folder with:
+The Cypress tests are end-to-end tests.
+
+To run the cypress tests, start Frontend and Backend.
+
+From the frontend directory run:
 
 ```
 npm run test:e2e
 ```
+
 The naming convention of Cypress IDs is to use kebab-case, rather than camel-case, which is used in other parts of the application. This is done to better distinguish between the two types of IDs.
 
 ## 🚀Git guidelines and code quality
@@ -138,11 +148,11 @@ More Examples:
 References:
 
 <<<<<<< HEAD
+
 - https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
 - https://www.conventionalcommits.org/
 - https://seesparkbox.com/foundry/semantic_commit_messages
-- http://karma-runner.github.io/1.0/dev/git-commit-msg.html stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
-=======
+- # http://karma-runner.github.io/1.0/dev/git-commit-msg.html stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
 - [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
 - [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
 - [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
@@ -220,4 +230,5 @@ For open source projects, say how it is licensed.
 ## Project status
 
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
->>>>>>> main
+
+> > > > > > > main
