@@ -1,3 +1,4 @@
+import { IKommuneRating } from './../models/kommuneRating';
 const {
   GraphQLObjectType,
   GraphQLID,
@@ -10,9 +11,11 @@ const {
   GraphQLNonNull,
 } = require('graphql');
 
-const kommuner = require('../models/kommune');
-const kommuneRating = require('../models/kommuneRating');
-const county = require('../models/county');
+import { IKommune, Kommune } from '../models/kommune';
+import { KommuneRating } from '../models/kommuneRating';
+import { County } from '../models/county';
+import { IKommuneRatingPost } from '../interfaces/kommuneInterfaces';
+
 const KommuneType = new GraphQLObjectType({
   name: 'Kommune',
   fields: () => ({
@@ -29,14 +32,14 @@ const KommuneType = new GraphQLObjectType({
     averageRating: { type: GraphQLFloat },
     county: {
       type: CountyType,
-      resolve(parent, args) {
-        return county.findById(parent.county);
+      resolve(parent: IKommune) {
+        return County.findById(parent.county);
       },
     },
     kommuneRating: {
       type: new GraphQLList(KommuneRatingType),
-      async resolve(parent, args) {
-        return kommuneRating.find({ kommune: parent._id }).exec();
+      async resolve(parent: IKommune) {
+        return KommuneRating.find({ kommune: parent._id }).exec();
       },
     },
   }),
@@ -96,8 +99,8 @@ const RootQuery = new GraphQLObjectType({
         search: { type: GraphQLString },
         county: { type: GraphQLString },
       },
-      async resolve(parent, args) {
-        let query = kommuner.find({});
+      async resolve(_parent: any, args: any) {
+        let query = Kommune.find({});
         if (args.county) {
           query = query.find({ county: args.county });
         }
@@ -119,14 +122,14 @@ const RootQuery = new GraphQLObjectType({
     kommune: {
       type: KommuneType,
       args: { id: { type: GraphQLString } },
-      resolve(parent, args) {
-        return kommuner.findOne({ _id: args.id });
+      resolve(_parent: any, args: any) {
+        return Kommune.findOne({ _id: args.id });
       },
     },
     counties: {
       type: new GraphQLList(CountyType),
-      resolve(parent, args) {
-        return county.find({});
+      resolve() {
+        return County.find({});
       },
     },
     kommunerCount: {
@@ -135,8 +138,8 @@ const RootQuery = new GraphQLObjectType({
         search: { type: GraphQLString },
         county: { type: GraphQLString },
       },
-      resolve(parent, args) {
-        let query = kommuner.find({});
+      resolve(parent: any, args: any) {
+        let query = Kommune.find({});
         if (args.county) {
           query = query.find({ county: args.county });
         }
@@ -163,27 +166,29 @@ const RootMutation = new GraphQLObjectType({
         description: { type: GraphQLNonNull(GraphQLString) },
         kommuneId: { type: GraphQLNonNull(GraphQLID) },
       },
-      async resolve(parent, args) {
+      async resolve(_parent: any, args: IKommuneRatingPost) {
         const { name, rating, title, description, kommuneId } = args;
-        const kommuneRatings = await kommuneRating.find({
-          kommune: kommuneId,
-        });
-        const ratings = await kommuneRatings.map((rating) => rating.rating);
-        ratings.push(args.rating);
-        const sum = ratings.reduce((a, b) => a + b, 0);
-        const averageRating = sum / ratings.length;
-        const kommune = await kommuner.findById(kommuneId);
-        kommune.averageRating = averageRating;
-        kommune.save();
-        const newKommuneRating = new kommuneRating({
-          name,
-          rating,
-          title,
-          description,
-          kommune: kommuneId,
-          timestamp: new Date(),
-        });
-        return newKommuneRating.save();
+        const kommune = await Kommune.findById(kommuneId);
+        if (kommune) {
+          const kommuneRatings = await KommuneRating.find({
+            kommune: kommuneId,
+          });
+          const ratings = await kommuneRatings.map((rating) => rating.rating);
+          ratings.push(args.rating);
+          const sum = ratings.reduce((a, b) => a + b, 0);
+          const averageRating = sum / ratings.length;
+          kommune.averageRating = averageRating;
+          await kommune.save();
+          const newKommuneRating = new KommuneRating({
+            name,
+            rating,
+            title,
+            description,
+            kommune: kommuneId,
+            timestamp: new Date(),
+          } as IKommuneRating);
+          return newKommuneRating.save();
+        }
       },
     },
   },
