@@ -1,5 +1,13 @@
 import { gql } from '@apollo/client';
 
+/**
+ * Post a new review for a kommune
+ * @param kommuneId id of the kommune to post a review for
+ * @param name user input for kommune name
+ * @param rating user input for kommune rating
+ * @param title user input for kommune title
+ * @param description user input for kommune description
+ */
 export const POST_REVIEW = gql`
   mutation (
     $name: String!
@@ -21,6 +29,11 @@ export const POST_REVIEW = gql`
   }
 `;
 
+/**
+ * get all reviews for a kommune
+ * @param id id of the kommune to get reviews for
+ * @returns array with name, rating, title, description and timestamp
+ */
 export const GET_REVIEWS = gql`
   query Kommune($id: String) {
     kommune(id: $id) {

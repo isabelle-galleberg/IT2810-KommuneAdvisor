@@ -148,13 +148,13 @@ exports[`<KommuneCard /> should match snapshot with data 1`] = `
           </span>
         </span>
       </span>
-      <p
+      <div
         className="kommuneCardAverageRating"
       >
         (
         4.50
         )
-      </p>
+      </div>
     </div>
   </div>
 </div>
