@@ -3,23 +3,6 @@ describe('test the details page', () => {
     cy.visit('http://localhost:3000/kommune/0301');
   });
 
-  // Check loading spinner
-  it('Should have a loading spinner', () => {
-    //interupt api call
-    let sendResponse;
-    const trigger = new Promise((resolve) => {
-      sendResponse = resolve;
-    });
-    cy.intercept('**/kommune/*', (request) => {
-      return trigger.then(() => {
-        request.reply();
-      });
-    });
-    cy.get('[data-cy="loading-spinner"]').should('be.visible');
-    sendResponse();
-    cy.get('[data-cy="loading-spinner"]').should('not.exist');
-  });
-
   // Should contain all necessary information
   it('Should contain all necessary information', () => {
     cy.get('[data-cy="kommune-name"]').should('exist');
