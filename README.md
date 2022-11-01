@@ -25,26 +25,24 @@ In the project directory, you can run:
 
 The backend runs on [http://localhost:8000](http://localhost:8000).
 
+## 🌍Global state management
+The main purpose of global state is to share a state among multiple components in order to avoid prop drilling. In this application we have implemented global state management using [Redux Toolkit](https://redux-toolkit.js.org) for the search field, dropdown menus and current page. A user can search for and filter kommuner, click on a kommune to view the details page, then go back to the search results and see that the values for search field, filter and page have persisted. 
+
+We implemented the global states with Redux before fetching data from the backend, and therefore did not know that this could be done in the cache configuration with Apollo client. Although using Redux requires a bit more boilerplate code, it was quite simple to implement and works well with our  GraphQL backend. 
 
 ## 🔎Search 
 With the search field, the user can search for a kommune. Suggested kommuner based on the user inputs will be displayed on the main page. 
+
 TODO: noe om hvordan dette fungerer. 
 
 ### Sorting and filtering
 TODO: dette er implementert backend. (Hvorfor og hvordan?) Kobles opp mot verdier frontend. 
 
-### Infinite scroll
-TODO: infinite scroll implementasjon. 
+### Pagination
+The kommune cards are paginated, displaying 24 kommuner at a time. We chose this number since it is divisible by both 4, 3 and 2, making it compatible with the grid. The query for fetching kommuner is paginated, such that one can specify the number of elements per page and get the current page. This is implemented frontend by storing the current page in a global state, and setting the current page to 1 when the user updates the input fields. 
 
 ### Detail view
 From the search results, a user can click into the details page of a kommune. This does a new query to fetch information about the given kommune based on id. The id is also displayed in the url for the details page `/kommune/:id`. 
-
-
-## 🌍Global state management
-The main purpose of global state is to share a state among multiple components in order to avoid prop drilling. In this application we have implemented global state management using [Redux Toolkit](https://redux-toolkit.js.org) for the search field and dropdown menus. A user can search for and filter kommuner, click on a kommune to view the details page, then go back to the search results and see that the values for search field and filter values have persisted. 
-
-We implemented the global states with Redux before fetching data from the backend, and therefore did not know that this could be done in the cache configuration with Apollo client. Although using Redux requires a bit more boilerplate code, it was quite simple to implement and works well with GraphQL. 
-
 
 ## 💅Web accessibility
 
