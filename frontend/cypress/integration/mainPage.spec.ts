@@ -26,7 +26,7 @@ describe('filter functionallity', () => {
     cy.get('[data-cy="inp-search-kommune"]').type('Gol');
     cy.get('[data-cy="kommune-card"]').should('have.length', 1);
 
-    cy.get('[data-cy="inp-search-kommune"]').type('Eva Er Teit');
+    cy.get('[data-cy="inp-search-kommune"]').type('keeper');
     cy.get('[data-cy="kommune-card"]').should('not.exist');
   });
 });
