@@ -42,12 +42,9 @@ label {
 .rating {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 5px;
-}
-
-.averageRating {
-  color: rgb(58, 54, 54);
-  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .weaponImg {
