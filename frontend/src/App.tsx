@@ -14,7 +14,7 @@ function App() {
     <div>
       <ApolloProvider client={client}>
         <Navbar />
-        <BrowserRouter>
+        <BrowserRouter basename='/kommuneadvisor'>
           <Routes>
             <Route
               path='/'
