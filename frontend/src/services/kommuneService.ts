@@ -32,6 +32,7 @@ export const GET_ALL_KOMMUNER = gql`
     $sortBy: sort
     $sortDirection: sortDirection
     $pageSize: Int
+    $page: Int
     $county: String
   ) {
     kommuner(
@@ -39,6 +40,7 @@ export const GET_ALL_KOMMUNER = gql`
       sortBy: $sortBy
       sortDirection: $sortDirection
       pageSize: $pageSize
+      page: $page
       county: $county
     ) {
       _id
@@ -53,5 +55,11 @@ export const GET_ALL_KOMMUNER = gql`
       }
       averageRating
     }
+  }
+`;
+
+export const GET_KOMMUNER_COUNT = gql`
+  query kommunerCount($county: String, $search: String) {
+    kommunerCount(search: $search, county: $county)
   }
 `;

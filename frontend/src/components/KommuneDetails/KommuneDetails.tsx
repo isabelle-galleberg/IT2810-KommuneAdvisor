@@ -10,15 +10,19 @@ export default function KommuneDetails({ refresh }: { refresh: boolean }) {
   // url param kommune/:id
   const { id } = useParams();
 
+  // get kommune data from GraphQL
   const { loading, error, data, refetch } = useQuery(GET_KOMMUNE, {
     variables: { id: id },
   });
+
+  // refetch data when the a new review is added to update kommune data
   useEffect(() => {
     if (refresh) {
       refetch();
     }
   }, [refresh]);
 
+  // loading and error handling
   if (loading) return <LoadingSpinner />;
   if (error) return <div>Kommune not found</div>;
 
@@ -44,18 +48,18 @@ export default function KommuneDetails({ refresh }: { refresh: boolean }) {
           <div className='line'></div>
           <div className='kommuneDetails'>
             <div>
-              <p className='rating'>
+              <div className='rating'>
                 <Rating
                   initialValue={data.kommune.averageRating}
                   readonly
                   size={30}
                 />
-                <div className='averageRating'>
+                <div>
                   {data.kommune.averageRating != 0
                     ? '(' + data.kommune.averageRating.toFixed(2) + ')'
                     : '(Ingen vurderinger)'}
                 </div>
-              </p>
+              </div>
               <label>📍 Fylke</label>
               <p>{data.kommune.county.name}</p>
               <label>👨‍👩‍👧‍👧 Innbyggertall</label>
