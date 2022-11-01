@@ -9,6 +9,7 @@ const initialState: PageState = {
   page: 1,
 };
 
+// global state for page, can be updated with updatePage
 export const pageSlice = createSlice({
   name: 'pageInput',
   initialState,

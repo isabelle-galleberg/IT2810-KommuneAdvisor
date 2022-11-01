@@ -9,6 +9,7 @@ const initialState: CountyState = {
   county: '',
 };
 
+// global state for county, can be updated with updateCounty
 export const countySlice = createSlice({
   name: 'countyInput',
   initialState,

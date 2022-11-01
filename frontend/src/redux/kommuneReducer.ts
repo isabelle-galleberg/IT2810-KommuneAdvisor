@@ -9,6 +9,7 @@ const initialState: KommuneState = {
   kommune: '',
 };
 
+// global state for kommune, can be updated with updateKommune
 export const kommuneSlice = createSlice({
   name: 'kommuneInput',
   initialState,
