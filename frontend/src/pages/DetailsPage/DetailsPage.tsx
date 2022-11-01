@@ -31,7 +31,9 @@ export default function DetailsPage() {
   function addReview(review: Review) {
     setReviews([...reviews, review]);
     setRefresh(true);
-    setRefresh(false);
+    setTimeout(() => {
+      setRefresh(false);
+    }, 1);
   }
 
   // loading and error handling
