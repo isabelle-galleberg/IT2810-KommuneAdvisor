@@ -20,6 +20,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### Backend
 
+In order to access the database, you must be connected to [NTNU VPN](https://i.ntnu.no/wiki/-/wiki/Norsk/Installere+VPN). 
+
 In the project directory, you can run:
 
 - `cd backend` to navigate to the backend directory
